@@ -1,8 +1,8 @@
-#N canvas 557 46 359 263 10;
-#X declare -path includes -path abs;
+#N canvas 557 69 359 263 10;
 #X declare -stdlib extra/zexy -stdpath extra/zexy;
 #X declare -stdpath extra/iemnet -stdpath extra/mrpeach;
-#N canvas 997 67 428 479 netpd 0;
+#X declare -path . -path includes -path abs;
+#N canvas 997 90 428 479 netpd 1;
 #N canvas 185 218 305 401 chat 0;
 #N canvas 334 296 444 295 connection 0;
 #X msg 143 175 disconnect;
@@ -3299,13 +3299,13 @@ to its right inlet.;
 #X obj 10 390 s \$0.loadbang.3;
 #X obj 10 306 loadbang;
 #X text 169 351 reserved for loading preferences;
-#X obj 11 167 declare -path includes -path abs;
 #X obj 14 231 declare -stdlib extra/zexy -stdpath extra/zexy;
 #X text 13 214 soon to be deprecated:;
 #X obj 11 191 declare -stdpath extra/iemnet -stdpath extra/mrpeach
 ;
 #X msg 9 443 \; pd-chat.pd loadbang;
-#X obj 177 83 netpd-pref-manager;
+#X obj 172 81 netpd-pref-manager netpd-preferences.cnf;
+#X obj 11 167 declare -path . -path includes -path abs;
 #X connect 3 0 2 0;
 #X connect 9 0 8 0;
 #X connect 14 0 17 0;
