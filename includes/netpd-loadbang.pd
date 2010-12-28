@@ -1,0 +1,10 @@
+#N canvas 487 75 363 128 10;
+#X obj 16 16 r NETPD;
+#X obj 16 37 route loadbang;
+#X obj 16 58 sel \$1;
+#X obj 16 79 outlet;
+#X text 119 15 ordered loadbang for netpd;
+#X text 117 30 (this abstractions depends on chat.pd);
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
