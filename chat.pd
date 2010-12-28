@@ -1,8 +1,8 @@
-#N canvas 557 69 359 263 10;
+#N canvas 552 159 359 263 10;
 #X declare -stdlib extra/zexy -stdpath extra/zexy;
 #X declare -stdpath extra/iemnet -stdpath extra/mrpeach;
 #X declare -path . -path includes -path abs;
-#N canvas 997 90 428 479 netpd 1;
+#N canvas 881 147 428 479 netpd 0;
 #N canvas 185 218 305 401 chat 0;
 #N canvas 334 296 444 295 connection 0;
 #X msg 143 175 disconnect;
@@ -2088,104 +2088,7 @@ vis 0 \; pd-creator vis 1 \; pd-_creator.pd loadbang \;;
 #X restore 8 58 pd netpd_related_programs;
 #X obj 14 135 s \$0-toall;
 #X msg 14 113 label empty;
-#N canvas 1 351 432 473 netpd-settings 0;
-#X symbolatom 103 15 10 0 0 0 - set.netpd-name netpd-name-s;
-#X symbolatom 103 36 40 0 0 0 - set.netpd-welcome netpd-welcome-s;
-#X symbolatom 103 56 40 0 0 0 - set.netpd-domain netpd-domain-s;
-#X floatatom 103 76 6 0 0 0 - set.netpd-port netpd-port-s;
-#X text 59 14 name:;
-#X text 59 74 port:;
-#X text 24 55 IP/domain:;
-#X obj 7 167 cnv 15 141 34 empty empty empty 20 12 0 14 -1 -66577 0
-;
-#X obj 8 168 cnv 15 139 32 empty empty empty 20 12 0 14 -262144 -66577
-0;
-#X obj 44 169 hsl 100 10 0 255 0 0 \$0-red-s \$0-red-r empty -2 -6
-0 8 -258699 -1 -1 0 0;
-#X obj 44 179 hsl 100 10 0 255 0 0 \$0-grn-s \$0-grn-r empty -2 -6
-0 8 -24198 -1 -1 0 0;
-#X obj 44 189 hsl 100 10 0 255 0 0 \$0-blu-s \$0-blu-r empty -2 -6
-0 8 -62784 -1 -1 0 0;
-#X obj 9 169 cnv 15 30 30 empty empty empty 20 12 0 14 -1 -66577 0
-;
-#X obj 10 170 cnv 15 28 28 empty \$0-preview empty 20 12 0 14 -1 -1
-0;
-#X text 4 114 ____________________________________________________________
-;
-#X text 5 416 ____________________________________________________________
-;
-#X obj 185 170 nbx 2 16 3 20 0 0 \$0-fontsize \$0-blid empty 0 -6 0
-12 -262144 -1 -1 3 256;
-#X obj 225 170 vradio 11 1 0 3 \$0-fonttype \$0-blib empty 0 -6 0 8
--262144 -1 -1 0;
-#X text 238 167 courier;
-#X text 239 178 helvetica;
-#X text 238 190 times;
-#X text 184 184 size;
-#X obj 317 178 cnv 15 100 15 empty \$0-testtext testtext 0 12 0 12
--262144 -66577 0;
-#X text 24 36 say hello:;
-#X obj 165 128 cnv 1 1 300 empty empty empty 20 12 0 14 -1 -66577 0
-;
-#X obj 166 128 cnv 1 1 346 empty empty empty 20 12 0 14 -262144 -66577
-0;
-#X obj 47 138 cnv 15 15 15 empty empty color 0 9 1 14 -262144 -66577
-0;
-#X obj 244 139 cnv 15 15 15 empty empty font 0 9 1 14 -262144 -66577
-0;
-#X text 5 197 ____________________________________________________________
-;
-#X text 341 225 C;
-#X text 341 248 H;
-#X text 341 274 A;
-#X text 341 300 T;
-#X text 5 313 ____________________________________________________________
-;
-#X text 344 336 C;
-#X text 345 347 R;
-#X text 344 358 E;
-#X text 344 370 A;
-#X text 344 381 T;
-#X text 344 392 O;
-#X text 344 402 R;
-#X floatatom 103 97 4 0 0 0 - set.netpd-msg-interval netpd-msg-interval-s
-;
-#X text 3 97 msg-interval:;
-#X text 135 97 /100 ms;
-#X obj 11 223 hsl 50 15 0 127 0 0 ch.font.clr ch.font.clr-r label 55
-8 1 11 -1 -1 -1 0 1;
-#X obj 11 242 hsl 50 15 0 127 0 0 ch.background.clr ch.background.clr-r
-background 55 8 1 11 -241213 -241213 -1 0 1;
-#X obj 11 262 hsl 50 15 0 127 0 0 ch.active.clr ch.active.clr-r active
-55 8 1 11 -187246 -187246 -1 0 1;
-#X obj 11 281 hsl 50 15 0 127 0 0 ch.border.clr ch.border.clr-r border
-55 8 1 11 -1 -1 -1 0 1;
-#X obj 185 223 hsl 80 20 0 127 0 0 ch.title.fnt ch.title.fnt-r title
-4 12 1 12 -233017 -233017 -1 0 1;
-#X obj 185 250 hsl 80 20 0 127 0 0 ch.talk.fnt ch.talk.fnt-r talk 4
-13 0 12 -233017 -233017 -1 0 1;
-#X obj 185 276 hsl 80 20 0 127 0 0 ch.buttons.fnt ch.buttons.fnt-r
-buttons 4 13 1 10 -233017 -233017 -1 0 1;
-#X obj 11 300 hsl 50 15 0 127 0 0 ch.inputbox.clr ch.inputbox.clr-r
-inputbox 55 8 1 11 -241213 -241213 -1 0 1;
-#X obj 11 338 hsl 50 15 0 127 0 0 cr.background1.clr cr.background1.clr-r
-background1 55 8 1 11 -199731 -199731 -1 0 1;
-#X obj 11 357 hsl 50 15 0 127 0 0 cr.background2.clr cr.background2.clr-r
-backgruond2 55 8 1 11 -224635 -224635 -1 0 1;
-#X obj 185 337 hsl 80 20 0 127 0 0 cr.title.fnt cr.title.fnt-r title
-4 12 1 12 -233017 -233017 -1 0 1;
-#X obj 185 364 hsl 80 20 0 127 0 0 cr.label.fnt cr.label.fnt-r label
-4 13 1 10 -233017 -233017 -1 0 1;
-#X obj 185 390 hsl 80 20 0 127 0 0 cr.display.fnt cr.display.fnt-r
-display 4 13 0 12 -233017 -233017 -1 0 1;
-#X obj 11 376 hsl 50 15 0 127 0 0 cr.label.clr cr.label.clr-r label
-55 8 1 11 -1 -1 -1 0 1;
-#X obj 11 395 hsl 50 15 0 127 0 0 cr.display.clr cr.display.clr-r display
-55 8 1 11 -258049 -258049 -1 0 1;
-#X obj 11 446 hsl 75 17 0 127 0 0 \$0-closesavesettings \$0-bli save&close
-2 9 1 11 -233017 -233017 -1 0 1;
-#X restore 8 37 pd netpd-settings;
-#N canvas 450 177 434 571 settings-code 0;
+#N canvas 450 200 434 571 settings-code 0;
 #N canvas 433 86 245 246 getcolor 0;
 #X obj 75 54 * -256;
 #X obj 10 54 * -65536;
@@ -3298,7 +3201,7 @@ to its right inlet.;
 #X obj 33 370 s \$0.loadbang.2;
 #X obj 10 390 s \$0.loadbang.3;
 #X obj 10 306 loadbang;
-#X text 169 351 reserved for loading preferences;
+#X text 129 385 reserved for loading preferences;
 #X obj 14 231 declare -stdlib extra/zexy -stdpath extra/zexy;
 #X text 13 214 soon to be deprecated:;
 #X obj 11 191 declare -stdpath extra/iemnet -stdpath extra/mrpeach
@@ -3306,12 +3209,22 @@ to its right inlet.;
 #X msg 9 443 \; pd-chat.pd loadbang;
 #X obj 172 81 netpd-pref-manager netpd-preferences.cnf;
 #X obj 11 167 declare -path . -path includes -path abs;
+#X obj 278 286 s NETPD;
+#X msg 280 265 pref load;
+#X obj 169 267 r NETPD;
+#X obj 169 288 route pref;
+#X obj 169 309 route set;
+#X obj 169 329 print PREFS;
 #X connect 3 0 2 0;
-#X connect 9 0 8 0;
-#X connect 14 0 17 0;
-#X connect 14 1 16 0;
-#X connect 14 2 15 0;
-#X connect 18 0 14 0;
+#X connect 8 0 7 0;
+#X connect 13 0 16 0;
+#X connect 13 1 15 0;
+#X connect 13 2 14 0;
+#X connect 17 0 13 0;
+#X connect 26 0 25 0;
+#X connect 27 0 28 0;
+#X connect 28 0 29 0;
+#X connect 29 0 30 0;
 #X restore 240 198 pd netpd;
 #X obj 3 2 cnv 15 347 17 empty \$0-border empty 6 8 1 12 -1 -1 0;
 #X obj 4 3 cnv 15 345 15 empty \$0-title empty 6 8 1 12 -241213 -1
