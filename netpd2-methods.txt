@@ -1,0 +1,15 @@
+pref load			load preferences from file
+pref save			write preferences to file
+pref saving			retrieve all prefs for saving
+pref saved			send pref data for saving
+pref set <prefname> <data>	overwrite data of <prefname> pref with <data>
+pref get <prefname>		request data of <prefname> pref
+pref <prefname>	<data>		receive data from <prefname> pref
+pref gui <1|0>			show/hide netpd-preferences window
+status get <statusprop>		request data from <statusprop> property
+status <statusprop> <data>	receive data from <statusprop> property
+to <OSC packet>			send <OSC packet> to server
+from <OSC packet>		receive <OSC packet> from server
+tcpclient <anything>		talk directly to [tcpclient]
+connection <1|0>		[tcpclient] connection status
+loadbang <int>			ordered loadbang (1-10)	
