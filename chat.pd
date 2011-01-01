@@ -1,8 +1,7 @@
-#N canvas 424 400 359 263 10;
-#X declare -stdlib extra/zexy -stdpath extra/zexy;
+#N canvas 424 423 359 263 10;
 #X declare -stdpath extra/iemnet -stdpath extra/mrpeach;
 #X declare -path . -path includes -path abs;
-#N canvas 784 257 428 479 netpd 1;
+#N canvas 784 280 428 479 netpd 1;
 #N canvas 185 451 305 401 chat 0;
 #N canvas 334 388 444 295 connection 0;
 #X msg 143 175 disconnect;
@@ -2084,8 +2083,6 @@ vis 0 \; pd-creator vis 1 \; pd-_creator.pd loadbang \;;
 #X msg 166 443 \; pd-_creator.pd vis 1;
 #X text 101 111 <-- click before saving;
 #X text 9 -1 CHAT;
-#X obj 14 231 declare -stdlib extra/zexy -stdpath extra/zexy;
-#X text 13 214 soon to be deprecated:;
 #X obj 11 191 declare -stdpath extra/iemnet -stdpath extra/mrpeach
 ;
 #X msg 9 443 \; pd-chat.pd loadbang;
@@ -2217,10 +2214,10 @@ vis 0 \; pd-creator vis 1 \; pd-_creator.pd loadbang \;;
 #X obj 75 327 print STATE;
 #X connect 3 0 2 0;
 #X connect 7 0 6 0;
-#X connect 17 0 18 0;
-#X connect 19 0 17 0;
-#X connect 23 0 24 0;
-#X connect 24 0 25 0;
+#X connect 15 0 16 0;
+#X connect 17 0 15 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
 #X restore 240 198 pd netpd;
 #X obj 3 2 cnv 15 347 17 empty \$0-border empty 6 8 1 12 -1 -1 0;
 #X obj 4 3 cnv 15 345 15 empty \$0-title empty 6 8 1 12 -241213 -1
