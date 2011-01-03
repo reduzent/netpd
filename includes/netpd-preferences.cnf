@@ -1,0 +1,19 @@
+cr.display.fnt 0 12
+cr.label.fnt 1 10
+cr.title.fnt 1 12
+cr.display.clr 255 0 0
+cr.label.clr 0 0 0
+cr.background2.clr 216 213 234
+cr.background1.clr 193 195 200
+ch.font.clr 0 0 0
+ch.inputbox.clr 234 226 242
+ch.buttons.fnt 1 10
+ch.talk.fnt 0 12
+ch.title.fnt 1 12
+ch.border.clr 0 0 0
+ch.active.clr 182 180 182
+ch.background.clr 234 226 242
+netpd-port 8003
+netpd-server localhost
+netpd-welcome <<<<<<<<<<<<<connected<<<<<<<<<<<<<<<<<
+netpd-name <username>
