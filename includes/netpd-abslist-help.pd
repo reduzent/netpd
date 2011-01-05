@@ -1,0 +1,34 @@
+#N canvas 410 105 504 270 10;
+#X obj 12 232 print netpd-ablist;
+#X msg 87 203 __finished__;
+#X obj 12 78 openpanel;
+#X obj 12 55 bng 15 250 50 0 empty empty empty 17 7 0 10 -204786 -1
+-1;
+#X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 7 7 netpd-abslist - get a list of abstraction dependencies
+;
+#X obj 12 167 netpd-abslist;
+#X text 224 48 inlet0: path to patch;
+#X text 223 62 outlet0: abstraction list;
+#X text 223 76 outlet1: bang when finished;
+#X text 141 136 [netpd-abslist] scans the given patch for an abslist.
+The abslist in the patch is specified in a subpatch [pd abslist] and
+the abs themselves are written to a message box each.;
+#X text 35 54 <- open a netpd-patch;
+#X text 225 202 example:;
+#N canvas 500 466 338 155 abslist 0;
+#X msg 16 13 netpd-abslist;
+#X msg 16 38 dummy-abs;
+#X msg 17 65 only one abstraction per message can be specified;
+#X text 15 98 Comments are ignored \, also objects.;
+#X obj 16 120 print;
+#X restore 227 221 pd abslist;
+#X msg 34 107 netpd-abslist-help.pd;
+#X text 170 107 <- test abslist below;
+#X connect 1 0 0 0;
+#X connect 2 0 6 0;
+#X connect 3 0 2 0;
+#X connect 6 0 0 0;
+#X connect 6 1 1 0;
+#X connect 14 0 6 0;
