@@ -1,4 +1,4 @@
-#N canvas 359 44 317 706 10;
+#N canvas 633 190 317 706 10;
 #X obj 15 155 textfile;
 #X obj 15 124 until;
 #X msg 64 124 clear \, read \$1 \, rewind;
@@ -81,7 +81,6 @@
 #X obj 15 648 t a;
 #X obj 113 579 r \$0.malformed;
 #X msg 113 623 0 0 0;
-#X obj 113 601 b;
 #X obj 15 32 list split 1;
 #N canvas 676 189 244 179 post.errors 0;
 #X obj 7 9 r \$0.malformed;
@@ -98,13 +97,15 @@
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
 #X restore 183 277 pd post.errors;
+#X obj 113 601 t b b;
+#X obj 140 662 outlet;
 #X connect 0 0 5 0;
 #X connect 0 1 6 0;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 1 0;
 #X connect 3 1 2 0;
-#X connect 4 0 32 0;
+#X connect 4 0 31 0;
 #X connect 7 0 1 1;
 #X connect 8 0 9 0;
 #X connect 9 0 10 0;
@@ -126,7 +127,8 @@
 #X connect 25 0 26 0;
 #X connect 26 0 27 0;
 #X connect 28 0 15 0;
-#X connect 29 0 31 0;
+#X connect 29 0 33 0;
 #X connect 30 0 28 0;
-#X connect 31 0 30 0;
-#X connect 32 0 16 0;
+#X connect 31 0 16 0;
+#X connect 33 0 30 0;
+#X connect 33 1 34 0;
