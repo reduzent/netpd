@@ -1,7 +1,7 @@
 #N canvas 0 44 358 260 10;
 #X declare -stdpath extra/iemnet -stdpath extra/mrpeach;
 #X declare -path . -path includes -path abs;
-#N canvas 0 377 359 279 netpd 0;
+#N canvas 0 352 359 279 netpd 0;
 #N canvas 170 490 164 296 chat 0;
 #N canvas 331 379 444 295 connection 0;
 #X msg 143 175 disconnect;
@@ -2131,7 +2131,7 @@ vis 0 \; pd-creator vis 1 \; pd-_creator.pd loadbang \;;
 #X connect 7 0 12 0;
 #X connect 8 0 11 0;
 #X connect 9 0 6 0;
-#X restore 12 205 pd netpd_related_programs;
+#X restore 12 226 pd netpd_related_programs;
 #X text 10 16 Author: Roman Haefeli (roman@netpd.org);
 #X text 9 -1 CHAT;
 #X obj 12 72 declare -stdpath extra/iemnet -stdpath extra/mrpeach;
@@ -2480,9 +2480,17 @@ vis 0 \; pd-creator vis 1 \; pd-_creator.pd loadbang \;;
 #X connect 4 0 2 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
-#X restore 12 233 pd TEMP;
+#X restore 12 254 pd TEMP;
 #X obj 248 246 bng 15 250 50 0 \$0.before.saving \$0.bli before_saving
 17 7 0 10 -232576 -1 -1;
+#N canvas 373 213 366 277 errors 0;
+#X obj 6 31 r NETPD;
+#X obj 6 53 route error;
+#X obj 6 75 print ERROR;
+#X text 5 8 print netpd errors:;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 12 205 pd errors;
 #X restore 240 198 pd netpd;
 #X obj 3 2 cnv 15 347 17 empty \$0-border empty 6 8 1 12 -1 -1 0;
 #X obj 4 3 cnv 15 345 15 empty \$0-title empty 6 8 1 12 -241213 -1
