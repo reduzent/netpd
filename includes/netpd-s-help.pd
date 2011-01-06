@@ -1,0 +1,22 @@
+#N canvas 520 44 503 417 10;
+#X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 7 7 netpd-s - send a message (OSC) to the server;
+#X obj 12 130 netpd-s /b/netpd-s-help;
+#X text 203 273 arg1: OSC address prefix (optional);
+#X text 179 57 [netpd-s] sends an OSC packet to the netpd-server.;
+#X text 191 292 inlet0: anything | OSC OSCAddressSuffix anything;
+#X msg 12 55 i'm only a help patch;
+#X msg 24 83 OSC /some/number 42;
+#X obj 13 206 netpd-s;
+#X text 151 88 <- when the 'OSC' tag is specified \, the following
+element is appended to the OSC address prefix of [netp-s];
+#X msg 13 180 /b/netpd-s-help/welcome hello;
+#X text 69 207 <- if no argument is given \, the first element is always
+interpreted as the OSC address;
+#X obj 17 310 netpd-r /netpd-s-help;
+#X obj 17 331 print netpd-s-help;
+#X connect 6 0 2 0;
+#X connect 7 0 2 0;
+#X connect 10 0 8 0;
+#X connect 12 0 13 0;
