@@ -1,4 +1,4 @@
-#N canvas 451 44 504 363 10;
+#N canvas 411 44 504 363 10;
 #X msg 59 201 0 0 1;
 #X msg 35 181 0 0 0;
 #X msg 14 159 2 0 12;
@@ -20,11 +20,11 @@ the incoming messages. Wrongly formatted versions will lead to unexpected
 results.;
 #X text 320 189 inlet0: netpd version;
 #X text 320 207 inlet1: netpd version;
-#X text 314 225 outlet0: result (float);
 #X text 314 172 args1-3: netpd version;
 #X text 23 50 [netpd-version-compare] accepts 3-float-lists on its
 inlets and performs a comparison between left and right. The result
 is either positive (>) \, zero (==) or negative (<).;
+#X text 314 225 outlet0: -1|0|1;
 #X connect 0 0 9 0;
 #X connect 1 0 9 0;
 #X connect 2 0 9 0;
