@@ -1,0 +1,36 @@
+#N canvas 451 44 504 363 10;
+#X msg 59 201 0 0 1;
+#X msg 35 181 0 0 0;
+#X msg 14 159 2 0 12;
+#X msg 66 221 2 1 12;
+#X msg 231 215 0 0 1;
+#X msg 211 195 0 0 0;
+#X msg 190 173 2 0 12;
+#X msg 242 235 2 1 12;
+#X floatatom 46 294 5 0 0 0 - - -;
+#X obj 46 252 netpd-version-compare 2 1 12;
+#X text 91 290 1: >;
+#X text 91 307 0: ==;
+#X text 85 324 -1: <;
+#X obj 0 -2 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 7 5 netpd-version-compare - compare netpd versions;
+#X text 22 101 [netpd-versions-compare] does not check the format of
+the incoming messages. Wrongly formatted versions will lead to unexpected
+results.;
+#X text 320 189 inlet0: netpd version;
+#X text 320 207 inlet1: netpd version;
+#X text 314 225 outlet0: result (float);
+#X text 314 172 args1-3: netpd version;
+#X text 23 50 [netpd-version-compare] accepts 3-float-lists on its
+inlets and performs a comparison between left and right. The result
+is either positive (>) \, zero (==) or negative (<).;
+#X connect 0 0 9 0;
+#X connect 1 0 9 0;
+#X connect 2 0 9 0;
+#X connect 3 0 9 0;
+#X connect 4 0 9 1;
+#X connect 5 0 9 1;
+#X connect 6 0 9 1;
+#X connect 7 0 9 1;
+#X connect 9 0 8 0;
