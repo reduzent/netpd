@@ -1,0 +1,8 @@
+#N canvas 500 96 317 194 10;
+#X obj 35 28 r NETPD;
+#X obj 35 50 route from;
+#X obj 35 75 routeOSC \$1;
+#X obj 35 101 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;

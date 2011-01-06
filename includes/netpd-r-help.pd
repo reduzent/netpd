@@ -1,0 +1,17 @@
+#N canvas 599 44 504 333 10;
+#X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 7 7 netpd-r - receive a message (OSC) from the server;
+#X obj 17 207 netpd-r /netpd-r-help;
+#X obj 17 250 print netpd-r;
+#X msg 16 48 /b/netpd-r-help/message 1 2 3 4;
+#X obj 16 90 netpd-s;
+#X text 152 206 <- argument is mandatory;
+#X msg 30 68 /b/netpd-r-help some text;
+#X text 125 105 [netpd-r] receives an OSC message from the netpd-server
+with the specified OSC address header.;
+#X text 123 160 outlet0: OSC message with first field of the OSC address
+stripped;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 7 0 5 0;
