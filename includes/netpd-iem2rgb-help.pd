@@ -1,0 +1,32 @@
+#N canvas 520 44 504 368 10;
+#X obj 17 230 netpd-iem2rgb;
+#X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 7 7 netpd-iem2rgb - convert iem color to rgb 8bit/channel;
+#X obj 17 268 unpack f f f;
+#X floatatom 17 292 5 0 0 0 - - -;
+#X floatatom 51 292 5 0 0 0 - - -;
+#X floatatom 86 292 5 0 0 0 - - -;
+#X msg 42 186 -256;
+#X text 75 187 blue;
+#X msg 36 162 -65281;
+#X text 83 161 green;
+#X msg 26 137 -983041;
+#X msg 17 114 -1.67117e+07;
+#X text 77 136 very dark red;
+#X text 97 113 red (with errors);
+#X text 17 307 R;
+#X text 51 307 G;
+#X text 86 306 B;
+#X text 15 55 [netpd-iem2rgb] converts iem color codes to rgb color
+values.;
+#X text 238 184 inlet0: iem color;
+#X text 232 201 outlet0: rgb color (3-float-list);
+#X connect 0 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 3 2 6 0;
+#X connect 7 0 0 0;
+#X connect 9 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
