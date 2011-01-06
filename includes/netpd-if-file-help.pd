@@ -1,0 +1,22 @@
+#N canvas 520 44 504 323 10;
+#X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 7 7 netpd-if-file - check if given file exists;
+#X obj 13 160 openpanel;
+#X obj 13 244 netpd-if-file;
+#X obj 13 136 bng 15 250 50 0 empty empty empty 17 7 0 10 -204786 -1
+-1;
+#X msg 22 182 netpd-if-file-help.pd;
+#X msg 40 206 nonexistingpatch.pd;
+#X obj 13 279 print netpd-if-file;
+#X text 7 41 [netpd-if-file] checks if the given file/patch exists
+and returns a '1' for true and '0' for false.;
+#X text 8 75 It uses a crude vanilla-compatible way to check the existence
+of a file. It only reliably works with Pd patches.;
+#X text 217 189 inlet0: path to patch;
+#X text 211 206 outlet0: 0|1;
+#X connect 2 0 3 0;
+#X connect 3 0 7 0;
+#X connect 4 0 2 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
