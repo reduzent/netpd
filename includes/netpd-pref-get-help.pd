@@ -1,0 +1,20 @@
+#N canvas 520 44 503 297 10;
+#X obj 24 145 netpd-pref-get;
+#X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 7 7 netpd-pref-get -;
+#X text 106 7 get the value of the specified preference parameter;
+#X obj 24 191 print netpd-pref-get;
+#X msg 35 91 netpd-name;
+#X msg 24 69 netpd-server;
+#X msg 46 113 ch.background.clr;
+#X text 174 61 [netpd-pref-get] retrieves the data of the specified
+preference parameter.;
+#X text 173 94 All preference parameters are read from the netpd-preferences.cnf
+file.;
+#X text 232 182 inlet0: preference paramater name;
+#X text 226 200 outlet0: preference parameter data;
+#X connect 0 0 4 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
