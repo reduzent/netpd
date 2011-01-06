@@ -1,0 +1,38 @@
+#N canvas 520 44 504 348 10;
+#X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 7 7 netpd-rgb2iem - convert rgb color to iem color;
+#X obj 25 238 netpd-rgb2iem;
+#X text 21 51 [netpd-rgb2iem] converts lists of rgb values to iem colors
+that can be used to change the colors of the iemguis.;
+#X obj 29 106 hsl 128 10 0 254 0 0 empty empty empty -2 -8 0 10 -258113
+-1 -1 0 1;
+#X obj 29 116 hsl 128 10 0 254 0 0 empty empty empty -2 -8 0 10 -4034
+-1 -1 0 1;
+#X obj 29 126 hsl 128 10 0 254 0 0 empty empty empty -2 -8 0 10 -4160
+-1 -1 0 1;
+#X floatatom 25 154 5 0 0 0 - - -;
+#X floatatom 63 154 5 0 0 0 - - -;
+#X floatatom 101 154 5 0 0 0 - - -;
+#X obj 63 173 t b a;
+#X obj 101 173 t b a;
+#X obj 25 200 pack f f f;
+#X obj 170 106 cnv 15 200 30 empty \$0.canvas empty 20 12 0 14 -1 -1
+0;
+#X msg 25 284 color \$1 -1;
+#X obj 25 306 s \$0.canvas;
+#X text 173 211 inlet0: rgb color values;
+#X text 167 228 outlet0: iem color;
+#X connect 2 0 14 0;
+#X connect 4 0 7 0;
+#X connect 5 0 8 0;
+#X connect 6 0 9 0;
+#X connect 7 0 12 0;
+#X connect 8 0 10 0;
+#X connect 9 0 11 0;
+#X connect 10 0 12 0;
+#X connect 10 1 12 1;
+#X connect 11 0 12 0;
+#X connect 11 1 12 2;
+#X connect 12 0 2 0;
+#X connect 14 0 15 0;
