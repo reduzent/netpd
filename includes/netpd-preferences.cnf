@@ -14,6 +14,6 @@ ch.border.clr 0 0 0
 ch.active.clr 182 180 182
 ch.background.clr 234 226 242
 netpd-port 8003
-netpd-server localhost
+netpd-server netpd.org
 netpd-welcome <<<<<<<<<<<<<connected<<<<<<<<<<<<<<<<<
 netpd-name <username>
