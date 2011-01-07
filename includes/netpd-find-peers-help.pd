@@ -1,0 +1,22 @@
+#N canvas 439 44 504 303 10;
+#X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 7 7 netpd-find-peers - find other instances of similar peers
+;
+#X obj 17 145 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 17 176 netpd-find-peers /helppatch;
+#X text 21 47 [netpd-find-peers] tries to find other instances of similar
+peers which might be netpd-patches or sections of netpd-patches.;
+#X text 20 104 Additionally \, [netpd-find-peers] performs a round
+trip measurement (a.k.a ping time) to the server.;
+#X text 269 202 inlet0: bang;
+#X text 263 220 outlet0: peers (socket numbers);
+#X text 263 238 outlet1: ping time (ms);
+#X text 281 173 arg1: peer name (OSC address field);
+#X obj 17 242 print netpd-find-peers;
+#X floatatom 176 203 5 0 0 0 - - -;
+#X text 210 203 ms;
+#X connect 2 0 3 0;
+#X connect 3 0 10 0;
+#X connect 3 1 11 0;
