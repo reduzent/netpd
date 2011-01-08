@@ -1,4 +1,4 @@
-#N canvas 358 44 504 303 10;
+#N canvas 371 44 504 303 10;
 #X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 7 7 netpd-find-peers - find other instances of similar peers
@@ -13,10 +13,10 @@ trip measurement (a.k.a ping time) to the server.;
 #X text 269 202 inlet0: bang;
 #X text 263 220 outlet0: peers (socket numbers);
 #X text 263 238 outlet1: ping time (ms);
-#X text 281 173 arg1: peer name (OSC address field);
 #X obj 17 242 print netpd-find-peers;
 #X floatatom 176 203 6 0 0 0 - - -;
 #X text 215 203 ms;
+#X text 281 173 arg1: /name (OSC address field);
 #X connect 2 0 3 0;
-#X connect 3 0 10 0;
-#X connect 3 1 11 0;
+#X connect 3 0 9 0;
+#X connect 3 1 10 0;
