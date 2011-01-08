@@ -1,16 +1,29 @@
-#N canvas 371 44 504 305 10;
+#N canvas 371 44 503 390 10;
 #X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 7 7 netpd-find-sync - find ready sync partner instance;
-#X obj 21 124 netpd-find-sync /testimesti;
-#X obj 21 202 print netpd-find-sync;
-#X msg 180 149 no_peer;
-#X msg 41 72 find;
-#X msg 93 73 ready;
-#X msg 150 71 unready;
-#X connect 2 0 3 0;
-#X connect 2 1 4 0;
-#X connect 4 0 3 0;
-#X connect 5 0 2 0;
-#X connect 6 0 2 0;
-#X connect 7 0 2 0;
+#X obj 20 360 print netpd-find-sync;
+#X msg 185 307 no_peer;
+#X msg 20 202 find;
+#X msg 36 223 ready;
+#X msg 45 246 unready;
+#X text 18 114 Once all state data is received \, the 'ready' message
+sets its state to 'ready' \, so that it will respond to requests from
+other peers.;
+#X text 19 163 If no other peer is available \, a bang is sent to the
+right outlet.;
+#X text 18 52 [netpd-find-sync] helps in syncing states between several
+instances of a certain patch. It tries to find a peer that claims to
+hold an up-to-date state. The socket number of the first peer that
+answers is output at the left outlet.;
+#X text 258 209 arg1: /name (OSC address field);
+#X text 246 238 inlet0: find|ready|unready;
+#X text 240 256 outlet0: socket number;
+#X text 240 274 outlet1: bang \, when no peer is found;
+#X obj 20 282 netpd-find-sync /netpd-patch;
+#X connect 3 0 2 0;
+#X connect 4 0 14 0;
+#X connect 5 0 14 0;
+#X connect 6 0 14 0;
+#X connect 14 0 2 0;
+#X connect 14 1 3 0;
