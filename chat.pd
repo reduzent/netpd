@@ -2491,6 +2491,14 @@ vis 0 \; pd-creator vis 1 \; pd-_creator.pd loadbang \;;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X restore 12 205 pd errors;
+#X obj 169 145 r NETPD;
+#X obj 169 167 spigot;
+#X obj 169 189 print NETPD_DEBUG;
+#X obj 225 152 tgl 15 0 empty empty debug_on/off 17 7 0 10 -204786
+-1 -1 0 1;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 16 0 14 1;
 #X restore 240 198 pd netpd;
 #X obj 3 2 cnv 15 347 17 empty \$0-border empty 6 8 1 12 -1 -1 0;
 #X obj 4 3 cnv 15 345 15 empty \$0-title empty 6 8 1 12 -241213 -1
