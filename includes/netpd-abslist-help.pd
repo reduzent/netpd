@@ -1,4 +1,4 @@
-#N canvas 410 105 504 270 10;
+#N canvas 410 44 504 270 10;
 #X obj 12 232 print netpd-ablist;
 #X msg 87 203 __finished__;
 #X obj 12 78 openpanel;
