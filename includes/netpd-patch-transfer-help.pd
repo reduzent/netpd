@@ -1,0 +1,21 @@
+#N canvas 410 44 503 367 10;
+#X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 21 177 patch|abstraction <filename> <remote socket>;
+#X text 7 7 netpd-transfer-patch -;
+#X text 143 7 download a patch/abstraction from given peer;
+#X obj 23 269 netpd-patch-transfer /helppatch;
+#X obj 23 307 print netpd-patch-transfer;
+#X msg 23 226 abstraction example.pd \$1;
+#X floatatom 23 201 5 0 0 0 - - -;
+#X text 23 51 Request a netpd-patch or netpd-abstraction from a peer
+identified by its socket number and download it.;
+#X text 35 132 abstraction -> <netpd>/abs;
+#X text 25 87 There are currently only two hard-coded types of patches
+which are saved into different directories:;
+#X text 273 252 inlet0: patch to download;
+#X text 267 270 outlet0: status info;
+#X text 36 120 patch -> <netpd>/patches;
+#X connect 4 0 5 0;
+#X connect 6 0 4 0;
+#X connect 7 0 6 0;
