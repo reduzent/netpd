@@ -1,7 +1,7 @@
 #N canvas 410 44 504 439 10;
 #X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X text 18 172 patch|abstraction <filename> <remote socket>;
+#X text 23 193 patch|abstraction <filename> <remote socket>;
 #X text 143 7 download a patch/abstraction from given peer;
 #X obj 25 322 netpd-patch-download /helppatch;
 #X msg 25 241 abstraction example.pd \$1;
@@ -9,15 +9,17 @@
 #X text 23 51 Request a netpd-patch or netpd-abstraction from a peer
 identified by its socket number and download it.;
 #X text 35 132 abstraction -> <netpd>/abs;
-#X text 25 87 There are currently only two hard-coded types of patches
-which are saved into different directories:;
-#X text 252 248 inlet0: patch to download;
+#X text 252 328 inlet0: patch to download;
 #X text 36 120 patch -> <netpd>/patches;
-#X text 264 219 arg1: /name (OSC address field);
-#X text 246 284 outlet1: status info;
-#X text 246 266 outlet0: messages;
+#X text 264 299 arg1: /name (OSC address field);
+#X text 246 364 outlet1: status info;
+#X text 246 346 outlet0: messages;
 #X obj 25 376 print netpd-patch-download;
 #X text 8 7 netpd-patch-download -;
-#X connect 3 0 14 0;
+#X text 25 87 There are currently only two hard-coded types of files
+which are saved into different directories.;
+#X text 25 154 It's the responsibility of the user to make sure that
+requested files exist on the remote side.;
+#X connect 3 0 13 0;
 #X connect 4 0 3 0;
 #X connect 5 0 4 0;
