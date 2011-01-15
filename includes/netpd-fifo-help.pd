@@ -3,27 +3,30 @@
 0;
 #X text 7 7 netpd-fifo - first-in-first-out message stack;
 #X obj 22 229 netpd-fifo;
-#X obj 22 114 bng 15 250 50 0 empty empty empty 17 7 0 10 -204786 -1
+#X obj 22 94 bng 15 250 50 0 empty empty empty 17 7 0 10 -204786 -1
 -1;
-#X text 43 114 <- spit out one message;
-#X msg 54 140 1;
-#X msg 79 160 one two three;
-#X msg 89 186 list this is only a help patch;
-#X text 88 137 add a message;
+#X text 43 94 <- spit out one message;
+#X msg 79 155 1;
+#X msg 104 175 one two three;
+#X msg 114 201 list this is only a help patch;
+#X text 113 152 add a message;
 #X obj 22 296 print netpd-fifo;
 #X obj 79 255 bng 15 250 50 0 empty empty empty 17 7 0 10 -261234 -1
 -1;
 #X text 99 255 <- bang when empty;
-#X text 96 207 (list selector is truncated);
+#X text 121 222 (list selector is truncated);
 #X text 15 48 [netpd-fifo] stores messages \, which can be retrieved
 later in the same order as they were stored.;
-#X text 275 258 inlet0: bang to get a message;
 #X text 275 275 inlet1: add messages;
 #X text 269 293 outlet0: message output;
 #X text 269 311 outlet1: bang when empty;
+#X msg 36 120 clear;
+#X text 78 120 <- clear the stack;
+#X text 275 258 inlet0: bang|clear;
 #X connect 2 0 9 0;
 #X connect 2 1 10 0;
 #X connect 3 0 2 0;
 #X connect 5 0 2 1;
 #X connect 6 0 2 1;
 #X connect 7 0 2 1;
+#X connect 17 0 2 0;
