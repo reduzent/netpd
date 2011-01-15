@@ -27,6 +27,7 @@ is output at the right outlet and all scheduled tasks are cleared.
 ;
 #X text 23 241 It's the responsibility of the user to make sure \,
 that requested patches/abstractions exist on the peers' side.;
+#X text 296 363 arg1: /name (OSC address field);
 #X connect 3 0 4 0;
 #X connect 3 1 5 0;
 #X connect 5 0 4 0;
