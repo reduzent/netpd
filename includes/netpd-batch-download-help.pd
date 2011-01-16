@@ -14,8 +14,6 @@ and eases the download of many patches and/or abstractions.;
 #X text 284 390 inlet0: patch|abstraction|msg;
 #X text 279 408 outlet0: msg output;
 #X text 279 426 outlet1: error output;
-#X msg 20 304 msg start download \, patch example-patch.pd \, abstraction
-example-abs.pd \, msg download finished;
 #X text 36 134 * msg: message to be posted after previous task finished
 ;
 #X text 24 153 Contrary to [netpd-patch-download] it accepts new tasks
@@ -25,10 +23,14 @@ the other.;
 #X text 24 198 If no peer is responding to download requests \, a bang
 is output at the right outlet and all scheduled tasks are cleared.
 ;
-#X text 23 241 It's the responsibility of the user to make sure \,
-that requested patches/abstractions exist on the peers' side.;
 #X text 296 363 arg1: /name (OSC address field);
+#X text 23 241 It's the responsibility of the user to make sure \,
+that requested patches/abstractions exist on the remote peer's side
+(in netpd it is assumed that all peers in a 'ready' state have the
+currently used patches).;
+#X msg 20 307 msg start download \, patch example-patch \, abstraction
+example-abs \, msg download finished;
 #X connect 3 0 4 0;
 #X connect 3 1 5 0;
 #X connect 5 0 4 0;
-#X connect 13 0 3 0;
+#X connect 19 0 3 0;
