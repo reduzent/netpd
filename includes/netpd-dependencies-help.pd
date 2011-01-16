@@ -1,11 +1,9 @@
-#N canvas 415 44 503 337 10;
-#X obj 20 230 netpd-dependencies;
+#N canvas 415 44 504 404 10;
 #X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 6 7 netpd-dependencies -;
 #X text 130 7 resolve dependencies and versions recursively;
-#X obj 20 298 print netpd-dependencies;
-#X msg 125 255 __finished__;
+#X obj 20 363 print netpd-dependencies;
 #X text 18 53 [netpd-dependencies] performs a recursive dependency
 resolution for the given netpd-patch. The output comes in a 'deepest
 first' order.;
@@ -13,12 +11,21 @@ first' order.;
 item.;
 #X text 21 125 The output format is:;
 #X text 45 142 patch|abstraction <name> <version (3-float-list)>;
-#X msg 20 170 example-patch;
-#X text 280 240 inlet0: netpd-patch;
+#X text 232 212 inlet0: netpd-patch;
 #X text 114 170 <- no path and no extension;
-#X text 274 258 outlet0: depenencies;
-#X text 274 276 outlet1: bang when done;
-#X connect 0 0 4 0;
-#X connect 0 1 5 0;
-#X connect 5 0 4 0;
-#X connect 10 0 0 0;
+#X text 226 230 outlet0: depenencies;
+#X obj 125 254 route bang;
+#X msg 125 277 __finished__;
+#X obj 182 305 list prepend ERROR;
+#X obj 182 327 list trim;
+#X obj 20 230 netpd-dependencies;
+#X text 226 248 outlet1: bang when done or error message;
+#X msg 20 170 example-patch;
+#X connect 11 0 12 0;
+#X connect 11 1 13 0;
+#X connect 12 0 3 0;
+#X connect 13 0 14 0;
+#X connect 14 0 3 0;
+#X connect 15 0 3 0;
+#X connect 15 1 11 0;
+#X connect 17 0 15 0;
