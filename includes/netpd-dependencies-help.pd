@@ -1,0 +1,8 @@
+#N canvas 236 340 450 300 10;
+#X msg 250 67 example-patch;
+#X obj 240 164 print SDHKAS;
+#X obj 304 144 print done;
+#X obj 240 109 netpd-dependencies;
+#X connect 0 0 3 0;
+#X connect 3 0 1 0;
+#X connect 3 1 2 0;
