@@ -1,8 +1,24 @@
-#N canvas 236 340 450 300 10;
-#X msg 250 67 example-patch;
-#X obj 240 164 print SDHKAS;
-#X obj 304 144 print done;
-#X obj 240 109 netpd-dependencies;
-#X connect 0 0 3 0;
-#X connect 3 0 1 0;
-#X connect 3 1 2 0;
+#N canvas 415 44 503 337 10;
+#X obj 20 230 netpd-dependencies;
+#X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 6 7 netpd-dependencies -;
+#X text 130 7 resolve dependencies and versions recursively;
+#X obj 20 298 print netpd-dependencies;
+#X msg 125 255 __finished__;
+#X text 18 53 [netpd-dependencies] performs a recursive dependency
+resolution for the given netpd-patch. The output comes in a 'deepest
+first' order.;
+#X text 20 101 Additionally it attaches the version number to each
+item.;
+#X text 21 125 The output format is:;
+#X text 45 142 patch|abstraction <name> <version (3-float-list)>;
+#X msg 20 170 example-patch;
+#X text 280 240 inlet0: netpd-patch;
+#X text 114 170 <- no path and no extension;
+#X text 274 258 outlet0: depenencies;
+#X text 274 276 outlet1: bang when done;
+#X connect 0 0 4 0;
+#X connect 0 1 5 0;
+#X connect 5 0 4 0;
+#X connect 10 0 0 0;
