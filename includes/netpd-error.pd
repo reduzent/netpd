@@ -1,0 +1,8 @@
+#N canvas 481 234 202 156 10;
+#X obj 23 22 inlet;
+#X obj 23 56 list prepend error \$1:;
+#X obj 23 78 list trim;
+#X obj 23 100 s NETPD;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
