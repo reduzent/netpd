@@ -15,8 +15,6 @@
 #X obj 200 163 list prepend add;
 #X obj 200 185 list trim;
 #X msg 180 214 write zzzz.pd \, clear;
-#X msg 161 266 \; pd open zzzz.pd netpd2/includes \; container.\$2
-vis 0;
 #X obj 161 117 t a b a;
 #X msg 100 11 load 4 example-patch;
 #X msg 143 36 unload 4;
@@ -26,17 +24,19 @@ vis 0;
 #X obj 79 91 route vis unload load;
 #X msg 120 330 \; container.\$1 menuclose;
 #X msg 79 368 \; container.\$1 vis \$2;
+#X msg 161 266 \; pd open zzzz.pd netpd2/includes \; container.\$1
+vis 0;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
 #X connect 4 0 1 0;
-#X connect 6 0 5 0;
-#X connect 6 1 4 0;
-#X connect 6 2 0 0;
-#X connect 7 0 11 0;
-#X connect 8 0 11 0;
-#X connect 9 0 11 0;
-#X connect 10 0 9 0;
-#X connect 11 0 13 0;
-#X connect 11 1 12 0;
-#X connect 11 2 6 0;
+#X connect 5 0 13 0;
+#X connect 5 1 4 0;
+#X connect 5 2 0 0;
+#X connect 6 0 10 0;
+#X connect 7 0 10 0;
+#X connect 8 0 10 0;
+#X connect 9 0 8 0;
+#X connect 10 0 12 0;
+#X connect 10 1 11 0;
+#X connect 10 2 5 0;
