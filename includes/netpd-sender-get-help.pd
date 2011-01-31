@@ -1,5 +1,24 @@
-#N canvas 398 53 503 370 10;
+#N canvas 402 44 503 370 10;
 #X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 8 7 netpd-sender-get - get the sender ID;
-#X obj 118 106 netpd-sender-get;
+#X obj 27 238 netpd-sender-get;
+#X obj 27 290 print netpd-sender-get;
+#X text 25 98 Possible values are:;
+#X text 32 114 * 0 - 999999 (socket number of sender);
+#X text 32 128 * l (local);
+#X text 32 141 * s (server);
+#X msg 53 182 /33/thirty/three note on 99;
+#X msg 80 209 /missing/sender/field/gives error;
+#X obj 120 263 bng 15 250 50 0 empty empty empty 17 7 0 10 -261234
+-1 -1;
+#X text 140 263 error;
+#X text 22 54 [metpd-sender-get] is used to retrieve the sender ID
+of the incoming OSC message.;
+#X text 312 247 inlet0: OSC Message;
+#X text 306 265 outlet0: sender ID;
+#X text 306 283 outlet1: bang on error;
+#X connect 2 0 3 0;
+#X connect 2 1 10 0;
+#X connect 8 0 2 0;
+#X connect 9 0 2 0;
