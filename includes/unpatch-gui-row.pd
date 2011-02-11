@@ -1,0 +1,13 @@
+#N canvas 89 119 450 300 10;
+#X obj 33 30 hsl 15 14 0 0 0 0 \$0.close \$0.close.r empty -2 -8 1
+9 -262144 -262144 -262144 0 1;
+#X obj 53 30 hsl 4 14 0 0 0 0 \$0.vismain \$0.vismain.r empty -2 -6
+0 8 -262144 -262144 -262144 0 1;
+#X obj 62 30 hsl 163 14 0 0 0 0 \$0.visgui \$0.visgui.r empty 2 8 0
+10 -262144 -262144 -1 0 1;
+#X obj 156 210 s \$0.visgui.r;
+#X msg 156 188 label \$1;
+#X symbolatom 190 140 40 0 0 0 - - -;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X coords 0 -1 1 1 197 14 2 30 30;
