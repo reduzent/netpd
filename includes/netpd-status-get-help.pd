@@ -1,8 +1,6 @@
-#N canvas 520 44 503 297 10;
+#N canvas 512 44 503 297 10;
 #X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X text 211 159 inlet0: preference paramater name;
-#X text 205 177 outlet0: preference parameter data;
 #X text 7 7 netpd-status-get -;
 #X text 119 7 get the value of the specified status parameter;
 #X text 168 53 [netpd-status-get] retrieves the data of the specified
@@ -14,7 +12,13 @@ status parameter.;
 #X obj 24 145 netpd-status-get;
 #X text 112 91 <- symbol prefix is mandatory here \, since the [inlet]
 object seems to block a 'dsp' message.;
-#X connect 7 0 10 0;
-#X connect 8 0 10 0;
-#X connect 9 0 10 0;
-#X connect 10 0 6 0;
+#X text 270 174 arg2: auto-update (1|0);
+#X text 270 157 arg1: status parameter;
+#X text 258 201 inlet0: status paramater name;
+#X text 252 219 outlet0: status parameter data;
+#X text 286 266 see also:;
+#X obj 354 268 netpd-pref-get;
+#X connect 5 0 8 0;
+#X connect 6 0 8 0;
+#X connect 7 0 8 0;
+#X connect 8 0 4 0;
