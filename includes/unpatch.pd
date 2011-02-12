@@ -1,7 +1,7 @@
 #N canvas 452 363 469 241 10;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
-#N canvas 503 95 238 324 unpatch 0;
-#X obj 5 7 cnv 5 207 295 empty empty empty 20 12 0 14 -1 -66577 0;
+#N canvas 360 44 232 317 unpatch 1;
+#X obj 5 7 cnv 5 207 296 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 35 36 cnv 13 176 13 empty cr.farbe1 empty 20 12 1 9 -199731
 -1 0;
 #X obj 6 64 cnv 12 205 13 empty cr.farbe1 empty 5 6 1 9 -199731 -1
@@ -18,98 +18,18 @@
 0;
 #X obj 6 37 cnv 12 27 12 empty cr.farbe1b empty 5 6 1 9 -199731 -262144
 0;
-#X obj 6 232 cnv 12 205 13 empty cr.farbe1 empty 5 6 1 9 -199731 -1
+#X obj 6 233 cnv 12 205 13 empty cr.farbe1 empty 5 6 1 9 -199731 -1
 0;
 #X obj 6 78 cnv 12 205 13 empty \$0-label.help close/code/visualize
 5 6 1 9 -224635 -1 0;
-#X obj 6 274 cnv 12 205 13 empty cr.upload_label empty 6 5 1 9 -224635
+#X obj 6 275 cnv 12 205 13 empty cr.upload_label empty 6 5 1 9 -224635
 -1 0;
-#X obj 6 246 cnv 12 205 13 empty cr.download_label empty 5 6 1 9 -224635
+#X obj 6 247 cnv 12 205 13 empty cr.download_label empty 5 6 1 9 -224635
 -1 0;
-#X obj 6 260 cnv 12 205 13 empty cr.download_display empty 5 6 0 11
+#X obj 6 261 cnv 12 205 13 empty cr.download_display empty 5 6 0 11
 -199731 -258049 0;
-#X obj 6 288 cnv 12 205 13 empty cr.upload_display empty 5 6 0 11 -199731
+#X obj 6 289 cnv 12 205 13 empty cr.upload_display empty 5 6 0 11 -199731
 -258049 0;
-#X obj 38 92 hsl 161 13 0 0 0 0 \$0-1-gui.vis \$0-1-gui.vis-r empty
--2 -8 0 10 -262144 -1 -1 0 1;
-#X obj 38 106 hsl 161 13 0 0 0 0 \$0-2-gui.vis \$0-2-gui.vis-r empty
--2 -8 0 10 -262144 -1 -1 0 1;
-#X obj 38 120 hsl 161 13 0 0 0 0 \$0-3-gui.vis \$0-3-gui.vis-r empty
--2 -8 0 10 -262144 -1 -1 0 1;
-#X obj 38 134 hsl 161 13 0 0 0 0 \$0-4-gui.vis \$0-4-gui.vis-r empty
--2 -8 0 10 -262144 -1 -1 0 1;
-#X obj 38 148 hsl 161 13 0 0 0 0 \$0-5-gui.vis \$0-5-gui.vis-r empty
--2 -8 0 10 -262144 -1 -1 0 1;
-#X obj 38 162 hsl 161 13 0 0 0 0 \$0-6-gui.vis \$0-6-gui.vis-r empty
--2 -8 0 10 -262144 -1 -1 0 1;
-#X obj 38 176 hsl 161 13 0 0 0 0 \$0-7-gui.vis \$0-7-gui.vis-r empty
--2 -8 0 10 -262144 -1 -1 0 1;
-#X obj 38 190 hsl 161 13 0 0 0 0 \$0-8-gui.vis \$0-8-gui.vis-r empty
--2 -8 0 10 -262144 -1 -1 0 1;
-#X obj 38 218 hsl 161 13 0 0 0 0 \$0-10-gui.vis \$0-10-gui.vis-r empty
--2 -8 0 10 -262144 -1 -1 0 1;
-#X obj 38 204 hsl 161 13 0 0 0 0 \$0-9-gui.vis \$0-9-gui.vis-r empty
--2 -8 0 10 -262144 -1 -1 0 1;
-#X obj 6 92 cnv 12 205 13 empty \$0-1-patch.label empty 32 6 0 11 -199731
--258049 0;
-#X obj 6 106 cnv 12 205 13 empty \$0-2-patch.label empty 32 6 0 11
--224635 -258049 0;
-#X obj 6 120 cnv 12 205 13 empty \$0-3-patch.label empty 32 6 0 11
--199731 -258049 0;
-#X obj 6 134 cnv 12 205 13 empty \$0-4-patch.label empty 32 6 0 11
--224635 -258049 0;
-#X obj 6 148 cnv 12 205 13 empty \$0-5-patch.label empty 32 6 0 11
--199731 -258049 0;
-#X obj 6 162 cnv 12 205 13 empty \$0-6-patch.label empty 32 6 0 11
--224635 -258049 0;
-#X obj 6 176 cnv 12 205 13 empty \$0-7-patch.label empty 32 6 0 11
--199731 -258049 0;
-#X obj 6 190 cnv 12 205 13 empty \$0-8-patch.label empty 32 6 0 11
--224635 -258049 0;
-#X obj 6 204 cnv 12 205 13 empty \$0-9-patch.label empty 32 6 0 11
--199731 -258049 0;
-#X obj 6 218 cnv 12 205 13 empty \$0-10-patch.label empty 32 6 0 11
--224635 -258049 0;
-#X obj 8 92 hsl 15 14 0 0 0 0 \$0-1-close.patch \$0-1-close.patch-r
-empty -2 -8 1 9 -262144 -262144 -262144 0 1;
-#X obj 8 120 hsl 15 14 0 0 0 0 \$0-3-close.patch \$0-3-close.patch-r
-empty -2 -8 1 9 -262144 -262144 -262144 0 1;
-#X obj 8 148 hsl 15 14 0 0 0 0 \$0-5-close.patch \$0-5-close.patch-r
-empty -2 -8 1 9 -262144 -262144 -262144 0 1;
-#X obj 8 176 hsl 15 14 0 0 0 0 \$0-7-close.patch \$0-7-close.patch-r
-empty -2 -8 1 9 -262144 -262144 -262144 0 1;
-#X obj 8 204 hsl 15 14 0 0 0 0 \$0-9-close.patch \$0-9-close.patch-r
-empty -2 -8 1 9 -262144 -262144 -262144 0 1;
-#X obj 8 106 hsl 15 14 0 0 0 0 \$0-2-close.patch \$0-2-close.patch-r
-empty -2 -8 1 9 -262144 -262144 -262144 0 1;
-#X obj 8 134 hsl 15 14 0 0 0 0 \$0-4-close.patch \$0-4-close.patch-r
-empty -2 -8 1 9 -262144 -262144 -262144 0 1;
-#X obj 8 162 hsl 15 14 0 0 0 0 \$0-6-close.patch \$0-6-close.patch-r
-empty -2 -8 1 9 -262144 -262144 -262144 0 1;
-#X obj 8 190 hsl 15 14 0 0 0 0 \$0-8-close.patch \$0-8-close.patch-r
-empty -2 -8 1 9 -262144 -262144 -262144 0 1;
-#X obj 8 218 hsl 15 14 0 0 0 0 \$0-10-close.patch \$0-10-close.patch-r
-empty -2 -8 1 9 -262144 -262144 -262144 0 1;
-#X obj 28 92 hsl 4 14 0 0 0 0 \$0-1-main.vis \$0-1-main.vis-r empty
--2 -6 0 8 -262144 -262144 -262144 0 1;
-#X obj 28 106 hsl 4 14 0 0 0 0 \$0-2-main.vis \$0-2-main.vis-r empty
--2 -6 0 8 -262144 -262144 -262144 0 1;
-#X obj 28 120 hsl 4 14 0 0 0 0 \$0-3-main.vis \$0-3-main.vis-r empty
--2 -6 0 8 -262144 -262144 -262144 0 1;
-#X obj 28 134 hsl 4 14 0 0 0 0 \$0-4-main.vis \$0-4-main.vis-r empty
--2 -6 0 8 -262144 -262144 -262144 0 1;
-#X obj 28 148 hsl 4 14 0 0 0 0 \$0-5-main.vis \$0-5-main.vis-r empty
--2 -6 0 8 -262144 -262144 -262144 0 1;
-#X obj 28 162 hsl 4 14 0 0 0 0 \$0-6-main.vis \$0-6-main.vis-r empty
--2 -6 0 8 -262144 -262144 -262144 0 1;
-#X obj 28 176 hsl 4 14 0 0 0 0 \$0-7-main.vis \$0-7-main.vis-r empty
--2 -6 0 8 -262144 -262144 -262144 0 1;
-#X obj 28 190 hsl 4 14 0 0 0 0 \$0-8-main.vis \$0-8-main.vis-r empty
--2 -6 0 8 -262144 -262144 -262144 0 1;
-#X obj 28 204 hsl 4 14 0 0 0 0 \$0-9-main.vis \$0-9-main.vis-r empty
--2 -6 0 8 -262144 -262144 -262144 0 1;
-#X obj 28 218 hsl 4 14 0 0 0 0 \$0-10-main.vis \$0-10-main.vis-r empty
--2 -6 0 8 -262144 -262144 -262144 0 1;
 #X obj 202 94 vsl 10 134 130 0 0 0 \$0-scrollsensor \$0-scrollsensor-r
 empty 0 -9 0 10 -262144 -1 -1 13300 1;
 #X obj 203 134 cnv 8 8 13 empty cr.farbe2 empty 5 6 1 9 -224635 -1
@@ -134,6 +54,16 @@ empty 0 -9 0 10 -262144 -1 -1 13300 1;
 0;
 #X obj 203 93 cnv 4 8 137 empty \$0-scrollbar empty 20 12 0 14 -258049
 -262144 0;
+#X obj 5 218 unpatch-gui-row 9;
+#X obj 5 120 unpatch-gui-row 2;
+#X obj 5 92 unpatch-gui-row 0;
+#X obj 5 106 unpatch-gui-row 1;
+#X obj 5 134 unpatch-gui-row 3;
+#X obj 5 148 unpatch-gui-row 4;
+#X obj 5 162 unpatch-gui-row 5;
+#X obj 5 176 unpatch-gui-row 6;
+#X obj 5 190 unpatch-gui-row 7;
+#X obj 5 204 unpatch-gui-row 8;
 #X restore 221 71 pd unpatch;
 #N canvas 696 141 369 531 unpatch_upload 0;
 #X obj 26 24 openpanel;
