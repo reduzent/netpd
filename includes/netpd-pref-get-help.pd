@@ -1,20 +1,29 @@
-#N canvas 520 44 503 297 10;
-#X obj 24 145 netpd-pref-get;
+#N canvas 520 44 504 338 10;
 #X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 7 7 netpd-pref-get -;
 #X text 106 7 get the value of the specified preference parameter;
-#X obj 24 191 print netpd-pref-get;
-#X msg 35 91 netpd-name;
-#X msg 24 69 netpd-server;
-#X msg 46 113 ch.background.clr;
-#X text 174 61 [netpd-pref-get] retrieves the data of the specified
+#X obj 15 295 print netpd-pref-get;
+#X msg 41 183 netpd-name;
+#X msg 32 160 netpd-server;
+#X msg 47 208 ch.background.clr;
+#X text 151 52 [netpd-pref-get] retrieves the data of the specified
 preference parameter.;
-#X text 173 94 All preference parameters are read from the netpd-preferences.cnf
+#X text 150 89 All preference parameters are read from the netpd-preferences.cnf
 file.;
-#X text 232 182 inlet0: preference paramater name;
-#X text 226 200 outlet0: preference parameter data;
-#X connect 0 0 4 0;
-#X connect 5 0 0 0;
-#X connect 6 0 0 0;
-#X connect 7 0 0 0;
+#X text 243 279 inlet0: preference paramater name;
+#X text 237 297 outlet0: preference parameter data;
+#X obj 15 237 netpd-pref-get netpd-name 1;
+#X obj 15 137 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 255 235 arg1: preference parameter;
+#X text 255 252 arg2: auto-update (1|0);
+#X text 150 125 If the first argument is given \, the specified pref
+parameter is retrieved on loadbang;
+#X text 149 162 If the second argument is 1 \, updated of the given
+pref parameter are automatically output at the outlet;
+#X connect 4 0 11 0;
+#X connect 5 0 11 0;
+#X connect 6 0 11 0;
+#X connect 11 0 3 0;
+#X connect 12 0 11 0;
