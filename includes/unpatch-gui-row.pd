@@ -1,4 +1,4 @@
-#N canvas 358 44 591 505 10;
+#N canvas 358 44 545 496 10;
 #X obj 278 320 netpd-pref-get cr.display.clr 1;
 #X obj 294 146 netpd-pref-get cr.background1.clr 1;
 #X obj 314 104 netpd-pref-get cr.background2.clr 1;
@@ -40,12 +40,12 @@
 -1 -1;
 #X obj 210 30 bng 14 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 33 30 hsl 15 14 0 0 0 0 \$0.bli \$0.close.r empty 3 8 1 15 -199731
--199731 -258049 0 1;
+#X obj 33 30 hsl 15 14 0 0 0 0 \$0.bli \$0.close.r empty 3 8 1 12 -224635
+-224635 -258049 0 1;
 #X obj 53 30 hsl 4 14 0 0 0 0 \$0.bli \$0.vismain.r empty -2 -6 0 8
--199731 -199731 -1 0 1;
+-224635 -224635 -1 0 1;
 #X obj 62 30 hsl 163 14 0 0 0 0 \$0.bli \$0.visgui.r empty 2 8 0 12
--199731 -199731 -258049 0 1;
+-224635 -224635 -258049 0 1;
 #X obj 14 343 r \$0.visgui;
 #X obj 86 343 r \$0.vismain;
 #X obj 164 343 r \$0.close;
