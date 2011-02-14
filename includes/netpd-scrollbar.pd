@@ -1,0 +1,34 @@
+#N canvas 912 44 500 364 10;
+#X obj 20 22 vsl 10 145 130 0 0 0 \$0.sensor \$0.sensor.r empty 0 -9
+0 10 -204786 -258113 -1 0 1;
+#X obj 21 22 cnv 4 8 138 empty \$0.bar.r empty 20 12 0 14 -258049 -262144
+0;
+#X msg 267 87 coords 0 -1 1 1 \$1 \$2 2 20 20;
+#X obj 228 20 loadbang;
+#X obj 246 254 namecanvas \$0.scrollbar;
+#X obj 267 109 s \$0.scrollbar;
+#X obj 228 42 list append \$1 \$2;
+#X obj 228 64 t a a a;
+#X obj 247 222 s \$0.sensor.r;
+#X msg 247 199 size \$1 \$2;
+#X msg 300 15 10 150;
+#X obj 247 135 unpack;
+#X obj 280 156 - 5;
+#X obj 247 177 pack f f;
+#X obj 103 236 s \$0.bar.r;
+#X floatatom 146 137 5 0 0 0 - - -;
+#X msg 103 213 pos 21 \$1;
+#X connect 2 0 5 0;
+#X connect 3 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 1 11 0;
+#X connect 7 2 2 0;
+#X connect 9 0 8 0;
+#X connect 10 0 6 0;
+#X connect 11 0 13 0;
+#X connect 11 1 12 0;
+#X connect 12 0 13 1;
+#X connect 13 0 9 0;
+#X connect 15 0 16 0;
+#X connect 16 0 14 0;
+#X coords 0 -1 1 1 10 150 2 20 20;
