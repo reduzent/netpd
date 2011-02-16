@@ -1,6 +1,6 @@
-#N canvas 452 363 469 241 10;
+#N canvas 449 363 469 241 10;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
-#N canvas 360 44 232 317 unpatch 1;
+#N canvas 357 81 229 312 unpatch 1;
 #X obj 5 7 cnv 5 207 296 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 35 36 cnv 13 176 13 empty cr.farbe1 empty 20 12 1 9 -199731
 -1 0;
@@ -30,30 +30,6 @@
 -199731 -258049 0;
 #X obj 6 289 cnv 12 205 13 empty cr.upload_display empty 5 6 0 11 -199731
 -258049 0;
-#X obj 202 94 vsl 10 134 130 0 0 0 \$0-scrollsensor \$0-scrollsensor-r
-empty 0 -9 0 10 -262144 -1 -1 13300 1;
-#X obj 203 134 cnv 8 8 13 empty cr.farbe2 empty 5 6 1 9 -224635 -1
-0;
-#X obj 203 148 cnv 8 8 13 empty cr.farbe1 empty 5 6 1 9 -199731 -1
-0;
-#X obj 203 162 cnv 8 8 13 empty cr.farbe2 empty 5 6 1 9 -224635 -1
-0;
-#X obj 203 176 cnv 8 8 13 empty cr.farbe1 empty 5 6 1 9 -199731 -1
-0;
-#X obj 203 190 cnv 8 8 13 empty cr.farbe2 empty 5 6 1 9 -224635 -1
-0;
-#X obj 203 204 cnv 8 8 13 empty cr.farbe1 empty 5 6 1 9 -199731 -1
-0;
-#X obj 203 218 cnv 8 8 12 empty cr.farbe2 empty 5 6 1 9 -224635 -1
-0;
-#X obj 203 93 cnv 8 8 12 empty cr.farbe1 empty 5 6 1 9 -199731 -1 0
-;
-#X obj 203 106 cnv 8 8 13 empty cr.farbe2 empty 5 6 1 9 -224635 -1
-0;
-#X obj 203 120 cnv 8 8 13 empty cr.farbe1 empty 5 6 1 9 -199731 -1
-0;
-#X obj 203 93 cnv 4 8 137 empty \$0-scrollbar empty 20 12 0 14 -258049
--262144 0;
 #X obj 5 92 unpatch-gui-row \$0 0;
 #X obj 5 106 unpatch-gui-row \$0 1;
 #X obj 5 120 unpatch-gui-row \$0 2;
@@ -64,6 +40,7 @@ empty 0 -9 0 10 -262144 -1 -1 13300 1;
 #X obj 5 190 unpatch-gui-row \$0 7;
 #X obj 5 204 unpatch-gui-row \$0 8;
 #X obj 5 218 unpatch-gui-row \$0 9;
+#X obj 202 92 netpd-scrollbar \$0.scrollbar 10 140 10;
 #X restore 221 71 pd unpatch;
 #N canvas 696 141 369 531 unpatch_upload 0;
 #X obj 26 24 openpanel;
@@ -6533,18 +6510,39 @@ pd cr.singletons \, connect 1 0 2 0 \, connect 2 0 3 0 \, connect 3
 #X text 15 24 Author: Roman Haefeli <roman@netpd.org>;
 #X obj 174 206 declare -stdpath extra/zexy -stdlib extra/zexy;
 #X msg 220 146 \; pd-unpatch.pd loadbang;
-#N canvas 592 44 450 300 temp 1;
-#X obj 79 64 pack s f;
-#X msg 79 86 gui.row \$2 label \$1;
-#X obj 79 108 s \$0.UNPATCH;
-#X obj 79 130 r \$0.UNPATCH;
-#X obj 79 152 print UNPATCH;
-#X floatatom 164 23 5 0 0 0 - - -;
-#X symbolatom 34 26 20 0 0 0 - - -;
+#N canvas 589 53 457 313 temp 0;
+#X obj -131 91 pack s f;
+#X msg -131 113 gui.row \$2 label \$1;
+#X obj -131 135 s \$0.UNPATCH;
+#X obj -131 157 r \$0.UNPATCH;
+#X obj -131 179 print UNPATCH;
+#X floatatom -46 50 5 0 0 0 - - -;
+#X symbolatom -127 30 20 0 0 0 - - -;
+#X obj 17 85 s \$0.scrollbar;
+#X msg 31 53 set totallength \$1;
+#X floatatom 58 19 5 0 0 0 - - -;
+#X obj 3 165 netpd-pref-get cr.display.clr;
+#X obj 55 128 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 3 188 set frontcolor \$1 \$2 \$3;
+#X obj 3 210 s \$0.scrollbar;
+#X obj -56 201 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -108 283 s \$0.scrollbar;
+#X msg -108 261 set bgcolor \$1 \$2 \$3;
+#X obj -108 238 netpd-pref-get cr.background2.clr;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 3 0 4 0;
 #X connect 5 0 0 1;
 #X connect 6 0 0 0;
+#X connect 8 0 7 0;
+#X connect 9 0 8 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 13 0;
+#X connect 14 0 17 0;
+#X connect 16 0 15 0;
+#X connect 17 0 16 0;
 #X restore 316 38 pd temp;
 #X connect 6 0 5 0;
