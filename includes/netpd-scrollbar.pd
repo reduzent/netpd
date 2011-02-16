@@ -1,8 +1,8 @@
 #N canvas 315 196 638 443 10;
 #X obj 20 22 vsl 15 115 1 0 0 0 \$0.sensor \$0.sensor.r empty 0 -9
-0 10 -204786 -4160 -1 6800 1;
-#X obj 21 67 cnv 4 13 72 empty \$0.bar.r empty 20 12 0 14 -258049 -262144
-0;
+0 10 -204786 -4160 -1 11300 1;
+#X obj 21 21 cnv 4 13 118 empty \$0.bar.r empty 20 12 0 14 -258049
+-262144 0;
 #X obj 49 42 namecanvas \$0.scrollbar;
 #X obj 146 378 s \$0.quotient;
 #X msg 146 256 \$2 \$1;
@@ -13,7 +13,7 @@
 #X msg 253 230 \$1;
 #X obj 238 205 r \$0.pos;
 #X obj 265 296 + 0.5;
-#N canvas 183 389 717 547 scrollbar.logic 0;
+#N canvas 173 332 717 547 scrollbar.logic 0;
 #X msg 400 220 coords 0 -1 1 1 \$1 \$2 2 20 20;
 #X obj 349 20 loadbang;
 #X obj 400 242 s \$0.scrollbar;
@@ -86,6 +86,15 @@
 #X obj 294 243 t a a;
 #X obj 269 266 min;
 #X obj 269 288 max 4;
+#X obj 557 32 sel 0;
+#X obj 557 141 s \$0.sensor.r;
+#X obj 572 77 r \$0.scale;
+#X obj 557 98 /;
+#X obj 423 25 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 557 119 set \$1;
+#X msg 557 53 1;
+#X obj 557 9 r \$0.sensor;
 #X connect 0 0 2 0;
 #X connect 1 0 64 0;
 #X connect 4 0 3 0;
@@ -161,6 +170,13 @@
 #X connect 69 1 70 1;
 #X connect 70 0 71 0;
 #X connect 71 0 15 1;
+#X connect 72 0 78 0;
+#X connect 74 0 75 1;
+#X connect 75 0 77 0;
+#X connect 76 0 64 0;
+#X connect 77 0 73 0;
+#X connect 78 0 75 0;
+#X connect 79 0 72 0;
 #X restore 49 22 pd scrollbar.logic;
 #X obj 265 339 change;
 #X obj 52 338 /;
