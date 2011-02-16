@@ -1,27 +1,44 @@
-#N canvas 269 399 525 410 10;
-#X obj 250 213 s blabla;
-#X floatatom 253 110 5 0 0 0 - - -;
-#X floatatom 312 110 5 0 0 0 - - -;
-#X obj 294 264 r blabla;
-#X obj 294 286 route pos;
-#X floatatom 294 308 5 0 0 0 - - -;
-#X floatatom 449 105 5 0 0 0 - - -;
-#X msg 250 156 set totallength \$1;
-#X msg 312 135 set displaylength \$1;
-#X msg 449 130 set pos \$1;
-#X msg 403 216 vis \$1;
-#X msg 403 194 1 \, 0;
-#X obj 466 191 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 50 62 netpd-scrollbar blabla 15 100 10;
-#X connect 1 0 7 0;
-#X connect 2 0 8 0;
-#X connect 3 0 4 0;
-#X connect 4 0 5 0;
-#X connect 6 0 9 0;
-#X connect 7 0 0 0;
-#X connect 8 0 0 0;
-#X connect 9 0 0 0;
-#X connect 10 0 0 0;
-#X connect 11 0 10 0;
-#X connect 12 0 10 0;
+#N canvas 581 53 502 530 10;
+#X floatatom 16 231 5 0 0 0 - - -;
+#X floatatom 25 275 5 0 0 0 - - -;
+#X obj 16 471 route pos;
+#X floatatom 16 493 5 0 0 0 - - -;
+#X floatatom 44 317 5 0 0 0 - - -;
+#X msg 16 250 set totallength \$1;
+#X msg 25 293 set displaylength \$1;
+#X msg 44 336 set pos \$1;
+#X msg 65 376 set bgcolor 220 220 220;
+#X msg 65 399 set frontcolor 180 180 180;
+#X obj 11 66 netpd-scrollbar \$0.scrollbar 15 120 10;
+#X obj 16 428 s \$0.scrollbar;
+#X obj 16 451 r \$0.scrollbar;
+#X text 8 43 [netpd-scrollbar \$0.scrollbar 15 120 10];
+#X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 7 7 netpd-scrollbar - a graph-on-parent scrollbar;
+#X text 65 68 [netpd-scrollbar] is supposed to be used as graphical
+scrollbar. It needs to know the total number of items and the number
+of display lines in order to return the current position to be displayed.
+;
+#X text 63 132 [netpd-scrollbar]'s output (current position) does not
+follow any consistent logic when the totallength or displaylength values
+are updated. It's the task of the user to create that logic.;
+#X text 241 256 arg1: receive/send symbol;
+#X text 241 273 arg2: visible width;
+#X text 241 290 arg3: visible height;
+#X text 241 307 arg4: displaylength;
+#X text 112 439 <- s / r is \$1 of the abstraction;
+#X text 58 493 <- current position;
+#X text 63 359 set color:;
+#X text 13 212 settings:;
+#X text 53 230 <- change that to > 10;
+#X connect 0 0 5 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 4 0 7 0;
+#X connect 5 0 11 0;
+#X connect 6 0 11 0;
+#X connect 7 0 11 0;
+#X connect 8 0 11 0;
+#X connect 9 0 11 0;
+#X connect 12 0 2 0;
