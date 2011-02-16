@@ -1,19 +1,19 @@
-#N canvas 327 196 638 443 10;
+#N canvas 315 196 638 443 10;
 #X obj 20 22 vsl 15 115 1 0 0 0 \$0.sensor \$0.sensor.r empty 0 -9
-0 10 -204786 -4160 -1 9400 1;
-#X obj 21 21 cnv 4 13 118 empty \$0.bar.r empty 20 12 0 14 -258049
--262144 0;
+0 10 -204786 -4160 -1 6800 1;
+#X obj 21 67 cnv 4 13 72 empty \$0.bar.r empty 20 12 0 14 -258049 -262144
+0;
 #X obj 49 42 namecanvas \$0.scrollbar;
 #X obj 146 378 s \$0.quotient;
 #X msg 146 256 \$2 \$1;
 #X obj 146 278 /;
 #X obj 146 300 min 1;
 #X obj 238 253 *;
-#X obj 238 298 int;
+#X obj 265 317 int;
 #X msg 253 230 \$1;
 #X obj 238 205 r \$0.pos;
-#X obj 238 275 + 0.5;
-#N canvas 186 389 717 547 scrollbar.logic 0;
+#X obj 265 296 + 0.5;
+#N canvas 183 389 717 547 scrollbar.logic 0;
 #X msg 400 220 coords 0 -1 1 1 \$1 \$2 2 20 20;
 #X obj 349 20 loadbang;
 #X obj 400 242 s \$0.scrollbar;
@@ -48,7 +48,7 @@
 #X obj 197 432 pack f f;
 #X msg 197 454 \$2 \$1;
 #X obj 197 476 -;
-#X obj 19 237 int;
+#X obj 19 329 int;
 #X obj 19 281 max 0;
 #X obj 197 498 s \$0.bar.y;
 #X obj 19 259 min;
@@ -121,7 +121,7 @@
 #X connect 31 0 32 0;
 #X connect 32 0 33 0;
 #X connect 33 0 36 0;
-#X connect 34 0 37 0;
+#X connect 34 0 19 0;
 #X connect 35 0 54 0;
 #X connect 37 0 35 0;
 #X connect 38 0 40 0;
@@ -136,14 +136,14 @@
 #X connect 46 1 41 1;
 #X connect 46 1 37 1;
 #X connect 47 0 48 0;
-#X connect 48 0 34 0;
+#X connect 48 0 37 0;
 #X connect 48 2 38 0;
 #X connect 49 0 50 0;
 #X connect 50 0 51 1;
 #X connect 51 0 52 0;
 #X connect 52 0 58 0;
 #X connect 53 0 51 0;
-#X connect 54 0 19 0;
+#X connect 54 0 34 0;
 #X connect 54 1 56 0;
 #X connect 55 0 56 1;
 #X connect 56 0 57 0;
@@ -162,7 +162,7 @@
 #X connect 70 0 71 0;
 #X connect 71 0 15 1;
 #X restore 49 22 pd scrollbar.logic;
-#X obj 238 320 change;
+#X obj 265 339 change;
 #X obj 52 338 /;
 #X obj 67 251 t a a;
 #X msg 94 316 \$1;
@@ -173,8 +173,8 @@
 #X obj 52 75 r \$1;
 #X obj 121 174 pack f f;
 #X obj 190 142 t b a;
-#X msg 238 370 pos \$1;
-#X obj 238 392 s \$1;
+#X msg 265 361 pos \$1;
+#X obj 265 383 s \$1;
 #X obj 52 97 route set;
 #X obj 52 119 route pos totallength displaylength;
 #X obj 121 143 max 1;
@@ -187,18 +187,18 @@
 #X obj 428 148 s \$0.bar.r;
 #X msg 358 192 color \$1 \$1 -1;
 #X obj 358 214 s \$0.sensor.r;
-#X obj 238 342 t a a;
+#X obj 238 273 t a a;
 #X obj 121 196 t b a a a;
 #X obj 121 229 f;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
 #X connect 6 0 3 0;
-#X connect 7 0 11 0;
+#X connect 7 0 38 0;
 #X connect 8 0 13 0;
 #X connect 9 0 7 1;
 #X connect 10 0 7 0;
 #X connect 11 0 8 0;
-#X connect 13 0 38 0;
+#X connect 13 0 24 0;
 #X connect 14 0 20 0;
 #X connect 15 0 17 0;
 #X connect 15 1 16 0;
@@ -224,8 +224,8 @@
 #X connect 33 0 34 0;
 #X connect 34 0 35 0;
 #X connect 36 0 37 0;
-#X connect 38 0 24 0;
-#X connect 38 1 40 1;
+#X connect 38 0 40 1;
+#X connect 38 1 11 0;
 #X connect 39 0 40 0;
 #X connect 39 1 15 0;
 #X connect 39 2 4 0;
