@@ -1,4 +1,4 @@
-#N canvas 376 53 503 456 10;
+#N canvas 399 44 503 456 10;
 #X msg 43 219 drop \$1;
 #X floatatom 43 200 5 0 0 0 - - -;
 #X floatatom 79 290 5 0 0 0 - - -;
@@ -58,5 +58,6 @@ the current data can be retrieved.;
 #X connect 16 0 39 0;
 #X connect 17 0 39 1;
 #X connect 18 0 6 0;
+#X connect 36 0 6 0;
 #X connect 37 0 36 0;
 #X connect 39 0 15 0;
