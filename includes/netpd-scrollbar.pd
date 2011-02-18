@@ -1,8 +1,8 @@
 #N canvas 315 196 638 443 10;
-#X obj 20 22 vsl 15 115 1 0 0 0 \$0.sensor \$0.sensor.r empty 0 -9
-0 10 -204786 -4160 -1 11300 1;
-#X obj 21 21 cnv 4 13 118 empty \$0.bar.r empty 20 12 0 14 -258049
--262144 0;
+#X obj 20 22 vsl 10 135 1 0 0 0 \$0.sensor \$0.sensor.r empty 0 -9
+0 10 -224635 -224635 -1 13300 1;
+#X obj 21 21 cnv 4 8 118 empty \$0.bar.r empty 20 12 0 14 -258049 -258049
+0;
 #X obj 49 42 namecanvas \$0.scrollbar;
 #X obj 146 378 s \$0.quotient;
 #X msg 146 256 \$2 \$1;
@@ -187,7 +187,7 @@
 #X obj 52 314 max 0;
 #X obj 52 358 s \$0.sensor.r;
 #X obj 52 75 r \$1;
-#X obj 121 174 pack f f;
+#X obj 121 167 pack f f;
 #X obj 190 142 t b a;
 #X msg 265 361 pos \$1;
 #X obj 265 383 s \$1;
@@ -204,8 +204,10 @@
 #X msg 358 192 color \$1 \$1 -1;
 #X obj 358 214 s \$0.sensor.r;
 #X obj 238 273 t a a;
-#X obj 121 196 t b a a a;
-#X obj 121 229 f;
+#X obj 121 189 t b a a a;
+#X obj 121 232 f;
+#X obj 52 142 t a b;
+#X msg 79 209 set -1;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
 #X connect 6 0 3 0;
@@ -228,7 +230,7 @@
 #X connect 23 1 22 1;
 #X connect 24 0 25 0;
 #X connect 26 0 27 0;
-#X connect 27 0 18 0;
+#X connect 27 0 41 0;
 #X connect 27 1 28 0;
 #X connect 27 2 23 0;
 #X connect 28 0 22 0;
@@ -247,4 +249,7 @@
 #X connect 39 2 4 0;
 #X connect 39 3 9 0;
 #X connect 40 0 18 0;
-#X coords 0 -1 1 1 15 120 2 20 20;
+#X connect 41 0 18 0;
+#X connect 41 1 42 0;
+#X connect 42 0 13 0;
+#X coords 0 -1 1 1 10 140 2 20 20;
