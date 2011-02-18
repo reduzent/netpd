@@ -1,6 +1,6 @@
-#N canvas 443 363 469 241 10;
+#N canvas 440 363 469 241 10;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
-#N canvas 358 81 230 319 unpatch 1;
+#N canvas 355 109 230 319 unpatch 1;
 #X obj 5 7 cnv 5 207 296 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 35 36 cnv 13 176 13 empty cr.farbe1 empty 20 12 1 9 -199731
 -1 0;
@@ -46,7 +46,7 @@
 #X restore 17 84 pd unpatch_upload;
 #N canvas 437 379 396 227 unpatch_download 0;
 #X restore 17 110 pd unpatch_download;
-#N canvas 447 409 873 407 unpatch_control 0;
+#N canvas 444 409 889 440 unpatch_control 0;
 #X obj 14 75 netpd-hash;
 #X obj 14 10 r \$0.UNPATCH;
 #X obj 14 142 s \$0.UNPATCH;
@@ -92,13 +92,19 @@
 #X msg 198 312 set pos \$1;
 #X obj 667 27 r \$0.UNPATCH;
 #X obj 667 49 route gui.row;
-#X obj 675 234 print YOYOYOYOOYO;
+#X obj 586 363 print YOYOYOYOOYO;
 #X obj 667 71 route button;
 #X obj 667 93 route close;
 #X obj 682 115 r \$0.scrollbar;
 #X obj 682 137 route pos;
 #X obj 667 159 +;
-#X floatatom 680 196 5 0 0 0 - - -;
+#X obj 667 181 t a b a;
+#X msg 706 204 patchlist in getbypos \$1;
+#X obj 706 225 s \$0.UNPATCH;
+#X obj 706 248 r \$0.UNPATCH;
+#X obj 706 272 route patchlist;
+#X obj 706 294 route out;
+#X obj 686 314 list;
 #X connect 0 0 3 0;
 #X connect 1 0 10 0;
 #X connect 3 0 4 0;
@@ -151,6 +157,12 @@
 #X connect 48 0 49 0;
 #X connect 49 0 50 1;
 #X connect 50 0 51 0;
+#X connect 51 1 57 0;
+#X connect 51 2 52 0;
+#X connect 52 0 53 0;
+#X connect 54 0 55 0;
+#X connect 55 0 56 0;
+#X connect 56 0 57 1;
 #X restore 17 136 pd unpatch_control;
 #N canvas 618 490 169 83 version 0;
 #X obj 18 13 r cr.getversion;
