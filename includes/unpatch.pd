@@ -1,6 +1,6 @@
 #N canvas 429 329 529 242 10;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
-#N canvas 358 44 230 319 unpatch 1;
+#N canvas 358 72 230 319 unpatch 1;
 #X obj 5 7 cnv 5 207 296 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 35 36 cnv 13 176 13 empty cr.farbe1 empty 20 12 1 9 -199731
 -1 0;
@@ -42,9 +42,9 @@
 #X obj 5 204 unpatch-gui-row \$0 8;
 #X obj 5 218 unpatch-gui-row \$0 9;
 #X restore 220 64 pd unpatch;
-#N canvas 688 44 314 397 unpatch_upload 0;
+#N canvas 688 44 464 398 unpatch_upload 0;
 #X symbolatom 8 13 10 0 0 0 - - -;
-#N canvas 503 194 312 440 negotiate.free.slot 0;
+#N canvas 503 194 524 429 negotiate.free.slot 0;
 #X obj 24 108 s \$0.send;
 #X obj 24 130 r \$0.receive;
 #X obj 93 175 netpd-status-get socket 1;
@@ -154,6 +154,10 @@
 #X obj 237 130 b;
 #X obj 24 11 inlet;
 #X obj 24 382 outlet;
+#X text 109 248 reserve slot \, if remote peer performed the request
+;
+#X text 136 299 if origin is local \, proceed with netloading patch
+;
 #X connect 1 0 6 0;
 #X connect 2 0 9 1;
 #X connect 3 0 10 1;
@@ -215,6 +219,10 @@
 #X msg 8 299 b /netload \$1 \$2;
 #X obj 171 255 netpd-error unpatch;
 #X obj 8 332 s \$0.send;
+#X text 75 24 only process the next request \, if the previous has
+been completed;
+#X text 78 142 resolve all dependencies of given patch and on success
+proceed to netloading patch;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 7 0;
@@ -238,11 +246,11 @@
 #X connect 14 0 9 0;
 #X connect 15 0 17 0;
 #X restore 17 84 pd unpatch_upload;
-#N canvas 570 43 307 392 unpatch_download 0;
-#X obj 11 6 r \$0.receive;
-#X obj 11 28 routeOSC /check /netload;
-#X obj 11 50 t a a;
-#X obj 11 107 list append;
+#N canvas 631 44 393 364 unpatch_download 0;
+#X obj 9 72 r \$0.receive;
+#X obj 9 94 routeOSC /check /netload;
+#X obj 9 116 t a a;
+#X obj 9 173 list append;
 #N canvas 1055 72 276 417 bang.if.needs.download 0;
 #X obj 11 202 netpd-if-file;
 #X obj 11 90 route abstraction patch;
@@ -282,13 +290,17 @@
 #X connect 14 0 13 0;
 #X connect 14 1 15 0;
 #X connect 17 0 11 0;
-#X restore 11 78 pd bang.if.needs.download;
-#X obj 11 129 list trim;
-#X obj 11 191 netpd-batch-download;
-#X msg 81 166 msg patch load \$1 \$2;
-#X obj 11 263 s \$0.UNPATCH;
-#X text 20 221 finally load patch \, if all dependencies;
-#X text 19 234 are fulfilled;
+#X restore 9 144 pd bang.if.needs.download;
+#X obj 9 195 list trim;
+#X obj 9 257 netpd-batch-download;
+#X msg 79 232 msg patch load \$1 \$2;
+#X obj 9 329 s \$0.UNPATCH;
+#X text 18 287 finally load patch \, if all dependencies;
+#X text 17 300 are fulfilled;
+#X text 13 10 Check if we're missing some dependencies of patch being
+netloaded. Check for existence of given abstractions and versions of
+abstractions and the patch.;
+#X text 171 145 <- file and version checks;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 7 0;
