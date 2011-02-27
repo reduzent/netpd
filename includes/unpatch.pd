@@ -1,4 +1,4 @@
-#N canvas 423 329 529 242 10;
+#N canvas 477 328 529 242 10;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
 #N canvas 358 72 230 319 unpatch 1;
 #X obj 5 7 cnv 5 207 296 empty empty empty 20 12 0 14 -1 -66577 0;
@@ -44,7 +44,7 @@
 #X restore 220 64 pd unpatch;
 #N canvas 676 53 472 435 unpatch_upload 0;
 #X symbolatom 8 13 20 0 0 0 - - -;
-#N canvas 503 194 524 429 negotiate.free.slot 0;
+#N canvas 503 194 525 452 negotiate.free.slot 0;
 #X obj 24 108 s \$0.send;
 #X obj 24 130 r \$0.receive;
 #X obj 93 175 netpd-status-get socket 1;
@@ -93,10 +93,10 @@
 #X connect 16 0 3 0;
 #X connect 16 1 1 1;
 #X restore 24 62 pd find.free.slot;
-#X obj 69 364 s \$0.UNPATCH;
+#X obj 95 409 s \$0.UNPATCH;
 #X obj 24 201 list prepend;
 #X obj 24 227 route;
-#N canvas 530 421 186 275 sanity.check 0;
+#N canvas 530 449 186 275 sanity.check 0;
 #X obj 28 17 inlet;
 #X obj 28 239 outlet;
 #X msg 47 64 patchlist in get \$1;
@@ -120,7 +120,7 @@
 #X connect 9 0 10 0;
 #X connect 10 0 1 0;
 #X restore 51 269 pd sanity.check;
-#X msg 69 342 patch load \$1 loading...;
+#X msg 95 386 patch load \$1 loading...;
 #X msg 51 248 \$2;
 #N canvas 520 234 194 279 sanity.check 0;
 #X obj 28 17 inlet;
@@ -158,6 +158,9 @@
 ;
 #X text 136 299 if origin is local \, proceed with netloading patch
 ;
+#X msg 51 341 patch load \$1 loading..;
+#X text 195 341 <- use a different symbol \, if is local;
+#X text 213 355 in order to set 'readyness' for that slot;
 #X connect 1 0 6 0;
 #X connect 2 0 9 1;
 #X connect 3 0 10 1;
@@ -174,9 +177,10 @@
 #X connect 14 0 15 0;
 #X connect 14 1 16 0;
 #X connect 15 0 18 0;
-#X connect 15 1 12 0;
+#X connect 15 1 21 0;
 #X connect 16 0 4 0;
 #X connect 17 0 4 0;
+#X connect 21 0 8 0;
 #X restore 8 75 pd negotiate.free.slot;
 #X obj 8 98 list append;
 #N canvas 405 203 219 261 buffer 0;
