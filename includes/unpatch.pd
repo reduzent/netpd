@@ -1,6 +1,6 @@
-#N canvas 603 208 529 242 10;
+#N canvas 590 181 529 242 10;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
-#N canvas 359 72 230 319 unpatch 1;
+#N canvas 358 72 224 313 unpatch 1;
 #X obj 5 7 cnv 5 207 296 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 35 36 cnv 13 176 13 empty cr.farbe1 empty 20 12 1 9 -199731
 -1 0;
@@ -22,14 +22,6 @@
 0;
 #X obj 6 78 cnv 12 205 13 empty \$0-label.help close/code/visualize
 5 6 1 9 -224635 -1 0;
-#X obj 6 275 cnv 12 205 13 empty cr.upload_label empty 6 5 1 9 -224635
--1 0;
-#X obj 6 247 cnv 12 205 13 empty cr.download_label empty 5 6 1 9 -224635
--1 0;
-#X obj 6 261 cnv 12 205 13 empty cr.download_display empty 5 6 0 11
--199731 -258049 0;
-#X obj 6 289 cnv 12 205 13 empty cr.upload_display empty 5 6 0 11 -199731
--258049 0;
 #X obj 5 106 unpatch-gui-row \$0 1;
 #X obj 202 92 netpd-scrollbar \$0.scrollbar 10 140 10;
 #X obj 5 92 unpatch-gui-row \$0 0;
@@ -41,6 +33,8 @@
 #X obj 5 190 unpatch-gui-row \$0 7;
 #X obj 5 204 unpatch-gui-row \$0 8;
 #X obj 5 218 unpatch-gui-row \$0 9;
+#X obj 6 247 unpatch-status-display \$0.upload.status upload;
+#X obj 6 275 unpatch-status-display \$0.download.status download;
 #X restore 220 64 pd unpatch;
 #N canvas 676 53 461 523 unpatch_upload 0;
 #X symbolatom 8 13 20 0 0 0 - - -;
@@ -430,7 +424,7 @@ abstractions and the patch.;
 #X connect 27 0 25 0;
 #X connect 27 1 17 0;
 #X restore 17 110 pd unpatch_download;
-#N canvas 618 490 169 83 version 0;
+#N canvas 618 518 169 83 version 0;
 #X obj 18 13 r cr.getversion;
 #X obj 18 55 s cr.version;
 #X msg 18 34 2.0.-1;
