@@ -1,28 +1,32 @@
-#N canvas 481 1331 419 244 10;
-#X obj 20 20 cnv 14 164 14 empty \$0.label gfds 2 8 1 8 -228856 -66577
+#N canvas 641 318 419 244 10;
+#X obj 20 20 cnv 13 205 13 empty \$0.label empty 2 8 1 10 -224635 -1
 0;
-#X obj 20 35 cnv 14 164 14 empty \$0.display sdf 2 8 0 10 -162280 -258113
-0;
+#X obj 20 34 cnv 13 205 13 empty \$0.display empty 2 8 0 12 -199731
+-258049 0;
 #X obj 20 200 s \$0.label;
 #X obj 257 143 s \$0.display;
 #X msg 257 119 label \$1;
-#N canvas 245 640 320 301 set.colors 0;
-#X obj 12 12 netpd-pref-get cr.background1.clr 1;
-#X obj 35 174 netpd-pref-get cr.background2.clr 1;
-#X obj 17 153 netpd-pref-get cr.display.clr 1;
-#X obj 30 35 netpd-pref-get cr.label.clr 1;
-#X obj 12 79 pack f f;
-#X obj 30 57 t b a;
-#X msg 12 101 color \$1 \$2;
-#X obj 12 122 s \$0.label;
-#X obj 17 216 pack f f;
-#X obj 35 194 t b a;
-#X msg 17 238 color \$1 \$2;
-#X obj 17 259 s \$0.display;
-#X connect 0 0 4 0;
-#X connect 1 0 9 0;
-#X connect 2 0 8 0;
-#X connect 3 0 5 0;
+#N canvas 307 94 321 392 set.colors 0;
+#X obj 17 203 netpd-pref-get cr.background1.clr 1;
+#X obj 12 10 netpd-pref-get cr.background2.clr 1;
+#X obj 35 245 netpd-pref-get cr.display.clr 1;
+#X obj 30 59 netpd-pref-get cr.label.clr 1;
+#X obj 12 122 pack f f;
+#X obj 30 100 t b a;
+#X msg 12 144 color \$1 \$2;
+#X obj 12 165 s \$0.label;
+#X obj 17 314 pack f f;
+#X obj 35 292 t b a;
+#X msg 17 336 color \$1 \$2;
+#X obj 17 357 s \$0.display;
+#X obj 12 33 netpd-rgb2iem;
+#X obj 30 81 netpd-rgb2iem;
+#X obj 35 269 netpd-rgb2iem;
+#X obj 17 224 netpd-rgb2iem;
+#X connect 0 0 15 0;
+#X connect 1 0 12 0;
+#X connect 2 0 14 0;
+#X connect 3 0 13 0;
 #X connect 4 0 6 0;
 #X connect 5 0 4 0;
 #X connect 5 1 4 1;
@@ -31,7 +35,11 @@
 #X connect 9 0 8 0;
 #X connect 9 1 8 1;
 #X connect 10 0 11 0;
-#X restore 226 16 pd set.colors;
+#X connect 12 0 4 0;
+#X connect 13 0 5 0;
+#X connect 14 0 9 0;
+#X connect 15 0 8 0;
+#X restore 101 69 pd set.colors;
 #N canvas 268 575 450 300 set.fonts 0;
 #X obj 45 51 netpd-pref-get cr.display.fnt 1;
 #X obj 46 125 netpd-pref-get cr.label.fnt 1;
@@ -43,7 +51,7 @@
 #X connect 1 0 4 0;
 #X connect 4 0 2 0;
 #X connect 5 0 3 0;
-#X restore 226 41 pd set.fonts;
+#X restore 192 69 pd set.fonts;
 #X obj 257 92 r \$1;
 #X obj 20 72 loadbang;
 #X obj 20 94 t b b;
@@ -52,6 +60,7 @@
 #X obj 20 115 list append \$2;
 #X obj 20 150 list append;
 #X msg 20 176 label \$1\$2status:;
+#X msg 257 183 label empty;
 #X connect 4 0 3 0;
 #X connect 7 0 4 0;
 #X connect 8 0 9 0;
@@ -62,4 +71,6 @@
 #X connect 12 0 13 0;
 #X connect 13 0 14 0;
 #X connect 14 0 2 0;
-#X coords 0 -1 1 1 164 29 2 20 20;
+#X connect 15 0 2 0;
+#X connect 15 0 3 0;
+#X coords 0 -1 1 1 205 27 2 20 20;
