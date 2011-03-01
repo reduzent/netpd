@@ -1,0 +1,12 @@
+#N canvas 491 68 394 217 10;
+#X declare -stdpath extra/zexy -stdlib extra/zexy;
+#X obj 21 18 declare -stdpath extra/zexy -stdlib extra/zexy;
+#X obj 42 61 inlet;
+#X obj 123 61 inlet;
+#X obj 42 121 outlet;
+#X text 25 164 This is a wrapper abstraction around zexy's [symbol2list]
+\, made in the hope there will be once a vanilla way.;
+#X obj 42 90 symbol2list \$1;
+#X connect 1 0 5 0;
+#X connect 2 0 5 1;
+#X connect 5 0 3 0;
