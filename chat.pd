@@ -2069,7 +2069,7 @@ vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 #X obj 159 231 chat-set-fnt \$0 ch.talk.fnt talk;
 #X obj 159 260 chat-set-fnt \$0 ch.buttons.fnt buttons;
 #X obj 159 303 chat-set-fnt \$0 cr.title.fnt title;
-#X obj 159 332 chat-set-fnt \$0 cr.lable.fnt label;
+#X obj 159 332 chat-set-fnt \$0 cr.label.fnt label;
 #X obj 159 361 chat-set-fnt \$0 cr.display.fnt display;
 #X restore 251 306 pd netpd-preferences;
 #X text 252 287 Preferences Window:;
