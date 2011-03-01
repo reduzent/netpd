@@ -950,12 +950,12 @@ sechs \, 7 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X text 194 82 ---------- testing ---------------------------------------
 ;
 #N canvas 1093 72 284 177 set.scrollbar.colors 0;
-#X obj -100 14 netpd-pref-get cr.display.clr;
+#X obj -100 14 netpd-pref-get cr.display.clr 1;
 #X msg -100 37 set frontcolor \$1 \$2 \$3;
 #X obj -100 59 s \$0.scrollbar;
 #X obj -99 137 s \$0.scrollbar;
 #X msg -99 115 set bgcolor \$1 \$2 \$3;
-#X obj -99 92 netpd-pref-get cr.background2.clr;
+#X obj -99 92 netpd-pref-get cr.background2.clr 1;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 4 0 3 0;
