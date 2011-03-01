@@ -1,8 +1,7 @@
-#N canvas 590 181 529 242 10;
+#N canvas 585 168 506 230 10;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
-#X declare -stdpath extra/zexy -stdlib extra/zexy;
-#N canvas 358 72 227 313 unpatch 1;
+#N canvas 358 72 226 318 unpatch 1;
 #X obj 5 7 cnv 5 207 296 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 6 64 cnv 12 205 13 empty cr.farbe1 empty 5 6 1 9 -199731 -1
 0;
@@ -655,7 +654,6 @@ pd cr.singletons \, connect 1 0 2 0 \, connect 2 0 3 0 \, connect 3
 #X restore 11 55 pd compare_version;
 #X restore 17 58 pd unpatchversion_compare;
 #X text 15 24 Author: Roman Haefeli <roman@netpd.org>;
-#X obj 174 206 declare -stdpath extra/zexy -stdlib extra/zexy;
 #X msg 220 146 \; pd-unpatch.pd loadbang;
 #N canvas 617 53 681 305 unpatch_patch_manager 0;
 #X obj 14 75 netpd-hash;
