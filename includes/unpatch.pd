@@ -1,18 +1,16 @@
 #N canvas 585 168 506 230 10;
-#X declare -stdpath extra/zexy -stdlib extra/zexy;
-#X declare -stdpath extra/zexy -stdlib extra/zexy;
-#N canvas 358 72 226 318 unpatch 1;
+#N canvas 358 44 235 320 unpatch 1;
 #X obj 5 7 cnv 5 207 296 empty empty empty 20 12 0 14 -1 -66577 0;
-#X obj 6 64 cnv 12 205 13 empty cr.farbe1 empty 5 6 1 9 -199731 -1
+#X obj 6 64 cnv 12 205 13 empty \$0.gui.bg1 empty 5 6 1 9 -199731 -1
 0;
-#X obj 6 8 cnv 12 205 13 empty cr.title empty 5 7 1 11 -199731 -1 0
-;
-#X obj 6 22 cnv 12 205 13 empty cr.farbe2 empty 5 6 1 9 -224635 -1
-0;
-#X obj 6 233 cnv 12 205 13 empty cr.farbe1 empty 5 6 1 9 -199731 -1
-0;
-#X obj 6 78 cnv 12 205 13 empty \$0-label.help close/code/visualize
-5 6 1 9 -224635 -1 0;
+#X obj 6 8 cnv 13 205 13 empty \$0.gui.title empty 5 8 1 12 -199731
+-1 0;
+#X obj 6 22 cnv 12 205 13 empty \$0.gui.bg2 empty 5 6 1 10 -224635
+-1 0;
+#X obj 6 233 cnv 12 205 13 empty \$0.gui.bg1 empty 5 6 1 9 -199731
+-1 0;
+#X obj 6 78 cnv 12 205 13 empty \$0.gui.bg2 close/code/visualize 5
+6 1 10 -224635 -1 0;
 #X obj 5 106 unpatch-gui-row \$0 1;
 #X obj 202 92 netpd-scrollbar \$0.scrollbar 10 140 10;
 #X obj 5 92 unpatch-gui-row \$0 0;
@@ -416,14 +414,13 @@ abstractions and the patch.;
 #X connect 27 0 25 0;
 #X connect 27 1 17 0;
 #X restore 17 110 pd unpatch_download;
-#N canvas 618 518 169 83 version 0;
-#X obj 18 13 r cr.getversion;
-#X obj 18 55 s cr.version;
-#X msg 18 34 2.0.-1;
-#X connect 0 0 2 0;
-#X connect 2 0 1 0;
+#N canvas 618 574 169 83 version 0;
+#X obj 18 14 r up.getversion;
+#X msg 18 34 2.0.-2;
+#X obj 18 55 s up.version;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
 #X restore 18 199 pd version;
-#X obj 220 118 s \$0-clean;
 #X msg 220 97 label empty;
 #X text 14 10 UNPATCH www.netpd.org;
 #N canvas 502 286 437 371 singletons-container 0;
@@ -669,7 +666,7 @@ pd cr.singletons \, connect 1 0 2 0 \, connect 2 0 3 0 \, connect 3
 #X msg 193 100 1 eins \, 2 zwei \, 3 drei \, 4 vier \, 5 fuenf \, 6
 sechs \, 7 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 ;
-#N canvas 778 119 198 360 sync.length 0;
+#N canvas 778 147 198 360 sync.length 0;
 #X msg 41 103 patchlist in getlength;
 #X obj 14 82 t b b;
 #X obj 41 125 s \$0.UNPATCH;
@@ -738,7 +735,7 @@ sechs \, 7 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X connect 16 0 17 0;
 #X connect 17 0 15 0;
 #X restore 15 172 pd add.patch;
-#N canvas 847 184 246 395 scroll.logic 0;
+#N canvas 847 212 246 395 scroll.logic 0;
 #X obj 34 124 s \$0.UNPATCH;
 #X msg 34 104 patchlist in getrange \$1 10;
 #X obj 34 147 r \$0.UNPATCH;
@@ -815,7 +812,7 @@ sechs \, 7 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X connect 17 0 8 0;
 #X connect 18 0 14 0;
 #X restore 15 193 pd scroll.logic;
-#N canvas 753 324 253 632 close.patch 0;
+#N canvas 753 352 253 632 close.patch 0;
 #X obj 12 -221 r \$0.UNPATCH;
 #X obj 12 -199 route gui.row;
 #X obj 12 -177 route button;
@@ -872,7 +869,7 @@ sechs \, 7 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X connect 26 2 27 0;
 #X connect 27 0 13 0;
 #X restore 15 236 pd close.patch;
-#N canvas 756 240 236 366 show.gui 0;
+#N canvas 756 268 236 366 show.gui 0;
 #X obj 12 -221 r \$0.UNPATCH;
 #X obj 12 -199 route gui.row;
 #X obj 12 -177 route button;
@@ -905,7 +902,7 @@ sechs \, 7 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X connect 13 0 5 0;
 #X connect 15 0 14 0;
 #X restore 15 256 pd show.gui;
-#N canvas 756 212 236 363 show.code 0;
+#N canvas 756 240 236 363 show.code 0;
 #X obj 12 -221 r \$0.UNPATCH;
 #X obj 12 -199 route gui.row;
 #X obj 12 -177 route button;
@@ -1005,4 +1002,76 @@ sechs \, 7 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X connect 8 1 10 0;
 #X connect 12 0 11 0;
 #X restore 319 38 pd unpatch_communication;
-#X connect 5 0 4 0;
+#N canvas 727 127 488 345 unpatch_gui_stuff 0;
+#X obj 43 83 s \$0.gui.title;
+#X obj 44 150 s \$0.gui.bg1;
+#X obj 200 233 s \$0.gui.bg2;
+#X obj 191 22 netpd-pref-get cr.background1.clr 1;
+#X obj 191 72 netpd-pref-get cr.background2.clr 1;
+#X obj 190 123 netpd-pref-get cr.label.clr 1;
+#X obj 200 191 netpd-pref-get cr.label.fnt 1;
+#X obj 201 260 netpd-pref-get cr.title.fnt 1;
+#X obj 201 303 s \$0.gui.title;
+#X msg 201 282 label_font \$1 \$2;
+#X msg 200 212 label_font \$1 \$2;
+#X obj 43 263 s \$0.gui.bg2;
+#X obj 191 44 netpd-rgb2iem;
+#X obj 190 144 netpd-rgb2iem;
+#X obj 43 18 t b a;
+#X obj 43 40 pack f f;
+#X msg 43 62 color \$1 \$2;
+#X obj 191 95 netpd-rgb2iem;
+#X obj 43 192 t b a;
+#X obj 43 214 pack f f;
+#X msg 43 236 color \$1 \$2;
+#X msg 44 127 color \$1 -1;
+#N canvas 531 127 450 300 title 0;
+#X obj 41 67 s up.getversion;
+#X obj 41 90 r up.version;
+#X obj 22 21 loadbang;
+#X obj 41 112 list;
+#X obj 22 139 list;
+#X msg 91 114 32;
+#X obj 91 136 makefilename %c;
+#X obj 22 43 t b b b;
+#X obj 22 161 list prepend;
+#X obj 22 183 list prepend UNPATCH;
+#X msg 22 205 label \$1\$2\$3;
+#X obj 22 227 s \$0.gui.title;
+#X connect 1 0 3 0;
+#X connect 2 0 7 0;
+#X connect 3 0 4 1;
+#X connect 4 0 8 0;
+#X connect 5 0 6 0;
+#X connect 6 0 8 1;
+#X connect 7 0 4 0;
+#X connect 7 1 0 0;
+#X connect 7 2 5 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X restore 42 302 pd title;
+#X connect 3 0 12 0;
+#X connect 4 0 17 0;
+#X connect 5 0 13 0;
+#X connect 6 0 10 0;
+#X connect 7 0 9 0;
+#X connect 9 0 8 0;
+#X connect 10 0 2 0;
+#X connect 12 0 15 0;
+#X connect 12 0 21 0;
+#X connect 13 0 14 0;
+#X connect 13 0 18 0;
+#X connect 14 0 15 0;
+#X connect 14 1 15 1;
+#X connect 15 0 16 0;
+#X connect 16 0 0 0;
+#X connect 17 0 19 0;
+#X connect 18 0 19 0;
+#X connect 18 1 19 1;
+#X connect 19 0 20 0;
+#X connect 20 0 11 0;
+#X connect 21 0 1 0;
+#X restore 15 160 pd unpatch_gui_stuff;
+#X obj 220 118 s \$0.gui.title;
+#X connect 4 0 14 0;
