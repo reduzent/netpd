@@ -1,4 +1,4 @@
-#N canvas 435 55 523 594 10;
+#N canvas 435 55 527 585 10;
 #X obj 16 20 inlet;
 #X obj 16 142 netpd-fifo;
 #X obj 16 70 t b a;
@@ -22,7 +22,7 @@
 #X obj 225 523 s \$0.findagain;
 #X obj 228 95 r \$0.findagain;
 #X text 43 294 msg;
-#X obj 333 485 outlet no_peer;
+#X obj 333 451 outlet no_peer;
 #X obj 16 254 t b a;
 #X obj 16 317 s \$0.next;
 #X obj 292 252 t b b;
@@ -36,14 +36,14 @@
 #X obj 158 164 t a a;
 #X msg 158 186 find \$3;
 #X msg 186 246 \$1 \$2;
-#X obj 185 383 list prepend status;
-#X obj 185 405 list trim;
+#X obj 333 401 list prepend status;
+#X obj 333 423 list trim;
 #X obj 158 340 netpd-patch-download \$1/batch;
 #X obj 158 362 t a a;
 #X obj 158 429 route saved downloading;
 #X obj 158 297 t a b a;
 #X msg 271 476 3000;
-#X msg 333 439 waiting for \$3 to send \$1 \$2;
+#X msg 333 378 waiting for \$3 to send \$1 \$2;
 #X connect 0 0 2 0;
 #X connect 1 0 5 0;
 #X connect 1 1 8 0;
@@ -94,4 +94,4 @@
 #X connect 42 1 43 0;
 #X connect 42 2 44 0;
 #X connect 43 0 18 0;
-#X connect 44 0 23 0;
+#X connect 44 0 37 0;
