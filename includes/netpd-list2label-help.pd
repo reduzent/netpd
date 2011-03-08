@@ -1,0 +1,19 @@
+#N canvas 628 44 504 378 10;
+#X obj 22 220 cnv 15 450 40 empty \$0.canvas empty 20 12 0 14 -233017
+-66577 0;
+#X obj 41 159 netpd-list2label \$0.canvas;
+#X text 21 199 \$0.canvas;
+#X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 7 7 netpd-list2label - write several words to canvasses;
+#X msg 41 81 eins zwei drei vier fuenf;
+#X msg 78 130 empty;
+#X msg 59 109 This is a whole sentence with many words.;
+#X text 17 286 IMPORTANT NOTE:;
+#X text 16 307 Make sure to always first empty a [cnv] before saving
+the patch. Otherwise the [cnv]'s settings will get lost.;
+#X text 266 154 arg1: receive symbol of the [cnv];
+#X text 260 182 inlet: anything message;
+#X connect 5 0 1 0;
+#X connect 6 0 1 0;
+#X connect 7 0 1 0;
