@@ -1,22 +1,22 @@
-#N canvas 355 53 615 525 10;
-#X obj 278 320 netpd-pref-get cr.display.clr 1;
+#N canvas 520 62 545 552 10;
+#X obj 295 363 netpd-pref-get cr.display.clr 1;
 #X obj 294 146 netpd-pref-get cr.background1.clr 1;
 #X obj 314 104 netpd-pref-get cr.background2.clr 1;
-#X obj 278 402 netpd-pref-get cr.display.fnt 1;
-#X obj 278 343 netpd-rgb2iem;
+#X obj 295 445 netpd-pref-get cr.display.fnt 1;
+#X obj 295 386 netpd-rgb2iem;
 #X obj 294 214 netpd-rgb2iem;
 #X obj 294 16 loadbang;
 #X obj 347 84 mod 2;
 #X obj 294 236 s \$0.bg.clr;
-#X obj 278 364 s \$0.front.clr;
-#X obj 278 425 s \$0.font;
+#X obj 295 407 s \$0.front.clr;
+#X obj 295 468 s \$0.font;
 #X obj 35 30 bng 13 250 50 0 \$0.close empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 30 30 bng 13 250 50 0 \$0.close empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 50 30 bng 8 250 50 0 \$0.vismain empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 50 30 bng 8 250 50 0 \$0.vismain empty empty 17 7 0 10 -262144
+#X obj 50 35 bng 8 250 50 0 \$0.vismain empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 60 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
 -1 -1;
@@ -187,10 +187,10 @@
 #X obj 156 79 r \$1.UNPATCH;
 #X obj 14 428 list prepend gui.row button;
 #X obj 14 450 list append \$2;
-#X obj 50 30 cnv 8 8 13 empty \$0.vismain.r empty 2 8 0 14 -233017
--66577 0;
-#X obj 30 30 cnv 13 18 13 empty \$0.close.r empty 3 8 1 12 -233017
--66577 0;
+#X obj 50 30 cnv 8 8 13 empty \$0.vismain.r empty 2 8 0 14 -199731
+-1 0;
+#X obj 30 30 cnv 13 18 13 empty \$0.close.r empty 5 8 1 12 -199731
+-258049 0;
 #X obj 74 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 88 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
@@ -213,8 +213,8 @@
 -1 -1;
 #X obj 212 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 60 30 cnv 13 165 13 empty \$0.visgui.r empty 2 8 0 14 -233017
--66577 0;
+#X obj 60 30 cnv 13 165 13 empty \$0.visgui.r empty 2 8 0 12 -199731
+-258049 0;
 #X connect 0 0 4 0;
 #X connect 1 0 39 0;
 #X connect 2 0 38 0;
