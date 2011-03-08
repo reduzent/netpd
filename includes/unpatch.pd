@@ -1,31 +1,29 @@
-#N canvas 588 159 506 230 10;
-#X declare -stdpath extra/zexy -stdlib extra/zexy;
-#X declare -stdpath extra/zexy -stdlib extra/zexy;
-#N canvas 358 72 230 317 unpatch 1;
-#X obj 5 7 cnv 5 207 296 empty empty empty 20 12 0 14 -1 -66577 0;
+#N canvas 583 156 506 230 10;
+#N canvas 358 44 225 314 unpatch 1;
+#X obj 5 7 cnv 5 207 297 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 6 64 cnv 12 205 13 empty \$0.gui.bg1 empty 5 6 1 9 -199731 -1
 0;
 #X obj 6 8 cnv 13 205 13 empty \$0.gui.title empty 5 8 1 12 -199731
 -1 0;
 #X obj 6 22 cnv 12 205 13 empty \$0.gui.bg2 empty 5 6 1 10 -224635
 -1 0;
-#X obj 6 233 cnv 12 205 13 empty \$0.gui.bg1 empty 5 6 1 9 -199731
+#X obj 6 234 cnv 12 205 13 empty \$0.gui.bg1 empty 5 6 1 9 -199731
 -1 0;
-#X obj 6 78 cnv 12 205 13 empty \$0.gui.bg2 close/code/visualize 5
-6 1 10 -224635 -1 0;
-#X obj 5 106 unpatch-gui-row \$0 1;
-#X obj 202 92 netpd-scrollbar \$0.scrollbar 10 140 10;
-#X obj 5 92 unpatch-gui-row \$0 0;
-#X obj 5 120 unpatch-gui-row \$0 2;
-#X obj 5 134 unpatch-gui-row \$0 3;
-#X obj 5 148 unpatch-gui-row \$0 4;
-#X obj 5 162 unpatch-gui-row \$0 5;
-#X obj 5 176 unpatch-gui-row \$0 6;
-#X obj 5 190 unpatch-gui-row \$0 7;
-#X obj 5 204 unpatch-gui-row \$0 8;
-#X obj 5 218 unpatch-gui-row \$0 9;
-#X obj 6 247 unpatch-status-display \$0.upload.status upload;
-#X obj 6 275 unpatch-status-display \$0.download.status download;
+#X obj 6 78 cnv 12 205 13 empty \$0.gui.bg2 close/code/visualize 2
+8 1 10 -224635 -1 0;
+#X obj 6 107 unpatch-gui-row \$0 1;
+#X obj 202 92 netpd-scrollbar \$0.scrollbar 10 141 10;
+#X obj 6 93 unpatch-gui-row \$0 0;
+#X obj 6 121 unpatch-gui-row \$0 2;
+#X obj 6 135 unpatch-gui-row \$0 3;
+#X obj 6 149 unpatch-gui-row \$0 4;
+#X obj 6 163 unpatch-gui-row \$0 5;
+#X obj 6 177 unpatch-gui-row \$0 6;
+#X obj 6 191 unpatch-gui-row \$0 7;
+#X obj 6 205 unpatch-gui-row \$0 8;
+#X obj 6 219 unpatch-gui-row \$0 9;
+#X obj 6 248 unpatch-status-display \$0.upload.status upload;
+#X obj 6 276 unpatch-status-display \$0.download.status download;
 #X obj 5 36 unpatch-netload-gui \$0.netload;
 #X restore 220 64 pd unpatch;
 #N canvas 676 53 461 523 unpatch_upload 0;
