@@ -1,10 +1,12 @@
 #N canvas 588 159 506 230 10;
-#N canvas 358 44 230 317 unpatch 1;
+#X declare -stdpath extra/zexy -stdlib extra/zexy;
+#X declare -stdpath extra/zexy -stdlib extra/zexy;
+#N canvas 358 72 230 317 unpatch 1;
 #X obj 5 7 cnv 5 207 296 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 6 64 cnv 12 205 13 empty \$0.gui.bg1 empty 5 6 1 9 -199731 -1
 0;
-#X obj 6 8 cnv 13 205 13 empty \$0.gui.title empty 5 8 1 12
--199731 -1 0;
+#X obj 6 8 cnv 13 205 13 empty \$0.gui.title empty 5 8 1 12 -199731
+-1 0;
 #X obj 6 22 cnv 12 205 13 empty \$0.gui.bg2 empty 5 6 1 10 -224635
 -1 0;
 #X obj 6 233 cnv 12 205 13 empty \$0.gui.bg1 empty 5 6 1 9 -199731
@@ -663,7 +665,7 @@ pd cr.singletons \, connect 1 0 2 0 \, connect 2 0 3 0 \, connect 3
 #X restore 11 55 pd compare_version;
 #X restore 17 58 pd unpatchversion_compare;
 #X text 15 24 Author: Roman Haefeli <roman@netpd.org>;
-#X msg 220 146 \; pd-unpatch.pd loadbang;
+#X msg 220 147 \; pd-unpatch.pd loadbang;
 #N canvas 617 53 681 305 unpatch_patch_manager 0;
 #X obj 14 75 netpd-hash;
 #X obj 14 10 r \$0.UNPATCH;
@@ -1014,7 +1016,7 @@ sechs \, 7 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X connect 8 1 10 0;
 #X connect 12 0 11 0;
 #X restore 319 38 pd unpatch_communication;
-#N canvas 727 323 226 262 unpatch_gui_stuff 0;
+#N canvas 727 351 226 262 unpatch_gui_stuff 0;
 #N canvas 531 127 450 300 title 0;
 #X obj 41 67 s up.getversion;
 #X obj 41 90 r up.version;
@@ -1103,12 +1105,8 @@ sechs \, 7 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X obj 5 202 route upload download;
 #X obj 5 232 route begin end;
 #X obj 171 237 route request begin end;
-#X obj 5 408 list prepend label;
-#X obj 5 430 list trim;
 #X obj 5 369 t a a;
 #X obj 171 382 t a a;
-#X obj 171 417 list prepend label;
-#X obj 171 439 list trim;
 #X obj 5 254 list;
 #X obj 48 256 list;
 #X obj 171 262 list;
@@ -1122,7 +1120,7 @@ sechs \, 7 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X msg 171 355 waiting for \$1 to send_\$3(\$4);
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
-#X connect 4 0 25 0;
+#X connect 4 0 21 0;
 #X connect 5 0 9 0;
 #X connect 5 1 4 0;
 #X connect 6 0 7 0;
@@ -1133,28 +1131,24 @@ sechs \, 7 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X connect 10 0 11 0;
 #X connect 11 0 12 0;
 #X connect 11 1 13 0;
-#X connect 12 0 20 0;
-#X connect 12 1 21 0;
-#X connect 13 0 22 0;
-#X connect 13 1 23 0;
-#X connect 13 2 24 0;
-#X connect 14 0 15 0;
-#X connect 15 0 3 0;
-#X connect 16 0 14 0;
-#X connect 17 0 18 0;
-#X connect 18 0 19 0;
-#X connect 19 0 2 0;
-#X connect 20 0 27 0;
-#X connect 21 0 26 0;
-#X connect 22 0 30 0;
-#X connect 23 0 29 0;
-#X connect 24 0 28 0;
-#X connect 25 0 6 0;
-#X connect 26 0 16 0;
-#X connect 27 0 16 0;
-#X connect 28 0 17 0;
-#X connect 29 0 17 0;
-#X connect 30 0 17 0;
+#X connect 12 0 16 0;
+#X connect 12 1 17 0;
+#X connect 13 0 18 0;
+#X connect 13 1 19 0;
+#X connect 13 2 20 0;
+#X connect 14 0 3 0;
+#X connect 15 0 2 0;
+#X connect 16 0 23 0;
+#X connect 17 0 22 0;
+#X connect 18 0 26 0;
+#X connect 19 0 25 0;
+#X connect 20 0 24 0;
+#X connect 21 0 6 0;
+#X connect 22 0 14 0;
+#X connect 23 0 14 0;
+#X connect 24 0 15 0;
+#X connect 25 0 15 0;
+#X connect 26 0 15 0;
 #X restore 15 98 pd download.upload.status;
 #X restore 15 160 pd unpatch_gui_stuff;
 #X obj 220 118 s \$0.gui.title;
