@@ -1,7 +1,5 @@
 #N canvas 590 128 495 262 10;
-#X declare -stdpath extra/zexy -stdlib extra/zexy;
-#X declare -stdpath extra/zexy -stdlib extra/zexy;
-#N canvas 358 72 232 318 unpatch 1;
+#N canvas 358 44 232 318 unpatch 1;
 #X obj 5 7 cnv 5 207 297 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 6 64 cnv 12 205 13 empty \$0.gui.bg1 empty 5 6 1 9 -199731 -1
 0;
@@ -600,7 +598,7 @@ sechs \, 7 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X connect 8 1 10 0;
 #X connect 12 0 11 0;
 #X restore 319 38 pd unpatch_communication;
-#N canvas 727 547 226 262 unpatch_gui_stuff 0;
+#N canvas 727 575 226 262 unpatch_gui_stuff 0;
 #N canvas 531 127 450 300 title 0;
 #X obj 41 67 s up.getversion;
 #X obj 41 90 r up.version;
@@ -799,22 +797,7 @@ sechs \, 7 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X connect 7 0 6 0;
 #X restore 35 12 pd load.patch;
 #X obj 35 34 t a a;
-#N canvas 930 254 272 428 \$0.container.container 0;
-#N canvas 0 0 450 300 2771.patch.container.1 0;
-#X obj 10 20 ../patches/example-patch 1;
-#X restore 10 20 pd 2771.patch.container.1;
-#N canvas 0 0 450 300 2771.patch.container.2 0;
-#X obj 10 20 ../patches/example-patch 2;
-#X restore 10 40 pd 2771.patch.container.2;
-#N canvas 0 0 450 300 2771.patch.container.3 0;
-#X obj 10 20 ../patches/sandbox 3;
-#X restore 10 60 pd 2771.patch.container.3;
-#N canvas 0 0 450 300 2771.patch.container.4 0;
-#X obj 10 20 ../patches/master 4;
-#X restore 10 80 pd 2771.patch.container.4;
-#N canvas 0 0 450 300 2771.patch.container.5 0;
-#X obj 10 20 ../patches/example-patch 5;
-#X restore 10 100 pd 2771.patch.container.5;
+#N canvas 930 282 272 428 \$0.container.container 0;
 #X restore 103 389 pd \$0.container.container;
 #X obj 106 323 s pd-\$0.container.container;
 #X msg 125 293 clear;
@@ -856,6 +839,9 @@ sechs \, 7 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X msg 158 68 \; pd-\$3.patch.container.\$1 clear;
 #X msg 35 442 \; pd-\$3.patch.container.\$1 obj 10 20 ../patches/\$2
 \$1 \; pd-\$1-\$2 vis 0 \; pd-\$3.patch.container.\$1 loadbang \;;
+#X obj 307 250 r \$0.gui.title;
+#X obj 307 272 route label;
+#X obj 307 294 route empty;
 #X connect 0 0 1 0;
 #X connect 1 0 21 0;
 #X connect 1 1 12 0;
@@ -880,6 +866,9 @@ sechs \, 7 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X connect 21 0 25 0;
 #X connect 22 0 23 0;
 #X connect 23 0 24 0;
+#X connect 26 0 27 0;
+#X connect 27 0 28 0;
+#X connect 28 0 4 0;
 #X restore 165 201 pd unpatch_patch_containers;
 #N canvas 676 53 469 534 unpatch_netload 0;
 #N canvas 503 194 525 452 negotiate.free.slot 0;
