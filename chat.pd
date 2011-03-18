@@ -1,8 +1,8 @@
 #N canvas 0 44 358 260 10;
 #X declare -stdpath extra/iemnet -stdpath extra/mrpeach;
 #X declare -path . -path includes -path abs;
-#N canvas 0 352 359 279 netpd 0;
-#N canvas 161 574 170 298 chat 0;
+#N canvas 0 352 359 279 netpd 1;
+#N canvas 161 602 170 298 chat 0;
 #N canvas 331 379 444 295 connection 0;
 #X msg 143 175 disconnect;
 #X msg 9 184 connect \$1 \$2;
@@ -1627,29 +1627,20 @@ to its right inlet.;
 #X connect 12 0 11 0;
 #X connect 14 0 12 0;
 #X restore 17 54 pd chat-guicode;
-#N canvas 547 254 239 325 CLIENT 0;
-#X obj -26 262 s NETPD;
-#X obj -26 220 list prepend from;
-#X obj -26 240 list trim;
+#N canvas 547 282 239 325 CLIENT 0;
+#X obj -26 186 s NETPD;
 #X obj -26 31 r NETPD;
-#X msg 43 162 connection \$1;
+#X msg -26 163 connection \$1;
 #X obj -26 54 list trim;
-#X obj -26 79 route to tcpclient;
-#X obj -26 114 netpd-client;
-#X obj 43 140 route connection;
-#X msg 8 190 sender \$1;
-#X connect 1 0 2 0;
+#X obj -26 141 route connection;
+#X obj -26 109 netpd-client;
+#X obj -26 78 route tcpclient;
+#X connect 1 0 3 0;
 #X connect 2 0 0 0;
-#X connect 3 0 5 0;
-#X connect 4 0 0 0;
-#X connect 5 0 6 0;
-#X connect 6 0 7 0;
-#X connect 6 1 7 0;
-#X connect 7 0 1 0;
-#X connect 7 1 9 0;
-#X connect 7 2 8 0;
-#X connect 8 0 4 0;
-#X connect 9 0 0 0;
+#X connect 3 0 6 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
 #X restore 18 -1 pd CLIENT;
 #N canvas 518 591 616 160 keep_alive 0;
 #X obj 22 68 metro 60000;
@@ -2346,13 +2337,13 @@ vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 -241213 0;
 #X symbolatom 67 221 46 0 0 0 - #0-inputbox-r #0-inputbox;
 #X obj 3 240 cnv 6 60 16 empty \$0-border empty 6 7 1 12 -1 -1 0;
-#X obj 7 241 hsl 53 14 0 0 0 0 \$0-connect \$0-connect-r empty -2 -8
+#X obj 7 241 hsl 53 14 1 1 0 0 \$0-connect \$0-connect-r empty -2 -8
 0 10 -262144 -1 -1 0 1;
 #X obj 4 241 cnv 14 58 14 empty \$0-connect-display empty 2 7 1 10
 -241213 -1 0;
 #X obj 67 240 cnv 6 37 16 empty \$0-border empty 6 7 1 12 -1 -1 0;
 #X obj 71 241 hsl 30 14 0 0 0 0 \$0-list \$0-list-r empty -2 -8 0 10
--262144 -1 -1 100 1;
+-262144 -1 -1 0 1;
 #X obj 68 241 cnv 14 35 14 empty \$0-list-display list 2 7 1 10 -241213
 -1 0;
 #X obj 108 240 cnv 6 37 16 empty \$0-border empty 6 7 1 12 -1 -1 0
