@@ -1,10 +1,10 @@
-#N canvas 641 318 419 244 10;
+#N canvas 549 229 412 268 10;
 #X obj 20 20 cnv 13 163 13 empty \$0.label empty 2 8 1 10 -224635 -1
 0;
 #X obj 20 34 cnv 13 205 13 empty \$0.display empty 2 8 0 12 -199731
 -258049 0;
 #X obj 20 200 s \$0.label;
-#X obj 234 196 s \$0.display;
+#X obj 233 242 s \$0.display;
 #N canvas 307 94 509 391 set.colors 0;
 #X obj 17 203 netpd-pref-get cr.background1.clr 1;
 #X obj 12 10 netpd-pref-get cr.background2.clr 1;
@@ -100,7 +100,7 @@
 #X obj 20 115 list append \$2;
 #X obj 20 150 list append;
 #X msg 20 176 label \$1\$2status:;
-#X msg 234 167 label empty;
+#X msg 233 213 label empty;
 #X obj 185 20 bng 13 250 50 0 \$0.print empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 212 20 bng 13 250 50 0 \$0.print empty empty 17 7 0 10 -262144
@@ -109,8 +109,13 @@
 -1 -1;
 #X obj 185 20 cnv 13 40 13 empty \$0.print.r print 2 8 1 10 -224635
 -1 0;
-#X obj 228 127 netpd-list2label \$0.display;
-#X connect 6 0 19 0;
+#X obj 228 172 s \$0.display;
+#X msg 228 150 label \$1;
+#X obj 228 127 netpd-l2s;
+#X obj 279 53 loadbang;
+#X msg 279 75 32;
+#X obj 279 97 makefilename %c;
+#X connect 6 0 21 0;
 #X connect 7 0 8 0;
 #X connect 8 0 11 0;
 #X connect 8 1 10 0;
@@ -121,4 +126,9 @@
 #X connect 13 0 2 0;
 #X connect 14 0 2 0;
 #X connect 14 0 3 0;
+#X connect 20 0 19 0;
+#X connect 21 0 20 0;
+#X connect 22 0 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 21 1;
 #X coords 0 -1 1 1 205 27 2 20 20;
