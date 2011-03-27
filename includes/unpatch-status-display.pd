@@ -92,7 +92,7 @@
 #X connect 4 0 6 0;
 #X connect 5 0 3 0;
 #X restore 192 69 pd set.fonts;
-#X obj 228 101 r \$1;
+#X obj 228 91 r \$1;
 #X obj 20 72 loadbang;
 #X obj 20 94 t b b;
 #X obj 113 133 makefilename %c;
@@ -109,13 +109,14 @@
 -1 -1;
 #X obj 185 20 cnv 13 40 13 empty \$0.print.r print 2 8 1 10 -224635
 -1 0;
-#X obj 228 172 s \$0.display;
-#X msg 228 150 label \$1;
-#X obj 228 127 netpd-l2s;
+#X obj 228 182 s \$0.display;
+#X msg 228 160 label \$1;
+#X obj 228 137 netpd-l2s;
 #X obj 279 53 loadbang;
 #X msg 279 75 32;
 #X obj 279 97 makefilename %c;
-#X connect 6 0 21 0;
+#X obj 228 114 list;
+#X connect 6 0 25 0;
 #X connect 7 0 8 0;
 #X connect 8 0 11 0;
 #X connect 8 1 10 0;
@@ -131,4 +132,5 @@
 #X connect 22 0 23 0;
 #X connect 23 0 24 0;
 #X connect 24 0 21 1;
+#X connect 25 0 21 0;
 #X coords 0 -1 1 1 205 27 2 20 20;
