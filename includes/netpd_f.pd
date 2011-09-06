@@ -1,4 +1,4 @@
-#N canvas 472 179 244 410 10;
+#N canvas 472 291 244 410 10;
 #X obj 53 10 r \$1-\$2;
 #X obj 12 10 inlet;
 #X obj 12 174 s \$1.NETPD;
@@ -23,6 +23,8 @@
 #X obj 91 318 t a a;
 #X obj 118 338 s \$0.internal;
 #X obj 43 106 r \$0.internal;
+#X obj 151 153 loadbang;
+#X obj 151 175 \$3;
 #X connect 0 0 18 0;
 #X connect 1 0 12 0;
 #X connect 3 0 4 0;
@@ -47,3 +49,6 @@
 #X connect 21 0 19 0;
 #X connect 21 1 22 0;
 #X connect 23 0 17 1;
+#X connect 24 0 25 0;
+#X connect 25 0 17 1;
+#X connect 25 0 21 0;
