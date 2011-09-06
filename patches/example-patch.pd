@@ -3,15 +3,15 @@
 #X msg 292 36 example-abs;
 #X restore 167 193 pd abslist;
 #X obj 169 223 example-abs;
-#N canvas 608 100 255 422 \$1-example-patch 0;
+#N canvas 608 184 255 422 \$1-example-patch 1;
 #N canvas 498 393 789 477 (subpatch) 0;
-#X array \$1-table 50 float 2;
-#X coords 0 1 50 -1 200 140 1 0 0;
+#X array \$1-table 100 float 2;
+#X coords 0 1 100 -1 200 140 1 0 0;
 #X restore 21 -4 graph;
 #X obj 24 158 hsl 195 17 0 127 0 0 \$1-slider1 \$1-slider1 empty -2
--8 0 10 -262144 -1 -1 5300 1;
+-8 0 10 -262144 -1 -1 458 1;
 #X obj 24 187 hsl 195 17 0 127 0 0 \$1-slider2 \$1-slider2 empty -2
--8 0 10 -262144 -1 -1 14800 1;
+-8 0 10 -262144 -1 -1 10387 1;
 #X symbolatom 29 260 30 0 0 0 - #0.symbol.r #0.symbol;
 #X msg 28 308 resize \$1;
 #X obj 28 359 s \$1-table;
@@ -23,15 +23,15 @@
 #X restore 160 104 pd \$1-example-patch;
 #X obj 160 80 netpd_head \$1 example-patch;
 #X obj 22 8 netpd_t \$1 table 100;
-#X obj 22 170 netpd_f \$1 slider1;
-#X obj 22 199 netpd_f \$1 slider2;
 #X obj 24 264 netpd_a \$1 anything;
 #X obj 24 286 list prepend set;
 #X obj 24 308 list trim;
 #X obj 24 330 s \$0.symbol.r;
 #X obj 24 241 r \$0.symbol;
 #X msg 162 145 version 0 3 3;
+#X obj 22 199 netpd_f \$1 slider2 68;
+#X obj 21 171 netpd_f \$1 slider1 3 300;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
 #X connect 7 0 8 0;
-#X connect 8 0 9 0;
-#X connect 9 0 10 0;
-#X connect 11 0 7 0;
+#X connect 9 0 5 0;
