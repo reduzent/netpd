@@ -1,0 +1,6 @@
+#N canvas 667 376 200 136 10;
+#X obj -4 10 r \$1.receive;
+#X obj -4 32 routeOSC /\$2;
+#X obj -4 58 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
