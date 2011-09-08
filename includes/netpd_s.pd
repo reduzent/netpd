@@ -1,8 +1,8 @@
-#N canvas 638 197 177 136 10;
+#N canvas 635 225 177 126 10;
 #X obj 12 10 inlet;
 #X obj 12 77 s \$1.NETPD;
-#X obj 12 34 list prepend \$2;
-#X msg 12 56 send /\$1 \$2;
+#X obj 12 34 list prepend send /\$2;
+#X obj 12 56 list trim;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
