@@ -1,4 +1,4 @@
-#N canvas 468 53 475 525 10;
+#N canvas 462 53 475 525 10;
 #X obj 9 11 loadbang;
 #X obj 282 33 list;
 #X obj 282 84 list split 1;
@@ -34,13 +34,15 @@
 #X obj 174 76 b;
 #X msg 55 336 1 \, 2 \, 3 \, 4 \, 5 \, 6 \, 7 \, 8 \, 9 \, 10;
 #X obj 55 449 list prepend b;
-#X obj 297 258 netpd-status-get socket 1;
-#X obj 282 282 !=;
-#X obj 282 304 s \$1.notown;
+#X obj 297 323 netpd-status-get socket 1;
+#X obj 282 347 !=;
+#X obj 282 369 s \$1.notown;
 #X obj 363 201 t a a;
 #X obj 9 129 s \$1.send;
 #X obj 9 151 r \$1.receive;
 #X obj 9 217 list;
+#X obj 282 257 route symbol;
+#X msg 282 279 -1;
 #X connect 0 0 31 0;
 #X connect 1 0 3 0;
 #X connect 2 1 5 0;
@@ -79,6 +81,9 @@
 #X connect 35 0 36 1;
 #X connect 36 0 37 0;
 #X connect 38 0 24 0;
-#X connect 38 1 36 0;
+#X connect 38 1 42 0;
 #X connect 40 0 11 0;
 #X connect 41 0 15 0;
+#X connect 42 0 43 0;
+#X connect 42 1 36 0;
+#X connect 43 0 36 0;
