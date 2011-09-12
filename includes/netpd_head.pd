@@ -43,6 +43,9 @@
 #X obj 9 217 list;
 #X obj 282 257 route symbol;
 #X msg 282 279 -1;
+#X obj 148 238 loadbang;
+#X obj 148 260 del 0;
+#X msg 148 282 l;
 #X connect 0 0 31 0;
 #X connect 1 0 3 0;
 #X connect 2 1 5 0;
@@ -87,3 +90,6 @@
 #X connect 42 0 43 0;
 #X connect 42 1 36 0;
 #X connect 43 0 36 0;
+#X connect 44 0 45 0;
+#X connect 45 0 46 0;
+#X connect 46 0 18 0;
