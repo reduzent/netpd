@@ -1,5 +1,4 @@
-#N canvas 405 109 503 317 10;
-#X obj 13 191 netpd-version;
+#N canvas 427 73 503 317 10;
 #X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 13 74 openpanel;
@@ -7,7 +6,6 @@
 -1;
 #X obj 13 256 print netpd-version;
 #X msg 42 110 netpd-version-help.pd;
-#X msg 184 270 version 0 0 1;
 #X text 7 7 netpd-version - get the version of a given patch;
 #X text 172 54 inlet0: path to patch;
 #X text 166 66 outlet0: version (list with 3 numbers);
@@ -20,9 +18,13 @@ patch or abstraction.;
 version tag is invalid \, the right outlet sends a bang. Either way
 the version '0 0 0' is output on the left outlet.;
 #X text 141 218 The only valid format is a list of three floats.;
-#X connect 0 0 4 0;
-#X connect 0 1 12 0;
-#X connect 2 0 0 0;
-#X connect 3 0 2 0;
-#X connect 5 0 0 0;
-#X connect 12 0 4 0;
+#N canvas 908 100 223 170 NETPD 0;
+#X msg 1 30 version 0 0 1;
+#X restore 181 269 pd NETPD;
+#X obj 13 191 netpd-version;
+#X connect 1 0 15 0;
+#X connect 2 0 1 0;
+#X connect 4 0 15 0;
+#X connect 10 0 3 0;
+#X connect 15 0 3 0;
+#X connect 15 1 10 0;
