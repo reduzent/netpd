@@ -357,6 +357,9 @@
 #X obj 443 113 s \$0.adjust.size;
 #X msg 443 89 resize \$1;
 #X msg 676 318 \; \$1.maxsize 2048;
+#X obj 507 465 inlet;
+#X obj 618 464 inlet;
+#X obj 507 491 tabwrite \$0.compare;
 #X connect 1 0 2 0;
 #X connect 2 0 7 0;
 #X connect 3 0 4 0;
@@ -415,3 +418,5 @@
 #X connect 67 0 60 1;
 #X connect 67 0 58 1;
 #X connect 70 0 69 0;
+#X connect 72 0 74 0;
+#X connect 73 0 74 1;
