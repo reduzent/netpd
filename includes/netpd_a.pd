@@ -1,4 +1,4 @@
-#N canvas 402 232 207 363 10;
+#N canvas 402 260 211 366 10;
 #X obj 11 10 inlet;
 #X obj 12 203 s \$1.NETPD;
 #X obj 12 226 r \$1.receive;
@@ -36,5 +36,6 @@
 #X connect 16 0 12 0;
 #X connect 16 1 12 1;
 #X connect 17 0 18 0;
+#X connect 17 0 12 1;
 #X connect 17 1 16 0;
 #X connect 19 0 4 0;
