@@ -1,5 +1,4 @@
 #N canvas 585 110 287 344 10;
-#X declare -stdpath extra/zexy -stdlib extra/zexy;
 #N canvas 358 44 227 319 unpatch 1;
 #X obj 5 7 cnv 5 207 297 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 6 64 cnv 12 205 13 empty \$0.gui.bg1 empty 5 6 1 9 -199731 -1
