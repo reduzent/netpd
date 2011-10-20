@@ -1,10 +1,10 @@
-#N canvas 402 288 217 364 10;
+#N canvas 402 316 273 432 10;
 #X obj 11 10 inlet;
 #X obj 12 203 s \$1.NETPD;
 #X obj 12 226 r \$1.receive;
 #X obj 12 248 routeOSC /\$2;
-#X obj 12 280 t a a;
-#X obj 12 328 outlet;
+#X obj 12 322 t a a;
+#X obj 12 348 outlet;
 #X obj 74 10 r \$1.NETPD;
 #X obj 74 32 route dump;
 #X obj 74 54 route 5;
@@ -16,9 +16,13 @@
 #X obj 12 82 t b a;
 #X obj 11 32 route set;
 #X obj 156 180 t a;
+#X obj 12 288 route foo;
+#X msg 74 288 symbol;
+#X obj 124 288 loadbang;
+#X text 18 271 workaround for bug3426523;
 #X connect 0 0 15 0;
 #X connect 2 0 3 0;
-#X connect 3 0 4 0;
+#X connect 3 0 17 0;
 #X connect 4 0 5 0;
 #X connect 4 1 16 0;
 #X connect 6 0 7 0;
@@ -34,3 +38,7 @@
 #X connect 15 0 10 1;
 #X connect 15 1 14 0;
 #X connect 16 0 10 1;
+#X connect 17 0 4 0;
+#X connect 17 1 4 0;
+#X connect 18 0 17 1;
+#X connect 19 0 18 0;
