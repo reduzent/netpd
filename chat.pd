@@ -1,6 +1,6 @@
 #N canvas 0 44 358 260 10;
 #X declare -path . -path includes -path abs;
-#X declare -stdpath extra/mrpeach;
+#X declare -stdpath extra/osc;
 #N canvas 0 352 359 279 netpd 0;
 #N canvas 161 602 170 298 chat 0;
 #N canvas 331 379 444 295 connection 0;
@@ -2316,7 +2316,7 @@ vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 #X obj 169 189 print NETPD_DEBUG;
 #X obj 225 152 tgl 15 0 empty empty debug_on/off 17 7 0 10 -204786
 -1 -1 0 1;
-#X obj 12 72 declare -stdpath extra/mrpeach;
+#X obj 12 72 declare -stdpath extra/osc;
 #X connect 12 0 13 0;
 #X connect 13 0 14 0;
 #X connect 15 0 13 1;
