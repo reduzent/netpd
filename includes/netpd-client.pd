@@ -1,4 +1,5 @@
-#N canvas 396 63 414 540 10;
+#N canvas 396 63 439 545 10;
+#X declare -stdpath extra/mrpeach;
 #X obj 69 276 unpackOSC;
 #X obj 69 109 packOSC;
 #X obj 69 155 list prepend send;
@@ -28,6 +29,9 @@
 #X obj 69 131 slipenc 16384;
 #X obj 69 254 slipdec 16384;
 #X obj 69 230 netpd-tcpclient;
+#X obj 74 10 declare -stdpath extra/mrpeach;
+#X text 75 26 we assume \, that there is no separate package for slip
+yet;
 #X connect 0 0 14 0;
 #X connect 1 0 26 0;
 #X connect 2 0 3 0;
