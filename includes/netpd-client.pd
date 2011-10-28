@@ -58,8 +58,8 @@ yet;
 #X obj 111 229 list append;
 #X obj 111 209 b;
 #X obj 111 272 netpd-error netpd-client;
-#X msg 111 251 protocol version mismatch (server: \$1 \$2 \, client:
-\$3 \$4);
+#X msg 111 251 protocol version mismatch \, server: \$1 \$2 \, client:
+\$3 \$4;
 #X connect 0 0 3 0;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;
