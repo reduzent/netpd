@@ -1,5 +1,5 @@
 #N canvas 586 44 287 344 10;
-#N canvas 359 44 227 319 unpatch 1;
+#N canvas 359 44 228 319 unpatch 1;
 #X obj 5 7 cnv 5 207 297 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 6 64 cnv 12 205 13 empty \$0.gui.bg1 empty 5 6 1 9 -199731 -1
 0;
@@ -1484,10 +1484,10 @@ update netpd!;
 #X restore 11 55 pd compare_version;
 #X restore 17 78 pd unpatch_version_compare;
 #X obj 17 282 unpatch-singleton-container;
-#N canvas 618 602 169 83 unpatch_version 0;
+#N canvas 618 630 169 83 unpatch_version 0;
 #X obj 18 14 r up.getversion;
-#X msg 18 34 2.0.-2;
 #X obj 18 55 s up.version;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
+#X msg 18 34 2 0 -3;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
 #X restore 17 308 pd unpatch_version;
