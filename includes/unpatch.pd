@@ -22,7 +22,7 @@
 #X obj 6 219 unpatch-gui-row \$0 9;
 #X obj 6 248 unpatch-status-display \$0.upload.status upload;
 #X obj 6 276 unpatch-status-display \$0.download.status download;
-#X obj 5 36 unpatch-netload-gui \$0.netload;
+#X obj 5 36 unpatch-netload-gui \$0 \$0.netload;
 #X obj 6 8 unpatch-gui-title;
 #X restore 17 52 pd unpatch;
 #N canvas 625 53 527 583 unpatch_download 0;
