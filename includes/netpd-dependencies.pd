@@ -34,7 +34,7 @@
 #X obj 159 175 list;
 #X obj 311 234 list;
 #X obj 305 116 t a a;
-#X obj 159 55 t a a;
+#X obj 159 52 t a a;
 #X obj 311 278 s \$0.error;
 #X msg 53 279 clear;
 #X obj 333 186 list prepend abstraction;
@@ -60,6 +60,8 @@
 #X msg 89 141 1;
 #X obj 402 475 r \$0.reset;
 #X obj 159 197 netpd-check-patch-spec;
+#X obj 267 241 list;
+#X obj 267 300 list prepend wrong_spec patch;
 #X connect 0 0 42 0;
 #X connect 1 0 4 0;
 #X connect 2 0 0 0;
@@ -97,6 +99,7 @@
 #X connect 32 1 36 0;
 #X connect 33 0 24 0;
 #X connect 33 1 37 0;
+#X connect 33 1 59 1;
 #X connect 35 0 9 0;
 #X connect 36 0 31 1;
 #X connect 37 0 31 1;
@@ -122,3 +125,6 @@
 #X connect 56 0 47 1;
 #X connect 57 0 39 1;
 #X connect 58 0 1 0;
+#X connect 58 1 59 0;
+#X connect 59 0 60 0;
+#X connect 60 0 34 0;
