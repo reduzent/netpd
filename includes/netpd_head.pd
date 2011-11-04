@@ -46,7 +46,8 @@
 #X obj 148 280 del 0;
 #X msg 148 302 l;
 #X msg 36 74 unready;
-#N canvas 886 44 428 409 unpatch.synced 0;
+#X obj 9 29 t b b;
+#N canvas 886 44 428 409 unpatch.state 0;
 #X obj 41 175 s UNPATCH;
 #X msg 41 152 state isready;
 #X obj 41 197 r UNPATCH;
@@ -58,14 +59,15 @@
 #X obj 14 316 sel 0;
 #X obj 14 294 f;
 #X msg 14 349 find;
-#X obj 41 244 route notready synced;
 #X text 12 8 We want patches to sync only when unpatch finished loading
 the patches \, so we can be sure that all abstractions are loaded.
 This is necessary for cases where dynamically loaded abstractions are
 part of the state.;
+#X obj 41 244 route notready synced ready;
+#X msg 147 337 ready;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
-#X connect 3 0 11 0;
+#X connect 3 0 12 0;
 #X connect 5 0 6 0;
 #X connect 6 0 9 0;
 #X connect 6 1 1 0;
@@ -73,11 +75,12 @@ part of the state.;
 #X connect 8 0 10 0;
 #X connect 9 0 8 0;
 #X connect 10 0 4 0;
-#X connect 11 0 7 0;
-#X connect 11 1 10 0;
-#X restore 9 52 pd unpatch.synced;
-#X obj 9 29 t b b;
-#X connect 0 0 48 0;
+#X connect 12 0 7 0;
+#X connect 12 1 10 0;
+#X connect 12 2 13 0;
+#X connect 13 0 4 0;
+#X restore 9 52 pd unpatch.state;
+#X connect 0 0 47 0;
 #X connect 1 0 3 0;
 #X connect 2 1 5 0;
 #X connect 3 0 2 0;
@@ -124,6 +127,6 @@ part of the state.;
 #X connect 44 0 45 0;
 #X connect 45 0 18 0;
 #X connect 46 0 7 0;
-#X connect 47 0 7 0;
-#X connect 48 0 47 0;
-#X connect 48 1 46 0;
+#X connect 47 0 48 0;
+#X connect 47 1 46 0;
+#X connect 48 0 7 0;
