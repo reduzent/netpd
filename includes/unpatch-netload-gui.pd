@@ -1,4 +1,6 @@
 #N canvas 520 69 343 631 10;
+#X declare -stdpath extra/zexy -stdlib extra/zexy;
+#X declare -stdpath extra/zexy -stdlib extra/zexy;
 #X obj 52 20 cnv 15 174 13 empty \$0.background1.r empty 5 8 1 10 -199731
 -1 0;
 #X obj 52 34 cnv 12 174 13 empty \$0.background2.r empty 5 6 1 9 -224635
@@ -181,6 +183,7 @@
 #X obj 211 243 r \$0.symbolbox;
 #X obj 211 268 s \$2;
 #X obj 32 605 s \$2;
+#X obj 21 48 cnv 2 205 2 empty empty empty 5 8 1 10 -199731 -1 0;
 #X connect 10 0 9 0;
 #X connect 12 0 15 0;
 #X connect 13 0 35 0;
@@ -213,4 +216,4 @@
 #X connect 34 0 31 0;
 #X connect 35 0 14 0;
 #X connect 36 0 37 0;
-#X coords 0 -1 1 1 207 27 2 20 20;
+#X coords 0 -1 1 1 207 30 2 20 20;
