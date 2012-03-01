@@ -1,1 +1,4 @@
 netpd-preferences.cnf
+abs/*
+patches/*
+
