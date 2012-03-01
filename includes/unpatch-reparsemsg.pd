@@ -1,0 +1,19 @@
+#N canvas 536 176 395 231 10;
+#X obj 17 22 inlet;
+#X obj 17 183 outlet;
+#X obj 17 161 textfile;
+#X obj 17 45 list prepend add;
+#X obj 17 66 list trim;
+#X obj 17 88 t b a b;
+#X msg 56 109 clear;
+#X msg 17 129 write ../abs/tmpcache \, read ../abs/tmpcache \, rewind
+\, bang;
+#X connect 0 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 7 0;
+#X connect 5 1 2 0;
+#X connect 5 2 6 0;
+#X connect 6 0 2 0;
+#X connect 7 0 2 0;
