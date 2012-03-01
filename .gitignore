@@ -1,4 +1,6 @@
 netpd-preferences.cnf
-abs/*
-patches/*
+abs
+abs/.gitignore
+patches
+patches/.gitignore
 
