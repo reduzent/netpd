@@ -1,6 +1,6 @@
 #N canvas 0 44 360 262 10;
-#X declare -path . -path includes -path abs;
 #X declare -stdpath extra/osc;
+#X declare -path . -path includes;
 #N canvas 0 352 359 279 netpd 0;
 #N canvas 156 544 170 298 chat 0;
 #N canvas 331 379 444 295 connection 0;
@@ -1950,7 +1950,6 @@ vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 #X restore 12 226 pd netpd_related_programs;
 #X text 10 16 Author: Roman Haefeli (roman@netpd.org);
 #X text 9 -1 CHAT;
-#X obj 12 52 declare -path . -path includes -path abs;
 #N canvas 397 319 510 397 preferences 0;
 #X text 20 12 colors;
 #X text 18 281 netpd-settings;
@@ -2307,10 +2306,11 @@ vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 -1 -1 0 1;
 #X obj 12 72 declare -stdpath extra/osc;
 #X obj 169 126 route to from;
-#X connect 11 0 16 0;
-#X connect 12 0 13 0;
-#X connect 14 0 12 1;
-#X connect 16 0 12 0;
+#X obj 12 52 declare -path . -path includes;
+#X connect 10 0 15 0;
+#X connect 11 0 12 0;
+#X connect 13 0 11 1;
+#X connect 15 0 11 0;
 #X restore 240 198 pd netpd;
 #X obj 3 2 cnv 15 347 17 empty \$0-border empty 6 8 1 12 -1 -1 0;
 #X obj 4 3 cnv 15 345 15 empty \$0-title empty 6 8 1 12 -241213 -1
@@ -2328,8 +2328,8 @@ vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 -241213 0;
 #X symbolatom 67 221 46 0 0 0 - #0-inputbox-r #0-inputbox;
 #X obj 3 240 cnv 6 60 16 empty \$0-border empty 6 7 1 12 -1 -1 0;
-#X obj 7 241 hsl 53 14 1 1 0 0 \$0-connect \$0-connect-r empty -2 -8
-0 10 -262144 -1 -1 0 1;
+#X obj 7 241 hsl 53 14 0 0 0 0 \$0-connect \$0-connect-r empty -2 -8
+0 10 -262144 -1 -1 100 1;
 #X obj 4 241 cnv 14 58 14 empty \$0-connect-display empty 2 7 1 10
 -241213 -1 0;
 #X obj 67 240 cnv 6 37 16 empty \$0-border empty 6 7 1 12 -1 -1 0;
