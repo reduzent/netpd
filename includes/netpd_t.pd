@@ -112,7 +112,7 @@
 #X obj 125 162 s \$0.compare;
 #X obj 55 162 route done;
 #X obj 15 162 t a a;
-#N canvas 544 268 260 485 generate.delta 0;
+#N canvas 544 296 260 485 generate.delta 0;
 #X obj 133 237 tabread \$1-\$2;
 #X obj 114 280 tabread \$0.compare;
 #X msg 129 113 0;
@@ -133,8 +133,8 @@
 #X obj 21 47 t b b;
 #X obj 21 166 netpd-slow-until;
 #X obj 21 96 t a a;
-#X msg 48 118 100 \$1;
 #X obj 48 139 /;
+#X msg 48 118 99.99 \$1;
 #X connect 0 0 7 0;
 #X connect 1 0 5 0;
 #X connect 2 0 3 1;
@@ -160,9 +160,9 @@
 #X connect 18 0 14 0;
 #X connect 18 1 3 0;
 #X connect 19 0 18 0;
-#X connect 19 1 20 0;
-#X connect 20 0 21 0;
-#X connect 21 0 18 1;
+#X connect 19 1 21 0;
+#X connect 20 0 18 1;
+#X connect 21 0 20 0;
 #X restore 15 112 pd generate.delta;
 #N canvas 541 420 450 300 compress.delta 0;
 #X obj 26 18 inlet;
