@@ -30,9 +30,9 @@
 #X msg 39 328 \$1;
 #X obj 12 397 s \$0.send;
 #X obj 39 351 s \$0.recipient;
-#X obj 174 63 netpd-status-get socket;
 #X msg 23 85 b;
 #X obj 23 105 s \$0.recipient;
+#X obj 174 63 netpd-status-get socket 1;
 #X connect 0 0 23 0;
 #X connect 2 0 17 0;
 #X connect 4 0 3 0;
@@ -47,7 +47,7 @@
 #X connect 14 0 12 0;
 #X connect 14 1 18 0;
 #X connect 14 1 31 0;
-#X connect 14 1 32 0;
+#X connect 14 1 33 0;
 #X connect 15 0 13 0;
 #X connect 17 0 14 0;
 #X connect 18 0 15 0;
@@ -63,7 +63,7 @@
 #X connect 27 0 26 0;
 #X connect 27 1 28 0;
 #X connect 28 0 30 0;
-#X connect 31 0 12 1;
-#X connect 31 0 7 1;
-#X connect 31 0 6 1;
-#X connect 32 0 33 0;
+#X connect 31 0 32 0;
+#X connect 33 0 12 1;
+#X connect 33 0 7 1;
+#X connect 33 0 6 1;
