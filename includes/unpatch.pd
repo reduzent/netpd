@@ -1,4 +1,5 @@
-#N canvas 589 44 274 347 10;
+#N canvas 589 44 323 345 10;
+#X declare -stdpath extra/zexy -stdlib extra/zexy;
 #X declare -path abs;
 #N canvas 363 44 226 320 unpatch 1;
 #X obj 5 7 cnv 5 207 297 empty empty empty 20 12 0 14 -1 -66577 0;
@@ -466,7 +467,7 @@ sechs \, 7 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X connect 23 1 25 0;
 #X restore 17 157 pd unpatch_patch_manager;
 #X text 83 82 GUI;
-#N canvas 310 57 374 342 unpatch_communication 0;
+#N canvas 310 57 539 365 unpatch_communication 0;
 #X obj 35 293 netpd-s /unpatch;
 #X obj 35 21 r \$0.send;
 #X obj 35 157 list;
@@ -488,6 +489,12 @@ sechs \, 7 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X obj 44 133 r \$0.send.dir;
 #X obj 245 45 s \$0.sender.dir;
 #X obj 217 65 s \$0.receive.dir;
+#X obj 389 114 s UNPATCH;
+#X obj 389 50 r UNPATCH;
+#X obj 389 72 route loaded?;
+#X msg 389 93 loaded 1;
+#X text 388 27 for unpatch status;
+#X obj 456 91 loadbang;
 #X connect 1 0 13 0;
 #X connect 2 0 4 0;
 #X connect 3 1 6 0;
@@ -509,6 +516,10 @@ sechs \, 7 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X connect 17 0 14 1;
 #X connect 17 0 15 1;
 #X connect 18 0 2 0;
+#X connect 22 0 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 21 0;
+#X connect 26 0 24 0;
 #X restore 17 258 pd unpatch_communication;
 #N canvas 646 308 222 200 unpatch_gui_stuff 0;
 #N canvas 313 201 417 272 row.colors 0;
