@@ -151,13 +151,13 @@
 #X obj 165 441 route end begin expire;
 #X obj 251 462 b;
 #X msg 232 487 20000;
-#N canvas 834 294 168 149 test 0;
+#N canvas 834 322 168 149 test 0;
 #X obj 14 12 inlet;
 #X obj 14 100 s NETPD;
 #X obj 14 34 spigot 1;
 #X obj 14 56 t b b;
 #X msg 78 46 0;
-#X msg 14 79 tests DOWNLOADPEER OK;
+#X msg 14 79 tests DOWNLOAD_SYNC OK;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 5 0;
