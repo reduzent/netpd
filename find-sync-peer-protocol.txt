@@ -1,0 +1,69 @@
+SCENARIO PEER READY
+===================
+LOCAL : set state unready
+LOCAL : set timeout short
+LOCAL : broadcast whoisthere
+
+REMOTE: iamready
+
+LOCAL : cancel timeout
+LOCAL : set state wait
+LOCAL : request data from remote
+
+REMOTE: send data to local
+
+LOCAL : receive data
+LOCAL : set state ready
+
+
+
+SCENARIO PEER NONE
+==================
+LOCAL : set state unready
+LOCAL : set timeout short
+LOCAL : broadcast whoisthere
+
+LOCAL : timeout expired
+LOCAL : message no peer found
+
+LOCAL : set state ready
+
+
+
+SCENARIO PEER WAIT1
+===================
+LOCAL : set state unready
+LOCAL : set timeout short
+LOCAL : broadcast whoisthere
+
+REMOTE: iwait
+
+LOCAL : set timeout long
+
+REMOTE: iamready
+
+LOCAL : cancel timeout
+LOCAL : set state wait
+LOCAL : request data from remote
+
+REMOTE: send data to local
+
+LOCAL : receive data
+LOCAL : set state ready
+
+
+
+SCENARIO PEER WAIT2
+===================
+LOCAL : set state unready
+LOCAL : set timeout short
+LOCAL : broadcast whoisthere
+
+REMOTE: iwait
+
+LOCAL : set timeout long
+
+LOCAL : timeout expired
+LOCAL : repeat from start
+
+
