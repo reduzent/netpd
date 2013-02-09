@@ -101,13 +101,6 @@
 #X obj 102 44 r \$0.try.again;
 #X msg 52 188 60000;
 #X msg 45 214 120000;
-#N canvas 834 378 231 144 test 0;
-#X obj 14 12 inlet;
-#X obj 14 100 s NETPD;
-#X msg 14 59 tests DOWNLOAD_PEER_FOUND \$1;
-#X connect 0 0 2 0;
-#X connect 2 0 1 0;
-#X restore 175 254 pd test;
 #X connect 0 0 30 0;
 #X connect 2 0 43 0;
 #X connect 2 1 58 0;
@@ -130,7 +123,6 @@
 #X connect 21 0 22 0;
 #X connect 22 0 10 0;
 #X connect 25 0 2 0;
-#X connect 25 0 59 0;
 #X connect 26 0 25 0;
 #X connect 26 1 57 0;
 #X connect 26 2 5 0;
