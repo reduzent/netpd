@@ -1875,7 +1875,7 @@ a dummy message every 60;
 #X obj 10 201 dac~;
 #X obj 145 120 noise~;
 #X msg 10 105 0 10;
-#X obj 145 141 hip~ 10000;
+#X obj 145 141 hip~ 4500;
 #X obj 228 144 del 10;
 #X obj 228 121 t b b;
 #X obj 253 172 1;
