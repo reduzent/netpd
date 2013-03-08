@@ -13,6 +13,7 @@ ch.title.fnt 1 12
 ch.border.clr 0 0 0
 ch.active.clr 182 180 182
 ch.background.clr 234 226 242
+dyn.dsp.off 0
 netpd-port 3025
 netpd-server netpd.org
 netpd-welcome <<<<<<<<<<<<<connected<<<<<<<<<<<<<<<<<
