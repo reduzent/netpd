@@ -2374,7 +2374,7 @@ vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 #N canvas 515 483 203 90 chat 0;
 #X obj 7 7 r chatgetversion;
 #X obj 7 48 s chatversion;
-#X msg 7 28 2.0.0;
+#X msg 7 28 2.1.0;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X restore 12 142 pd chat version;
