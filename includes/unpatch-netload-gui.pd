@@ -1,6 +1,5 @@
 #N canvas 520 69 343 631 10;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
-#X declare -stdpath extra/zexy -stdlib extra/zexy;
 #X obj 52 20 cnv 15 174 13 empty \$0.background1.r empty 5 8 1 10 -199731
 -1 0;
 #X obj 52 34 cnv 12 174 13 empty \$0.background2.r empty 5 6 1 9 -224635
@@ -109,7 +108,7 @@
 #N canvas 530 393 648 235 set.labels 0;
 #X obj 19 176 s \$0.background1.r;
 #X msg 170 88 label empty;
-#X msg 19 108 list netload patch;
+#X msg 19 108 list netload instrument;
 #X obj 19 21 loadbang;
 #X obj 19 43 t b b;
 #X msg 46 63 32;
