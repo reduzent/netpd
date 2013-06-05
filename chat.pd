@@ -2590,7 +2590,7 @@ f 40;
 #X obj 4 3 cnv 15 345 15 empty \$0-title empty 6 8 1 12 -241213 -1
 0;
 #X obj 3 220 cnv 6 59 16 empty \$0-border empty 6 7 1 12 -1 -1 0;
-#X obj 4 221 cnv 14 57 14 empty \$0-onlinedisplay 3 clients 4 7 1 10
+#X obj 4 221 cnv 14 57 14 empty \$0-onlinedisplay empty 4 7 1 10
 -241213 -1 0;
 #X obj 221 240 cnv 6 63 16 empty \$0-border empty 6 7 1 12 -1 -1 0
 ;
