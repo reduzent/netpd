@@ -2115,13 +2115,10 @@ vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 #X obj 18 341 netpd-pref-store netpd-server;
 #X obj 18 360 netpd-pref-store netpd-port;
 #N canvas 0 356 374 444 netpd-preferences 0;
-#X symbolatom 113 15 10 0 0 0 - #0.netpd-name.r #0.netpd-name, f 10
-;
-#X symbolatom 113 36 40 0 0 0 - #0.netpd-welcome.r #0.netpd-welcome
-, f 40;
-#X symbolatom 113 56 40 0 0 0 - #0.netpd-server.r #0.netpd-server,
-f 40;
-#X floatatom 113 76 6 0 0 0 - #0.netpd-port.r #0.netpd-port, f 6;
+#X symbolatom 113 15 10 0 0 0 - #0.netpd-name.r #0.netpd-name;
+#X symbolatom 113 36 40 0 0 0 - #0.netpd-welcome.r #0.netpd-welcome;
+#X symbolatom 113 56 40 0 0 0 - #0.netpd-server.r #0.netpd-server;
+#X floatatom 113 76 6 0 0 0 - #0.netpd-port.r #0.netpd-port;
 #X text 69 14 name:;
 #X text 69 74 port:;
 #X obj 7 157 cnv 15 141 34 empty empty empty 20 12 0 14 -1 -66577 0
@@ -2600,7 +2597,7 @@ f 40;
 ;
 #X obj 68 222 cnv 12 280 12 empty \$0-input empty 6 7 1 12 -241213
 -241213 0;
-#X symbolatom 67 221 46 0 0 0 - #0-inputbox-r #0-inputbox, f 46;
+#X symbolatom 67 221 46 0 0 0 - #0-inputbox-r #0-inputbox;
 #X obj 3 240 cnv 6 60 16 empty \$0-border empty 6 7 1 12 -1 -1 0;
 #X obj 7 241 hsl 53 14 0 0 0 0 \$0-connect \$0-connect-r empty -2 -8
 0 10 -262144 -1 -1 0 1;
