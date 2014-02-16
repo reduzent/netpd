@@ -1,24 +1,50 @@
-#N canvas 535 55 426 401 10;
-#X obj 23 22 inlet;
-#X obj 23 299 outlet;
-#X obj 23 44 t b a;
-#X obj 23 115 list append;
-#X msg 23 143 #N canvas 585 170 426 287 10 \, #N canvas 624 75 373
-157 NETPD 0 \, #X msg 12 8 version 0 0 0 \, #N canvas 954 301 289 192
-abslist 0 \, #X text 7 7 Add here dependencies of your netpd-patch:
-\, #X restore 12 33 pd abslist \, #X text 106 7 <- update the version
-of this netpd-patch \, #X restore 10 14 pd NETPD 2 0 \, #N canvas 624
-348 433 148 \$1-\$2 1 \, #X text 23 16 Put your GUI stuff here....
-\, #X restore 10 66 pd \$1-\$2 \, #X obj 10 40 netpd_head \$1 \$2 \,
-#X text 158 16 <- put netpd-patch meta tags here \, #X text 158 39
-<- this manages patch state synchorization \, #X text 158 66 <- this
-is your new patch's GUI canvas;
-#X msg 23 66 list $ 1;
-#X msg 23 87 symbol \$1\$2;
-#X connect 0 0 2 0;
-#X connect 2 0 5 0;
-#X connect 2 1 3 1;
-#X connect 3 0 4 0;
-#X connect 4 0 1 0;
-#X connect 5 0 6 0;
-#X connect 6 0 3 0;
+#N canvas 594 79 441 494 10;
+#N canvas 624 75 434 290 NETPD 0;
+#X msg 12 8 version 0 0 0;
+#N canvas 315 75 473 287 abslist 0;
+#X text 7 13 Put a message box containing the name of the abstraction
+(without the .pd suffix) for each dependency.;
+#X text 6 55 For instance:;
+#X text 23 84 [mysynth-voice(;
+#X text 13 130 NOTE: abstractions of instruments also use netpd meta
+tags and may also specify their own dependencies. unpatch resolves
+dependency trees recursively.;
+#X restore 12 178 pd abslist;
+#X text 106 7 <- update the version of this netpd-patch;
+#X text 111 179 <- add dependencies of your netpd instrument;
+#X text 18 32 A 'version' meta tag is mandatory. unpatch uses this
+information to make sure that all clients load the same version of
+the instrument.;
+#X text 19 78 Whenever you make changes to your instrument \, make
+sure to bump the version.;
+#X text 18 118 There is no predefined meaning of the three version
+fields. Use them at your own will.;
+#X text 16 211 The [pd abslist] tag container is optional and is used
+to specify dependencies (abstractions in netpd/abs) of your instrument.
+;
+#X restore 10 14 pd NETPD 2 0;
+#X text 158 16 <- put netpd-patch meta tags here;
+#X text 158 160 <- this manages patch state synchorization;
+#X text 159 44 <- this is your new patch's GUI canvas;
+#X msg 10 159 PLACEHOLDER NETPD_HEAD;
+#X msg 10 42 PLACEHOLDER GUI;
+#X text 10 66 This subpatch is displayed when you click on the instrument's
+name in unpatch. You can put in there whatever the user is supposed
+to see. Usually \, it contains the GUI widgets (sliders \, numberboxes
+\, etc.) that let the user control your instrument.;
+#X text 13 189 Every instrument needs exactly one [netpd_x] for state
+synchronization. You may use as many of the other [netpd_something]
+abstractions as you want for synchronizing user controlled parameters
+of your instrument.;
+#X text 15 262 An overview of available netpd_* abstractions:;
+#X text 19 289 * [netpd_f \$1 <sr-symbol> <initvalue>];
+#X text 19 368 * [netpd_t \$1 <table_name> <initsize>];
+#X text 33 383 synchronizes a table with the name '\$1-tablename'.
+;
+#X text 19 407 * [netpd_a \$1 <symbol>];
+#X text 31 424 synchronizes an 'anything' message or list;
+#X text 32 304 synchronizes a number controller by a number box \,
+slider \, toggle \, radio \, etc. Make sure to use <sr-symbol> in both
+\, send and receive symbol \, in the corresponding widget (slider \,
+numberbox \, etc).;
+#X text 284 472 last update: 2014-02-15;
