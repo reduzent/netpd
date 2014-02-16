@@ -32,7 +32,7 @@ to specify dependencies (abstractions in netpd/abs) of your instrument.
 name in unpatch. You can put in there whatever the user is supposed
 to see. Usually \, it contains the GUI widgets (sliders \, numberboxes
 \, etc.) that let the user control your instrument.;
-#X text 13 189 Every instrument needs exactly one [netpd_x] for state
+#X text 13 189 Every instrument needs exactly one [netpd_head] for state
 synchronization. You may use as many of the other [netpd_something]
 abstractions as you want for synchronizing user controlled parameters
 of your instrument.;
