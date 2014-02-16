@@ -4,12 +4,12 @@
 #X obj 5 7 cnv 5 207 297 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 6 64 cnv 12 205 13 empty \$0.gui.bg1 empty 5 6 1 9 -199731 -1
 0;
-#X obj 6 22 cnv 12 205 13 empty \$0.gui.bg2 empty 5 6 1 9 -224635 -1
-0;
+#X obj 6 22 cnv 12 205 13 empty \$0.gui.bg2 empty 5 6 1 10 -224635
+-1 0;
 #X obj 6 234 cnv 12 205 13 empty \$0.gui.bg1 empty 5 6 1 9 -199731
 -1 0;
 #X obj 6 78 cnv 12 205 13 empty \$0.gui.bg2 close/code/visualize 2
-8 1 9 -224635 -1 0;
+8 1 10 -224635 -1 0;
 #X obj 6 107 unpatch-gui-row \$0 1;
 #X obj 202 92 netpd-scrollbar \$0.scrollbar 10 141 10;
 #X obj 6 93 unpatch-gui-row \$0 0;
@@ -158,8 +158,8 @@ abstractions and the patch.;
 #X obj 14 96 list prepend patchlist out;
 #X obj 14 118 list trim;
 #X obj 222 151 pack f s;
-#X floatatom 222 132 5 0 0 0 - - -;
-#X symbolatom 263 132 10 0 0 0 - - -;
+#X floatatom 222 132 5 0 0 0 - - -, f 5;
+#X symbolatom 263 132 10 0 0 0 - - -, f 10;
 #X obj 14 32 route patchlist;
 #X obj 14 54 route in;
 #X msg 193 100 1 eins \, 2 zwei \, 3 drei \, 4 vier \, 5 fuenf \, 6
@@ -1147,7 +1147,7 @@ been completed;
 #X obj 25 266 outlet;
 #X obj 25 11 r \$0.netload;
 #X obj 25 44 unpatch-reparsemsg;
-#N canvas 586 154 462 465 /new.command 0;
+#N canvas 586 154 435 366 /new.command 0;
 #X obj 26 27 inlet;
 #X obj 83 75 outlet;
 #X obj 26 54 route /new;
@@ -1160,13 +1160,8 @@ been completed;
 #X obj 149 247 netpd-error unpatch;
 #X msg 149 225 can't overwrite existing patch: \$1;
 #X obj 26 211 symbol;
-#X obj 60 288 unpatch-template;
-#X obj 60 309 list prepend add;
-#X obj 60 331 list trim;
-#X obj 77 409 textfile;
-#X msg 77 264 clear;
-#X obj 26 241 t a a a b;
-#X msg 43 357 write ../patches/\$1.pd;
+#X obj 53 289 unpatch-template-create;
+#X obj 26 241 t a a;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
 #X connect 2 1 1 0;
@@ -1180,16 +1175,9 @@ been completed;
 #X connect 7 1 8 0;
 #X connect 8 0 10 0;
 #X connect 10 0 9 0;
-#X connect 11 0 17 0;
-#X connect 12 0 13 0;
-#X connect 13 0 14 0;
-#X connect 14 0 15 0;
-#X connect 16 0 15 0;
-#X connect 17 0 1 0;
-#X connect 17 1 18 0;
-#X connect 17 2 12 0;
-#X connect 17 3 16 0;
-#X connect 18 0 15 0;
+#X connect 11 0 13 0;
+#X connect 13 0 1 0;
+#X connect 13 1 12 0;
 #X restore 25 78 pd /new.command;
 #N canvas 586 154 496 353 /help.command 0;
 #X obj 26 27 inlet;
