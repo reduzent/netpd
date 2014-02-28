@@ -25,8 +25,8 @@
 #X obj 6 13 r NETPD;
 #X obj 6 36 list trim;
 #X obj 6 59 route to;
-#X obj 94 198 slipenc 16384;
-#X obj 94 341 slipdec 16384;
+#X obj 94 198 slipenc 65536;
+#X obj 94 341 slipdec 65536;
 #X obj 94 297 netpd-tcpclient;
 #X obj 74 10 declare -stdpath extra/mrpeach;
 #X text 75 26 we assume \, that there is no separate package for slip
