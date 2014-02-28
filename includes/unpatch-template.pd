@@ -1,4 +1,4 @@
-#N canvas 594 79 441 494 10;
+#N canvas 594 44 460 561 10;
 #N canvas 624 75 434 290 NETPD 0;
 #X msg 12 8 version 0 0 0;
 #N canvas 315 75 473 287 abslist 0;
@@ -10,7 +10,6 @@
 tags and may also specify their own dependencies. unpatch resolves
 dependency trees recursively.;
 #X restore 12 178 pd abslist;
-#X text 106 7 <- update the version of this netpd-patch;
 #X text 111 179 <- add dependencies of your netpd instrument;
 #X text 18 32 A 'version' meta tag is mandatory. unpatch uses this
 information to make sure that all clients load the same version of
@@ -22,18 +21,17 @@ fields. Use them at your own will.;
 #X text 16 211 The [pd abslist] tag container is optional and is used
 to specify dependencies (abstractions in netpd/abs) of your instrument.
 ;
+#X text 107 7 <- update the version of this netpd instrument;
 #X restore 10 14 pd NETPD 2 0;
-#X text 158 16 <- put netpd-patch meta tags here;
 #X text 158 160 <- this manages patch state synchorization;
-#X text 159 44 <- this is your new patch's GUI canvas;
 #X msg 10 159 PLACEHOLDER NETPD_HEAD;
 #X msg 10 42 PLACEHOLDER GUI;
 #X text 10 66 This subpatch is displayed when you click on the instrument's
 name in unpatch. You can put in there whatever the user is supposed
 to see. Usually \, it contains the GUI widgets (sliders \, numberboxes
 \, etc.) that let the user control your instrument.;
-#X text 13 189 Every instrument needs exactly one [netpd_head] for state
-synchronization. You may use as many of the other [netpd_something]
+#X text 13 189 Every instrument needs exactly one [netpd_head] for
+state synchronization. You may use as many of the other [netpd_something]
 abstractions as you want for synchronizing user controlled parameters
 of your instrument.;
 #X text 15 262 An overview of available netpd_* abstractions:;
@@ -47,4 +45,12 @@ of your instrument.;
 slider \, toggle \, radio \, etc. Make sure to use <sr-symbol> in both
 \, send and receive symbol \, in the corresponding widget (slider \,
 numberbox \, etc).;
-#X text 284 472 last update: 2014-02-15;
+#X text 296 537 last update: 2014-02-28;
+#X text 158 16 <- put your instrument's meta tags here;
+#X text 159 44 <- this is your new instrument's GUI canvas;
+#X obj 164 499 hsl 128 17 0 127 0 0 \$1-param1 \$1-param1 param1 2
+8 0 10 -262144 -1 -1 0 1;
+#X text 16 475 Example usage:;
+#X floatatom 18 521 5 0 0 0 - - -;
+#X obj 18 499 netpd_f \$1 param1 100;
+#X connect 19 0 18 0;
