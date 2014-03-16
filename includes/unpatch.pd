@@ -1,6 +1,6 @@
 #N canvas 589 44 323 345 10;
 #X declare -path abs;
-#N canvas 366 44 228 320 unpatch 1;
+#N canvas 366 44 225 324 unpatch 1;
 #X obj 5 7 cnv 5 207 297 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 6 64 cnv 12 205 13 empty \$0.gui.bg1 empty 5 6 1 9 -199731 -1
 0;
@@ -25,6 +25,8 @@
 #X obj 6 276 unpatch-status-display \$0.download.status download;
 #X obj 5 36 unpatch-netload-gui \$0 \$0.netload;
 #X obj 6 8 unpatch-gui-title;
+#X obj 129 8 unpatch-preset-save;
+#X obj 171 8 unpatch-preset-load;
 #X restore 17 82 pd unpatch;
 #N canvas 625 53 532 660 unpatch_download 0;
 #X obj 9 65 r \$0.receive;
