@@ -7,7 +7,7 @@
 #X obj 21 74 t b b b;
 #X obj 21 249 list prepend;
 #X obj 21 271 list prepend UNPATCH;
-#X obj 20 20 cnv 13 205 13 empty \$0.title empty 5 8 1 12 -199731 -1
+#X obj 20 20 cnv 13 121 13 empty \$0.title empty 5 8 1 12 -199731 -1
 0;
 #X obj 21 323 s \$0.title;
 #X obj 209 93 netpd-pref-get cr.background1.clr 1;
@@ -50,4 +50,4 @@
 #X connect 22 0 23 0;
 #X connect 23 0 9 0;
 #X connect 24 0 9 0;
-#X coords 0 -1 1 1 205 13 2 20 20;
+#X coords 0 -1 1 1 121 13 2 20 20;
