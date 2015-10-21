@@ -17,7 +17,7 @@ NOTE: This archive contains only the framework and no netpd-instruments.
 Instruments can be acquired either by having a session with other users
 or by downloading a pre-compiled set from:
 
-  https://github.com/reduzent/netpd2-patches
+  https://github.com/reduzent/netpd-instruments
 
 
 prerequisites
@@ -79,7 +79,7 @@ intro
 copyright
 =========
 
-2008-2013, Roman Haefeli <roman@netpd.org>
+2008-2015, Roman Haefeli <roman@netpd.org>
 Published under the Gnu Public License (GPL-2)
 
 
