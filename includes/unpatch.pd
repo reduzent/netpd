@@ -1,5 +1,5 @@
 #N canvas 589 44 323 345 10;
-#X declare -path abs;
+#X declare -path instruments/abs;
 #N canvas 366 44 225 324 unpatch 1;
 #X obj 5 7 cnv 5 207 297 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 6 64 cnv 12 205 13 empty \$0.gui.bg1 empty 5 6 1 9 -199731 -1
@@ -767,7 +767,7 @@ sechs \, 7 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X restore 158 15 pd close.patch;
 #X obj 158 46 list append \$0;
 #X msg 158 68 \; pd-\$3.patch.container.\$1 clear;
-#X msg 35 482 \; pd-\$3.patch.container.\$1 obj 10 20 ../patches/\$2
+#X msg 35 482 \; pd-\$3.patch.container.\$1 obj 10 20 ../instruments/\$2
 \$1 \; pd-\$1-\$2 vis 0 \; pd-\$3.patch.container.\$1 loadbang \;;
 #X obj 35 12 r \$0.load.patch;
 #X obj 89 340 unpatch-container \$0;
@@ -1041,7 +1041,7 @@ been completed;
 #N canvas 786 81 348 533 singleton.check 0;
 #X obj 10 7 inlet;
 #X obj 10 455 outlet;
-#X msg 27 70 ../patches/\$2.pd;
+#X msg 27 70 ../instruments/\$2.pd;
 #X obj 27 92 netpd-properties;
 #X obj 27 114 route singleton;
 #X obj 46 227 s \$0.UNPATCH;
@@ -1156,7 +1156,7 @@ been completed;
 #X obj 144 232 b;
 #X obj 197 101 route NETPD_PATCH_SPEC;
 #X obj 144 324 netpd-error unpatch;
-#X msg 197 57 ../patches/\$1.pd;
+#X msg 197 57 ../instruments/\$1.pd;
 #X msg 144 299 \$1: patch spec (\$2 \$3) not supported by unpatch;
 #X obj 21 32 list;
 #X obj 92 301 outlet;
@@ -1209,7 +1209,7 @@ been completed;
 #X obj 26 54 route /new;
 #X obj 26 85 symbol;
 #X obj 26 153 netpd-if-file;
-#X msg 26 130 symbol ../patches/\$1.pd;
+#X msg 26 130 symbol ../instruments/\$1.pd;
 #X obj 26 107 t a a;
 #X obj 26 176 sel 0 1;
 #X obj 149 203 symbol;
@@ -1309,7 +1309,7 @@ been completed;
 #X obj 10 137 sel 1 0;
 #X msg 110 189 no such patch: \$1;
 #X obj 110 211 netpd-error unpatch;
-#X msg 10 91 symbol ../patches/\$1.pd;
+#X msg 10 91 symbol ../instruments/\$1.pd;
 #X obj 10 48 list;
 #X obj 10 17 inlet;
 #X obj 10 197 outlet;
@@ -1786,4 +1786,4 @@ update netpd!;
 #X connect 3 0 4 0;
 #X connect 5 0 2 0;
 #X restore 17 309 pd unpatch_version;
-#X obj 17 52 declare -path abs;
+#X obj 17 52 declare -path instruments/abs;

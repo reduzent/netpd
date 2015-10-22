@@ -45,8 +45,8 @@
 #X obj 11 90 route abstraction patch;
 #X obj 11 112 list;
 #X obj 78 113 list;
-#X msg 11 155 ../abs/\$1.pd;
-#X msg 78 135 ../patches/\$1.pd;
+#X msg 11 155 ../instruments/abs/\$1.pd;
+#X msg 78 135 ../instruments/\$1.pd;
 #X obj 11 272 netpd-version;
 #X obj 11 177 t a a;
 #X obj 11 224 sel 1 0;

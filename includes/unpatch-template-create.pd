@@ -5,7 +5,7 @@
 #X obj 42 355 list trim;
 #X obj 42 418 textfile;
 #X msg 179 339 clear;
-#X msg 23 379 write ../patches/\$1.pd;
+#X msg 23 379 write ../instruments/\$1.pd;
 #N canvas 87 136 341 389 read_template_patch 0;
 #X obj 30 17 inlet;
 #X obj 30 99 textfile;

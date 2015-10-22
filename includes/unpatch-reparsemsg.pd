@@ -6,8 +6,8 @@
 #X obj 17 66 list trim;
 #X obj 17 88 t b a b;
 #X msg 56 109 clear;
-#X msg 17 129 write ../abs/tmpcache \, read ../abs/tmpcache \, rewind
-\, bang;
+#X msg 17 129 write ../instruments/abs/tmpcache \, read ../instruments/abs/tmpcache
+\, rewind \, bang;
 #X connect 0 0 3 0;
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
