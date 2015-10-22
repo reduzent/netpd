@@ -23,8 +23,8 @@
 #X obj 6 56 route /patch /abstraction;
 #X obj 6 172 outlet;
 #X text 154 107 <filename> <remote_socket>;
-#X msg 79 127 list abs \$1 \$2 abstraction;
-#X msg 6 147 list patches \$1 \$2 patch;
+#X msg 79 127 list instruments/abs \$1 \$2 abstraction;
+#X msg 6 147 list instruments \$1 \$2 patch;
 #X text 58 170 list <path> <file> <remote_socket> <type>;
 #X obj 6 107 list append;
 #X obj 79 107 list append;
@@ -125,8 +125,8 @@
 #X obj 11 259 routeOSC /done;
 #X obj 11 304 list;
 #X obj 150 217 route patch abstraction;
-#X obj 150 261 list prepend patches;
-#X obj 217 238 list prepend abs;
+#X obj 150 261 list prepend instruments;
+#X obj 217 238 list prepend instruments/abs;
 #X msg 150 283 write ../\$1/\$2.pd;
 #X obj 132 106 list append;
 #X obj 195 83 r \$0.sender;
