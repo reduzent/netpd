@@ -2,15 +2,15 @@
 #X obj 59 52 openpanel;
 #X msg 93 154 read \$1 cr \, rewind;
 #X obj 86 274 textfile;
-#X obj 86 382 list prepend to;
-#X obj 86 404 list trim;
+#X obj 86 322 list prepend to;
+#X obj 86 344 list trim;
 #X obj 27 236 b;
 #X obj 59 250 t b b;
 #X obj 59 222 spigot 0;
 #X msg 153 250 0;
 #X msg 76 175 1;
 #X obj 86 425 s NETPD;
-#X msg 115 204 symbol /unpatch/netcloseall;
+#X msg 110 200 symbol /unpatch/netcloseall;
 #N canvas 326 109 450 300 turn-dsp-off 0;
 #X obj 96 10 inlet;
 #X obj 96 231 outlet;
@@ -65,7 +65,7 @@
 #X obj 263 172 s \$0.click;
 #X obj 236 24 r \$0.button.s;
 #X obj 23 20 hsl 35 13 0 127 0 0 \$0.button.s empty empty -2 -8 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 300 1;
 #X obj 20 20 cnv 13 40 13 empty \$0.button.r load 2 8 1 10 -199731
 -1 0;
 #X obj 236 149 t b b;
@@ -107,8 +107,9 @@
 #X obj 309 54 r \$0.load;
 #X obj 59 74 t a b;
 #X obj 103 76 s \$0.load;
-#X obj 59 131 t b b a b b;
-#X msg 150 329 receiver l;
+#X obj 59 131 t b b a b;
+#X obj 86 366 t a b;
+#X msg 113 389 receiver l;
 #X connect 0 0 30 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -116,7 +117,7 @@
 #X connect 2 1 12 1;
 #X connect 2 1 23 0;
 #X connect 3 0 4 0;
-#X connect 4 0 10 0;
+#X connect 4 0 33 0;
 #X connect 5 0 13 0;
 #X connect 6 0 5 0;
 #X connect 6 1 2 0;
@@ -144,6 +145,7 @@
 #X connect 32 1 9 0;
 #X connect 32 2 1 0;
 #X connect 32 3 11 0;
-#X connect 32 4 33 0;
 #X connect 33 0 10 0;
+#X connect 33 1 34 0;
+#X connect 34 0 10 0;
 #X coords 0 -1 1 1 40 13 2 20 20;
