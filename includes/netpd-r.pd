@@ -1,4 +1,4 @@
-#N canvas 491 152 261 209 10;
+#N canvas 491 236 261 209 10;
 #X obj 35 28 r NETPD;
 #X obj 35 75 routeOSC \$1;
 #X obj 35 50 route from sender;
@@ -6,17 +6,10 @@
 #X obj 109 144 list;
 #X obj 35 167 outlet data;
 #X obj 109 167 outlet sender;
-#X obj 123 77 list;
-#X obj 123 98 sel g;
-#X msg 123 120 symbol p;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
-#X connect 2 1 7 0;
+#X connect 2 1 4 1;
 #X connect 3 0 5 0;
 #X connect 3 1 4 0;
 #X connect 4 0 6 0;
-#X connect 7 0 8 0;
-#X connect 8 0 9 0;
-#X connect 8 1 4 1;
-#X connect 9 0 4 1;
