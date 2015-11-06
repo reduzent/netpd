@@ -6,7 +6,7 @@
 #X declare -stdpath extra/osc;
 #X declare -path . -path includes;
 #N canvas 0 352 370 295 netpd 0;
-#N canvas 220 440 172 293 chat 0;
+#N canvas 220 468 172 293 chat 0;
 #N canvas 331 379 444 295 connection 0;
 #X msg 143 175 disconnect;
 #X msg 9 184 connect \$1 \$2;
@@ -33,13 +33,13 @@
 #X obj 9 82 sel 1 0;
 #X obj 9 258 s NETPD;
 #X obj 9 236 list prepend tcpclient;
-#X obj 230 172 s NETPD;
 #X obj 119 12 loadbang;
 #X obj 118 41 r NETPD;
 #X obj 118 62 route pref;
 #X obj 118 83 route netpd-server netpd-port;
-#X msg 230 149 to /l/server/num_of_clients 0;
 #X obj 118 104 list;
+#X obj 222 201 netpd-s /server/num_of_clients l;
+#X msg 222 176 0;
 #X connect 0 0 8 0;
 #X connect 1 0 8 0;
 #X connect 2 0 3 0;
@@ -48,15 +48,15 @@
 #X connect 5 0 6 0;
 #X connect 6 0 2 0;
 #X connect 6 1 0 0;
-#X connect 6 1 14 0;
+#X connect 6 1 15 0;
 #X connect 8 0 7 0;
-#X connect 10 0 2 0;
+#X connect 9 0 2 0;
+#X connect 10 0 11 0;
 #X connect 11 0 12 0;
 #X connect 12 0 13 0;
-#X connect 13 0 15 0;
-#X connect 13 1 3 1;
-#X connect 14 0 9 0;
-#X connect 15 0 2 1;
+#X connect 12 1 3 1;
+#X connect 13 0 2 1;
+#X connect 15 0 14 0;
 #X restore 17 85 pd connection;
 #N canvas 455 413 192 351 chat-guicode 0;
 #N canvas 545 95 492 638 talkdisplay 0;
@@ -1766,7 +1766,7 @@ a dummy message every 60;
 #X connect 4 1 1 1;
 #X connect 5 0 0 0;
 #X restore 15 180 pd say_hello;
-#N canvas 674 430 206 173 socket_request 0;
+#N canvas 674 458 206 173 socket_request 0;
 #X obj 6 22 r NETPD;
 #X obj 6 43 route connection;
 #X obj 6 64 sel 1;
@@ -2580,7 +2580,7 @@ f 40;
 -241213 -1 0;
 #X obj 67 240 cnv 6 37 16 empty \$0-border empty 6 7 1 12 -1 -1 0;
 #X obj 71 241 hsl 30 14 0 0 0 0 \$0-list \$0-list-r empty -2 -8 0 10
--262144 -1 -1 100 1;
+-262144 -1 -1 0 1;
 #X obj 68 241 cnv 14 35 14 empty \$0-list-display list 2 7 1 10 -241213
 -1 0;
 #X obj 108 240 cnv 6 37 16 empty \$0-border empty 6 7 1 12 -1 -1 0
