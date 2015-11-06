@@ -300,7 +300,6 @@ a reentrancy bug of [packOSC].;
 #X connect 2 1 0 0;
 #X connect 3 0 4 0;
 #X restore 6 101 pd packOSC (fixed);
-#X obj 381 297 netpd-r;
 #X connect 0 0 17 0;
 #X connect 1 0 30 0;
 #X connect 2 0 3 0;
