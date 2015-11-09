@@ -14,15 +14,10 @@
 -1 -1;
 #X obj 30 30 bng 13 250 50 0 \$0.close empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 50 30 bng 8 250 50 0 \$0.vismain empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 50 35 bng 8 250 50 0 \$0.vismain empty empty 17 7 0 10 -262144
--1 -1;
 #X obj 60 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 14 343 r \$0.visgui;
-#X obj 86 343 r \$0.vismain;
-#X obj 164 343 r \$0.close;
+#X obj 91 343 r \$0.close;
 #N canvas 141 150 289 372 visgui 0;
 #X obj 21 342 s \$0.visgui.r;
 #X msg 21 314 color \$1 \$1 \$2;
@@ -122,48 +117,8 @@
 #X connect 21 0 22 1;
 #X connect 22 0 10 0;
 #X restore 15 110 pd close;
-#N canvas 632 181 317 331 vismain 0;
-#X obj 220 98 r \$0.bg.clr;
-#X msg 17 270 color \$1 \$1 -1;
-#X obj 43 244 f;
-#X obj 17 243 f;
-#X obj 17 199 sel 0 1;
-#X obj 17 177 f;
-#X obj 121 97 r \$0.front.clr;
-#X obj 121 119 t b a;
-#X obj 220 120 t b a;
-#X obj 17 293 s \$0.vismain.r;
-#X obj 17 82 t b b;
-#X msg 70 107 1;
-#X msg 17 129 0;
-#X obj 17 107 del 100;
-#X obj 17 6 r \$0.vismain;
-#X obj 50 32 r \$0.isset;
-#X obj 17 55 spigot;
-#X connect 0 0 8 0;
-#X connect 1 0 9 0;
-#X connect 2 0 1 0;
-#X connect 3 0 1 0;
-#X connect 4 0 3 0;
-#X connect 4 1 2 0;
-#X connect 5 0 4 0;
-#X connect 6 0 7 0;
-#X connect 7 0 5 0;
-#X connect 7 1 2 1;
-#X connect 8 0 5 0;
-#X connect 8 1 3 1;
-#X connect 10 0 13 0;
-#X connect 10 1 11 0;
-#X connect 11 0 5 0;
-#X connect 12 0 5 0;
-#X connect 13 0 12 0;
-#X connect 14 0 16 0;
-#X connect 15 0 16 1;
-#X connect 16 0 10 0;
-#X restore 15 131 pd vismain;
 #X msg 14 367 visgui;
-#X msg 86 365 vismain;
-#X msg 164 366 close;
+#X msg 91 366 close;
 #X obj 14 479 list trim;
 #X obj 156 101 route gui.row;
 #X obj 156 146 route label;
@@ -187,9 +142,7 @@
 #X obj 156 79 r \$1.UNPATCH;
 #X obj 14 428 list prepend gui.row button;
 #X obj 14 450 list append \$2;
-#X obj 50 30 cnv 8 8 13 empty \$0.vismain.r empty 2 8 0 14 -199731
--1 0;
-#X obj 30 30 cnv 13 18 13 empty \$0.close.r empty 5 8 1 12 -199731
+#X obj 30 30 cnv 13 18 13 empty \$0.close.r empty 5 8 1 12 -262144
 -258049 0;
 #X obj 74 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
 -1 -1;
@@ -213,44 +166,44 @@
 -1 -1;
 #X obj 212 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 60 30 cnv 13 165 13 empty \$0.visgui.r empty 2 8 0 12 -199731
+#X obj 50 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 50 30 cnv 13 175 13 empty \$0.visgui.r empty 2 8 0 11 -262144
 -258049 0;
 #X connect 0 0 4 0;
-#X connect 1 0 39 0;
-#X connect 2 0 38 0;
+#X connect 1 0 34 0;
+#X connect 2 0 33 0;
 #X connect 3 0 10 0;
 #X connect 4 0 9 0;
 #X connect 5 0 8 0;
-#X connect 6 0 41 0;
-#X connect 7 0 40 1;
-#X connect 16 0 22 0;
-#X connect 17 0 23 0;
-#X connect 18 0 24 0;
-#X connect 22 0 37 0;
-#X connect 23 0 37 0;
-#X connect 24 0 37 0;
-#X connect 25 0 44 0;
-#X connect 26 0 42 0;
+#X connect 6 0 36 0;
+#X connect 7 0 35 1;
+#X connect 14 0 18 0;
+#X connect 15 0 19 0;
+#X connect 18 0 32 0;
+#X connect 19 0 32 0;
+#X connect 20 0 39 0;
+#X connect 21 0 37 0;
+#X connect 22 0 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X connect 24 1 27 0;
+#X connect 25 0 26 0;
 #X connect 27 0 28 0;
-#X connect 28 0 29 0;
+#X connect 27 1 29 0;
+#X connect 28 0 30 0;
 #X connect 29 0 30 0;
-#X connect 29 1 32 0;
-#X connect 30 0 31 0;
-#X connect 32 0 33 0;
-#X connect 32 1 34 0;
+#X connect 31 0 32 1;
+#X connect 32 0 41 0;
 #X connect 33 0 35 0;
 #X connect 34 0 35 0;
-#X connect 36 0 37 1;
-#X connect 37 0 46 0;
-#X connect 38 0 40 0;
-#X connect 39 0 40 0;
-#X connect 40 0 5 0;
-#X connect 41 0 2 0;
-#X connect 41 0 1 0;
-#X connect 41 1 43 0;
-#X connect 42 0 27 0;
-#X connect 43 0 7 0;
-#X connect 45 0 26 0;
-#X connect 46 0 47 0;
-#X connect 47 0 25 0;
+#X connect 35 0 5 0;
+#X connect 36 0 2 0;
+#X connect 36 0 1 0;
+#X connect 36 1 38 0;
+#X connect 37 0 22 0;
+#X connect 38 0 7 0;
+#X connect 40 0 21 0;
+#X connect 41 0 42 0;
+#X connect 42 0 20 0;
 #X coords 0 -1 1 1 195 13 2 30 30;
