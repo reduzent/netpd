@@ -1,44 +1,58 @@
-#N canvas 520 44 504 550 10;
+#N canvas 520 44 504 628 10;
 #X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 7 7 netpd-s - send a message (OSC) to the server;
-#X text 211 397 arg1: OSC address prefix (optional);
-#X text 199 441 inlet0: anything | OSC OSCAddressSuffix anything;
+#X text 211 487 arg1: OSC address prefix (optional);
+#X text 199 531 inlet0: anything | OSC OSCAddressSuffix anything;
 #X msg 12 75 i'm only a help patch;
 #X msg 22 102 OSC /some/number 42;
-#X obj 17 420 netpd-r /netpd-s-help;
-#X obj 17 458 print netpd-s-help;
-#X floatatom 140 441 5 0 0 0 - - -;
-#X text 211 414 arg2: receiver ID (optional \; default 'b');
-#X msg 109 188 b;
-#X msg 121 211 l;
-#X msg 133 233 s;
-#X floatatom 144 255 5 0 0 0 - - -;
-#X obj 13 345 netpd-s;
-#X text 320 494 see also:;
-#X obj 382 495 netpd-r /dummy;
+#X obj 17 510 netpd-r /netpd-s-help;
+#X obj 17 548 print netpd-s-help;
+#X floatatom 140 531 5 0 0 0 - - -, f 5;
+#X text 211 504 arg2: receiver ID (optional \; default 'b');
+#X msg 109 288 b;
+#X msg 121 311 l;
+#X msg 133 333 s;
+#X floatatom 144 355 5 0 0 0 - - -, f 5;
+#X obj 13 435 netpd-s;
+#X text 320 584 see also:;
+#X obj 382 585 netpd-r /dummy;
 #X text 11 44 send a OSC message:;
 #X text 11 53 -------------------;
-#X text 149 76 <- anything is treated as OSC data;
 #X text 144 102 <- when the 'OSC' tag is specified \, the first element
 is appended to the OSC address prefix of [netp-s] and the rest is treated
 as OSC data;
-#X text 113 160 set the recipient:;
-#X text 113 170 ------------------;
-#X text 142 189 broadcast to all peers (default);
-#X text 151 211 local send (leave out server);
-#X text 166 232 send to server (only useful in rare cases);
-#X text 182 254 send to peer identified by this socket number;
-#X text 67 345 <- if no argument is given \, the selector of the message
+#X text 113 260 set the recipient:;
+#X text 113 270 ------------------;
+#X text 142 289 broadcast to all peers (default);
+#X text 151 311 local send (leave out server);
+#X text 166 332 send to server (only useful in rare cases);
+#X text 182 354 send to peer identified by this socket number;
+#X text 67 435 <- if no argument is given \, the selector of the message
 is always interpreted as the OSC address;
-#X obj 12 276 netpd-s /netpd-s-help b;
-#X msg 13 319 /netpd-s-help/welcome hello;
-#X connect 4 0 28 0;
-#X connect 5 0 28 0;
+#X obj 12 376 netpd-s /netpd-s-help b;
+#X msg 13 409 /netpd-s-help/welcome hello;
+#X text 149 76 <- anything is treated as type-guessed OSC data;
+#X msg 34 161 typed \$1;
+#X obj 34 140 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 92 160 <- when turned on \, the first element of OSC data is
+expected to be type definitions;
+#X msg 42 197 sif foo 20 0.43;
+#X text 145 197 <- send type-forced message (turn 'typed' on first)
+;
+#X msg 52 225 OSC /blob b 97 98 99 100;
+#X text 203 225 <- type-forced message with OSC address suffix;
+#X connect 4 0 27 0;
+#X connect 5 0 27 0;
 #X connect 6 0 7 0;
 #X connect 6 1 8 0;
-#X connect 10 0 28 1;
-#X connect 11 0 28 1;
-#X connect 12 0 28 1;
-#X connect 13 0 28 1;
-#X connect 29 0 14 0;
+#X connect 10 0 27 1;
+#X connect 11 0 27 1;
+#X connect 12 0 27 1;
+#X connect 13 0 27 1;
+#X connect 28 0 14 0;
+#X connect 30 0 27 0;
+#X connect 31 0 30 0;
+#X connect 33 0 27 0;
+#X connect 35 0 27 0;
