@@ -1679,20 +1679,25 @@ to its right inlet.;
 #X connect 12 0 11 0;
 #X connect 14 0 12 0;
 #X restore 17 66 pd chat-guicode;
-#N canvas 392 414 199 224 CLIENT 0;
-#X obj 22 171 s NETPD;
+#N canvas 392 442 279 249 CLIENT 0;
+#X obj 22 207 s NETPD;
 #X obj 22 16 r NETPD;
 #X msg 22 148 connection \$1;
 #X obj 22 39 list trim;
 #X obj 22 126 route connection;
 #X obj 22 94 netpd-client;
 #X obj 22 63 route tcpclient;
+#X obj 115 148 list prepend status;
+#X obj 115 170 list trim;
 #X connect 1 0 3 0;
 #X connect 2 0 0 0;
 #X connect 3 0 6 0;
 #X connect 4 0 2 0;
+#X connect 4 1 7 0;
 #X connect 5 0 4 0;
 #X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 0;
 #X restore 18 9 pd CLIENT;
 #N canvas 518 591 616 160 keep_alive 0;
 #X obj 22 68 metro 60000;
@@ -2654,7 +2659,7 @@ empty 0 -9 0 10 -195568 -195568 -1 0 1;
 -1 0;
 #X obj 190 240 cnv 6 27 16 empty \$0-border empty 6 7 1 12 -1 -1 0
 ;
-#X obj 194 241 hsl 20 14 1 1 0 0 \$0-dsp \$0-dsp-r empty -2 -8 0 10
+#X obj 194 241 hsl 20 14 0 0 0 0 \$0-dsp \$0-dsp-r empty -2 -8 0 10
 -262144 -1 -1 0 1;
-#X obj 191 241 cnv 14 25 14 empty \$0-dsp-display dsp 2 7 1 10 -187246
+#X obj 191 241 cnv 14 25 14 empty \$0-dsp-display dsp 2 7 1 10 -241213
 -1 0;
