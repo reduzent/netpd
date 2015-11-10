@@ -1,8 +1,4 @@
 #N canvas 0 44 366 264 10;
-#X declare -stdpath extra/iemnet -stdpath extra/net;
-#X declare -stdpath mrpeach -stdpath slip;
-#X declare -stdpath extra/zexy -stdlib extra/zexy;
-#X declare -stdpath moocow -stdpath extra/ggee;
 #X declare -stdpath extra/osc;
 #X declare -path . -path includes;
 #N canvas 0 352 370 295 netpd 0;
