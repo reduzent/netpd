@@ -1,5 +1,4 @@
 #N canvas 458 70 548 631 10;
-#X declare -stdpath extra/iemnet -stdpath extra/net;
 #X declare -stdpath mrpeach -stdpath slip;
 #X obj 177 281 unpackOSC;
 #X obj 177 141 packOSC;
