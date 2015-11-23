@@ -1,0 +1,37 @@
+#N canvas 439 44 505 455 10;
+#X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 7 7 netpd-mutex - a mutually exclusive lock;
+#X msg 37 92 acquire;
+#X msg 54 117 release;
+#X obj 17 63 tgl 15 0 empty empty empty 17 7 0 10 -204786 -1 -1 0 1
+;
+#X obj 17 198 tgl 15 0 empty empty empty 17 7 0 10 -204800 -1 -1 0
+1;
+#X text 45 199 1: lock acquired;
+#X text 45 184 0: blocked;
+#X obj 174 64 tgl 15 0 empty empty empty 17 7 0 10 -204786 -1 -1 0
+1;
+#X obj 174 199 tgl 15 0 empty empty empty 17 7 0 10 -204800 -1 -1 0
+1;
+#X obj 323 63 tgl 15 0 empty empty empty 17 7 0 10 -204786 -1 -1 0
+1;
+#X obj 323 198 tgl 15 0 empty empty empty 17 7 0 10 -204800 -1 -1 0
+1;
+#X obj 17 149 netpd-mutex EXAMPLE;
+#X obj 174 150 netpd-mutex EXAMPLE;
+#X obj 323 149 netpd-mutex EXAMPLE;
+#X text 15 252 [netpd-mutex] manages a mutex lock with name given by
+first argument. Only one instance of netpd-mutex can hold the lock
+at any given time.;
+#X text 35 341 inlet0: acquire or release a lock;
+#X text 84 374 0 (lock was released);
+#X text 30 357 outlet0: 1 (lock was acquired);
+#X connect 2 0 12 0;
+#X connect 3 0 12 0;
+#X connect 4 0 12 0;
+#X connect 8 0 13 0;
+#X connect 10 0 14 0;
+#X connect 12 0 5 0;
+#X connect 13 0 9 0;
+#X connect 14 0 11 0;
