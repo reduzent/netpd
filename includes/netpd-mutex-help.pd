@@ -27,6 +27,7 @@ at any given time.;
 #X text 35 341 inlet0: acquire or release a lock;
 #X text 84 374 0 (lock was released);
 #X text 30 357 outlet0: 1 (lock was acquired);
+#X text 49 318 arg1: name of the lock;
 #X connect 2 0 12 0;
 #X connect 3 0 12 0;
 #X connect 4 0 12 0;
