@@ -1,0 +1,20 @@
+#N canvas 379 44 504 420 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 291 160 table \$0.sometable 10;
+#X msg 62 150 set differentable;
+#X text 27 319 arg1: <table>;
+#X text 61 349 set <table>;
+#X text 323 388 see also:;
+#X text 8 7 netpd-tabwrite16 - write 16bit data to table;
+#X obj 17 178 netpd-tabwrite16 \$0.sometable;
+#X msg 17 62 0 63 255 191 255 255 255 112 163;
+#X text 16 229 [netpd-tabwrite16] writes 16bit data represented as
+list of bytes to a table.;
+#X text 15 262 NOTE: the first element of the list is the index and
+does not represent a byte value.;
+#X text 15 334 inlet0: 16bit data (index \, msb \, lsb \, msb \, lsb
+...);
+#X obj 387 387 netpd-tabdump16;
+#X connect 2 0 7 0;
+#X connect 8 0 7 0;
