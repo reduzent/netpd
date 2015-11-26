@@ -1,0 +1,32 @@
+#N canvas 379 44 504 433 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 8 7 netpd-tabdump16 - dump table content as 16bit byte list
+;
+#X obj 291 160 table \$0.sometable 10;
+#X obj 290 106 s \$0.sometable;
+#X obj 290 59 loadbang;
+#X msg 290 84 0 -0.5 0.5 1 -0.12 -0.3 0 0.2 -1;
+#X obj 17 178 netpd-tabdump16 \$0.sometable;
+#X obj 17 238 print netpd-tabdump16;
+#X text 59 62 index \, count;
+#X msg 17 62 0 10;
+#X msg 37 85 2 1;
+#X msg 50 107 7 1;
+#X msg 62 150 set differentable;
+#X text 15 270 [netpd-tabdump16] dumps content of a table as a list
+of bytes representing 16bit sample values (2 bytes = 1 sample \, big
+endian).;
+#X text 48 342 arg1: <table>;
+#X text 36 357 inlet0: <index> <count>;
+#X text 82 372 set <table>;
+#X text 30 387 outlet0: list of bytes;
+#X obj 379 395 netpd-tabwrite16;
+#X text 315 396 see also:;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 6 0 7 0;
+#X connect 9 0 6 0;
+#X connect 10 0 6 0;
+#X connect 11 0 6 0;
+#X connect 12 0 6 0;
