@@ -27,6 +27,7 @@
 #X obj 133 292 & 255;
 #X obj 98 313 mod 256;
 #X obj 98 241 * 32768;
+#X obj 20 114 list;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 16 0;
@@ -43,7 +44,7 @@
 #X connect 12 0 1 1;
 #X connect 13 0 7 0;
 #X connect 13 1 0 0;
-#X connect 14 0 15 0;
+#X connect 14 0 22 0;
 #X connect 14 1 10 0;
 #X connect 15 0 16 0;
 #X connect 16 0 21 0;
@@ -53,3 +54,4 @@
 #X connect 19 0 4 1;
 #X connect 20 0 4 0;
 #X connect 21 0 17 0;
+#X connect 22 0 15 0;
