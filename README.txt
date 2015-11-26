@@ -13,32 +13,37 @@ experience for every connected user.
   Read more: 
   http://www.netpd.org
 
-NOTE: This archive contains only the framework and no netpd-instruments.
-Instruments can be acquired either by having a session with other users
-or by downloading a pre-compiled set from:
+NOTE: This repository|archive contains only the netpd framework. The
+netpd-instruments are hosted separately on:
 
   https://github.com/reduzent/netpd-instruments
+
+You may want to clone all at once by doing:
+
+  git clone --recursive https://github.com/reduzent/netpd.git
 
 
 prerequisites
 =============
 
-Download and install Pd-extended (>= 0.43.4) from:
+You need to have Pure Data (>= 0.45) installed. The following Pd
+externals are needed, too. You can install them through the Pd menu
+'Help' -> 'Find externals':
 
-  https://puredata.info/downloads/pd-extended
-
-Or, if you want to run it with Pd-vanilla (Miller's Pure Data), you need:
-
-  * pd >= 0.43
+  * binfile
   * ggee
   * iemnet
-  * moocow
+  * iemlib
+  * readdir
   * osc
-  * slipdec
-  * slipenc
+  * slip
   * zexy
 
-NOTE: pd-l2ork is not supported (and support is not planned)
+NOTE: pd-l2ork is not supported (and support is not planned) because it
+      has some incompatibilities with Pure Data.
+
+NOTE: Support for Pd-extended is going to fade out slowly as netpd is going
+      to use new features of Pure Data.
 
 
 intro
