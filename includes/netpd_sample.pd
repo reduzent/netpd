@@ -248,7 +248,8 @@
 #X connect 14 0 15 0;
 #X connect 15 0 13 0;
 #X restore 13 107 pd fromfile;
-#N canvas 520 60 450 300 liveinput 1;
+#X obj 551 46 s~ \$0.inlet1;
+#N canvas 520 60 450 300 liveinput 0;
 #X obj 107 159 r~ \$0.inlet1;
 #X obj 19 21 r \$0.inlet;
 #X obj 19 45 route start stop;
@@ -281,9 +282,8 @@
 #X connect 4 0 6 0;
 #X connect 5 0 6 0;
 #X restore 13 130 pd liveinput;
-#X obj 551 46 s~ \$0.inlet1;
 #X connect 0 0 5 0;
-#X connect 2 0 25 0;
+#X connect 2 0 24 0;
 #X connect 6 0 1 0;
 #X connect 9 0 8 0;
 #X connect 10 0 21 0;
