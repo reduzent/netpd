@@ -1,11 +1,11 @@
-#N canvas 535 44 505 456 10;
-#X obj 27 217 netpd_sample \$1 sample1;
+#N canvas 535 44 506 484 10;
+#X obj 27 247 netpd_sample \$1 sample1;
 #X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 8 7 netpd_sample - manage an audio sample that is netpd-synced
 ;
 #X msg 70 89 loadfile sample1.wav;
-#X obj 163 190 adc~ 1;
+#X obj 163 220 adc~ 1;
 #X msg 142 117 stop;
 #X msg 98 117 start;
 #X obj 179 117 tgl 17 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -13,16 +13,20 @@
 #X text 212 63 load audio from an array or table;
 #X text 214 90 load audio from a sound file;
 #X text 214 117 record audio from inlet;
-#X obj 27 260 print netpd_sample;
+#X obj 27 290 print netpd_sample;
 #X obj 27 42 table sample1 4000;
 #X msg 27 64 loadtable sample1 30 1030;
-#X msg 157 150 length;
-#X text 217 146 get information about length (samples);
-#X text 27 292 The abstraction [netpd_sample] keeps an audio table
+#X msg 157 180 length;
+#X text 217 176 get information about length (samples);
+#X text 27 322 The abstraction [netpd_sample] keeps an audio table
 in sync between clients. The table is accessed by the name \$1-\$2-table.
 ;
-#X text 28 347 Any changes to the table are reported through the outlet.
+#X text 28 377 Any changes to the table are reported through the outlet.
 ;
+#X obj 408 437 netpd_head;
+#X text 340 436 see also:;
+#X msg 99 141 startuntil 1000;
+#X text 216 142 record for a pre-defined duration (ms);
 #X connect 0 0 11 0;
 #X connect 3 0 0 0;
 #X connect 4 0 0 1;
@@ -31,3 +35,4 @@ in sync between clients. The table is accessed by the name \$1-\$2-table.
 #X connect 7 0 0 0;
 #X connect 13 0 0 0;
 #X connect 14 0 0 0;
+#X connect 20 0 0 0;
