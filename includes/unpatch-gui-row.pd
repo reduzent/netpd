@@ -1,4 +1,4 @@
-#N canvas 520 62 545 552 10;
+#N canvas 520 60 545 552 10;
 #X obj 295 363 netpd-pref-get cr.display.clr 1;
 #X obj 294 146 netpd-pref-get cr.background1.clr 1;
 #X obj 314 104 netpd-pref-get cr.background2.clr 1;
@@ -10,14 +10,8 @@
 #X obj 294 236 s \$0.bg.clr;
 #X obj 295 407 s \$0.front.clr;
 #X obj 295 468 s \$0.font;
-#X obj 35 30 bng 13 250 50 0 \$0.close empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 30 30 bng 13 250 50 0 \$0.close empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 60 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 14 343 r \$0.visgui;
-#X obj 91 343 r \$0.close;
+#X obj 14 323 r \$0.visgui;
+#X obj 91 323 r \$0.close;
 #N canvas 141 150 289 372 visgui 0;
 #X obj 21 342 s \$0.visgui.r;
 #X msg 21 314 color \$1 \$1 \$2;
@@ -142,68 +136,58 @@
 #X obj 156 79 r \$1.UNPATCH;
 #X obj 14 428 list prepend gui.row button;
 #X obj 14 450 list append \$2;
-#X obj 30 30 cnv 13 18 13 empty \$0.close.r empty 5 8 1 12 -262144
+#X obj 14 341 sel 0;
+#X obj 58 341 t a;
+#X obj 33 30 hsl 13 13 0 127 0 0 \$0.close empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 30 30 cnv 13 18 13 empty \$0.close.r empty 5 8 1 12 -199731
 -258049 0;
-#X obj 74 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 88 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 102 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 116 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 130 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 144 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 158 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 172 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 186 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 200 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 212 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 50 30 bng 13 250 50 0 \$0.visgui empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 50 30 cnv 13 175 13 empty \$0.visgui.r empty 2 8 0 11 -262144
+#X obj 91 342 sel 0;
+#X obj 136 342 t a;
+#X obj 53 30 hsl 170 13 0 127 0 0 \$0.visgui empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 50 30 cnv 13 175 13 empty \$0.visgui.r empty 2 8 0 11 -199731
 -258049 0;
 #X connect 0 0 4 0;
-#X connect 1 0 34 0;
-#X connect 2 0 33 0;
+#X connect 1 0 31 0;
+#X connect 2 0 30 0;
 #X connect 3 0 10 0;
 #X connect 4 0 9 0;
 #X connect 5 0 8 0;
-#X connect 6 0 36 0;
-#X connect 7 0 35 1;
-#X connect 14 0 18 0;
-#X connect 15 0 19 0;
-#X connect 18 0 32 0;
-#X connect 19 0 32 0;
-#X connect 20 0 39 0;
-#X connect 21 0 37 0;
+#X connect 6 0 33 0;
+#X connect 7 0 32 1;
+#X connect 11 0 40 0;
+#X connect 12 0 44 0;
+#X connect 15 0 29 0;
+#X connect 16 0 29 0;
+#X connect 17 0 36 0;
+#X connect 18 0 34 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 21 1 24 0;
 #X connect 22 0 23 0;
-#X connect 23 0 24 0;
 #X connect 24 0 25 0;
-#X connect 24 1 27 0;
-#X connect 25 0 26 0;
-#X connect 27 0 28 0;
-#X connect 27 1 29 0;
-#X connect 28 0 30 0;
-#X connect 29 0 30 0;
-#X connect 31 0 32 1;
-#X connect 32 0 41 0;
-#X connect 33 0 35 0;
-#X connect 34 0 35 0;
-#X connect 35 0 5 0;
-#X connect 36 0 2 0;
-#X connect 36 0 1 0;
-#X connect 36 1 38 0;
-#X connect 37 0 22 0;
-#X connect 38 0 7 0;
-#X connect 40 0 21 0;
-#X connect 41 0 42 0;
-#X connect 42 0 20 0;
+#X connect 24 1 26 0;
+#X connect 25 0 27 0;
+#X connect 26 0 27 0;
+#X connect 28 0 29 1;
+#X connect 29 0 38 0;
+#X connect 30 0 32 0;
+#X connect 31 0 32 0;
+#X connect 32 0 5 0;
+#X connect 33 0 2 0;
+#X connect 33 0 1 0;
+#X connect 33 1 35 0;
+#X connect 34 0 19 0;
+#X connect 35 0 7 0;
+#X connect 37 0 18 0;
+#X connect 38 0 39 0;
+#X connect 39 0 17 0;
+#X connect 40 0 15 0;
+#X connect 40 1 41 0;
+#X connect 41 0 40 1;
+#X connect 44 0 16 0;
+#X connect 44 1 45 0;
+#X connect 45 0 44 1;
 #X coords 0 -1 1 1 195 13 2 30 30;
