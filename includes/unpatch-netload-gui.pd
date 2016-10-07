@@ -107,7 +107,7 @@
 #N canvas 530 393 648 235 set.labels 0;
 #X obj 19 176 s \$0.background1.r;
 #X msg 170 88 label empty;
-#X msg 19 108 list netload instrument;
+#X msg 19 108 list load instrument;
 #X obj 19 21 loadbang;
 #X obj 19 43 t b b;
 #X msg 46 63 32;
@@ -118,7 +118,7 @@
 #X msg 295 98 32;
 #X obj 295 120 makefilename %c;
 #X obj 268 155 list append;
-#X msg 268 50 list <enter patch name>;
+#X msg 268 50 list <enter instrument name>;
 #X obj 268 201 s \$0.symbolbox.r;
 #X msg 268 178 set \$1\$4\$2\$4\$3;
 #X obj 170 31 inlet;

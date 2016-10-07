@@ -59,7 +59,7 @@
 #X obj 17 317 savepanel;
 #X obj 23 20 hsl 35 13 0 127 0 0 \$0.button.s empty empty -2 -8 0 10
 -262144 -1 -1 0 1;
-#X obj 20 20 cnv 13 40 13 empty \$0.button.r save 2 8 1 10 -199731
+#X obj 20 20 cnv 13 40 13 empty \$0.button.r store 2 8 1 10 -199731
 -1 0;
 #N canvas 547 364 371 356 set.colors 0;
 #X obj 123 83 netpd-pref-get cr.display.clr 1;
