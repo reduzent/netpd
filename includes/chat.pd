@@ -1,7 +1,4 @@
-#N canvas 0 43 366 264 10;
-#X declare -stdpath extra/osc;
-#X declare -path . -path includes;
-#N canvas 0 345 370 295 netpd 0;
+#N canvas 384 43 363 500 10;
 #N canvas 220 652 172 320 chat 0;
 #N canvas 331 377 444 295 connection 0;
 #X msg 143 175 disconnect;
@@ -1959,7 +1956,7 @@ a dummy message every 60;
 #X connect 10 0 11 0;
 #X connect 11 0 6 0;
 #X restore 15 261 pd bell&click;
-#X restore 12 121 pd chat;
+#X restore 12 341 pd chat;
 #N canvas 470 418 325 236 netpd_related_programs 0;
 #X obj 18 12 r \$0-unpatch;
 #N canvas 475 671 226 70 \$0.unpatch.container 0;
@@ -1975,9 +1972,9 @@ vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 #X connect 2 1 3 0;
 #X connect 3 0 6 0;
 #X connect 4 0 5 0;
-#X restore 12 226 pd netpd_related_programs;
-#X text 10 16 Author: Roman Haefeli (roman@netpd.org);
-#X text 9 -1 CHAT;
+#X restore 12 446 pd netpd_related_programs;
+#X text 9 299 Author: Roman Haefeli (roman@netpd.org);
+#X text 9 279 CHAT;
 #N canvas 397 318 518 419 preferences 0;
 #X text 20 12 colors;
 #X text 18 281 netpd-settings;
@@ -2005,7 +2002,7 @@ vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 #X obj 18 322 netpd-pref-store netpd-welcome;
 #X obj 18 341 netpd-pref-store netpd-server;
 #X obj 18 360 netpd-pref-store netpd-port;
-#N canvas 0 356 374 444 netpd-preferences 0;
+#N canvas 0 355 374 444 netpd-preferences 0;
 #X symbolatom 113 15 10 0 0 0 - #0.netpd-name.r #0.netpd-name, f 10
 ;
 #X symbolatom 113 36 40 0 0 0 - #0.netpd-welcome.r #0.netpd-welcome
@@ -2201,7 +2198,7 @@ f 40;
 #X restore 251 325 pd netpd-preferences-code;
 #X obj 251 344 netpd-pref-manager netpd-preferences.cnf;
 #X obj 18 380 netpd-pref-store dyn.dsp.off;
-#X restore 12 163 pd preferences;
+#X restore 12 383 pd preferences;
 #N canvas 349 455 198 192 status 0;
 #N canvas 722 546 235 208 connection 0;
 #X obj 10 108 f;
@@ -2320,7 +2317,7 @@ f 40;
 #X connect 15 0 7 0;
 #X connect 16 0 13 0;
 #X restore 8 66 pd unpatch_;
-#X restore 12 184 pd status;
+#X restore 12 404 pd status;
 #N canvas 568 178 317 333 INIT 0;
 #X msg 9 130 \; pd dsp 1;
 #N canvas 120 155 181 227 netpd-loadbang 0;
@@ -2355,15 +2352,15 @@ f 40;
 #X connect 5 0 0 0;
 #X connect 8 0 7 0;
 #X connect 10 0 8 0;
-#X restore 12 100 pd INIT;
+#X restore 12 320 pd INIT;
 #N canvas 515 537 203 90 chat 0;
 #X obj 7 7 r chatgetversion;
 #X obj 7 48 s chatversion;
-#X msg 7 28 2.1.1;
+#X msg 7 28 2.1.2;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
-#X restore 12 142 pd chat version;
-#X obj 248 246 bng 15 250 50 0 \$0.before.saving \$0.bli before_saving
+#X restore 12 362 pd chat version;
+#X obj 247 463 bng 15 250 50 0 \$0.before.saving \$0.bli before_saving
 17 7 0 10 -232576 -1 -1;
 #N canvas 373 213 366 277 errors 0;
 #X obj 6 31 r NETPD;
@@ -2372,9 +2369,7 @@ f 40;
 #X text 5 8 print netpd errors:;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
-#X restore 12 205 pd errors;
-#X obj 12 72 declare -stdpath extra/osc;
-#X obj 12 52 declare -path . -path includes;
+#X restore 12 425 pd errors;
 #N canvas 302 285 450 300 CMD_FLAGS 0;
 #N canvas 520 231 303 238 START_UNPATCH 0;
 #X obj 37 160 s \$0-showunpatch-r;
@@ -2475,8 +2470,9 @@ f 40;
 #X connect 15 0 16 0;
 #X connect 16 0 9 0;
 #X restore 14 38 pd DEBUG_PROTO;
-#X restore 12 247 pd CMD_FLAGS;
-#X restore 240 198 pd netpd;
+#X restore 12 467 pd CMD_FLAGS;
+#X obj 3 2 cnv 6 347 254 empty empty empty 20 12 0 14 -262144 -66577
+0;
 #X obj 3 2 cnv 15 347 17 empty \$0-border empty 6 8 1 12 -1 -1 0;
 #X obj 4 3 cnv 15 345 15 empty \$0-title empty 6 8 1 12 -241213 -1
 0;
@@ -2511,7 +2507,7 @@ f 40;
 #X obj 288 240 cnv 6 62 16 empty \$0-border empty 6 7 1 12 -1 -1 0
 ;
 #X obj 292 241 hsl 55 14 0 1 0 0 \$0-showunpatch \$0-showunpatch-r
-empty -2 -8 0 10 -262144 -1 -1 0 1;
+empty -2 -8 0 10 -262144 -1 -1 100 1;
 #X obj 289 241 cnv 14 60 14 empty \$0-showunpatch-display unpatch 2
 7 1 10 -241213 -1 0;
 #X obj 336 25 vsl 14 188 187 0 0 0 \$0-scrollsensor \$0-scrollsensor-r
@@ -2579,5 +2575,6 @@ empty 0 -9 0 10 -195568 -195568 -1 0 1;
 ;
 #X obj 194 241 hsl 20 14 0 1 0 0 \$0-dsp \$0-dsp-r empty -2 -8 0 10
 -262144 -1 -1 0 1;
-#X obj 191 241 cnv 14 25 14 empty \$0-dsp-display dsp 2 7 1 10 -187246
+#X obj 191 241 cnv 14 25 14 empty \$0-dsp-display dsp 2 7 1 10 -241213
 -1 0;
+#X coords 0 -1 1 1 347 254 2 3 2;
