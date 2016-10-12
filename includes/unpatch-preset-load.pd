@@ -1,4 +1,4 @@
-#N canvas 451 44 507 641 10;
+#N canvas 451 43 507 641 10;
 #X obj 19 72 openpanel;
 #X obj 38 502 list prepend to;
 #X obj 38 524 list trim;
@@ -52,8 +52,8 @@
 #X obj 196 96 -;
 #X obj 196 117 sel 0;
 #X obj 196 14 r \$0.button.s;
-#X obj 23 20 hsl 35 13 0 127 0 0 \$0.button.s empty empty -2 -8 0 10
--262144 -1 -1 200 1;
+#X obj 23 20 hsl 35 13 0 127 0 0 \$0.button.s empty empty -2 8 0 10
+-262144 -1 -1 0 1;
 #X obj 20 20 cnv 13 40 13 empty \$0.button.r recall 2 8 1 10 -199731
 -1 0;
 #N canvas 547 364 371 356 set.colors 0;

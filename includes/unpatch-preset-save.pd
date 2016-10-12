@@ -1,4 +1,4 @@
-#N canvas 502 72 275 509 10;
+#N canvas 502 124 275 509 10;
 #N canvas 408 94 345 539 get.data 0;
 #X obj 78 140 r NETPD;
 #X obj 78 182 route preset;
@@ -57,7 +57,7 @@
 #X obj 34 294 list trim;
 #X msg 68 373 clear;
 #X obj 17 317 savepanel;
-#X obj 23 20 hsl 35 13 0 127 0 0 \$0.button.s empty empty -2 -8 0 10
+#X obj 23 20 hsl 35 13 0 127 0 0 \$0.button.s empty empty -2 8 0 10
 -262144 -1 -1 0 1;
 #X obj 20 20 cnv 13 40 13 empty \$0.button.r store 2 8 1 10 -199731
 -1 0;
