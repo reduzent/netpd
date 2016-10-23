@@ -1975,11 +1975,10 @@ vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 #X restore 12 446 pd netpd_related_programs;
 #X text 9 299 Author: Roman Haefeli (roman@netpd.org);
 #X text 9 279 CHAT;
-#N canvas 397 314 521 461 preferences 0;
+#N canvas 397 309 521 461 preferences 0;
 #X text 20 12 colors;
 #X text 18 281 netpd-settings;
 #X text 334 124 C H A T;
-#X text 310 239 C R E A T O R;
 #X obj 15 30 netpd-pref-store ch.font.clr;
 #X obj 15 50 netpd-pref-store ch.background.clr;
 #X obj 15 70 netpd-pref-store ch.active.clr;
@@ -1998,11 +1997,7 @@ vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 #X text 252 13 fonts;
 #X text 17 137 ____________________________________________________________
 ;
-#X obj 18 303 netpd-pref-store netpd-name;
-#X obj 18 322 netpd-pref-store netpd-welcome;
-#X obj 18 341 netpd-pref-store netpd-server;
-#X obj 18 360 netpd-pref-store netpd-port;
-#N canvas 0 353 377 455 netpd-preferences 0;
+#N canvas 0 345 373 219 netpd-preferences 0;
 #X symbolatom 113 15 10 0 0 0 - #0.netpd-name.r #0.netpd-name, f 10
 ;
 #X symbolatom 113 36 40 0 0 0 - #0.netpd-welcome.r #0.netpd-welcome
@@ -2012,86 +2007,25 @@ f 40;
 #X floatatom 113 76 6 0 0 0 - #0.netpd-port.r #0.netpd-port, f 6;
 #X text 69 14 name:;
 #X text 69 74 port:;
-#X obj 7 177 cnv 15 141 34 empty empty empty 20 12 0 14 -1 -66577 0
-;
-#X obj 8 178 cnv 15 139 32 empty empty empty 20 12 0 14 -262144 -66577
-0;
-#X obj 44 179 hsl 100 10 0 255 0 0 \$0-red-s \$0-red-r empty -2 -6
-0 8 -258699 -1 -1 0 0;
-#X obj 44 189 hsl 100 10 0 255 0 0 \$0-grn-s \$0-grn-r empty -2 -6
-0 8 -24198 -1 -1 0 0;
-#X obj 44 199 hsl 100 10 0 255 0 0 \$0-blu-s \$0-blu-r empty -2 -6
-0 8 -62784 -1 -1 0 0;
-#X obj 9 179 cnv 15 30 30 empty empty empty 20 12 0 14 -1 -66577 0
-;
-#X obj 10 180 cnv 15 28 28 empty \$0-preview empty 20 12 0 14 -1 -1
-0;
-#X text 5 135 ____________________________________________________________
-;
-#X obj 185 180 nbx 2 16 3 40 0 0 \$0.fontsize \$0.fontsize.r empty
-0 -6 0 12 -262144 -1 -1 3 256;
-#X obj 225 180 vradio 11 1 0 3 \$0.fonttype \$0.fonttype.r empty 0
--6 0 8 -262144 -1 -1 0;
-#X text 238 177 courier;
-#X text 239 188 helvetica;
-#X text 238 200 times;
-#X text 184 194 size;
-#X obj 309 160 cnv 15 15 15 empty \$0-testtext testtext 0 12 0 12 -262144
--66577 0;
 #X text 39 36 say hello:;
-#X obj 158 149 cnv 1 1 270 empty empty empty 20 12 0 14 -1 -66577 0
-;
-#X obj 159 149 cnv 1 1 270 empty empty empty 20 12 0 14 -262144 -66577
-0;
-#X obj 47 149 cnv 15 15 15 empty empty color 0 9 1 14 -262144 -66577
-0;
-#X obj 244 149 cnv 15 15 15 empty empty font 0 9 1 14 -262144 -66577
-0;
-#X text 5 218 ____________________________________________________________
-;
-#X text 341 195 C;
-#X text 341 218 H;
-#X text 341 244 A;
-#X text 341 270 T;
-#X text 5 319 ____________________________________________________________
-;
-#X text 342 296 C;
-#X text 343 307 R;
-#X text 342 318 E;
-#X text 342 330 A;
-#X text 342 341 T;
-#X text 342 352 O;
-#X text 342 362 R;
-#X obj 11 426 hsl 75 17 0 127 0 0 \$0.closesavesettings \$0-bli save&close
+#X obj 116 186 hsl 237 19 0 127 0 0 \$0.closesavesettings \$0-bli save&close
 2 9 1 11 -233017 -233017 -1 0 1;
 #X text 27 54 IP/hostname:;
-#X text 5 407 ____________________________________________________________
-;
-#X obj 7 232 chat-set-clr \$0 ch.font.clr label;
-#X obj 7 252 chat-set-clr \$0 ch.background.clr background;
-#X obj 7 272 chat-set-clr \$0 ch.active.clr active;
-#X obj 7 292 chat-set-clr \$0 ch.border.clr border;
-#X obj 7 312 chat-set-clr \$0 ch.inputbox.clr inputbox;
-#X obj 7 333 chat-set-clr \$0 cr.background1.clr background1;
-#X obj 7 353 chat-set-clr \$0 cr.background2.clr background2;
-#X obj 7 373 chat-set-clr \$0 cr.label.clr label;
-#X obj 7 393 chat-set-clr \$0 cr.display.clr display;
-#X obj 159 232 chat-set-fnt \$0 ch.title.fnt title;
-#X obj 159 261 chat-set-fnt \$0 ch.talk.fnt talk;
-#X obj 159 290 chat-set-fnt \$0 ch.buttons.fnt buttons;
-#X obj 159 333 chat-set-fnt \$0 cr.title.fnt title;
-#X obj 159 362 chat-set-fnt \$0 cr.label.fnt label;
-#X obj 159 391 chat-set-fnt \$0 cr.display.fnt display;
 #X text 3 94 dynamic dsp-off:;
-#X obj 113 96 tgl 15 0 \$0.dyn.dsp.off \$0.dyn.dsp.off.r empty 17 7
-0 10 -262144 -1 -1 1 1;
+#X obj 113 96 tgl 15 0 \$0.pd-dynamic-dsp-off \$0.pd-dynamic-dsp-off.r
+empty 17 7 0 10 -262144 -1 -1 0 1;
 #X text 51 116 latency:;
-#X floatatom 113 117 5 0 0 0 - #0.pd-audio-latency.r #0.pd-audio-latency
-, f 5;
-#X text 147 117 ms;
+#X floatatom 113 117 10 0 0 0 - #0.pd-audio-latency.r #0.pd-audio-latency
+, f 10;
+#X text 177 117 ms;
+#X text 33 135 appearance:;
+#X obj 116 135 hsl 57 14 0 127 0 0 \$0.show.appearance.dialog \$0.show.appearance.dialog.r
+show 0 8 0 10 -228856 -228856 -1 0 1;
+#X text 3 156 __________________________________________________________
+;
 #X restore 251 306 pd netpd-preferences;
 #X text 252 287 Preferences Window:;
-#N canvas 130 498 240 421 netpd-preferences-code 0;
+#N canvas 133 304 376 422 netpd-preferences-code 0;
 #X obj 14 396 s pd-netpd-preferences;
 #X obj 14 310 r NETPD;
 #X obj 14 331 route pref;
@@ -2190,20 +2124,108 @@ f 40;
 #X obj 14 285 s NETPD;
 #X obj 14 220 b;
 #X obj 14 242 del 100;
-#X obj 14 140 chat-set-pref \$0 dyn.dsp.off;
 #X obj 14 160 chat-set-pref \$0 pd-audio-latency;
+#X obj 156 332 r \$0.show.appearance.dialog;
+#X obj 156 352 sel 0;
+#X obj 201 354 t a;
+#X msg 156 376 vis 1;
+#X obj 156 396 s pd-netpd-preferences-appearance;
+#X obj 14 140 chat-set-pref \$0 pd-dynamic-dsp-off;
+#X obj 116 354 sel 0;
+#X msg 116 374 vis 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
+#X connect 3 0 23 0;
 #X connect 4 0 0 0;
 #X connect 11 0 14 0;
 #X connect 12 0 13 0;
 #X connect 14 0 15 0;
 #X connect 15 0 12 0;
+#X connect 17 0 18 0;
+#X connect 18 0 20 0;
+#X connect 18 1 19 0;
+#X connect 19 0 18 1;
+#X connect 20 0 21 0;
+#X connect 23 0 24 0;
+#X connect 24 0 21 0;
 #X restore 251 325 pd netpd-preferences-code;
 #X obj 251 344 netpd-pref-manager netpd-preferences.cnf;
-#X obj 18 380 netpd-pref-store dyn.dsp.off;
+#X text 308 238 U N P A T C H;
+#N canvas 373 344 380 316 netpd-preferences-appearance 0;
+#X obj 7 57 cnv 15 141 34 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 8 58 cnv 15 139 32 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#X obj 44 59 hsl 100 10 0 255 0 0 \$0-red-s \$0-red-r empty -2 -6 0
+8 -258699 -1 -1 0 0;
+#X obj 44 69 hsl 100 10 0 255 0 0 \$0-grn-s \$0-grn-r empty -2 -6 0
+8 -24198 -1 -1 0 0;
+#X obj 44 79 hsl 100 10 0 255 0 0 \$0-blu-s \$0-blu-r empty -2 -6 0
+8 -62784 -1 -1 0 0;
+#X obj 9 59 cnv 15 30 30 empty empty empty 20 12 0 14 -1 -66577 0;
+#X obj 10 60 cnv 15 28 28 empty \$0-preview empty 20 12 0 14 -1 -1
+0;
+#X text 5 15 ____________________________________________________________
+;
+#X obj 185 60 nbx 2 16 3 40 0 0 \$0.fontsize \$0.fontsize.r empty 0
+-6 0 12 -262144 -1 -1 3 256;
+#X obj 225 60 vradio 11 1 0 3 \$0.fonttype \$0.fonttype.r empty 0 -6
+0 8 -262144 -1 -1 0;
+#X text 238 57 courier;
+#X text 239 68 helvetica;
+#X text 238 80 times;
+#X text 184 74 size;
+#X obj 309 40 cnv 15 15 15 empty \$0-testtext testtext 0 12 0 12 -262144
+-66577 0;
+#X obj 158 29 cnv 1 1 270 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 159 29 cnv 1 1 270 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#X obj 47 29 cnv 15 15 15 empty empty color 0 9 1 14 -262144 -66577
+0;
+#X obj 244 29 cnv 15 15 15 empty empty font 0 9 1 14 -262144 -66577
+0;
+#X text 5 98 ____________________________________________________________
+;
+#X text 359 121 C;
+#X text 359 144 H;
+#X text 359 167 A;
+#X text 359 190 T;
+#X text 5 199 ____________________________________________________________
+;
+#X text 5 287 ____________________________________________________________
+;
+#X obj 7 112 chat-set-clr \$0 ch.font.clr label;
+#X obj 7 132 chat-set-clr \$0 ch.background.clr background;
+#X obj 7 152 chat-set-clr \$0 ch.active.clr active;
+#X obj 7 172 chat-set-clr \$0 ch.border.clr border;
+#X obj 7 192 chat-set-clr \$0 ch.inputbox.clr inputbox;
+#X obj 7 213 chat-set-clr \$0 cr.background1.clr background1;
+#X obj 7 233 chat-set-clr \$0 cr.background2.clr background2;
+#X obj 7 253 chat-set-clr \$0 cr.label.clr label;
+#X obj 7 273 chat-set-clr \$0 cr.display.clr display;
+#X obj 159 112 chat-set-fnt \$0 ch.title.fnt title;
+#X obj 159 141 chat-set-fnt \$0 ch.talk.fnt talk;
+#X obj 159 170 chat-set-fnt \$0 ch.buttons.fnt buttons;
+#X obj 159 213 chat-set-fnt \$0 cr.title.fnt title;
+#X obj 159 242 chat-set-fnt \$0 cr.label.fnt label;
+#X obj 159 271 chat-set-fnt \$0 cr.display.fnt display;
+#X text 6 6 N E T P D - A P P E A R A N C E;
+#X text 359 215 U;
+#X text 359 225 N;
+#X text 359 235 P;
+#X text 359 245 A;
+#X text 359 255 T;
+#X text 359 265 C;
+#X text 359 275 H;
+#X restore 251 363 pd netpd-preferences-appearance;
 #X obj 18 399 netpd-pref-store pd-audio-latency;
+#X obj 18 380 netpd-pref-store pd-dynamic-dsp-off;
+#X obj 18 360 netpd-pref-store netpd-port;
+#X obj 18 341 netpd-pref-store netpd-server;
+#X obj 18 322 netpd-pref-store netpd-welcome;
+#X obj 18 303 netpd-pref-store netpd-name;
 #X restore 12 383 pd preferences;
 #N canvas 349 455 198 192 status 0;
 #N canvas 722 546 235 208 connection 0;
@@ -2359,7 +2381,7 @@ f 40;
 #X connect 8 0 7 0;
 #X connect 10 0 8 0;
 #X restore 12 320 pd INIT;
-#N canvas 515 537 203 90 chat 0;
+#N canvas 515 563 203 90 chat 0;
 #X obj 7 7 r chatgetversion;
 #X obj 7 48 s chatversion;
 #X msg 7 28 2.1.2;
@@ -2523,53 +2545,53 @@ empty 0 -9 0 10 -195568 -195568 -1 0 1;
 -241213 0;
 #X obj 337 24 cnv 12 12 191 empty \$0-scrollbar empty 20 12 0 14 -187246
 -187246 0;
-#X obj 4 200 cnv 15 70 15 empty \$0-1-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 200 cnv 15 70 15 empty \$0-1-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 184 cnv 15 70 15 empty \$0-2-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 184 cnv 15 70 15 empty \$0-2-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 168 cnv 15 70 15 empty \$0-3-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 168 cnv 15 70 15 empty \$0-3-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 152 cnv 15 70 15 empty \$0-4-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 152 cnv 15 70 15 empty \$0-4-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 136 cnv 15 70 15 empty \$0-5-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 136 cnv 15 70 15 empty \$0-5-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 120 cnv 15 70 15 empty \$0-6-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 120 cnv 15 70 15 empty \$0-6-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 104 cnv 15 70 15 empty \$0-7-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 104 cnv 15 70 15 empty \$0-7-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 88 cnv 15 70 15 empty \$0-8-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 88 cnv 15 70 15 empty \$0-8-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 72 cnv 15 70 15 empty \$0-9-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 72 cnv 15 70 15 empty \$0-9-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 56 cnv 15 70 15 empty \$0-10-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 56 cnv 15 70 15 empty \$0-10-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 40 cnv 15 70 15 empty \$0-11-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 40 cnv 15 70 15 empty \$0-11-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 24 cnv 15 70 15 empty \$0-12-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 24 cnv 15 70 15 empty \$0-12-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 75 200 cnv 13 260 15 empty \$0-1-line empty 2 7 0 11 -241213
+#X obj 75 200 cnv 13 260 15 empty \$0-1-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 184 cnv 13 260 15 empty \$0-2-line empty 2 7 0 11 -241213
+#X obj 75 184 cnv 13 260 15 empty \$0-2-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 168 cnv 13 260 15 empty \$0-3-line empty 2 7 0 11 -241213
+#X obj 75 168 cnv 13 260 15 empty \$0-3-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 152 cnv 13 260 15 empty \$0-4-line empty 2 7 0 11 -241213
+#X obj 75 152 cnv 13 260 15 empty \$0-4-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 136 cnv 13 260 15 empty \$0-5-line empty 2 7 0 11 -241213
+#X obj 75 136 cnv 13 260 15 empty \$0-5-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 120 cnv 13 260 15 empty \$0-6-line empty 2 7 0 11 -241213
+#X obj 75 120 cnv 13 260 15 empty \$0-6-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 104 cnv 13 260 15 empty \$0-7-line empty 2 7 0 11 -241213
+#X obj 75 104 cnv 13 260 15 empty \$0-7-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 88 cnv 13 260 15 empty \$0-8-line empty 2 7 0 11 -241213
+#X obj 75 88 cnv 13 260 15 empty \$0-8-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 72 cnv 13 260 15 empty \$0-9-line empty 2 7 0 11 -241213
+#X obj 75 72 cnv 13 260 15 empty \$0-9-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 56 cnv 13 260 15 empty \$0-10-line empty 2 7 0 11 -241213
+#X obj 75 56 cnv 13 260 15 empty \$0-10-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 40 cnv 13 260 15 empty \$0-11-line empty 2 7 0 11 -241213
+#X obj 75 40 cnv 13 260 15 empty \$0-11-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 24 cnv 13 260 15 empty \$0-12-line empty 2 7 0 11 -241213
+#X obj 75 24 cnv 13 260 15 empty \$0-12-line empty 2 7 0 12 -241213
 -262144 0;
 #X obj 149 240 cnv 6 37 16 empty \$0-border empty 6 7 1 12 -1 -1 0
 ;
