@@ -1,5 +1,5 @@
 #N canvas 384 43 363 500 10;
-#N canvas 220 652 172 320 chat 0;
+#N canvas 220 678 172 320 chat 0;
 #N canvas 331 377 444 295 connection 0;
 #X msg 143 175 disconnect;
 #X msg 9 184 connect \$1 \$2;
@@ -31,7 +31,7 @@
 #X connect 12 0 11 0;
 #X connect 13 0 4 0;
 #X restore 17 85 pd connection;
-#N canvas 455 597 192 351 chat-guicode 0;
+#N canvas 455 623 192 351 chat-guicode 0;
 #N canvas 545 95 492 638 talkdisplay 0;
 #N canvas 323 46 684 806 scrolllist 0;
 #X obj 163 547 s \$0-scrollbar;
@@ -1317,7 +1317,7 @@ to its right inlet.;
 #X connect 25 0 6 0;
 #X connect 25 1 8 0;
 #X restore 9 185 pd unpatch-button;
-#N canvas 573 97 500 307 title 0;
+#N canvas 573 96 500 307 title 0;
 #X obj 52 75 r chatversion;
 #X obj 52 54 s chatgetversion;
 #X obj 52 97 list;
@@ -1975,11 +1975,10 @@ vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 #X restore 12 446 pd netpd_related_programs;
 #X text 9 299 Author: Roman Haefeli (roman@netpd.org);
 #X text 9 279 CHAT;
-#N canvas 397 318 518 419 preferences 0;
+#N canvas 482 346 519 454 preferences 0;
 #X text 20 12 colors;
 #X text 18 281 netpd-settings;
 #X text 334 124 C H A T;
-#X text 310 239 C R E A T O R;
 #X obj 15 30 netpd-pref-store ch.font.clr;
 #X obj 15 50 netpd-pref-store ch.background.clr;
 #X obj 15 70 netpd-pref-store ch.active.clr;
@@ -1998,11 +1997,7 @@ vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 #X text 252 13 fonts;
 #X text 17 137 ____________________________________________________________
 ;
-#X obj 18 303 netpd-pref-store netpd-name;
-#X obj 18 322 netpd-pref-store netpd-welcome;
-#X obj 18 341 netpd-pref-store netpd-server;
-#X obj 18 360 netpd-pref-store netpd-port;
-#N canvas 0 355 374 444 netpd-preferences 0;
+#N canvas 0 357 369 236 netpd-preferences 0;
 #X symbolatom 113 15 10 0 0 0 - #0.netpd-name.r #0.netpd-name, f 10
 ;
 #X symbolatom 113 36 40 0 0 0 - #0.netpd-welcome.r #0.netpd-welcome
@@ -2012,87 +2007,37 @@ f 40;
 #X floatatom 113 76 6 0 0 0 - #0.netpd-port.r #0.netpd-port, f 6;
 #X text 69 14 name:;
 #X text 69 74 port:;
-#X obj 7 157 cnv 15 141 34 empty empty empty 20 12 0 14 -1 -66577 0
-;
-#X obj 8 158 cnv 15 139 32 empty empty empty 20 12 0 14 -262144 -66577
-0;
-#X obj 44 159 hsl 100 10 0 255 0 0 \$0-red-s \$0-red-r empty -2 -6
-0 8 -258699 -1 -1 0 0;
-#X obj 44 169 hsl 100 10 0 255 0 0 \$0-grn-s \$0-grn-r empty -2 -6
-0 8 -24198 -1 -1 0 0;
-#X obj 44 179 hsl 100 10 0 255 0 0 \$0-blu-s \$0-blu-r empty -2 -6
-0 8 -62784 -1 -1 0 0;
-#X obj 9 159 cnv 15 30 30 empty empty empty 20 12 0 14 -1 -66577 0
-;
-#X obj 10 160 cnv 15 28 28 empty \$0-preview empty 20 12 0 14 -1 -1
-0;
-#X text 5 115 ____________________________________________________________
-;
-#X obj 185 160 nbx 2 16 3 40 0 0 \$0.fontsize \$0.fontsize.r empty
-0 -6 0 12 -262144 -1 -1 3 256;
-#X obj 225 160 vradio 11 1 0 3 \$0.fonttype \$0.fonttype.r empty 0
--6 0 8 -262144 -1 -1 0;
-#X text 238 157 courier;
-#X text 239 168 helvetica;
-#X text 238 180 times;
-#X text 184 174 size;
-#X obj 309 180 cnv 15 15 15 empty \$0-testtext testtext 0 12 0 12 -262144
--66577 0;
 #X text 39 36 say hello:;
-#X obj 158 129 cnv 1 1 270 empty empty empty 20 12 0 14 -1 -66577 0
-;
-#X obj 159 129 cnv 1 1 270 empty empty empty 20 12 0 14 -262144 -66577
-0;
-#X obj 47 129 cnv 15 15 15 empty empty color 0 9 1 14 -262144 -66577
-0;
-#X obj 244 129 cnv 15 15 15 empty empty font 0 9 1 14 -262144 -66577
-0;
-#X text 5 198 ____________________________________________________________
-;
-#X text 341 215 C;
-#X text 341 238 H;
-#X text 341 264 A;
-#X text 341 290 T;
-#X text 5 299 ____________________________________________________________
-;
-#X text 342 316 C;
-#X text 343 327 R;
-#X text 342 338 E;
-#X text 342 350 A;
-#X text 342 361 T;
-#X text 342 372 O;
-#X text 342 382 R;
-#X obj 11 406 hsl 75 17 0 127 0 0 \$0.closesavesettings \$0-bli save&close
+#X obj 116 206 hsl 237 19 0 127 0 0 \$0.closesavesettings \$0-bli save&close
 2 9 1 11 -233017 -233017 -1 0 1;
-#X text 27 54 IP/hostname:;
-#X text 5 387 ____________________________________________________________
+#X obj 113 116 tgl 15 0 \$0.pd-dynamic-dsp-off \$0.pd-dynamic-dsp-off.r
+empty 17 7 0 10 -262144 -1 -1 1 1;
+#X floatatom 113 137 10 0 0 0 - #0.pd-audio-latency.r #0.pd-audio-latency
+, f 10;
+#X text 177 137 ms;
+#X text 33 155 appearance:;
+#X obj 116 155 hsl 73 14 0 127 0 0 \$0.show.appearance.dialog \$0.show.appearance.dialog.r
+colors&fonts 0 8 0 10 -228856 -228856 -1 0 1;
+#X text 3 176 __________________________________________________________
 ;
-#X obj 7 212 chat-set-clr \$0 ch.font.clr label;
-#X obj 7 232 chat-set-clr \$0 ch.background.clr background;
-#X obj 7 252 chat-set-clr \$0 ch.active.clr active;
-#X obj 7 272 chat-set-clr \$0 ch.border.clr border;
-#X obj 7 292 chat-set-clr \$0 ch.inputbox.clr inputbox;
-#X obj 7 313 chat-set-clr \$0 cr.background1.clr background1;
-#X obj 7 333 chat-set-clr \$0 cr.background2.clr background2;
-#X obj 7 353 chat-set-clr \$0 cr.label.clr label;
-#X obj 7 373 chat-set-clr \$0 cr.display.clr display;
-#X obj 159 212 chat-set-fnt \$0 ch.title.fnt title;
-#X obj 159 241 chat-set-fnt \$0 ch.talk.fnt talk;
-#X obj 159 270 chat-set-fnt \$0 ch.buttons.fnt buttons;
-#X obj 159 313 chat-set-fnt \$0 cr.title.fnt title;
-#X obj 159 342 chat-set-fnt \$0 cr.label.fnt label;
-#X obj 159 371 chat-set-fnt \$0 cr.display.fnt display;
-#X text 3 94 dynamic dsp-off:;
-#X obj 113 96 tgl 15 0 \$0.dyn.dsp.off \$0.dyn.dsp.off.r empty 17 7
-0 10 -262144 -1 -1 1 1;
+#X text 15 136 audio latency:;
+#X text 3 114 dynamic DSP-off:;
+#X text 3 94 DSP on at start:;
+#X text 15 54 IP / hostname:;
+#X obj 113 94 tgl 15 0 \$0.pd-start-dsp \$0.pd-start-dsp.r empty 17
+7 0 10 -262144 -1 -1 1 1;
+#X obj 206 135 hsl 30 14 0 127 0 0 \$0.show.alsa.dialog \$0.show.alsa.dialog.r
+alsa 0 8 0 10 -228856 -228856 -1 0 1;
+#X obj 244 135 hsl 30 14 0 127 0 0 \$0.show.jack.dialog \$0.show.jack.dialog.r
+jack 0 8 0 10 -228856 -228856 -1 0 1;
 #X restore 251 306 pd netpd-preferences;
 #X text 252 287 Preferences Window:;
-#N canvas 130 446 240 421 netpd-preferences-code 0;
-#X obj 14 396 s pd-netpd-preferences;
-#X obj 14 310 r NETPD;
-#X obj 14 331 route pref;
-#X obj 14 352 route gui;
-#X msg 14 373 vis \$1;
+#N canvas 133 294 422 448 netpd-preferences-code 0;
+#X obj 14 426 s pd-netpd-preferences;
+#X obj 14 340 r NETPD;
+#X obj 14 361 route pref;
+#X obj 14 382 route gui;
+#X msg 14 403 vis \$1;
 #N canvas 421 185 245 414 color.setter 0;
 #X obj 10 12 r \$0-red-s;
 #X obj 76 12 r \$0-grn-s;
@@ -2181,23 +2126,281 @@ f 40;
 #X obj 14 83 chat-set-pref \$0 netpd-welcome;
 #X obj 14 102 chat-set-pref \$0 netpd-server;
 #X obj 14 121 chat-set-pref \$0 netpd-port;
-#X obj 14 178 r \$0.closesavesettings;
-#X msg 14 250 pref save \, pref gui 0;
-#X obj 14 272 s NETPD;
-#X obj 14 200 b;
-#X obj 14 222 del 100;
-#X obj 14 140 chat-set-pref \$0 dyn.dsp.off;
+#X obj 14 228 r \$0.closesavesettings;
+#X msg 14 293 pref save \, pref gui 0;
+#X obj 14 315 s NETPD;
+#X obj 14 250 b;
+#X obj 14 272 del 100;
+#X obj 14 180 chat-set-pref \$0 pd-audio-latency;
+#X obj 14 160 chat-set-pref \$0 pd-dynamic-dsp-off;
+#X obj 14 140 chat-set-pref \$0 pd-start-dsp;
+#N canvas 0 43 560 490 show-dialogs 0;
+#X obj 130 27 r \$0.show.appearance.dialog;
+#X obj 130 47 sel 0;
+#X obj 176 50 t a;
+#X msg 130 71 vis 1;
+#X obj 130 91 s pd-netpd-preferences-appearance;
+#X obj 11 16 inlet;
+#X msg 11 47 vis 0;
+#X obj 130 143 sel 0;
+#X obj 176 146 t a;
+#X msg 130 167 vis 1;
+#X obj 130 123 r \$0.show.alsa.dialog;
+#X obj 130 233 sel 0;
+#X obj 176 236 t a;
+#X msg 130 257 vis 1;
+#X obj 130 187 s pd-netpd-preferences-alsa;
+#X obj 130 277 s pd-netpd-preferences-jack;
+#X obj 130 213 r \$0.show.jack.dialog;
+#X msg 41 226 vis 0;
+#X msg 42 185 vis 0;
+#X msg 43 134 vis 0;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 0 19 0;
+#X connect 1 1 2 0;
+#X connect 2 0 1 1;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 6 0 14 0;
+#X connect 6 0 15 0;
+#X connect 7 0 9 0;
+#X connect 7 0 17 0;
+#X connect 7 1 8 0;
+#X connect 8 0 7 1;
+#X connect 9 0 14 0;
+#X connect 10 0 7 0;
+#X connect 11 0 13 0;
+#X connect 11 0 18 0;
+#X connect 11 1 12 0;
+#X connect 12 0 11 1;
+#X connect 13 0 15 0;
+#X connect 16 0 11 0;
+#X connect 17 0 15 0;
+#X connect 17 0 4 0;
+#X connect 18 0 14 0;
+#X connect 18 0 4 0;
+#X connect 19 0 14 0;
+#X connect 19 0 15 0;
+#X restore 159 427 pd show-dialogs;
+#N canvas 641 263 296 419 jack_latency 0;
+#X msg 130 68 2 \$1;
+#X obj 130 89 pow;
+#X obj 130 44 + 6;
+#X obj 18 158 *;
+#X obj 39 135 t b a;
+#X text 47 77 why?;
+#X obj 18 16 r \$0.jack.periods;
+#X obj 130 15 r \$0.jack.frames;
+#X text 69 271 convert samples to ms;
+#X obj 18 271 t a b;
+#X obj 18 318 /;
+#X obj 45 295 samplerate~;
+#X obj 18 341 * 1000;
+#X obj 18 371 outlet;
+#X obj 18 78 + 4;
+#X obj 18 209 + 150;
+#X text 58 211 add constant of 150 samples (why?);
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 0 0;
+#X connect 3 0 15 0;
+#X connect 4 0 3 0;
+#X connect 4 1 3 1;
+#X connect 6 0 14 0;
+#X connect 7 0 2 0;
+#X connect 9 0 10 0;
+#X connect 9 1 11 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 1;
+#X connect 12 0 13 0;
+#X connect 14 0 3 0;
+#X connect 15 0 9 0;
+#X restore 218 332 pd jack_latency;
+#N canvas 238 169 418 371 alsa_latency 0;
+#X obj 173 87 <<;
+#X obj 173 41 t b a;
+#X msg 173 64 64;
+#X text 235 191 ALSA blocksize in ms;
+#X obj 35 159 /;
+#X obj 49 131 t b a;
+#X obj 35 181 int;
+#X obj 35 222 *;
+#X obj 35 202 max 1;
+#X obj 35 76 r \$0.alsa.msec;
+#X obj 173 15 r \$0.alsa.blocksize;
+#X obj 35 297 outlet;
+#X text 224 112 convert samples to ms;
+#X obj 173 112 t a b;
+#X obj 173 159 /;
+#X obj 200 136 samplerate~;
+#X obj 173 182 * 1000;
+#X obj 129 225 loadbang;
+#X obj 129 245 samplerate~;
+#X msg 129 265 1000 \$1;
+#X obj 129 285 /;
+#X obj 129 305 * 198;
+#X obj 35 250 +;
+#X connect 0 0 13 0;
+#X connect 1 0 2 0;
+#X connect 1 1 0 1;
+#X connect 2 0 0 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 5 1 4 1;
+#X connect 5 1 7 1;
+#X connect 6 0 8 0;
+#X connect 7 0 22 0;
+#X connect 8 0 7 0;
+#X connect 9 0 4 0;
+#X connect 10 0 1 0;
+#X connect 13 0 14 0;
+#X connect 13 1 15 0;
+#X connect 14 0 16 0;
+#X connect 15 0 14 1;
+#X connect 16 0 5 0;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 1;
+#X connect 22 0 11 0;
+#X restore 199 310 pd alsa_latency;
+#X obj 199 364 s \$0.pd-audio-latency.r;
+#X obj 116 384 sel 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
+#X connect 3 0 23 0;
 #X connect 4 0 0 0;
 #X connect 11 0 14 0;
 #X connect 12 0 13 0;
 #X connect 14 0 15 0;
 #X connect 15 0 12 0;
-#X restore 251 325 pd netpd-preferences-code;
-#X obj 251 344 netpd-pref-manager netpd-preferences.cnf;
-#X obj 18 380 netpd-pref-store dyn.dsp.off;
+#X connect 20 0 22 0;
+#X connect 21 0 22 0;
+#X connect 23 0 19 0;
+#X restore 251 384 pd netpd-preferences-code;
+#X obj 251 403 netpd-pref-manager netpd-preferences.cnf;
+#X text 308 238 U N P A T C H;
+#N canvas 369 357 380 316 netpd-preferences-appearance 0;
+#X obj 7 57 cnv 15 141 34 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 8 58 cnv 15 139 32 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#X obj 44 59 hsl 100 10 0 255 0 0 \$0-red-s \$0-red-r empty -2 -6 0
+8 -258699 -1 -1 0 0;
+#X obj 44 69 hsl 100 10 0 255 0 0 \$0-grn-s \$0-grn-r empty -2 -6 0
+8 -24198 -1 -1 0 0;
+#X obj 44 79 hsl 100 10 0 255 0 0 \$0-blu-s \$0-blu-r empty -2 -6 0
+8 -62784 -1 -1 0 0;
+#X obj 9 59 cnv 15 30 30 empty empty empty 20 12 0 14 -1 -66577 0;
+#X obj 10 60 cnv 15 28 28 empty \$0-preview empty 20 12 0 14 -1 -1
+0;
+#X text 5 15 ____________________________________________________________
+;
+#X obj 185 60 nbx 2 16 3 40 0 0 \$0.fontsize \$0.fontsize.r empty 0
+-6 0 12 -262144 -1 -1 3 256;
+#X obj 225 60 vradio 11 1 0 3 \$0.fonttype \$0.fonttype.r empty 0 -6
+0 8 -262144 -1 -1 0;
+#X text 238 57 courier;
+#X text 239 68 helvetica;
+#X text 238 80 times;
+#X text 184 74 size;
+#X obj 309 40 cnv 15 15 15 empty \$0-testtext testtext 0 12 0 12 -262144
+-66577 0;
+#X obj 158 29 cnv 1 1 270 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 159 29 cnv 1 1 270 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#X obj 47 29 cnv 15 15 15 empty empty color 0 9 1 14 -262144 -66577
+0;
+#X obj 244 29 cnv 15 15 15 empty empty font 0 9 1 14 -262144 -66577
+0;
+#X text 5 98 ____________________________________________________________
+;
+#X text 359 121 C;
+#X text 359 144 H;
+#X text 359 167 A;
+#X text 359 190 T;
+#X text 5 199 ____________________________________________________________
+;
+#X text 5 287 ____________________________________________________________
+;
+#X obj 7 112 chat-set-clr \$0 ch.font.clr label;
+#X obj 7 132 chat-set-clr \$0 ch.background.clr background;
+#X obj 7 152 chat-set-clr \$0 ch.active.clr active;
+#X obj 7 172 chat-set-clr \$0 ch.border.clr border;
+#X obj 7 192 chat-set-clr \$0 ch.inputbox.clr inputbox;
+#X obj 7 213 chat-set-clr \$0 cr.background1.clr background1;
+#X obj 7 233 chat-set-clr \$0 cr.background2.clr background2;
+#X obj 7 253 chat-set-clr \$0 cr.label.clr label;
+#X obj 7 273 chat-set-clr \$0 cr.display.clr display;
+#X obj 159 112 chat-set-fnt \$0 ch.title.fnt title;
+#X obj 159 141 chat-set-fnt \$0 ch.talk.fnt talk;
+#X obj 159 170 chat-set-fnt \$0 ch.buttons.fnt buttons;
+#X obj 159 213 chat-set-fnt \$0 cr.title.fnt title;
+#X obj 159 242 chat-set-fnt \$0 cr.label.fnt label;
+#X obj 159 271 chat-set-fnt \$0 cr.display.fnt display;
+#X text 6 6 N E T P D - A P P E A R A N C E;
+#X text 359 215 U;
+#X text 359 225 N;
+#X text 359 235 P;
+#X text 359 245 A;
+#X text 359 255 T;
+#X text 359 265 C;
+#X text 359 275 H;
+#X restore 251 325 pd netpd-preferences-appearance;
+#X obj 18 418 netpd-pref-store pd-audio-latency;
+#X obj 18 399 netpd-pref-store pd-dynamic-dsp-off;
+#X obj 18 380 netpd-pref-store pd-start-dsp;
+#X obj 18 360 netpd-pref-store netpd-port;
+#X obj 18 341 netpd-pref-store netpd-server;
+#X obj 18 322 netpd-pref-store netpd-welcome;
+#X obj 18 303 netpd-pref-store netpd-name;
+#N canvas 369 357 326 201 netpd-preferences-alsa 0;
+#X obj 130 65 vradio 15 1 0 7 \$0.alsa.blocksize \$0.bli empty 0 -8
+0 10 -1 -228856 -1 6;
+#X text 113 66 64;
+#X text 107 81 128;
+#X text 107 96 256;
+#X text 107 111 512;
+#X text 101 126 1024;
+#X text 101 143 2048;
+#X text 101 159 4096;
+#X obj 6 65 nbx 4 14 0 3000 0 0 \$0.alsa.msec \$0.blidsk empty 45 8
+0 12 -1 -228856 -1 0 256;
+#X text 59 66 msec;
+#X text 4 48 Delay;
+#X text 81 48 Block size;
+#X text 4 26 Enter currently used ALSA settings:;
+#X text 4 5 CALCULATE AUDIO LATENCY (ALSA);
+#X restore 251 344 pd netpd-preferences-alsa;
+#N canvas 369 357 327 200 netpd-preferences-jack 0;
+#X obj 53 73 vradio 15 1 0 7 \$0.jack.frames \$0.bli empty 0 -8 0 10
+-1 -228856 -1 0;
+#X text 36 74 64;
+#X text 30 89 128;
+#X text 30 104 256;
+#X text 30 119 512;
+#X text 24 134 1024;
+#X text 24 151 2048;
+#X text 4 5 CALCULATE AUDIO LATENCY (JACK);
+#X text 4 26 Enter currently used JACK settings:;
+#X text 4 56 Frames;
+#X text 24 167 4096;
+#X obj 149 73 vradio 15 1 0 7 \$0.jack.periods \$0.bli empty 0 -8 0
+10 -1 -228856 -1 0;
+#X text 100 56 Periods;
+#X text 138 74 2;
+#X text 138 89 3;
+#X text 138 104 4;
+#X text 138 119 5;
+#X text 138 134 6;
+#X text 138 149 7;
+#X text 138 164 8;
+#X restore 251 364 pd netpd-preferences-jack;
 #X restore 12 383 pd preferences;
 #N canvas 349 455 198 192 status 0;
 #N canvas 722 546 235 208 connection 0;
@@ -2318,8 +2521,8 @@ f 40;
 #X connect 16 0 13 0;
 #X restore 8 66 pd unpatch_;
 #X restore 12 404 pd status;
-#N canvas 568 178 317 333 INIT 0;
-#X msg 9 130 \; pd dsp 1;
+#N canvas 568 177 313 294 INIT 0;
+#X msg 10 147 \; pd dsp 1;
 #N canvas 120 155 181 227 netpd-loadbang 0;
 #X obj 8 8 loadbang;
 #X msg 8 28 10;
@@ -2339,21 +2542,23 @@ f 40;
 #X connect 6 0 7 0;
 #X restore 9 18 pd netpd-loadbang;
 #X text 130 20 - ordered loadbang;
-#X obj 9 66 r NETPD;
-#X obj 9 87 route loadbang;
-#X obj 9 108 sel 10;
-#X text 131 133 - start DSP;
-#X obj 14 251 s \$0-toall;
-#X msg 14 229 label empty;
-#X text 17 189 click before saving;
-#X obj 14 208 r \$0.before.saving;
-#X connect 3 0 4 0;
-#X connect 4 0 5 0;
-#X connect 5 0 0 0;
-#X connect 8 0 7 0;
-#X connect 10 0 8 0;
+#X text 74 154 - start DSP;
+#X obj 10 249 s \$0-toall;
+#X msg 10 227 label empty;
+#X text 13 187 click before saving;
+#X obj 10 206 r \$0.before.saving;
+#X obj 10 59 r NETPD;
+#X obj 10 80 route pref;
+#X obj 10 101 route pd-start-dsp;
+#X obj 10 122 sel 1;
+#X connect 5 0 4 0;
+#X connect 7 0 5 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 0 0;
 #X restore 12 320 pd INIT;
-#N canvas 515 537 203 90 chat 0;
+#N canvas 515 563 203 90 chat 0;
 #X obj 7 7 r chatgetversion;
 #X obj 7 48 s chatversion;
 #X msg 7 28 2.1.2;
@@ -2507,7 +2712,7 @@ f 40;
 #X obj 288 240 cnv 6 62 16 empty \$0-border empty 6 7 1 12 -1 -1 0
 ;
 #X obj 292 241 hsl 55 14 0 1 0 0 \$0-showunpatch \$0-showunpatch-r
-empty -2 -8 0 10 -262144 -1 -1 100 1;
+empty -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 289 241 cnv 14 60 14 empty \$0-showunpatch-display unpatch 2
 7 1 10 -241213 -1 0;
 #X obj 336 25 vsl 14 188 187 0 0 0 \$0-scrollsensor \$0-scrollsensor-r
@@ -2517,53 +2722,53 @@ empty 0 -9 0 10 -195568 -195568 -1 0 1;
 -241213 0;
 #X obj 337 24 cnv 12 12 191 empty \$0-scrollbar empty 20 12 0 14 -187246
 -187246 0;
-#X obj 4 200 cnv 15 70 15 empty \$0-1-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 200 cnv 15 70 15 empty \$0-1-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 184 cnv 15 70 15 empty \$0-2-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 184 cnv 15 70 15 empty \$0-2-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 168 cnv 15 70 15 empty \$0-3-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 168 cnv 15 70 15 empty \$0-3-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 152 cnv 15 70 15 empty \$0-4-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 152 cnv 15 70 15 empty \$0-4-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 136 cnv 15 70 15 empty \$0-5-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 136 cnv 15 70 15 empty \$0-5-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 120 cnv 15 70 15 empty \$0-6-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 120 cnv 15 70 15 empty \$0-6-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 104 cnv 15 70 15 empty \$0-7-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 104 cnv 15 70 15 empty \$0-7-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 88 cnv 15 70 15 empty \$0-8-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 88 cnv 15 70 15 empty \$0-8-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 72 cnv 15 70 15 empty \$0-9-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 72 cnv 15 70 15 empty \$0-9-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 56 cnv 15 70 15 empty \$0-10-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 56 cnv 15 70 15 empty \$0-10-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 40 cnv 15 70 15 empty \$0-11-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 40 cnv 15 70 15 empty \$0-11-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 4 24 cnv 15 70 15 empty \$0-12-nick empty 2 7 0 11 -241213 -262144
+#X obj 4 24 cnv 15 70 15 empty \$0-12-nick empty 2 7 0 12 -241213 -262144
 0;
-#X obj 75 200 cnv 13 260 15 empty \$0-1-line empty 2 7 0 11 -241213
+#X obj 75 200 cnv 13 260 15 empty \$0-1-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 184 cnv 13 260 15 empty \$0-2-line empty 2 7 0 11 -241213
+#X obj 75 184 cnv 13 260 15 empty \$0-2-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 168 cnv 13 260 15 empty \$0-3-line empty 2 7 0 11 -241213
+#X obj 75 168 cnv 13 260 15 empty \$0-3-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 152 cnv 13 260 15 empty \$0-4-line empty 2 7 0 11 -241213
+#X obj 75 152 cnv 13 260 15 empty \$0-4-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 136 cnv 13 260 15 empty \$0-5-line empty 2 7 0 11 -241213
+#X obj 75 136 cnv 13 260 15 empty \$0-5-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 120 cnv 13 260 15 empty \$0-6-line empty 2 7 0 11 -241213
+#X obj 75 120 cnv 13 260 15 empty \$0-6-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 104 cnv 13 260 15 empty \$0-7-line empty 2 7 0 11 -241213
+#X obj 75 104 cnv 13 260 15 empty \$0-7-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 88 cnv 13 260 15 empty \$0-8-line empty 2 7 0 11 -241213
+#X obj 75 88 cnv 13 260 15 empty \$0-8-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 72 cnv 13 260 15 empty \$0-9-line empty 2 7 0 11 -241213
+#X obj 75 72 cnv 13 260 15 empty \$0-9-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 56 cnv 13 260 15 empty \$0-10-line empty 2 7 0 11 -241213
+#X obj 75 56 cnv 13 260 15 empty \$0-10-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 40 cnv 13 260 15 empty \$0-11-line empty 2 7 0 11 -241213
+#X obj 75 40 cnv 13 260 15 empty \$0-11-line empty 2 7 0 12 -241213
 -262144 0;
-#X obj 75 24 cnv 13 260 15 empty \$0-12-line empty 2 7 0 11 -241213
+#X obj 75 24 cnv 13 260 15 empty \$0-12-line empty 2 7 0 12 -241213
 -262144 0;
 #X obj 149 240 cnv 6 37 16 empty \$0-border empty 6 7 1 12 -1 -1 0
 ;
