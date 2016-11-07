@@ -1,0 +1,23 @@
+#N canvas 379 44 503 348 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X msg 35 84 7 1;
+#X msg 49 105 0 512;
+#X text 59 62 start \, length;
+#X obj 17 178 netpd-range-slice 64;
+#X msg 17 62 10 200;
+#X obj 17 280 print netpd-range-slice;
+#X text 238 184 inlet0: range (start \, length);
+#X text 232 218 outlet0: range slices;
+#X text 250 166 arg1: slice size;
+#X text 238 201 inlet1: slice size;
+#X text 8 7 netpd-range-slice - splits a range into slices of given
+size;
+#X msg 68 123 1000 300;
+#X msg 74 145 0 64;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 12 0 4 0;
+#X connect 13 0 4 0;
