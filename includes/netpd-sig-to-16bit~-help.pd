@@ -1,0 +1,41 @@
+#N canvas 379 44 505 430 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 308 395 see also:;
+#X text 8 7 netpd-sig-to-16bit - convert signal to two byte-streams
+;
+#X obj 17 177 netpd-sig-to-16bit~;
+#X text 36 357 inlet0: audio signal (-1 to 1);
+#X text 30 370 outlet0: audio signal (MSB);
+#X text 30 383 outlet1: audio signal (LSB);
+#X obj 17 267 snapshot~;
+#X floatatom 17 287 5 0 0 0 - - -, f 5;
+#X obj 127 267 snapshot~;
+#X floatatom 127 287 5 0 0 0 - - -, f 5;
+#X obj 159 223 loadbang;
+#X obj 159 243 metro 100;
+#X obj 20 89 hsl 400 15 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 23600 1;
+#X obj 17 124 sig~;
+#X msg 17 53 -1;
+#X msg 46 53 -0.5;
+#X msg 81 53 0;
+#X msg 110 53 0.5;
+#X msg 139 53 1;
+#X obj 372 394 netpd-16bit-to-sig~;
+#X text 57 287 MSB;
+#X text 165 287 LSB;
+#X connect 3 0 7 0;
+#X connect 3 1 9 0;
+#X connect 7 0 8 0;
+#X connect 9 0 10 0;
+#X connect 11 0 12 0;
+#X connect 12 0 9 0;
+#X connect 12 0 7 0;
+#X connect 13 0 14 0;
+#X connect 14 0 3 0;
+#X connect 15 0 13 0;
+#X connect 16 0 13 0;
+#X connect 17 0 13 0;
+#X connect 18 0 13 0;
+#X connect 19 0 13 0;
