@@ -1,0 +1,47 @@
+#N canvas 439 44 504 466 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 8 7 netpd-nb-until - a non-blocking variant of [until];
+#X text 35 370 inlet0: bang|float;
+#X text 35 385 inlet1: bang (stop);
+#X msg 48 47 1000;
+#X obj 48 142 netpd-nb-until;
+#X obj 129 117 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 150 116 <- stop;
+#X obj 48 215 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 30 400 outlet0: bang when done;
+#X text 30 414 outlet1: series of bangs;
+#N canvas 0 43 405 268 something_that_takes_some_time 0;
+#X obj 13 12 inlet;
+#X msg 13 32 1000;
+#X obj 13 52 until;
+#X msg 13 72 23489.1;
+#X obj 13 92 pow 3.23819;
+#X obj 13 112 t a a;
+#X obj 13 132 /;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 1 6 1;
+#X restore 129 192 pd something_that_takes_some_time;
+#X obj 69 67 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 89 48 <- number of iterations;
+#X text 88 67 <- infinite loop;
+#X text 69 215 <- done;
+#X text 25 262 [netpd-nb-until] works similar to [until] and shoots
+a series of bangs \, but measures the computation time of each iteration
+and delays the subsequent bang accordingly. As a consequence \, Pd
+processing is not blocked from doing anything else and user interaction
+is still possible. The trade-off is determinism. It's totally unforeseeable
+when [netpd-nb-until] will be done.;
+#X connect 4 0 5 0;
+#X connect 5 0 8 0;
+#X connect 5 1 11 0;
+#X connect 6 0 5 1;
+#X connect 12 0 5 0;
