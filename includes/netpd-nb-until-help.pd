@@ -38,9 +38,10 @@ processing is not blocked from doing anything else and user interaction
 is still possible. The trade-off is determinism. It's totally unforeseeable
 when [netpd-nb-until] will be done.;
 #X obj 48 142 netpd-nb-until;
-#X obj 277 114 netpd-funnel;
 #X text 35 385 inlet1: bang to stop;
 #X text 35 370 inlet0: bang|float (number of iterations);
+#X text 313 429 See also:;
+#X obj 384 429 netpd-funnel;
 #X connect 2 0 14 0;
 #X connect 3 0 14 1;
 #X connect 9 0 14 0;
