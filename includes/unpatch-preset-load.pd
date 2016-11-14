@@ -59,6 +59,8 @@
 #X obj 108 135 f;
 #X obj 27 98 r \$0.done;
 #X obj 81 60 r \$0.load;
+#X obj 68 142 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X connect 0 0 7 0;
 #X connect 1 0 6 0;
 #X connect 2 0 4 0;
@@ -73,6 +75,7 @@
 #X connect 11 0 2 0;
 #X connect 12 0 10 0;
 #X connect 13 0 11 0;
+#X connect 14 0 10 0;
 #X restore 284 601 pd set.colors;
 #X obj 196 41 spigot 1;
 #X msg 269 66 0;
@@ -89,7 +92,7 @@
 #X msg 222 272 /unpatch/netcloseall;
 #X obj 19 101 t b a b;
 #X obj 326 221 r \$0.done;
-#N canvas 641 236 416 430 check_format_version 0;
+#N canvas 792 265 416 430 check_format_version 0;
 #X obj 75 17 inlet;
 #X obj 75 40 routeOSC /netpd/preset/format;
 #X msg 75 85 \$1 \$2 0;
@@ -111,11 +114,12 @@
 #X msg 123 180 1;
 #X obj 60 199 sel 1;
 #X obj 60 221 t b b;
-#X msg 106 212 0;
+#X msg 123 214 0;
 #X obj 82 313 s \$0.try.old.format;
 #X obj 60 291 sel 0 -3;
 #X obj 218 267 sel -1 1;
 #X obj 60 358 s \$0.flush;
+#X obj 60 332 del 0;
 #X connect 0 0 1 0;
 #X connect 1 0 15 0;
 #X connect 2 0 5 0;
@@ -140,11 +144,12 @@
 #X connect 20 0 8 0;
 #X connect 20 1 21 0;
 #X connect 21 0 17 1;
-#X connect 23 0 25 0;
+#X connect 23 0 26 0;
 #X connect 23 1 22 0;
 #X connect 23 2 10 0;
 #X connect 24 0 13 0;
 #X connect 24 1 13 0;
+#X connect 26 0 25 0;
 #X restore 65 388 pd check_format_version;
 #X obj 38 366 t a a;
 #X obj 38 478 spigot 0;
@@ -253,7 +258,7 @@ to [unpackOSC];
 #X msg 112 434 0;
 #X msg 83 435 1;
 #X obj 205 186 t b b b b;
-#X msg 19 153 39;
+#X msg 19 153 40;
 #X connect 0 0 26 0;
 #X connect 1 0 2 0;
 #X connect 2 0 19 0;
