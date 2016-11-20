@@ -1,19 +1,19 @@
-#N canvas 535 44 507 634 10;
+#N canvas 535 44 513 646 10;
 #X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X text 324 591 see also:;
+#X text 324 611 see also:;
 #X text 8 7 netpd_text - netpd version of [text];
-#X obj 27 397 netpd_text \$1 text1;
-#X text 27 482 [netpd_text] is a wrapper around Pd's [text] class and
+#X obj 27 417 netpd_text \$1 text1;
+#X text 27 502 [netpd_text] is a wrapper around Pd's [text] class and
 keeps instances among clients in sync. Although it tries to provide
 an interface as similar as possible to the original \, some difference
 in behavior need to consider: All modifications happen asynchronously
 because they're sent through the network.;
-#X obj 27 440 print netpd_text.out;
-#X obj 287 440 print netpd_text.status;
-#X obj 402 590 text;
-#X obj 154 440 print netpd_text.type;
-#X obj 435 590 netpd_head;
+#X obj 27 460 print netpd_text.out;
+#X obj 287 460 print netpd_text.status;
+#X obj 402 610 text;
+#X obj 154 460 print netpd_text.type;
+#X obj 435 610 netpd_head;
 #X obj 316 49 netpd_head \$1 netpd_text-help;
 #X msg 37 73 set 2 -1 another line;
 #X msg 44 94 set 3 2 part of another line;
@@ -41,7 +41,9 @@ because they're sent through the network.;
 #X text 145 326 <- output whole text as a list;
 #X msg 108 348 fromlist this is a message \\\; this is another 1 ...
 \\\;;
-#X text 219 365 set text from list;
+#X msg 123 385 append this will always be appended at the end;
+#X text 414 385 <- append;
+#X text 319 365 ^^ set text from list;
 #X connect 3 0 5 0;
 #X connect 3 1 8 0;
 #X connect 3 2 6 0;
@@ -59,3 +61,4 @@ because they're sent through the network.;
 #X connect 30 0 3 0;
 #X connect 33 0 3 0;
 #X connect 35 0 3 0;
+#X connect 36 0 3 0;
