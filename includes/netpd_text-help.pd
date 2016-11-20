@@ -1,4 +1,4 @@
-#N canvas 535 44 513 646 10;
+#N canvas 520 43 513 646 10;
 #X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 324 611 see also:;
@@ -44,6 +44,30 @@ because they're sent through the network.;
 #X msg 123 385 append this will always be appended at the end;
 #X text 414 385 <- append;
 #X text 319 365 ^^ set text from list;
+#N canvas 70 43 485 419 more_about_netpd_text 0;
+#X text 21 13 Alternatively \, you can also use the common [text] subclasses
+for accessing data in [netpd_text]. However \, DO NOT use the [text]
+subclasses for modifying the data \, since those changes are not replicated
+through netpd.;
+#X obj 33 141 print text-get;
+#X floatatom 33 96 5 0 0 0 - - -, f 5;
+#X obj 33 121 text get 0-text1;
+#X text 140 120 <- think of the '0' to be a \$1;
+#X text 75 96 <- get lines from text;
+#X text 32 190 DON'T DO THIS:;
+#X obj 35 235 text delete 0-text1;
+#X msg 35 212 delete 5;
+#X obj 29 332 text search 0-text1;
+#X obj 161 332 text sequence 0-text1;
+#X text 24 284 However \, you access data in ways that are not directly
+supported by [netpd_text]'s methods:;
+#X text 45 355 (refer to the help of [ŧext]);
+#X text 162 235 <- this will NOT be synchronized between clients;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 8 0 7 0;
+#X restore 35 593 pd more_about_netpd_text;
+#X text 189 593 <- Some important notes;
 #X connect 3 0 5 0;
 #X connect 3 1 8 0;
 #X connect 3 2 6 0;
