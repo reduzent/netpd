@@ -1,6 +1,6 @@
-#N canvas 589 44 323 345 10;
-#X declare -path instruments/abs;
-#N canvas 366 44 226 316 unpatch 1;
+#N canvas 585 14 354 354 10;
+#X declare -path instruments/abs -path ../instruments/abs;
+#N canvas 359 14 226 316 unpatch 1;
 #X obj 5 7 cnv 5 207 297 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 6 64 cnv 12 205 13 empty \$0.gui.bg1 empty 5 6 1 9 -199731 -1
 0;
@@ -1751,4 +1751,5 @@ update netpd!;
 #X connect 3 0 4 0;
 #X connect 5 0 2 0;
 #X restore 17 309 pd unpatch_version;
-#X obj 17 52 declare -path instruments/abs;
+#X obj 17 52 declare -path instruments/abs -path ../instruments/abs
+;
