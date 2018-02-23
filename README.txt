@@ -10,7 +10,7 @@ or use pre-existing ones. The set of patches, as well as the state of
 each is synchronized between clients in order to provide identical
 experience for every connected user.
 
-  Read more: 
+  Read more:
   http://www.netpd.org
 
 NOTE: This repository|archive contains only the netpd framework. The
@@ -49,7 +49,7 @@ NOTE: Support for Pd-extended is going to fade out slowly as netpd is going
 intro
 =====
 
-* Open netpd/chat.pd with Pd
+* Open netpd/main.pd with Pd
   chat automatically connects to the server and you can
   now talk to other users.
   Click 'list' to get a list of currently connnected users.
@@ -60,10 +60,10 @@ intro
   are first downloaded from other users, if necessary).
 
 * Load instruments with unpatch by clicking the square button next
-  to the 'netload instrument' label. Browse to netpd/patches and pick
-  an instrument (if your netpd/patches directory is empty, you need
-  to get some instruments first. Read above). 
-  Alternatively, just type the name of the instrument (without the 
+  to the 'netload instrument' label. Browse to netpd/instruments and pick
+  an instrument (if your netpd/instruments directory is empty, you need
+  to get some instruments first. Read above).
+  Alternatively, just type the name of the instrument (without the
   extension .pd) into the symbol box and hit enter.
 
 * Play an instrument by clicking its name in unpatch. The instru-
@@ -77,8 +77,8 @@ intro
   save it. You might want to check existing instruments to get an
   idea of how to cook your own instrument. There will be section
   about this topic on http://www.netpd.org/docs .
-  NOTE: instruments belong to netpd/patches, their abstractions to 
-  netpd/abs.
+  NOTE: instruments belong to netpd/instruments, their abstractions to
+  netpd/instruments/abs.
 
 
 copyright
@@ -104,8 +104,8 @@ releases
   * Turn on/off printing of all incoming and outgoing OSC
     message with cmdline option
   * Turn on/off state messages for testing and debugging
-    with cmdline option 
-  
+    with cmdline option
+
 2.0
   * Complete rewrite
   * Messaging layer based on OSC
