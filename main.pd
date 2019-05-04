@@ -1,6 +1,4 @@
 #N canvas 0 43 359 267 10;
-#X declare -stdpath extra/osc;
 #X declare -path . -path includes;
-#X obj 42 151 declare -stdpath extra/osc;
 #X obj 42 131 declare -path . -path includes;
 #X obj 4 4 chat;

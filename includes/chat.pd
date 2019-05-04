@@ -1,5 +1,6 @@
-#N canvas 384 43 363 500 10;
-#N canvas 212 308 172 320 chat 0;
+#N canvas 384 132 363 500 10;
+#X declare -path osc;
+#N canvas 212 374 172 320 chat 0;
 #N canvas 331 376 444 295 connection 0;
 #X msg 143 175 disconnect;
 #X msg 9 184 connect \$1 \$2;
@@ -1617,7 +1618,7 @@ to its right inlet.;
 #X connect 12 0 11 0;
 #X connect 14 0 12 0;
 #X restore 17 66 pd chat-guicode;
-#N canvas 392 495 279 249 CLIENT 0;
+#N canvas 392 528 279 249 CLIENT 0;
 #X obj 22 207 s NETPD;
 #X obj 22 16 r NETPD;
 #X msg 22 148 connection \$1;
@@ -2021,13 +2022,11 @@ vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 #X text 17 137 ____________________________________________________________
 ;
 #N canvas 0 357 376 256 netpd-preferences 0;
-#X symbolatom 120 15 10 0 0 0 - #0.netpd-name.r #0.netpd-name, f 10
-;
+#X symbolatom 120 15 10 0 0 0 - #0.netpd-name.r #0.netpd-name;
 #X symbolatom 120 36 40 0 0 0 - #0.netpd-welcome.r #0.netpd-welcome
-, f 40;
-#X symbolatom 120 56 40 0 0 0 - #0.netpd-server.r #0.netpd-server,
-f 40;
-#X floatatom 120 76 6 0 0 0 - #0.netpd-port.r #0.netpd-port, f 6;
+;
+#X symbolatom 120 56 40 0 0 0 - #0.netpd-server.r #0.netpd-server;
+#X floatatom 120 76 6 0 0 0 - #0.netpd-port.r #0.netpd-port;
 #X text 76 14 name:;
 #X text 76 74 port:;
 #X text 46 36 say hello:;
@@ -2036,7 +2035,7 @@ f 40;
 #X obj 120 134 tgl 15 0 \$0.pd-dynamic-dsp-off \$0.pd-dynamic-dsp-off.r
 empty 17 7 0 10 -262144 -1 -1 1 1;
 #X floatatom 120 157 10 0 0 0 - #0.pd-audio-latency.r #0.pd-audio-latency
-, f 10;
+;
 #X text 183 157 ms;
 #X text 40 175 appearance:;
 #X obj 123 175 hsl 73 14 0 127 0 0 \$0.show.appearance.dialog \$0.show.appearance.dialog.r
@@ -2055,7 +2054,7 @@ alsa 0 8 0 10 -228856 -228856 -1 0 1;
 jack 0 8 0 10 -228856 -228856 -1 0 1;
 #X text 4 94 connect at start:;
 #X obj 120 94 tgl 15 0 \$0.netpd-auto-connect \$0.netpd-auto-connect.r
-empty 17 7 0 10 -262144 -1 -1 0 1;
+empty 17 7 0 10 -262144 -1 -1 1 1;
 #X restore 251 306 pd netpd-preferences;
 #X text 252 287 Preferences Window:;
 #N canvas 133 293 422 448 netpd-preferences-code 0;
@@ -2549,7 +2548,7 @@ empty 17 7 0 10 -262144 -1 -1 0 1;
 #X connect 16 0 13 0;
 #X restore 8 66 pd unpatch_;
 #X restore 12 404 pd status;
-#N canvas 568 227 304 382 INIT 0;
+#N canvas 568 260 304 382 INIT 1;
 #X msg 47 187 \; pd dsp 1;
 #N canvas 120 208 181 227 netpd-loadbang 0;
 #X obj 8 8 loadbang;
@@ -2733,7 +2732,7 @@ empty 17 7 0 10 -262144 -1 -1 0 1;
 ;
 #X obj 68 222 cnv 12 280 12 empty \$0-input empty 6 7 1 12 -241213
 -241213 0;
-#X symbolatom 67 221 46 0 0 0 - #0-inputbox-r #0-inputbox, f 46;
+#X symbolatom 67 221 46 0 0 0 - #0-inputbox-r #0-inputbox;
 #X obj 3 240 cnv 6 60 16 empty \$0-border empty 6 7 1 12 -1 -1 0;
 #X obj 7 241 hsl 53 14 0 1 0 0 \$0-connect \$0-connect-r empty -2 -8
 0 10 -262144 -1 -1 0 1;
@@ -2821,6 +2820,7 @@ empty 0 -9 0 10 -195568 -195568 -1 0 1;
 ;
 #X obj 194 241 hsl 20 14 0 1 0 0 \$0-dsp \$0-dsp-r empty -2 -8 0 10
 -262144 -1 -1 0 1;
-#X obj 191 241 cnv 14 25 14 empty \$0-dsp-display dsp 2 7 1 10 -241213
+#X obj 191 241 cnv 14 25 14 empty \$0-dsp-display dsp 2 7 1 10 -187246
 -1 0;
+#X obj 55 277 declare -path osc;
 #X coords 0 -1 1 1 347 254 2 3 2;
