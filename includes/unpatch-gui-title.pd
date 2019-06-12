@@ -1,4 +1,4 @@
-#N canvas 713 56 440 391 10;
+#N canvas 713 99 440 391 10;
 #X obj 21 52 loadbang;
 #X obj 40 193 list;
 #X obj 21 220 list;
@@ -6,8 +6,8 @@
 #X obj 90 224 makefilename %c;
 #X obj 21 74 t b b b;
 #X obj 21 249 list prepend;
-#X obj 21 271 list prepend UNPATCH;
-#X obj 20 20 cnv 13 121 13 empty \$0.title empty 5 8 1 12 -199731 -1
+#X obj 21 271 list prepend u\ n\ p\ a\ t\ c\ h;
+#X obj 20 20 cnv 13 121 13 empty \$0.title empty 5 7 1 12 -199731 -1
 0;
 #X obj 21 323 s \$0.title;
 #X obj 209 93 netpd-pref-get cr.background1.clr 1;
@@ -17,7 +17,6 @@
 #X obj 227 183 t b a;
 #X obj 209 208 pack f f;
 #X msg 209 230 color \$1 \$2;
-#X msg 21 293 label \$1\$2\$3.\$4.\$5;
 #X msg 40 96 getversion;
 #X obj 40 118 s UNPATCH;
 #X obj 40 140 r UNPATCH;
@@ -25,16 +24,17 @@
 #X obj 217 264 netpd-pref-get cr.title.fnt 1;
 #X msg 217 286 label_font \$1 \$2;
 #X msg 156 343 label empty;
+#X msg 21 293 label \$1;
 #X connect 0 0 5 0;
 #X connect 1 0 2 1;
 #X connect 2 0 6 0;
 #X connect 3 0 4 0;
 #X connect 4 0 6 1;
 #X connect 5 0 2 0;
-#X connect 5 1 18 0;
+#X connect 5 1 17 0;
 #X connect 5 2 3 0;
 #X connect 6 0 7 0;
-#X connect 7 0 17 0;
+#X connect 7 0 24 0;
 #X connect 10 0 12 0;
 #X connect 11 0 13 0;
 #X connect 12 0 15 0;
@@ -43,11 +43,11 @@
 #X connect 14 1 15 1;
 #X connect 15 0 16 0;
 #X connect 16 0 9 0;
-#X connect 17 0 9 0;
-#X connect 18 0 19 0;
-#X connect 20 0 21 0;
-#X connect 21 0 1 0;
-#X connect 22 0 23 0;
+#X connect 17 0 18 0;
+#X connect 19 0 20 0;
+#X connect 20 0 1 0;
+#X connect 21 0 22 0;
+#X connect 22 0 9 0;
 #X connect 23 0 9 0;
 #X connect 24 0 9 0;
 #X coords 0 -1 1 1 121 13 2 20 20;
