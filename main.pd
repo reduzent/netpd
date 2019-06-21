@@ -1,4 +1,4 @@
-#N canvas 0 43 359 267 10;
+#N canvas 0 14 359 267 10;
 #X declare -path . -path includes;
 #X obj 42 131 declare -path . -path includes;
 #X obj 4 4 chat;
