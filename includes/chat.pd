@@ -1,4 +1,4 @@
-#N canvas 359 1332 369 510 10;
+#N canvas 43 132 369 543 10;
 #X declare -path osc;
 #N canvas 212 1365 172 320 chat 0;
 #N canvas 331 376 444 295 connection 0;
@@ -1759,16 +1759,17 @@ a dummy message every 60;
 #X connect 11 0 6 0;
 #X restore 15 261 pd bell&click;
 #X restore 12 341 pd chat;
-#N canvas 507 1343 325 236 netpd_related_programs 0;
+#N canvas 454 176 308 274 netpd_related_programs 0;
 #X obj 18 12 r \$0-unpatch;
 #N canvas 475 1332 241 127 \$0.unpatch.container 0;
-#X restore 18 207 pd \$0.unpatch.container;
+#X restore 18 227 pd \$0.unpatch.container;
 #X obj 18 37 sel 0 1;
 #X obj 37 58 \$0;
-#X obj 18 151 \$0;
-#X msg 18 172 \; pd-\$1.unpatch.container clear;
-#X msg 37 79 \; pd-\$1.unpatch.container obj 20 20 unpatch \; pd-unpatch.pd
-vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
+#X obj 18 171 \$0;
+#X msg 18 192 \; pd-\$1.unpatch.container clear;
+#X msg 37 79 \; pd-\$1.unpatch.container obj 20 20 unpatch ../instruments/abs
+\; pd-unpatch.pd vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang
+\;;
 #X connect 0 0 2 0;
 #X connect 2 0 4 0;
 #X connect 2 1 3 0;
@@ -1777,7 +1778,7 @@ vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 #X restore 12 426 pd netpd_related_programs;
 #X text 9 299 Author: Roman Haefeli (roman@netpd.org);
 #X text 9 279 CHAT;
-#N canvas 482 340 518 465 preferences 0;
+#N canvas 482 340 587 529 preferences 0;
 #X text 20 12 colors;
 #X text 18 281 netpd-settings;
 #X text 334 124 C H A T;
@@ -1833,8 +1834,8 @@ jack 0 8 0 10 -228856 -228856 -1 0 1;
 #X text 4 94 connect at start:;
 #X obj 120 94 tgl 15 0 \$0.netpd-auto-connect \$0.netpd-auto-connect.r
 empty 17 7 0 10 -262144 -1 -1 1 1;
-#X restore 251 306 pd netpd-preferences;
-#X text 252 287 Preferences Window:;
+#X restore 271 303 pd netpd-preferences;
+#X text 272 284 Preferences Window:;
 #N canvas 133 293 422 448 netpd-preferences-code 0;
 #X obj 14 426 s pd-netpd-preferences;
 #X obj 14 340 r NETPD;
@@ -2085,8 +2086,8 @@ empty 17 7 0 10 -262144 -1 -1 1 1;
 #X connect 16 0 18 0;
 #X connect 17 0 18 0;
 #X connect 19 0 15 0;
-#X restore 251 384 pd netpd-preferences-code;
-#X obj 251 403 netpd-pref-manager netpd-preferences.cnf;
+#X restore 271 379 pd netpd-preferences-code;
+#X obj 271 398 netpd-pref-manager netpd-preferences.cnf;
 #X text 308 238 U N P A T C H;
 #N canvas 369 357 380 316 netpd-preferences-appearance 0;
 #X obj 7 57 cnv 15 141 34 empty empty empty 20 12 0 14 -1 -66577 0
@@ -2155,10 +2156,10 @@ empty 17 7 0 10 -262144 -1 -1 1 1;
 #X text 359 255 T;
 #X text 359 265 C;
 #X text 359 275 H;
-#X restore 251 325 pd netpd-preferences-appearance;
-#X obj 18 436 netpd-pref-store pd-audio-latency;
-#X obj 18 417 netpd-pref-store pd-dynamic-dsp-off;
-#X obj 18 398 netpd-pref-store pd-start-dsp;
+#X restore 271 322 pd netpd-preferences-appearance;
+#X obj 18 455 netpd-pref-store pd-audio-latency;
+#X obj 18 436 netpd-pref-store pd-dynamic-dsp-off;
+#X obj 18 417 netpd-pref-store pd-start-dsp;
 #N canvas 369 357 326 201 netpd-preferences-alsa 0;
 #X obj 130 65 vradio 15 1 0 7 \$0.alsa.blocksize \$0.bli empty 0 -8
 0 10 -1 -228856 -1 6;
@@ -2176,7 +2177,7 @@ empty 17 7 0 10 -262144 -1 -1 1 1;
 #X text 81 48 Block size;
 #X text 4 26 Enter currently used ALSA settings:;
 #X text 4 5 CALCULATE AUDIO LATENCY (ALSA);
-#X restore 251 344 pd netpd-preferences-alsa;
+#X restore 271 341 pd netpd-preferences-alsa;
 #N canvas 369 357 327 200 netpd-preferences-jack 0;
 #X obj 53 73 vradio 15 1 0 7 \$0.jack.frames \$0.bli empty 0 -8 0 10
 -1 -228856 -1 0;
@@ -2200,12 +2201,13 @@ empty 17 7 0 10 -262144 -1 -1 1 1;
 #X text 138 134 6;
 #X text 138 149 7;
 #X text 138 164 8;
-#X restore 251 364 pd netpd-preferences-jack;
+#X restore 271 360 pd netpd-preferences-jack;
 #X obj 18 379 netpd-pref-store netpd-auto-connect;
 #X obj 18 360 netpd-pref-store netpd-port;
 #X obj 18 341 netpd-pref-store netpd-server;
 #X obj 18 322 netpd-pref-store netpd-welcome;
 #X obj 18 303 netpd-pref-store netpd-name;
+#X obj 18 398 netpd-pref-store netpd-instruments-path;
 #X restore 12 363 pd preferences;
 #N canvas 724 1352 198 192 status 0;
 #N canvas 722 1332 235 208 connection 0;
@@ -2616,7 +2618,7 @@ empty 0 -9 0 10 -195568 -195568 -1 0 1;
 #X obj 190 240 cnv 6 27 16 empty \$0-border empty 6 7 1 12 -1 -1 0
 ;
 #X obj 194 241 hsl 20 14 0 1 0 0 \$0-dsp \$0-dsp-r empty -2 -8 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 200 1;
 #X obj 191 241 cnv 14 25 14 empty \$0-dsp-display dsp 2 7 1 10 -241213
 -1 0;
 #X obj 231 336 loadbang;
