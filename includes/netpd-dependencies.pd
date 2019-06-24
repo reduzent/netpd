@@ -67,8 +67,8 @@
 #X msg 274 217 \$1/abs/\$2.pd;
 #X obj 103 556 list prepend;
 #X obj 170 533 list prepend;
-#X msg 103 604 \$2/\$2.pd;
 #X msg 170 580 \$1/abs/\$2.pd;
+#X msg 103 604 \$1/\$2.pd;
 #X connect 0 0 33 0;
 #X connect 1 0 4 0;
 #X connect 2 0 0 0;
@@ -141,7 +141,7 @@
 #X connect 61 0 64 1;
 #X connect 62 0 50 1;
 #X connect 63 0 50 1;
-#X connect 64 0 66 0;
-#X connect 65 0 67 0;
+#X connect 64 0 67 0;
+#X connect 65 0 66 0;
 #X connect 66 0 12 0;
 #X connect 67 0 12 0;
