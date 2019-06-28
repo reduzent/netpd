@@ -1,0 +1,24 @@
+#N canvas 453 65 505 424 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X symbolatom 147 206 10 0 0 0 - - -;
+#X msg 225 209 32;
+#X text 264 210 <- use a white space as delimiter;
+#X symbolatom 48 169 20 0 0 0 - - -;
+#X obj 48 299 print netpd-symbol2list;
+#X obj 48 264 netpd-symbol2list;
+#X text 8 7 netpd-symbol2list - split incoming symbol to list;
+#X text 16 43 [netpd-symbol2list] splits an incoming symbol to a list
+using the symbol from the right inlet as delimiter.;
+#X text 17 84 NOTE: Only the first character of the delimiter symbol
+is used.;
+#X text 256 272 inlet0: symbol;
+#X text 256 286 inlet1: delimiter symbol or float;
+#X text 257 301 outlet0: list;
+#X text 257 316 arg1: delimiter symbol or float;
+#X text 17 114 NOTE: If a float is given as delimiter symbol \, its
+ascii value is used as delimiter character.;
+#X connect 1 0 6 1;
+#X connect 2 0 6 1;
+#X connect 4 0 6 0;
+#X connect 6 0 5 0;
