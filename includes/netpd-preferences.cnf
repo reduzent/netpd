@@ -3,6 +3,7 @@ netpd-welcome <<<<<<<<<<<<<connected<<<<<<<<<<<<<<<<<
 netpd-server netpd.org
 netpd-port 3025
 netpd-auto-connect 1
+netpd-instruments-path ../instruments
 pd-start-dsp 1
 pd-dynamic-dsp-off 1
 pd-audio-latency 50

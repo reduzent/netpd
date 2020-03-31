@@ -1,4 +1,4 @@
-#N canvas 520 44 504 323 10;
+#N canvas 520 65 504 323 10;
 #X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 7 7 netpd-if-file - check if given file exists;
@@ -13,8 +13,6 @@
 and returns a '1' for true and '0' for false.;
 #X text 217 189 inlet0: path to patch;
 #X text 211 206 outlet0: 0|1;
-#X text 7 75 [netpd-if-file] uses [readdir] from moocow and [gettir]
-from ggee internally.;
 #X connect 2 0 3 0;
 #X connect 3 0 7 0;
 #X connect 4 0 2 0;
