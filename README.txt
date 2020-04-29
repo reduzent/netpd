@@ -26,15 +26,14 @@ You may want to clone all at once by doing:
 prerequisites
 =============
 
-You need to have Pure Data (>= 0.45) installed. The following Pd
+You need to have Pure Data (>= 0.49) installed. The following Pd
 externals are needed, too. You can install them through the Pd menu
 'Help' -> 'Find externals':
 
   * binfile
-  * ggee
+  * else
   * iemnet
   * iemlib
-  * readdir
   * osc
   * slip
   * zexy
@@ -84,14 +83,21 @@ intro
 copyright
 =========
 
-2008-2015, Roman Haefeli <roman@netpd.org>
+2008-2020, Roman Haefeli <roman@netpd.org>
 Published under the Gnu Public License (GPL-2)
 
 
 releases
 ========
 
-2.1
+2.2 (upcoming)
+  * add support for OSC blob data
+  * support audio transmissions (samples or live)
+  * new netpd abstraction: [netpd_sample]
+  * make instruments directory configurable
+  * add configuration parameter for latency compensation
+
+2.1 (2013-03-10)
   * Improved reliability of finding a sync peer (breaks
     compatibility with v2.0)
   * Added non-blocking until [netpd-nb-until]
@@ -106,7 +112,7 @@ releases
   * Turn on/off state messages for testing and debugging
     with cmdline option
 
-2.0
+2.0 (2012-05-20)
   * Complete rewrite
   * Messaging layer based on OSC
   * Consequent use of namespaces
