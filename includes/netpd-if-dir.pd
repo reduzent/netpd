@@ -1,0 +1,15 @@
+#N canvas 176 347 330 223 10;
+#X declare -path else;
+#X text 160 87 1: yes;
+#X text 160 100 0: no;
+#X obj 28 57 inlet;
+#X obj 28 79 symbol;
+#X obj 91 179 outlet;
+#X obj 26 18 declare -path else;
+#X obj 28 152 dir, f 11;
+#X msg 28 126 reset \, open \$1;
+#X text 105 65 check \, if given directory exists:;
+#X connect 2 0 3 0;
+#X connect 3 0 7 0;
+#X connect 6 3 4 0;
+#X connect 7 0 6 0;
