@@ -26,7 +26,7 @@ You may want to clone all at once by doing:
 prerequisites
 =============
 
-You need to have Pure Data (>= 0.49) installed. The following Pd
+You need to have Pure Data (>= 0.50) installed. The following Pd
 externals are needed, too. You can install them through the Pd menu
 'Help' -> 'Find externals':
 
@@ -90,7 +90,7 @@ Published under the Gnu Public License (GPL-2)
 releases
 ========
 
-2.2 (upcoming)
+2.2 (2020-05-01)
   * add support for OSC blob data
   * support audio transmissions (samples or live)
   * new netpd abstraction: [netpd_sample]
