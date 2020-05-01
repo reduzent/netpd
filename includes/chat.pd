@@ -1,4 +1,4 @@
-#N canvas 0 165 369 543 10;
+#N canvas 0 190 369 543 10;
 #X declare -path osc;
 #N canvas 212 1365 172 320 chat 0;
 #N canvas 331 376 444 295 connection 0;
@@ -1778,7 +1778,7 @@ a dummy message every 60;
 #X restore 12 426 pd netpd_related_programs;
 #X text 9 299 Author: Roman Haefeli (roman@netpd.org);
 #X text 9 279 CHAT;
-#N canvas 482 340 587 529 preferences 0;
+#N canvas 472 332 587 529 preferences 0;
 #X text 20 12 colors;
 #X text 18 281 netpd-settings;
 #X text 334 124 C H A T;
@@ -1830,7 +1830,7 @@ colors&fonts 0 8 0 10 -228856 -228856 -1 0 1;
 #X obj 212 175 hsl 30 14 0 127 0 0 \$0.show.alsa.dialog \$0.show.alsa.dialog.r
 alsa 0 8 0 10 -228856 -228856 -1 0 1;
 #X obj 250 175 hsl 30 14 0 127 0 0 \$0.show.jack.dialog \$0.show.jack.dialog.r
-jack 0 8 0 10 -228856 -228856 -1 400 1;
+jack 0 8 0 10 -228856 -228856 -1 0 1;
 #X text 4 114 connect at start:;
 #X obj 120 117 tgl 15 0 \$0.netpd-auto-connect \$0.netpd-auto-connect.r
 empty 17 7 0 10 -262144 -1 -1 1 1;
@@ -1841,7 +1841,7 @@ empty 17 7 0 10 -262144 -1 -1 1 1;
 \$0.blu empty 0 -9 0 10 -228856 -228856 -1 0 1;
 #X restore 271 303 pd netpd-preferences;
 #X text 272 284 Preferences Window:;
-#N canvas 133 293 417 497 netpd-preferences-code 0;
+#N canvas 123 285 417 497 netpd-preferences-code 0;
 #X obj 14 456 s pd-netpd-preferences;
 #X obj 14 370 r NETPD;
 #X obj 14 391 route pref;
@@ -2375,7 +2375,7 @@ empty 17 7 0 10 -262144 -1 -1 1 1;
 #X connect 10 1 5 1;
 #X restore 8 88 pd netpd_version;
 #X restore 12 384 pd status;
-#N canvas 640 181 304 382 INIT 0;
+#N canvas 610 256 306 426 INIT 0;
 #X msg 47 217 \; pd dsp 1;
 #N canvas 120 208 181 227 netpd-loadbang 0;
 #X obj 8 8 loadbang;
@@ -2412,6 +2412,40 @@ empty 17 7 0 10 -262144 -1 -1 1 1;
 #X text 134 250 set to 1 when not defined;
 #X obj 8 250 s \$0.pd-start-dsp.r;
 #X obj 10 16 declare -path osc;
+#N canvas 0 99 492 310 check.instruments.path 0;
+#X obj 14 23 netpd-pref-get netpd-instruments-path;
+#X msg 33 72 symbol \$1/abs;
+#X obj 14 127 netpd-if-dir;
+#X obj 14 100 t a a;
+#X obj 14 150 list append;
+#X obj 14 173 route 0 1;
+#X obj 14 203 list;
+#X obj 14 271 netpd-error NETPD;
+#X msg 14 230 instruments directory '\$1' does not exist. Please check
+netpd-instruments-dir in preferences.;
+#X obj 14 46 t a a a;
+#X obj 161 53 loadbang;
+#X obj 161 91 symbol <not_set>;
+#X obj 161 114 sel <not_set>;
+#X msg 161 139 instruments directory not configured. Please check netpd-instruments-dir
+in preferences.;
+#X connect 0 0 9 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 3 1 4 1;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 8 0;
+#X connect 8 0 7 0;
+#X connect 9 0 3 0;
+#X connect 9 1 1 0;
+#X connect 9 2 11 1;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 7 0;
+#X restore 5 385 pd check.instruments.path;
 #X connect 5 0 4 0;
 #X connect 7 0 5 0;
 #X connect 8 0 12 0;
@@ -2561,7 +2595,7 @@ empty 17 7 0 10 -262144 -1 -1 1 1;
 -241213 -1 0;
 #X obj 67 240 cnv 6 37 16 empty \$0-border empty 6 7 1 12 -1 -1 0;
 #X obj 71 241 hsl 30 14 0 1 0 0 \$0-list \$0-list-r empty -2 -8 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 300 1;
 #X obj 68 241 cnv 14 35 14 empty \$0-list-display list 2 7 1 10 -241213
 -1 0;
 #X obj 108 240 cnv 6 37 16 empty \$0-border empty 6 7 1 12 -1 -1 0
