@@ -26,7 +26,7 @@ You may want to clone all at once by doing:
 prerequisites
 =============
 
-You need to have Pure Data (>= 0.50) installed. The following Pd
+You need to have Pure Data (>= 0.51) installed. The following Pd
 externals are needed, too. You can install them through the Pd menu
 'Help' -> 'Find externals':
 
