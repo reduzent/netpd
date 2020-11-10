@@ -2678,7 +2678,7 @@ empty 0 -9 0 10 -195568 -195568 -1 0 1;
 #X obj 191 241 cnv 14 25 14 empty \$0-dsp-display dsp 2 7 1 10 -241213
 -1 0;
 #X obj 231 336 loadbang;
-#X msg 231 359 2 2 0;
+#X msg 231 359 2 2 1;
 #N canvas 0 1299 414 142 set_version 0;
 #X obj 6 19 inlet;
 #X obj 6 46 list prepend status set version;
