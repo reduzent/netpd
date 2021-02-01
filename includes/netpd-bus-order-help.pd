@@ -1,0 +1,34 @@
+#N canvas 283 106 502 482 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 8 7 netpd-bus-order - create two busses with defined msg order
+;
+#X text 12 404 arg0: standard bus ID (usually \$1);
+#X text 12 424 arg1: first subbus ID;
+#X text 12 444 arg2: second subbus ID;
+#X obj 15 331 netpd-bus-order \$1 1 2;
+#X text 9 39 A common problem with message busses on a common send
+name is that message order cannot be controlled among message recipients.
+This is also the reason why it was yet not possible in netpd to implement
+state management corretly for nested dynamically created modules in
+instruments. [netpd-bus-order] solves that problem by creating additional
+subbusses that are conneted to the standard bus \, but receive messages
+from standard bus with a defined order. This allows for instruments
+to create modules dynamically and still be sure that a parent sends
+its state before its children do. If children use also [netpd-bus-order]
+\, this nesting works indefinitely.;
+#X text 16 226 Example setup:;
+#X obj 15 270 netpd_head \$1 example;
+#X text 252 366 ^;
+#X text 254 293 ^;
+#X text 129 348 ^;
+#X text 140 348 ^;
+#X obj 191 242 hsl 128 18 0 127 0 0 \$1/1-firstparam \$1/1-firstparam
+empty -2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 191 318 hsl 128 18 0 127 0 0 \$1/2-secondparam \$1/2-secondparam
+empty -2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 188 347 netpd_f \$1/2 secondparam 65;
+#X obj 188 271 netpd_f \$1/1 firstparam 34;
+#X text 365 347 <- receives second;
+#X text 365 272 <- receives bus;
+#X text 384 285 messages first;
