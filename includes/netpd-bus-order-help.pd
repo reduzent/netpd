@@ -3,9 +3,9 @@
 0;
 #X text 8 7 netpd-bus-order - create two busses with defined msg order
 ;
-#X text 12 404 arg0: standard bus ID (usually \$1);
-#X text 12 424 arg1: first subbus ID;
-#X text 12 444 arg2: second subbus ID;
+#X text 11 404 arg0: standard bus ID (usually \$1);
+#X text 11 424 arg1: first subbus ID;
+#X text 11 444 arg2: second subbus ID;
 #X obj 15 331 netpd-bus-order \$1 1 2;
 #X text 9 39 A common problem with message busses on a common send
 name is that message order cannot be controlled among message recipients.
