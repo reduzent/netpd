@@ -1,6 +1,6 @@
-#N canvas 0 141 367 501 10;
+#N canvas 0 139 367 501 10;
 #X declare -path osc;
-#N canvas 97 607 172 320 chat 0;
+#N canvas 187 295 172 320 chat 0;
 #N canvas 331 376 444 295 connection 0;
 #X msg 143 175 disconnect;
 #X msg 9 184 connect \$1 \$2;
@@ -1486,7 +1486,7 @@
 #X connect 12 0 11 0;
 #X connect 14 0 12 0;
 #X restore 17 66 pd chat-guicode;
-#N canvas 392 561 279 249 CLIENT 0;
+#N canvas 392 594 279 249 CLIENT 0;
 #X obj 22 207 s NETPD;
 #X obj 22 16 r NETPD;
 #X msg 22 148 connection \$1;
@@ -2563,8 +2563,8 @@ in preferences.;
 #X obj 4 3 cnv 15 345 15 empty \$0-title empty 6 8 1 12 -241213 -1
 0;
 #X obj 3 220 cnv 6 59 16 empty \$0-border empty 6 7 1 12 -1 -1 0;
-#X obj 4 221 cnv 14 57 14 empty \$0-onlinedisplay 0\ clients 4 7 1
-10 -241213 -1 0;
+#X obj 4 221 cnv 14 57 14 empty \$0-onlinedisplay empty 4 7 1 10 -241213
+-1 0;
 #X obj 221 240 cnv 6 63 16 empty \$0-border empty 6 7 1 12 -1 -1 0
 ;
 #X obj 222 241 cnv 14 61 14 empty \$0-background empty 2 6 0 12 -241213
@@ -2577,7 +2577,7 @@ in preferences.;
 #X obj 3 240 cnv 6 60 16 empty \$0-border empty 6 7 1 12 -1 -1 0;
 #X obj 7 241 hsl 53 14 0 1 0 0 \$0-connect \$0-connect-r empty -2 -8
 0 10 -262144 -1 -1 0 1;
-#X obj 4 241 cnv 14 58 14 empty \$0-connect-display offline 2 7 1 10
+#X obj 4 241 cnv 14 58 14 empty \$0-connect-display empty 2 7 1 10
 -241213 -1 0;
 #X obj 67 240 cnv 6 37 16 empty \$0-border empty 6 7 1 12 -1 -1 0;
 #X obj 71 241 hsl 30 14 0 1 0 0 \$0-list \$0-list-r empty -2 -8 0 10
