@@ -2607,7 +2607,7 @@ empty 0 -9 0 10 -195568 -195568 -1 0 1;
 #X connect 1 0 3 0;
 #X connect 3 0 2 0;
 #X restore 231 385 pd set_version;
-#N canvas 369 189 447 158 commands 1;
+#N canvas 369 189 447 158 commands 0;
 #N canvas 475 170 396 351 TESTS 0;
 #X obj 14 12 netpd-status-get connection 1;
 #X obj 15 112 netpd-status-get socket 1;
@@ -3029,8 +3029,6 @@ bus \, ----------;
 #X obj 15 15 r \$0.chat.commands;
 #X obj 72 282 s \$0.chat.comand.display;
 #X obj 15 143 route help;
-#X msg 15 168 help help ✓ \, ---------- \, help doesn't have more
-detailed \, information \, ----------;
 #X obj 156 90 list;
 #X msg 156 114 ---------- \, no such command: \$1 \, use: \, \ \ help
 \, to get more information \, ----------;
@@ -3039,14 +3037,16 @@ detailed \, information \, ----------;
 \ \ debug: manage debug output \, \ \ help: show this help \, \ \ unpatch:
 control unpatch \, For more detailed information use: \, \ \ /<command>
 help \, ----------;
-#X connect 0 0 6 0;
-#X connect 2 0 3 0;
-#X connect 2 1 7 0;
-#X connect 3 0 1 0;
-#X connect 4 0 5 0;
-#X connect 5 0 1 0;
-#X connect 6 0 2 0;
-#X connect 6 3 4 0;
+#X msg 15 168 help help ✓ \, ---------- \, Sorry\\\, there is no
+help for help \, ----------;
+#X connect 0 0 5 0;
+#X connect 2 0 7 0;
+#X connect 2 1 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X connect 5 3 3 0;
+#X connect 6 0 1 0;
 #X connect 7 0 1 0;
 #X restore 17 19 pd help.cmd;
 #X restore 12 447 pd commands;
