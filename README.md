@@ -17,9 +17,9 @@ experience for every connected user.
   * Discuss related matters on  
     https://untalk.netpd.org
 
-NOTE: This repository contains only the netpd framework. The
+**NOTE**:  
+This repository contains only the netpd framework. The
 netpd-instruments are hosted separately on:  
-  
 https://github.com/reduzent/netpd-instruments
 
 You may want to clone everything at once by doing:
@@ -95,6 +95,6 @@ https://github.com/reduzent/netpd-server.
 
 ## copyright
 
-2008-2021, Roman Haefeli <roman@netpd.org>
+2008-2021, Roman Haefeli <roman@netpd.org>  
 Published under the Gnu Public License (GPL-2)
 
