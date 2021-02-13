@@ -81,7 +81,7 @@ similarly named choices are presented:
   shows up in unpatch's instrument list. Edit *mysupersynth.pd* and
   save it. You might want to check existing instruments to get an
   idea of how to cook your own instrument. There will be section
-  about this topic on http://www.netpd.org/docs .  
+  about this topic on https://netpd.org/docs .  
   **NOTE**: instruments belong to `netpd/instruments`, their abstractions to
   `netpd/instruments/abs`.
  
@@ -96,5 +96,5 @@ https://github.com/reduzent/netpd-server.
 ## copyright
 
 2008-2021, Roman Haefeli <roman@netpd.org>  
-Published under the Gnu Public License (GPL-2)
+Published under the GNU Public License (GPL-2)
 
