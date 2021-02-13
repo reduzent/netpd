@@ -1,34 +1,45 @@
 
-netpd
-=====
+# netpd
+
+![netpd in action](https://www.netpd.org/netpd-in-action.png "netpd in action")
 
 is a CRNMME (Collaborative Realtime Networked Music Making Environment)
 written in Pure Data. It allows many users to have a realtime jam
-sessions with each other, connected over the net.
+sessions with each other, connected over the internet.
 Users might contribute their own netpd-ized patches a.k.a. instruments
-or use pre-existing ones. The set of patches, as well as the state of
-each is synchronized between clients in order to provide identical
+or use pre-existing ones. The set of instruments and the state of
+each one is synchronized between clients in order to provide identical
 experience for every connected user.
 
-  Read more:
-  http://www.netpd.org
+  * Find more detailed information on  
+    https://netpd.org
+    
+  * Discuss related matters on  
+    https://untalk.netpd.org
 
-NOTE: This repository|archive contains only the netpd framework. The
-netpd-instruments are hosted separately on:
+NOTE: This repository contains only the netpd framework. The
+netpd-instruments are hosted separately on:  
+  
+https://github.com/reduzent/netpd-instruments
 
-  https://github.com/reduzent/netpd-instruments
+You may want to clone everything at once by doing:
 
-You may want to clone all at once by doing:
+```
+git clone --recursive https://github.com/reduzent/netpd.git
+```
 
-  git clone --recursive https://github.com/reduzent/netpd.git
+## supported platforms
 
+netpd runs on any platform [Pure Data](https://puredata.info) runs on. This includes **Linux**, **macOS**,
+**Windows**.
 
-prerequisites
-=============
+## prerequisites
 
-You need to have Pure Data (>= 0.51) installed. The following Pd
-externals are needed, too. You can install them through the Pd menu
-'Help' -> 'Find externals':
+Before runnning netpd you need to install [Pure Data](https://puredata.info) (Pd) (>= 0.51.0) from
+[here](http://msp.ucsd.edu/software.html). You also need to install a few additional libraries.
+They can be installed from Pd through the menu *Help* -> *Find externals*. Search for their names
+and click on the appropriate choice. Be careful to pick the one with the right name, if several
+similarly named choices are presented:
 
   * binfile
   * else
@@ -38,28 +49,23 @@ externals are needed, too. You can install them through the Pd menu
   * slip
   * zexy
 
-NOTE: pd-l2ork is not supported (and support is not planned) because it
-      has some incompatibilities with Pure Data.
+**NOTE**: pd-l2ork is not supported (and support is not planned) because it
+ has some incompatibilities with Pure Data.
 
-NOTE: Support for Pd-extended is going to fade out slowly as netpd is going
-      to use new features of Pure Data.
+## intro
 
-
-intro
-=====
-
-* Open netpd/main.pd with Pd
+* Open `netpd/main.pd` with Pd.  
   chat automatically connects to the server and you can
-  now talk to other users.
-  Click 'list' to get a list of currently connnected users.
+  now talk to other users.  
+  Click *list* to get a list of currently connnected users.
 
-* Click the 'unpatch' button in chat to launch the unpatch instru-
-  ment manager. If there is already a session going on, the instru-
+* Click the *unpatch* button in chat to launch the unpatch instrument
+  manager. If there is already a session going on, the instru-
   ments used in the ongoing session are automatically loaded (they
   are first downloaded from other users, if necessary).
 
 * Load instruments with unpatch by clicking the square button next
-  to the 'netload instrument' label. Browse to netpd/instruments and pick
+  to the *netload instrument* label. Browse to `netpd/instruments` and pick
   an instrument (if your netpd/instruments directory is empty, you need
   to get some instruments first. Read above).
   Alternatively, just type the name of the instrument (without the
@@ -70,56 +76,25 @@ intro
   at your will. Beware other users are able (and supposed) to
   manipulate the instrument to their will as well.
 
-* Create your own instrument by typing '/new mysupersynth' into
-  unpatch's symbol box. A new instrument named 'mysupersynth'
-  shows up in unpatch's instrument list. Edit mysupersynth.pd and
+* Create your own instrument by typing `/new mysupersynth` into
+  unpatch's symbol box. A new instrument named *mysupersynth*
+  shows up in unpatch's instrument list. Edit *mysupersynth.pd* and
   save it. You might want to check existing instruments to get an
   idea of how to cook your own instrument. There will be section
-  about this topic on http://www.netpd.org/docs .
-  NOTE: instruments belong to netpd/instruments, their abstractions to
-  netpd/instruments/abs.
+  about this topic on http://www.netpd.org/docs .  
+  **NOTE**: instruments belong to `netpd/instruments`, their abstractions to
+  `netpd/instruments/abs`.
+ 
+## server
+
+For online jams, netpd needs to connect to a netpd-server. A public netpd-server
+is running at **netpd.org** on port **3025**. This is the default server in
+netpd's configuration. The netpd-server software is available here:  
+https://github.com/reduzent/netpd-server. 
 
 
-copyright
-=========
+## copyright
 
-2008-2020, Roman Haefeli <roman@netpd.org>
+2008-2021, Roman Haefeli <roman@netpd.org>
 Published under the Gnu Public License (GPL-2)
-
-
-releases
-========
-
-2.2 (2020-05-01)
-  * add support for OSC blob data
-  * support audio transmissions (samples or live)
-  * new netpd abstraction: [netpd_sample]
-  * make instruments directory configurable
-  * add configuration parameter for latency compensation
-
-2.1 (2013-03-10)
-  * Improved reliability of finding a sync peer (breaks
-    compatibility with v2.0)
-  * Added non-blocking until [netpd-nb-until]
-  * Turning DSP off on dynamic creation is now a
-    configurable option (see chat's preferences)
-  * Prevent errors when checking for non-existing files
-    (adds more dependencies, though)
-  * Automatically load unpatch by cmdline option (useful
-    for -nogui)
-  * Turn on/off printing of all incoming and outgoing OSC
-    message with cmdline option
-  * Turn on/off state messages for testing and debugging
-    with cmdline option
-
-2.0 (2012-05-20)
-  * Complete rewrite
-  * Messaging layer based on OSC
-  * Consequent use of namespaces
-  * Improved and more reliable state synchronization
-  * Faster patch synchronization
-  * More intelligent dependency resolving
-  * Multiple instances of the same instrument
-  * Non-blocking network layer (less audio drop-outs)
-  * Lots of bugfixes
 
