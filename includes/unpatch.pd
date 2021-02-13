@@ -1322,7 +1322,7 @@ been completed;
 #X obj 26 118 t b b b b b b b b b b b b b;
 #X obj 25 303 print UNPATCH;
 #X msg 171 168 /help : print this help;
-#X msg 158 194 /new <patchname> : create new netpd-patch;
+#X msg 158 194 /new <patchname> : create new instrument;
 #X msg 185 143 ... \, available commands:;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
