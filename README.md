@@ -1,12 +1,11 @@
 
 # netpd
 
-![netpd in action](https://www.netpd.org/netpd-in-action.png "netpd in action")
 
-is a CRNMME (Collaborative Realtime Networked Music Making Environment)
-written in Pure Data. It allows many users to have a realtime jam
+is a CRNMME (**C**ollaborative **R**ealtime **N**etworked **M**usic **M**aking **E**nvironment)
+written in Pure Data. It allows many users to have a real time jam
 sessions with each other, connected over the internet.
-Users might contribute their own netpd-ized patches a.k.a. instruments
+Users might contribute their own *netpd*ized patches a.k.a. instruments
 or use pre-existing ones. The set of instruments and the state of
 each one is synchronized between clients in order to provide identical
 experience for every connected user.
@@ -18,8 +17,7 @@ experience for every connected user.
     https://untalk.netpd.org
 
 **NOTE**:  
-This repository contains only the netpd framework. The
-netpd-instruments are hosted separately on:  
+This repository contains only the netpd framework. The instruments are hosted separately on:  
 https://github.com/reduzent/netpd-instruments
 
 You may want to clone everything at once by doing:
