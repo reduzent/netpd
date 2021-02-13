@@ -1,5 +1,5 @@
 
-# netpd
+![netpd](https://www.netpd.org/netpd-logo.png "netpd")
 
 
 is a CRNMME (**C**ollaborative **R**ealtime **N**etworked **M**usic **M**aking **E**nvironment)
