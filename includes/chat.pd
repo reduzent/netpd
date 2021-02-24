@@ -999,7 +999,7 @@
 #X obj 231 74 netpd-rgb2iem;
 #X obj 328 74 netpd-rgb2iem;
 #X obj 231 53 route ch.background.clr ch.font.clr ch.buttons.fnt;
-#X obj 10 145 netpd-l2s;
+#X obj 10 145 netpd-list2symbol;
 #X obj 201 235 loadbang;
 #X msg 201 258 32;
 #X obj 201 281 makefilename %c;
@@ -1038,7 +1038,7 @@
 #X obj 294 48 route pref;
 #X obj 294 69 route ch.inputbox.clr;
 #X obj 294 90 netpd-rgb2iem;
-#X obj 22 131 netpd-l2s;
+#X obj 22 131 netpd-list2symbol;
 #X obj 21 39 t b b;
 #X msg 48 65 32;
 #X obj 48 88 makefilename %c;
@@ -1278,7 +1278,7 @@
 #X obj 382 74 netpd-rgb2iem;
 #X obj 287 54 route ch.background.clr ch.font.clr ch.title.fnt;
 #X msg 99 113 list \$1 . \$2 . \$3;
-#X obj 24 208 netpd-l2s;
+#X obj 24 208 netpd-list2symbol;
 #X msg 75 56 32;
 #X obj 75 80 makefilename %c;
 #X msg 24 78 symbol;
@@ -1649,7 +1649,7 @@ a dummy message every 60;
 #X obj 216 251 list append;
 #X obj 43 291 list append;
 #X obj 43 314 list append;
-#X obj 43 343 netpd-l2s;
+#X obj 43 343 netpd-list2symbol;
 #X obj 231 313 loadbang;
 #X msg 231 335 32;
 #X obj 231 359 makefilename %c;
