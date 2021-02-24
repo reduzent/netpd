@@ -1,4 +1,4 @@
-#N canvas 372 136 588 557 10;
+#N canvas 433 130 588 557 10;
 #X obj 19 13 inlet;
 #X obj 19 36 list;
 #X obj 50 208 list store;
@@ -9,13 +9,13 @@
 #X obj 50 90 t b b a, f 13;
 #X msg 50 183 get \$1 1;
 #X obj 50 263 route symbol float, f 36;
-#X obj 50 345 list fromsymbol;
+#X obj 50 305 list fromsymbol;
 #X msg 156 287 symbol _\$1;
-#X obj 156 310 route 95;
+#X obj 156 345 route 95;
 #X obj 50 386 list prepend append;
 #X obj 50 410 list trim;
-#X obj 19 444 list store, f 23;
-#X obj 19 59 t b a b, f 25;
+#X obj 19 443 list store, f 32;
+#X obj 19 59 t b a b, f 32;
 #X obj 19 518 outlet;
 #X obj 19 468 list tosymbol;
 #X obj 50 159 t a a;
@@ -35,6 +35,7 @@
 #X obj 281 203 f;
 #X obj 281 226 sel 0;
 #X obj 486 43 inlet;
+#X obj 156 310 list fromsymbol;
 #X connect 0 0 1 0;
 #X connect 1 0 16 0;
 #X connect 2 0 32 0;
@@ -50,8 +51,8 @@
 #X connect 9 0 10 0;
 #X connect 9 1 11 0;
 #X connect 10 0 13 0;
-#X connect 11 0 12 0;
-#X connect 12 0 10 0;
+#X connect 11 0 36 0;
+#X connect 12 0 13 0;
 #X connect 13 0 14 0;
 #X connect 14 0 15 0;
 #X connect 15 0 18 0;
@@ -81,3 +82,4 @@
 #X connect 33 0 34 0;
 #X connect 34 1 31 0;
 #X connect 35 0 23 0;
+#X connect 36 0 12 0;
