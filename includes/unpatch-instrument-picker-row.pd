@@ -31,9 +31,9 @@
 #X msg 42 124 184 184 184;
 #X msg 266 128 184 184 184;
 #X obj 23 64 f;
-#X obj 171 57 del 200;
 #X obj 130 34 t b b b;
 #X obj 171 80 t b b;
+#X obj 171 57 del 120;
 #X connect 0 0 4 0;
 #X connect 1 0 9 0;
 #X connect 2 0 7 0;
@@ -52,21 +52,21 @@
 #X connect 15 0 16 0;
 #X connect 17 0 2 0;
 #X connect 18 0 22 0;
-#X connect 19 0 24 0;
+#X connect 19 0 23 0;
 #X connect 20 0 9 0;
 #X connect 21 0 2 0;
 #X connect 22 0 8 0;
-#X connect 23 0 25 0;
+#X connect 23 0 22 0;
+#X connect 23 1 21 0;
+#X connect 23 2 25 0;
 #X connect 24 0 22 0;
-#X connect 24 1 21 0;
-#X connect 24 2 23 0;
-#X connect 25 0 22 0;
-#X connect 25 1 17 0;
+#X connect 24 1 17 0;
+#X connect 25 0 24 0;
 #X restore 418 210 pd colors;
 #X obj 23 20 hsl 139 20 0 127 0 0 \$0.click empty empty -2 -8 0 10
 -262144 -1 -1 0 1;
 #X obj 20 20 cnv 15 144 20 empty \$0.label empty 10 12 0 14 -249661
--66577 0;
+-191407 0;
 #X obj 102 110 r \$0.click;
 #X obj 102 134 sel;
 #X obj 132 133 t a;
@@ -76,8 +76,8 @@
 #X msg 285 207 symbol \$1;
 #X obj 102 198 symbol;
 #X obj 171 294 s \$1.load;
-#X obj 315 15 r \$1.refresh;
-#X obj 315 38 b;
+#X obj 330 8 r \$1.refresh;
+#X obj 330 31 b;
 #X obj 211 82 f;
 #X obj 211 127 route bang;
 #X obj 102 220 select empty;
@@ -104,7 +104,7 @@
 #X connect 17 0 18 1;
 #X connect 18 0 24 0;
 #X connect 20 0 21 0;
-#X connect 21 0 22 0;
+#X connect 21 0 3 0;
 #X connect 22 0 2 0;
 #X connect 23 0 7 0;
 #X connect 23 1 14 0;
