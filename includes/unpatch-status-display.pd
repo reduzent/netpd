@@ -108,7 +108,7 @@
 #X msg 233 213 label empty;
 #X obj 228 182 s \$0.display;
 #X msg 228 160 label \$1;
-#X obj 228 137 netpd-l2s;
+#X obj 228 137 netpd-list2symbol;
 #X obj 279 53 loadbang;
 #X msg 279 75 32;
 #X obj 279 97 makefilename %c;
