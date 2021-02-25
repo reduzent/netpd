@@ -1,19 +1,9 @@
-#N canvas 590 139 301 401 10;
+#N canvas 584 0 301 401 10;
 #X declare -path ../instruments/abs;
-#N canvas 359 106 590 579 unpatch 1;
-#X obj 78 434 unpatch-status-display \$0.upload.status upload;
-#X obj 50 484 unpatch-status-display \$0.download.status download;
-#X obj 232 13 unpatch-preset-save;
-#X obj 277 15 unpatch-preset-load;
+#N canvas 359 0 225 422 unpatch 1;
 #X obj 6 7 cnv 15 204 404 empty empty empty 3 12 0 14 -191407 -1 0
 ;
 #X obj 8 9 cnv 15 200 400 empty empty unpatch 3 12 0 20 -249661 -162280
-0;
-#X obj 118 9 cnv 15 40 20 empty empty save 3 12 0 14 -249661 -66577
-0;
-#X obj 167 9 cnv 15 40 20 empty empty load 3 12 0 14 -249661 -66577
-0;
-#X obj 157 389 cnv 15 40 20 empty empty print 3 12 0 14 -249661 -191407
 0;
 #X obj 8 205 unpatch-gui-row \$0 1;
 #X obj 8 185 unpatch-gui-row \$0 0;
@@ -27,6 +17,9 @@
 #X obj 8 365 unpatch-gui-row \$0 9;
 #X obj 48 39 unpatch-instrument-picker \$0.loader;
 #X obj 193 185 netpd-scrollbar \$0.scrollbar 15 200 10;
+#X obj 168 9 unpatch-preset-load;
+#X obj 118 9 unpatch-preset-save;
+#X obj 158 389 unpatch-status-print \$0;
 #X restore 17 82 pd unpatch;
 #N canvas 625 53 532 660 unpatch_download 0;
 #X obj 9 65 r \$0.receive;
