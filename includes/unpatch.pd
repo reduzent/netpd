@@ -1,26 +1,10 @@
-#N canvas 589 139 301 401 10;
+#N canvas 590 139 301 401 10;
 #X declare -path ../instruments/abs;
 #N canvas 359 106 590 579 unpatch 1;
-#X obj 286 52 cnv 12 205 13 empty \$0.gui.bg2 empty 5 6 1 9 -224635
--1 0;
-#X obj 12 426 cnv 12 205 13 empty \$0.gui.bg1 empty 5 6 1 9 -199731
--1 0;
-#X obj 8 205 unpatch-gui-row \$0 1;
-#X obj 8 185 unpatch-gui-row \$0 0;
-#X obj 8 225 unpatch-gui-row \$0 2;
-#X obj 8 245 unpatch-gui-row \$0 3;
-#X obj 8 265 unpatch-gui-row \$0 4;
-#X obj 8 285 unpatch-gui-row \$0 5;
-#X obj 8 305 unpatch-gui-row \$0 6;
-#X obj 8 325 unpatch-gui-row \$0 7;
-#X obj 8 345 unpatch-gui-row \$0 8;
-#X obj 8 365 unpatch-gui-row \$0 9;
-#X obj 12 440 unpatch-status-display \$0.upload.status upload;
-#X obj 12 468 unpatch-status-display \$0.download.status download;
-#X obj 308 34 unpatch-gui-title \$0;
-#X obj 409 38 unpatch-preset-save;
-#X obj 451 38 unpatch-preset-load;
-#X obj 48 47 unpatch-instrument-picker \$0.loader;
+#X obj 78 434 unpatch-status-display \$0.upload.status upload;
+#X obj 50 484 unpatch-status-display \$0.download.status download;
+#X obj 232 13 unpatch-preset-save;
+#X obj 277 15 unpatch-preset-load;
 #X obj 6 7 cnv 15 204 404 empty empty empty 3 12 0 14 -191407 -1 0
 ;
 #X obj 8 9 cnv 15 200 400 empty empty unpatch 3 12 0 20 -249661 -162280
@@ -31,6 +15,17 @@
 0;
 #X obj 157 389 cnv 15 40 20 empty empty print 3 12 0 14 -249661 -191407
 0;
+#X obj 8 205 unpatch-gui-row \$0 1;
+#X obj 8 185 unpatch-gui-row \$0 0;
+#X obj 8 225 unpatch-gui-row \$0 2;
+#X obj 8 245 unpatch-gui-row \$0 3;
+#X obj 8 265 unpatch-gui-row \$0 4;
+#X obj 8 285 unpatch-gui-row \$0 5;
+#X obj 8 305 unpatch-gui-row \$0 6;
+#X obj 8 325 unpatch-gui-row \$0 7;
+#X obj 8 345 unpatch-gui-row \$0 8;
+#X obj 8 365 unpatch-gui-row \$0 9;
+#X obj 48 39 unpatch-instrument-picker \$0.loader;
 #X obj 193 185 netpd-scrollbar \$0.scrollbar 15 200 10;
 #X restore 17 82 pd unpatch;
 #N canvas 625 53 532 660 unpatch_download 0;
