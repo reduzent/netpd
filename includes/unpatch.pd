@@ -20,7 +20,7 @@
 #X obj 168 9 unpatch-preset-load;
 #X obj 118 9 unpatch-preset-save;
 #X obj 158 389 unpatch-status-print \$0;
-#X obj 96 11 cnv 15 20 20 empty \$0.protect.label ☂ 3 6 0 30 -249661
+#X obj 96 11 cnv 15 20 20 empty \$0.protect.label empty 3 6 0 30 -249661
 -66577 0;
 #X obj 8 164 unpatch-symbolbox-140x20 \$0.input;
 #X restore 17 82 pd unpatch;
