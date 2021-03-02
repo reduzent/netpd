@@ -1,6 +1,6 @@
-#N canvas 0 139 753 571 10;
+#N canvas 0 106 595 562 10;
 #X declare -path osc;
-#N canvas 20 542 172 320 chat 1;
+#N canvas 31 423 172 320 chat 0;
 #N canvas 331 376 444 295 connection 0;
 #X msg 143 175 disconnect;
 #X msg 9 184 connect \$1 \$2;
@@ -32,7 +32,7 @@
 #X connect 12 0 11 0;
 #X connect 13 0 4 0;
 #X restore 17 85 pd connection;
-#N canvas 327 472 192 351 chat-guicode 1;
+#N canvas 330 394 198 283 chat-guicode 0;
 #N canvas 357 176 555 324 connect-button 0;
 #X obj 8 26 route connection;
 #X obj 8 5 r NETPD;
@@ -111,152 +111,39 @@
 #X connect 5 0 4 0;
 #X connect 7 0 6 0;
 #X restore 9 28 pd inputbox;
-#N canvas 357 181 696 299 list-button 0;
-#X obj 12 6 r \$0-list;
+#N canvas 357 181 433 238 list-button 0;
 #X obj 12 194 s \$0-listrequest;
-#X text 194 78 select color;
-#X obj 192 156 f;
-#X obj 221 157 f;
-#X obj 192 257 s \$0-list-display;
-#X msg 192 203 color \$1 \$2;
-#X obj 192 128 sel 1 0;
-#X obj 192 105 1;
-#X obj 192 181 list append 0;
-#X msg 573 177 label_font \$1 \$2;
-#X obj 355 13 r NETPD;
-#X obj 355 34 route pref;
-#X obj 355 55 route ch.background.clr ch.active.clr ch.font.clr ch.buttons.fnt
-;
-#X obj 382 154 netpd-rgb2iem;
-#X obj 454 134 netpd-rgb2iem;
-#X obj 527 112 netpd-rgb2iem;
-#X obj 355 92 t b a;
-#X obj 427 92 t b a;
-#X obj 500 90 t b a;
-#X obj 355 116 t b;
-#X obj 12 31 sel 0;
-#X obj 57 31 t a;
-#X obj 12 53 t b b;
-#X connect 0 0 21 0;
-#X connect 3 0 9 0;
-#X connect 4 0 9 0;
-#X connect 6 0 5 0;
-#X connect 7 0 3 0;
-#X connect 7 1 4 0;
-#X connect 8 0 7 0;
-#X connect 9 0 6 0;
-#X connect 10 0 5 0;
-#X connect 11 0 12 0;
-#X connect 12 0 13 0;
-#X connect 13 0 17 0;
-#X connect 13 1 18 0;
-#X connect 13 2 19 0;
-#X connect 13 3 10 0;
-#X connect 14 0 3 1;
-#X connect 15 0 4 1;
-#X connect 16 0 9 1;
-#X connect 17 0 20 0;
-#X connect 17 1 14 0;
-#X connect 18 0 20 0;
-#X connect 18 1 15 0;
-#X connect 19 0 20 0;
-#X connect 19 1 16 0;
-#X connect 20 0 8 0;
-#X connect 21 0 23 0;
-#X connect 21 1 22 0;
-#X connect 22 0 21 1;
-#X connect 23 0 1 0;
-#X connect 23 1 8 0;
+#X obj 157 34 route connection;
+#X obj 157 13 r NETPD;
+#X msg 157 58 set \$1;
+#X obj 157 83 s \$0.list.button;
+#X obj 12 6 r \$0.list.button;
+#X obj 12 31 route bang;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 6 0 0 0;
 #X restore 9 108 pd list-button;
-#N canvas 354 172 735 261 pref-button 0;
-#X text 203 7 select color;
-#X obj 192 157 f;
-#X obj 221 158 f;
-#X msg 192 211 color \$1 \$2;
-#X obj 12 6 r \$0-pref;
-#X obj 192 236 s \$0-pref-display;
-#X obj 192 73 r \$0-gui.update;
-#X obj 192 129 sel 1 0;
-#X obj 192 106 1;
-#X obj 192 189 list append 0;
+#N canvas 354 205 306 259 pref-button 0;
 #X obj 12 184 list prepend pref gui;
-#X obj 12 205 list trim;
+#X obj 12 206 list trim;
 #X obj 12 226 s NETPD;
 #X msg 12 164 1;
-#X msg 578 194 label_font \$1 \$2;
-#X obj 360 30 r NETPD;
-#X obj 360 51 route pref;
-#X obj 360 72 route ch.background.clr ch.active.clr ch.font.clr ch.buttons.fnt
-;
-#X obj 387 172 netpd-rgb2iem;
-#X obj 459 152 netpd-rgb2iem;
-#X obj 532 130 netpd-rgb2iem;
-#X obj 360 108 t b a;
-#X obj 432 108 t b a;
-#X obj 505 107 t b a;
-#X obj 360 140 t b;
-#X obj 12 31 sel 0;
-#X obj 57 31 t a;
-#X obj 12 54 t b b;
-#X connect 1 0 9 0;
-#X connect 2 0 9 0;
-#X connect 3 0 5 0;
-#X connect 4 0 25 0;
-#X connect 6 0 8 0;
-#X connect 7 0 1 0;
-#X connect 7 1 2 0;
-#X connect 8 0 7 0;
-#X connect 9 0 3 0;
-#X connect 10 0 11 0;
-#X connect 11 0 12 0;
-#X connect 13 0 10 0;
-#X connect 14 0 5 0;
-#X connect 15 0 16 0;
-#X connect 16 0 17 0;
-#X connect 17 0 21 0;
-#X connect 17 1 22 0;
-#X connect 17 2 23 0;
-#X connect 17 3 14 0;
-#X connect 18 0 1 1;
-#X connect 19 0 2 1;
-#X connect 20 0 9 1;
-#X connect 21 0 24 0;
-#X connect 21 1 18 0;
-#X connect 22 0 24 0;
-#X connect 22 1 19 0;
-#X connect 23 0 24 0;
-#X connect 23 1 20 0;
-#X connect 24 0 8 0;
-#X connect 25 0 27 0;
-#X connect 25 1 26 0;
-#X connect 26 0 25 1;
-#X connect 27 0 13 0;
-#X connect 27 1 8 0;
+#X obj 12 6 r \$0.pref.button;
+#X obj 12 29 route bang;
+#X obj 145 108 s \$0.pref.button;
+#X obj 144 60 loadbang;
+#X msg 145 84 set 1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 0;
 #X restore 9 128 pd pref-button;
-#N canvas 357 157 930 277 unpatch-button 0;
-#X obj 291 104 sel 0 1;
-#X text 362 27 select color;
-#X obj 291 131 f;
-#X obj 320 133 f;
-#X msg 291 181 color \$1 \$2;
-#X obj 12 6 r \$0-showunpatch;
-#X obj 291 206 s \$0-showunpatch-display;
-#X obj 291 74 f;
-#X obj 291 159 list append 0;
-#X msg 693 178 label_font \$1 \$2;
-#X obj 475 14 r NETPD;
-#X obj 475 35 route pref;
-#X obj 475 56 route ch.background.clr ch.active.clr ch.font.clr ch.buttons.fnt
-;
-#X obj 502 157 netpd-rgb2iem;
-#X obj 574 137 netpd-rgb2iem;
-#X obj 647 115 netpd-rgb2iem;
-#X obj 475 91 t b a;
-#X obj 547 90 t b a;
-#X obj 620 91 t b a;
-#X obj 475 123 t b;
-#X obj 12 31 sel 0;
-#X obj 57 31 t a;
+#N canvas 347 149 394 299 unpatch-button 0;
 #X obj 12 71 ==;
 #X obj 51 71 t a;
 #X obj 148 18 r NETPD;
@@ -264,59 +151,38 @@
 #X obj 148 64 route start stop;
 #X msg 148 87 1;
 #X msg 194 88 0;
-#X obj 12 102 sel 0 1;
-#X msg 12 132 stop;
-#X msg 56 132 start;
-#X obj 12 166 list prepend unpatch;
-#X obj 12 189 list trim;
-#X obj 12 212 s NETPD;
+#X obj 12 142 sel 0 1;
+#X msg 12 172 stop;
+#X msg 56 172 start;
+#X obj 12 206 list prepend unpatch;
+#X obj 12 229 list trim;
+#X obj 12 252 s NETPD;
 #X obj 148 114 t a a;
-#X connect 0 0 2 0;
-#X connect 0 1 3 0;
-#X connect 2 0 8 0;
-#X connect 3 0 8 0;
-#X connect 4 0 6 0;
-#X connect 5 0 20 0;
-#X connect 7 0 0 0;
-#X connect 8 0 4 0;
-#X connect 9 0 6 0;
+#X msg 175 144 set \$1;
+#X obj 175 167 s \$0.unpatch.button;
+#X obj 12 6 r \$0.unpatch.button;
+#X obj 12 29 route bang;
+#X connect 0 0 1 0;
+#X connect 0 0 7 0;
+#X connect 1 0 0 1;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 4 1 6 0;
+#X connect 5 0 13 0;
+#X connect 6 0 13 0;
+#X connect 7 0 8 0;
+#X connect 7 1 9 0;
+#X connect 8 0 10 0;
+#X connect 9 0 10 0;
 #X connect 10 0 11 0;
 #X connect 11 0 12 0;
-#X connect 12 0 16 0;
-#X connect 12 1 17 0;
-#X connect 12 2 18 0;
-#X connect 12 3 9 0;
-#X connect 13 0 2 1;
-#X connect 14 0 3 1;
-#X connect 15 0 8 1;
-#X connect 16 0 19 0;
-#X connect 16 1 13 0;
-#X connect 17 0 19 0;
-#X connect 17 1 14 0;
-#X connect 18 0 19 0;
-#X connect 18 1 15 0;
-#X connect 19 0 7 0;
-#X connect 20 0 22 0;
-#X connect 20 1 21 0;
-#X connect 21 0 20 1;
-#X connect 22 0 23 0;
-#X connect 22 0 29 0;
-#X connect 23 0 22 1;
-#X connect 24 0 25 0;
-#X connect 25 0 26 0;
-#X connect 26 0 27 0;
-#X connect 26 1 28 0;
-#X connect 27 0 35 0;
-#X connect 28 0 35 0;
-#X connect 29 0 30 0;
-#X connect 29 1 31 0;
-#X connect 30 0 32 0;
-#X connect 31 0 32 0;
-#X connect 32 0 33 0;
-#X connect 33 0 34 0;
-#X connect 35 0 23 0;
-#X connect 35 1 7 0;
-#X restore 9 185 pd unpatch-button;
+#X connect 13 0 1 0;
+#X connect 13 1 14 0;
+#X connect 14 0 15 0;
+#X connect 16 0 17 0;
+#X connect 17 0 0 0;
+#X restore 9 188 pd unpatch-button;
 #N canvas 607 310 168 165 border 0;
 #X msg 27 107 color \$1 \$1;
 #X obj 27 129 s \$0-border;
@@ -329,7 +195,7 @@
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
 #X connect 5 0 0 0;
-#X restore 9 204 pd border;
+#X restore 9 208 pd border;
 #N canvas 634 237 190 167 background 0;
 #X msg 36 104 color \$1 \$1;
 #X obj 36 126 s \$0-background;
@@ -342,142 +208,49 @@
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
 #X connect 5 0 0 0;
-#X restore 9 223 pd background;
+#X restore 9 228 pd background;
 #N canvas 357 181 804 250 mute-button 0;
-#X obj 291 104 sel 0 1;
-#X text 362 27 select color;
-#X obj 291 132 f;
-#X obj 320 133 f;
-#X msg 291 181 color \$1 \$2;
-#X obj 291 74 f;
-#X obj 291 159 list append 0;
-#X obj 12 6 r \$0-mute;
-#X obj 291 206 s \$0-mute-display;
-#X obj 12 169 s \$0-muteclick;
-#X msg 677 178 label_font \$1 \$2;
-#X obj 459 14 r NETPD;
-#X obj 459 35 route pref;
-#X obj 459 56 route ch.background.clr ch.active.clr ch.font.clr ch.buttons.fnt
-;
-#X obj 486 160 netpd-rgb2iem;
-#X obj 558 140 netpd-rgb2iem;
-#X obj 631 115 netpd-rgb2iem;
-#X obj 459 91 t b a;
-#X obj 531 93 t b a;
-#X obj 604 92 t b a;
-#X obj 459 123 t b;
-#X obj 12 31 sel 0;
-#X obj 57 31 t a;
+#X obj 12 212 s \$0-muteclick;
 #X obj 12 56 ==;
 #X obj 42 56 t a;
 #X obj 12 87 t a a;
-#X connect 0 0 2 0;
-#X connect 0 1 3 0;
-#X connect 2 0 6 0;
-#X connect 3 0 6 0;
-#X connect 4 0 8 0;
-#X connect 5 0 0 0;
-#X connect 6 0 4 0;
-#X connect 7 0 21 0;
-#X connect 10 0 8 0;
-#X connect 11 0 12 0;
-#X connect 12 0 13 0;
-#X connect 13 0 17 0;
-#X connect 13 1 18 0;
-#X connect 13 2 19 0;
-#X connect 13 3 10 0;
-#X connect 14 0 2 1;
-#X connect 15 0 3 1;
-#X connect 16 0 6 1;
-#X connect 17 0 20 0;
-#X connect 17 1 14 0;
-#X connect 18 0 20 0;
-#X connect 18 1 15 0;
-#X connect 19 0 20 0;
-#X connect 19 1 16 0;
-#X connect 20 0 5 0;
-#X connect 21 0 23 0;
-#X connect 21 1 22 0;
-#X connect 22 0 21 1;
-#X connect 23 0 24 0;
-#X connect 23 0 25 0;
-#X connect 24 0 23 1;
-#X connect 25 0 9 0;
-#X connect 25 1 5 0;
-#X restore 9 147 pd mute-button;
-#N canvas 357 181 804 250 dsp-button 0;
-#X obj 291 104 sel 0 1;
-#X text 362 27 select color;
-#X obj 291 132 f;
-#X obj 320 133 f;
-#X msg 291 181 color \$1 \$2;
-#X obj 291 74 f;
-#X obj 291 159 list append 0;
-#X msg 677 178 label_font \$1 \$2;
-#X obj 459 14 r NETPD;
-#X obj 459 35 route pref;
-#X obj 459 56 route ch.background.clr ch.active.clr ch.font.clr ch.buttons.fnt
-;
-#X obj 486 160 netpd-rgb2iem;
-#X obj 558 140 netpd-rgb2iem;
-#X obj 631 115 netpd-rgb2iem;
-#X obj 459 91 t b a;
-#X obj 531 93 t b a;
-#X obj 604 92 t b a;
-#X obj 459 123 t b;
-#X obj 12 6 r \$0-dsp;
-#X obj 291 206 s \$0-dsp-display;
+#X obj 12 6 r \$0.mute.button;
+#X obj 12 29 route bang;
+#X msg 39 110 set \$1;
+#X obj 39 133 s \$0.mute.button;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 1;
+#X connect 3 0 0 0;
+#X connect 3 1 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 6 0 7 0;
+#X restore 9 148 pd mute-button;
+#N canvas 357 181 396 253 dsp-button 0;
 #X msg 12 185 dsp \$1;
 #X obj 12 207 s pd;
-#X obj 102 7 r pd;
-#X obj 102 29 route dsp;
-#X obj 12 31 sel 0;
-#X obj 57 31 t a;
-#X obj 12 71 ==;
-#X obj 44 71 t a;
-#X obj 12 99 t a a;
-#X obj 129 76 t a;
-#X obj 102 49 t a a;
-#X connect 0 0 2 0;
-#X connect 0 1 3 0;
-#X connect 2 0 6 0;
+#X obj 122 7 r pd;
+#X obj 122 29 route dsp;
+#X obj 12 81 ==;
+#X obj 44 81 t a;
+#X obj 122 49 t a a;
+#X obj 12 6 r \$0.dsp.button;
+#X obj 12 29 route bang;
+#X msg 149 72 set \$1;
+#X obj 149 95 s \$0.dsp.button;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
 #X connect 3 0 6 0;
-#X connect 4 0 19 0;
-#X connect 5 0 0 0;
-#X connect 6 0 4 0;
-#X connect 7 0 19 0;
-#X connect 8 0 9 0;
+#X connect 4 0 5 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 1;
+#X connect 6 0 4 1;
+#X connect 6 1 9 0;
+#X connect 7 0 8 0;
+#X connect 8 0 4 0;
 #X connect 9 0 10 0;
-#X connect 10 0 14 0;
-#X connect 10 1 15 0;
-#X connect 10 2 16 0;
-#X connect 10 3 7 0;
-#X connect 11 0 2 1;
-#X connect 12 0 3 1;
-#X connect 13 0 6 1;
-#X connect 14 0 17 0;
-#X connect 14 1 11 0;
-#X connect 15 0 17 0;
-#X connect 15 1 12 0;
-#X connect 16 0 17 0;
-#X connect 16 1 13 0;
-#X connect 17 0 5 0;
-#X connect 18 0 24 0;
-#X connect 20 0 21 0;
-#X connect 22 0 23 0;
-#X connect 23 0 30 0;
-#X connect 24 0 26 0;
-#X connect 24 1 25 0;
-#X connect 25 0 24 1;
-#X connect 26 0 27 0;
-#X connect 26 0 28 0;
-#X connect 27 0 26 1;
-#X connect 28 0 20 0;
-#X connect 28 1 29 0;
-#X connect 29 0 5 0;
-#X connect 30 0 26 1;
-#X connect 30 1 29 0;
-#X restore 9 166 pd dsp-button;
+#X restore 9 168 pd dsp-button;
 #N canvas 757 145 479 486 chatdisplay 0;
 #X obj 11 63 list;
 #X obj 11 117 unpack s s f;
@@ -1054,6 +827,7 @@ a dummy message every 60;
 #X restore 12 401 pd chat;
 #N canvas 454 209 380 369 netpd_related_programs 0;
 #N canvas 475 953 241 127 \$0.unpatch.container 0;
+#X obj 20 20 unpatch;
 #X restore 17 330 pd \$0.unpatch.container;
 #X obj 17 225 \$0;
 #X obj 63 178 \$0;
@@ -1107,7 +881,7 @@ vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 #X text 252 13 fonts;
 #X text 17 137 ____________________________________________________________
 ;
-#N canvas 0 458 379 284 netpd-preferences 0;
+#N canvas 0 450 379 284 netpd-preferences 0;
 #X symbolatom 120 15 10 0 0 0 - #0.netpd-name.r #0.netpd-name;
 #X symbolatom 120 36 40 0 0 0 - #0.netpd-welcome.r #0.netpd-welcome
 ;
@@ -1538,7 +1312,7 @@ empty 17 7 0 10 -262144 -1 -1 1 1;
 #X obj 18 303 netpd-pref-store netpd-name;
 #X obj 18 398 netpd-pref-store netpd-instruments-path;
 #X restore 12 423 pd preferences;
-#N canvas 392 298 974 304 status 0;
+#N canvas 382 290 974 304 status 0;
 #N canvas 419 416 280 353 unpatch_ 0;
 #X obj 10 14 r NETPD;
 #X obj 10 35 route status;
@@ -1710,117 +1484,8 @@ in preferences.;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X restore 12 465 pd errors;
-#X obj 395 10 cnv 6 347 254 empty empty empty 20 12 0 14 -262144 -66577
-0;
-#X obj 395 10 cnv 15 347 17 empty \$0-border empty 6 8 1 12 -1 -1 0
-;
-#X obj 396 11 cnv 15 345 15 empty \$0-title n\ e\ t\ p\ d\ \ \ \ 2\ .\ 3\ .\ 0
-6 8 1 12 -241213 -1 0;
-#X obj 395 228 cnv 6 59 16 empty \$0-border empty 6 7 1 12 -1 -1 0
-;
-#X obj 396 229 cnv 14 57 14 empty \$0-onlinedisplay 1\ clients 4 7
-1 10 -241213 -1 0;
-#X obj 613 248 cnv 6 63 16 empty \$0-border empty 6 7 1 12 -1 -1 0
-;
-#X obj 614 249 cnv 14 61 14 empty \$0-background empty 2 6 0 12 -241213
--241213 0;
-#X obj 458 228 cnv 6 284 16 empty \$0-border empty 6 7 1 12 -1 -1 0
-;
-#X obj 460 230 cnv 12 280 12 empty \$0-input empty 6 7 1 12 -241213
--241213 0;
-#X symbolatom 459 229 46 0 0 0 - #0-inputbox-r #0-inputbox;
-#X obj 395 248 cnv 6 60 16 empty \$0-border empty 6 7 1 12 -1 -1 0
-;
-#X obj 399 249 hsl 53 14 0 1 0 0 \$0-connect \$0-connect-r empty -2
--8 0 10 -262144 -1 -1 0 1;
-#X obj 396 249 cnv 14 58 14 empty \$0-connect-display empty 2 7 1 10
--187246 -1 0;
-#X obj 459 248 cnv 6 37 16 empty \$0-border empty 6 7 1 12 -1 -1 0
-;
-#X obj 463 249 hsl 30 14 0 1 0 0 \$0-list \$0-list-r empty -2 -8 0
-10 -262144 -1 -1 0 1;
-#X obj 460 249 cnv 14 35 14 empty \$0-list-display list 2 7 1 10 -241213
--1 0;
-#X obj 500 248 cnv 6 37 16 empty \$0-border empty 6 7 1 12 -1 -1 0
-;
-#X obj 504 249 hsl 30 14 0 1 0 0 \$0-pref \$0-pref-r empty -2 -8 0
-10 -262144 -1 -1 0 1;
-#X obj 501 249 cnv 14 35 14 empty \$0-pref-display pref 2 7 1 10 -241213
--1 0;
-#X obj 680 248 cnv 6 62 16 empty \$0-border empty 6 7 1 12 -1 -1 0
-;
-#X obj 684 249 hsl 55 14 0 1 0 0 \$0-showunpatch \$0-showunpatch-r
-empty -2 -8 0 10 -262144 -1 -1 0 1;
-#X obj 681 249 cnv 14 60 14 empty \$0-showunpatch-display unpatch 2
-7 1 10 -241213 -1 0;
-#X obj 728 33 vsl 14 188 187 0 0 0 \$0-scrollsensor \$0-scrollsensor-r
-empty 0 -9 0 10 -195568 -195568 -1 0 1;
-#X obj 395 31 cnv 3 347 193 empty \$0-border empty 6 7 1 12 -1 -1 0
-;
-#X obj 729 32 cnv 12 12 191 empty \$0-background empty 20 12 0 14 -241213
--241213 0;
 #X obj 337 24 cnv 12 12 191 empty \$0-scrollbar empty 20 12 0 14 -187246
 -187246 0;
-#X obj 396 208 cnv 15 70 15 empty \$0-1-nick roman 2 7 0 12 -241213
--10142 0;
-#X obj 396 192 cnv 15 70 15 empty \$0-2-nick roman 2 7 0 12 -241213
--10142 0;
-#X obj 396 176 cnv 15 70 15 empty \$0-3-nick roman 2 7 0 12 -241213
--10142 0;
-#X obj 396 160 cnv 15 70 15 empty \$0-4-nick roman 2 7 0 12 -241213
--123011 0;
-#X obj 396 144 cnv 15 70 15 empty \$0-5-nick roman 2 7 0 12 -241213
--123011 0;
-#X obj 396 128 cnv 15 70 15 empty \$0-6-nick roman 2 7 0 12 -241213
--123011 0;
-#X obj 396 112 cnv 15 70 15 empty \$0-7-nick empty 2 7 0 12 -241213
--262144 0;
-#X obj 396 96 cnv 15 70 15 empty \$0-8-nick empty 2 7 0 12 -241213
--262144 0;
-#X obj 396 80 cnv 15 70 15 empty \$0-9-nick empty 2 7 0 12 -241213
--262144 0;
-#X obj 396 64 cnv 15 70 15 empty \$0-10-nick empty 2 7 0 12 -241213
--262144 0;
-#X obj 396 48 cnv 15 70 15 empty \$0-11-nick empty 2 7 0 12 -241213
--262144 0;
-#X obj 396 32 cnv 15 70 15 empty \$0-12-nick empty 2 7 0 12 -241213
--262144 0;
-#X obj 467 208 cnv 13 260 15 empty \$0-1-line BABABABA 2 7 0 12 -241213
--10142 0;
-#X obj 467 192 cnv 13 260 15 empty \$0-2-line sadköl\ asdjlkfasf 2
-7 0 12 -241213 -10142 0;
-#X obj 467 176 cnv 13 260 15 empty \$0-3-line <<<<<<<<<<<<<connected<<<<<<<<<<<<<<<<<
-2 7 0 12 -241213 -10142 0;
-#X obj 467 160 cnv 13 260 15 empty \$0-4-line bycicle\ jlsd\ klsdf\ jsad
-2 7 0 12 -241213 -123011 0;
-#X obj 467 144 cnv 13 260 15 empty \$0-5-line velo 2 7 0 12 -241213
--123011 0;
-#X obj 467 128 cnv 13 260 15 empty \$0-6-line hallo 2 7 0 12 -241213
--123011 0;
-#X obj 467 112 cnv 13 260 15 empty \$0-7-line empty 2 7 0 12 -241213
--262144 0;
-#X obj 467 96 cnv 13 260 15 empty \$0-8-line empty 2 7 0 12 -241213
--262144 0;
-#X obj 467 80 cnv 13 260 15 empty \$0-9-line empty 2 7 0 12 -241213
--262144 0;
-#X obj 467 64 cnv 13 260 15 empty \$0-10-line empty 2 7 0 12 -241213
--262144 0;
-#X obj 467 48 cnv 13 260 15 empty \$0-11-line empty 2 7 0 12 -241213
--262144 0;
-#X obj 467 32 cnv 13 260 15 empty \$0-12-line empty 2 7 0 12 -241213
--262144 0;
-#X obj 541 248 cnv 6 37 16 empty \$0-border empty 6 7 1 12 -1 -1 0
-;
-#X obj 545 249 hsl 30 14 0 1 0 0 \$0-mute \$0-mute-r empty -2 -8 0
-10 -262144 -1 -1 0 1;
-#X obj 542 249 cnv 14 35 14 empty \$0-mute-display mute 2 7 1 10 -241213
--1 0;
-#X obj 582 248 cnv 6 27 16 empty \$0-border empty 6 7 1 12 -1 -1 0
-;
-#X obj 586 249 hsl 20 14 0 1 0 0 \$0-dsp \$0-dsp-r empty -2 -8 0 10
--262144 -1 -1 0 1;
-#X obj 583 249 cnv 14 25 14 empty \$0-dsp-display dsp 2 7 1 10 -187246
--1 0;
 #X obj 231 396 loadbang;
 #X msg 231 419 2 3 0;
 #N canvas 138 498 414 142 set_version 0;
@@ -2280,8 +1945,6 @@ help for help \, ----------;
 #X obj 3 2 cnv 7 384 324 empty empty empty 6 8 1 12 -182959 -1 0;
 #X obj 5 4 cnv 15 380 320 empty empty netpd 3 12 0 20 -241213 -124705
 0;
-#X obj 317 4 cnv 15 60 20 empty \$0.version.label 2.3.0 3 12 0 20 -241213
--124705 0;
 #X obj 85 279 chat-inputbox \$0.input;
 #X obj 5 304 chat-button \$0.online.button online 79;
 #X obj 85 304 chat-button \$0.list.button list 60;
@@ -2290,7 +1953,7 @@ help for help \, ----------;
 #X obj 268 304 chat-button \$0.dsp.button dsp 54;
 #X obj 323 304 chat-button \$0.unpatch.button unpatch 62;
 #X obj 370 38 netpd-scrollbar \$0.scrollbar 15 240 12;
-#X obj 5 279 cnv 15 79 24 empty \$0.num.clients.label 18\  4 12 0 16
+#X obj 5 279 cnv 15 79 24 empty \$0.num.clients.label 1\  4 12 0 16
 -241213 -124705 0;
 #X obj 5 238 chat-line \$0 1;
 #X obj 5 218 chat-line \$0 2;
@@ -2316,6 +1979,7 @@ help for help \, ----------;
 #X text 470 459 button inactive;
 #X msg 390 494 176 168 184;
 #X text 473 493 scrollbar handle;
-#X connect 65 0 66 0;
-#X connect 66 0 67 0;
+#X obj 318 4 chat-version-display;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
 #X coords 0 -1 1 1 384 324 2 3 2;
