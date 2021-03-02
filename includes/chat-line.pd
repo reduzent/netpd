@@ -1,0 +1,6 @@
+#N canvas 0 106 450 300 10;
+#X obj 98 20 cnv 19 260 19 empty empty sa 2 7 0 12 -241213 -123011
+0;
+#X obj 20 20 cnv 19 77 19 empty \$0-3-nick roman 2 7 0 12 -241213 -123011
+0;
+#X coords 0 -1 1 1 338 19 2 20 20;
