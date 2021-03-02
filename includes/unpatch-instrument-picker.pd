@@ -1,4 +1,5 @@
 #N canvas 377 123 570 296 10;
+#X declare -path else;
 #X obj 24 201 s \$0.scrollbar;
 #X obj 20 20 unpatch-instrument-picker-row \$0 0;
 #X obj 20 40 unpatch-instrument-picker-row \$0 1;
@@ -119,6 +120,7 @@
 #X text 349 42 lock|unlock <instrument>;
 #X msg 229 228 load \$1;
 #X obj 229 251 s \$1;
+#X obj 363 80 declare -path else;
 #X connect 10 0 9 0;
 #X connect 11 0 0 0;
 #X connect 12 0 11 0;
