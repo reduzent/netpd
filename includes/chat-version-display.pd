@@ -1,0 +1,13 @@
+#N canvas 369 124 423 229 10;
+#X obj 20 20 cnv 15 67 20 empty \$0.version.label 2.3.0 3 12 0 20 -241213
+-124705 0;
+#X msg 33 162 label \$1;
+#X obj 33 185 s \$0.version.label;
+#X obj 33 140 netpd-list2symbol .;
+#X obj 33 118 netpd-status-get version;
+#X obj 33 88 loadbang;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X coords 0 -1 1 1 67 20 2 20 20;
