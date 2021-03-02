@@ -1,0 +1,34 @@
+#N canvas 1006 617 450 300 12;
+#X obj 20 20 cnv 20 300 20 empty \$0.bg empty 20 12 0 14 -249661 -249661
+0;
+#X symbolatom 21 21 40 0 0 0 - #0.symbol.r #0.symbol.s;
+#X obj 20 38 cnv 2 300 6 empty \$0.bg empty 20 12 0 14 -260097 -249661
+0;
+#X obj 20 20 cnv 2 300 2 empty \$0.bg empty 20 12 0 14 -260097 -249661
+0;
+#X obj 20 20 cnv 2 2 20 empty \$0.bg empty 20 12 0 14 -249661 -249661
+0;
+#X obj 300 20 cnv 7 20 24 empty \$0.bg empty 20 12 0 14 -260097 -249661
+0;
+#X obj 37 134 r \$1;
+#X obj 37 157 route color;
+#X msg 37 180 color \$1 \$1 \$1;
+#X obj 37 203 s \$0.bg;
+#X obj 148 173 r \$0.symbol.s;
+#X msg 148 196 from \$1;
+#X obj 148 219 s \$1;
+#X obj 256 113 r \$1;
+#X obj 256 136 route set;
+#X msg 256 179 set \$1;
+#X obj 256 202 s \$0.symbol.r;
+#X obj 256 159 list;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 13 0 14 0;
+#X connect 14 0 17 0;
+#X connect 15 0 16 0;
+#X connect 17 0 15 0;
+#X coords 0 -1 1 1 300 24 2 20 20;
