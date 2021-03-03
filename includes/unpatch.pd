@@ -1,6 +1,6 @@
-#N canvas 614 0 282 329 10;
+#N canvas 614 139 282 329 10;
 #X declare -path ../instruments/abs;
-#N canvas 394 0 220 423 unpatch 1;
+#N canvas 394 139 220 423 unpatch 1;
 #X obj 6 7 cnv 15 204 404 empty empty empty 3 12 0 14 -191407 -1 0
 ;
 #X obj 8 9 cnv 15 200 400 empty \$0.title.label unpatch 3 12 0 20 -249661
@@ -1906,9 +1906,10 @@ update netpd!;
 #X restore 72 379 pd test;
 #X obj 14 285 list append;
 #X obj 297 68 netpd-status-get version;
-#X obj 374 184 r \$0.UNPATCH;
-#X obj 374 207 route protect;
+#X obj 374 164 r \$0.UNPATCH;
+#X obj 374 187 route protect;
 #X obj 270 214 spigot 1;
+#X obj 374 210 == 0;
 #X connect 0 0 5 0;
 #X connect 4 0 11 1;
 #X connect 5 0 26 0;
@@ -1950,8 +1951,9 @@ update netpd!;
 #X connect 39 0 30 0;
 #X connect 40 0 35 1;
 #X connect 41 0 42 0;
-#X connect 42 0 43 1;
+#X connect 42 0 44 0;
 #X connect 43 0 6 0;
+#X connect 44 0 43 1;
 #X restore 10 42 pd negotiate.protocol.version;
 #N canvas 842 181 487 273 tell.netpd_head.state 0;
 #X obj 125 12 r \$0.UNPATCH;
