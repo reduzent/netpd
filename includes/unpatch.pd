@@ -1,6 +1,6 @@
 #N canvas 614 0 282 329 10;
 #X declare -path ../instruments/abs;
-#N canvas 394 0 220 425 unpatch 1;
+#N canvas 394 0 220 423 unpatch 1;
 #X obj 6 7 cnv 15 204 404 empty empty empty 3 12 0 14 -191407 -1 0
 ;
 #X obj 8 9 cnv 15 200 400 empty \$0.title.label unpatch 3 12 0 20 -249661
@@ -15,14 +15,14 @@
 #X obj 8 325 unpatch-gui-row \$0 7;
 #X obj 8 345 unpatch-gui-row \$0 8;
 #X obj 8 365 unpatch-gui-row \$0 9;
-#X obj 48 39 unpatch-instrument-picker \$0.loader;
+#X obj 48 37 unpatch-instrument-picker \$0.loader;
 #X obj 193 185 netpd-scrollbar \$0.scrollbar 15 200 10;
 #X obj 168 9 unpatch-preset-load;
 #X obj 118 9 unpatch-preset-save;
 #X obj 158 389 unpatch-status-print \$0;
 #X obj 96 11 cnv 15 20 20 empty \$0.protect.label empty 3 6 0 30 -249661
 -66577 0;
-#X obj 8 164 unpatch-symbolbox-140x20 \$0.input;
+#X obj 8 164 unpatch-inputbox \$0.input;
 #X restore 17 82 pd unpatch;
 #N canvas 595 106 532 660 unpatch_download 0;
 #X obj 9 65 r \$0.receive;
@@ -595,7 +595,7 @@ sechs \, 4 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X connect 25 0 26 0;
 #X connect 26 0 21 0;
 #X restore 17 258 pd unpatch_communication;
-#N canvas 646 407 384 278 unpatch_gui_stuff 0;
+#N canvas 646 407 384 355 unpatch_gui_stuff 0;
 #N canvas 313 201 417 272 row.colors 0;
 #X obj 44 97 s \$0.gui.bg1;
 #X obj 44 22 netpd-pref-get cr.background1.clr 1;
@@ -771,8 +771,13 @@ sechs \, 4 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X msg 18 153 set bgcolor 240 240 240 \, set frontcolor 184 184 184
 ;
 #X obj 18 130 loadbang;
+#X obj 24 216 loadbang;
+#X obj 24 283 s \$0.input;
+#X msg 24 252 bgcolor 224 224 224;
 #X connect 5 0 4 0;
 #X connect 6 0 5 0;
+#X connect 7 0 9 0;
+#X connect 9 0 8 0;
 #X restore 17 183 pd unpatch_gui_stuff;
 #N canvas 520 99 508 615 unpatch_patch_containers 0;
 #X obj 35 34 t a a;
@@ -1460,7 +1465,7 @@ been completed;
 #X msg 276 63 set \$1;
 #X obj 276 86 s \$0.input;
 #X obj 153 108 t a b;
-#X obj 219 94 del 3000;
+#X obj 211 104 del 10000;
 #X connect 1 0 5 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
