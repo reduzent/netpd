@@ -1,6 +1,6 @@
-#N canvas 615 106 416 78 10;
-#N canvas 394 139 220 426 unpatch 1;
-#X obj 7 6 unpatch-guts;
+#N canvas 615 0 414 78 10;
+#N canvas 394 0 219 424 unpatch 1;
+#X obj 4 7 unpatch-guts;
 #X restore 12 11 pd unpatch;
 #X text 16 40 This main window is only a container for unpatch subpatch
 ;
