@@ -305,7 +305,6 @@ to [unpackOSC];
 #X connect 36 2 4 0;
 #X connect 36 3 35 0;
 #X connect 37 0 16 0;
-#X connect 40 0 41 0;
 #X connect 40 1 43 0;
 #X connect 41 0 3 0;
 #X connect 41 1 42 0;
