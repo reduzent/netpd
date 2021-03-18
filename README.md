@@ -31,6 +31,10 @@ git clone --recursive https://github.com/reduzent/netpd.git
 netpd runs on any platform [Pure Data](https://puredata.info) runs on. This includes **Linux**, **macOS**,
 **Windows**.
 
+For [macOS](https://www.netpd.org/software/netpd-current-macos.dmg) and
+[Windows](https://www.netpd.org/software/netpd-current-windows.zip) there are
+batteries-included standalone apps available that should get you going very quickly.
+
 ## prerequisites
 
 Before runnning netpd you need to install [Pure Data](https://puredata.info) (Pd) (>= 0.51.0) from
