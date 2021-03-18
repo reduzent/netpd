@@ -1,0 +1,36 @@
+#N canvas 671 151 450 300 12;
+#X obj 20 20 cnv 20 200 20 empty \$0.bg empty 20 12 0 14 -124831 -124831
+0;
+#X symbolatom 21 21 28 0 0 0 - #0.symbol.r #0.symbol.s;
+#X obj 20 38 cnv 2 200 2 empty \$0.bg empty 20 12 0 14 -124831 -124831
+0;
+#X obj 20 20 cnv 2 200 2 empty \$0.bg empty 20 12 0 14 -124831 -124831
+0;
+#X obj 20 20 cnv 2 2 20 empty \$0.bg empty 20 12 0 14 -124831 -124831
+0;
+#X obj 210 20 cnv 7 10 20 empty \$0.bg empty 20 12 0 14 -124831 -124831
+0;
+#X obj 37 84 r \$1;
+#X msg 37 160 color \$1 \$1 \$1;
+#X obj 37 183 s \$0.bg;
+#X obj 148 123 r \$0.symbol.s;
+#X msg 148 146 from \$1;
+#X obj 148 169 s \$1;
+#X obj 256 63 r \$1;
+#X obj 256 86 route set;
+#X msg 256 129 set \$1;
+#X obj 256 152 s \$0.symbol.r;
+#X obj 256 109 list;
+#X obj 37 132 netpd-rgb2iem;
+#X obj 37 107 route bgcolor;
+#X connect 6 0 18 0;
+#X connect 7 0 8 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 12 0 13 0;
+#X connect 13 0 16 0;
+#X connect 14 0 15 0;
+#X connect 16 0 14 0;
+#X connect 17 0 7 0;
+#X connect 18 0 17 0;
+#X coords 0 -1 1 1 200 20 2 20 20;

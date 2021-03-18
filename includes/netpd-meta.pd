@@ -1,0 +1,18 @@
+#N canvas 169 106 432 242 10;
+#N canvas 25 106 420 300 META 0;
+#X text 10 70 LICENSE GPL-2;
+#X text 10 50 NAME netpd;
+#X text 10 30 AUTHOR Roman Haefeli <roman@netpd.org>;
+#X text 10 10 VERSION 2.3.0;
+#X text 9 91 DESCRIPTION Collaborative Realtime Networked Music Making
+Environment;
+#X text 8 129 URL https://www.netpd.org;
+#X restore 20 20 pd META;
+#X text 14 208 (c) 2004-2021 Roman Haefeli <roman@netpd.org>;
+#X obj 30 140 pdcontrol;
+#X msg 30 77 browse https://netpd.org;
+#X text 187 76 <- info;
+#X msg 43 106 browse https://untalk.netpd.org;
+#X text 245 107 <- community;
+#X connect 3 0 2 0;
+#X connect 5 0 2 0;

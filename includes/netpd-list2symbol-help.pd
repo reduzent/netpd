@@ -1,0 +1,26 @@
+#N canvas 453 106 504 416 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 8 7 netpd-list2symbol - compose a symbol from list;
+#X symbolatom 83 154 10 0 0 0 - - -;
+#X obj 20 201 netpd-list2symbol /;
+#X msg 20 107 list this is not a path;
+#X obj 20 236 print netpd-list2symbol;
+#X text 285 251 arg1: delimiter symbol;
+#X text 273 278 inlet0: list;
+#X text 273 295 inlet1: delimiter symbol;
+#X text 267 312 outlet0: composed symbol;
+#X text 21 58 [netpd-list2symbol] composes a symbol of the incoming
+list using the symbol on the right inlet as a delimiter.;
+#X msg 191 128 32;
+#X obj 191 150 makefilename %c;
+#X text 260 129 <- use a white space as delimiter;
+#X msg 181 179 32;
+#X text 207 180 <- this is works to as a space.;
+#X text 225 197 floats are treated as byte value;
+#X connect 2 0 3 1;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 11 0 12 0;
+#X connect 12 0 3 1;
+#X connect 14 0 3 1;

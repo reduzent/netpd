@@ -1,4 +1,4 @@
-#N canvas 399 44 503 456 10;
+#N canvas 399 106 503 461 10;
 #X msg 43 219 drop \$1;
 #X floatatom 43 200 5 0 0 0 - - -;
 #X floatatom 79 290 5 0 0 0 - - -;
@@ -8,9 +8,9 @@
 #X obj 31 366 netpd-hash;
 #X obj 31 398 print netpd-hash;
 #X msg 173 309 getlength;
-#X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X text 7 7 netpd-hash - associate symbols with numbers;
+#X text 8 7 netpd-hash - associate symbols with numbers;
 #X msg 239 309 getbypos \$1;
 #X floatatom 239 288 5 0 0 0 - - -;
 #X floatatom 316 288 5 0 0 0 - - -;
@@ -45,6 +45,9 @@ the current data can be retrieved.;
 #X msg 407 309 find \$1;
 #X symbolatom 407 287 10 0 0 0 - - -;
 #X text 216 249 find <symbol>: find <id> with given symbol;
+#X text 216 262 pos <id>: get position of id;
+#X floatatom 172 261 5 0 0 0 - - -;
+#X msg 172 283 pos \$1;
 #X connect 0 0 6 0;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
@@ -66,3 +69,5 @@ the current data can be retrieved.;
 #X connect 39 0 15 0;
 #X connect 40 0 6 0;
 #X connect 41 0 40 0;
+#X connect 44 0 45 0;
+#X connect 45 0 6 0;

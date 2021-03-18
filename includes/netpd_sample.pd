@@ -157,10 +157,10 @@
 #X obj 9 147 t a b;
 #X obj 36 169 symbol \$1-\$2-table;
 #X obj 9 279 s \$0.tabdump;
-#X obj 9 9 netpd-dump \$1 7;
 #X msg 9 247 index \$1 \, \$1 \$2;
+#X obj 9 9 netpd-dump \$1;
 #X connect 0 0 12 0;
-#X connect 1 0 14 0;
+#X connect 1 0 13 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 5 0 6 1;
@@ -172,8 +172,8 @@
 #X connect 10 0 1 0;
 #X connect 10 1 11 0;
 #X connect 11 0 0 0;
-#X connect 13 0 6 0;
-#X connect 14 0 12 0;
+#X connect 13 0 12 0;
+#X connect 14 0 6 0;
 #X restore 9 191 pd dump;
 #N canvas 652 188 333 359 fromfile 0;
 #X msg 37 243 set \$1;
