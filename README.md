@@ -56,15 +56,15 @@ need to be searched and installed:
   now chat with other users currently online.  
   Click *list* to get a list all connnected users.
 
-* Click the [unpatch](https://www.netpd.org/Unpatch) button in chat to launch the unpatch instrument
-  manager. If there is already a session going on, the instru-
-  ments used in the ongoing session are automatically loaded (they
+* Click the [unpatch](https://www.netpd.org/Unpatch) button in chat to launch
+  the unpatch instrument manager. If there is already a session going on,
+  the instruments used in the ongoing session are automatically loaded (they
   are first downloaded from other users, if necessary).
 
 * Load instruments into the current session by clicking on any of the
-  instrument names in the upper scroll list.
+  instrument names in the upper scroll list.  
   Alternatively, just type the name of the instrument (without the
-  extension .pd) into the input box and hit enter.
+  extension `.pd`) into the input box and hit enter.
 
 * Show an instrument's GUI by clicking on its name in unpatch's lower section.
   You can now manipulate the instrument's parameters. Any changes are instantaneously
