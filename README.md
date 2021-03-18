@@ -6,7 +6,7 @@ is a CRNMME (**C**ollaborative **R**ealtime **N**etworked **M**usic **M**aking *
 written in Pure Data. It allows many users to have a real time jam
 sessions with each other, connected over the internet.
 Users might contribute their own *netpd*ized patches a.k.a. instruments
-or use pre-existing ones. The set of instruments and the state of
+or use pre-existing ones. The set of [instruments](https://www.netpd.org/Instruments) and the state of
 each one is synchronized between clients in order to provide identical
 experience for every connected user.
 
@@ -35,9 +35,8 @@ netpd runs on any platform [Pure Data](https://puredata.info) runs on. This incl
 
 Before runnning netpd you need to install [Pure Data](https://puredata.info) (Pd) (>= 0.51.0) from
 [here](http://msp.ucsd.edu/software.html). You also need to install a few additional libraries.
-They can be installed from Pd through the menu *Help* -> *Find externals*. Search for their names
-and click on the appropriate choice. Be careful to pick the one with the right name, if several
-similarly named choices are presented:
+They can be installed from Pd through the menu *Help* -> *Find externals*. The following libraries
+need to be searched and installed:
 
   * binfile
   * else
@@ -53,42 +52,38 @@ similarly named choices are presented:
 ## intro
 
 * Open `netpd/main.pd` with Pd.  
-  chat automatically connects to the server and you can
-  now talk to other users.  
-  Click *list* to get a list of currently connnected users.
+  [chat](https://www.netpd.org/Chat) automatically connects to the server and you can
+  now chat with other users currently online.  
+  Click *list* to get a list all connnected users.
 
-* Click the *unpatch* button in chat to launch the unpatch instrument
+* Click the [unpatch](https://www.netpd.org/Unpatch) button in chat to launch the unpatch instrument
   manager. If there is already a session going on, the instru-
   ments used in the ongoing session are automatically loaded (they
   are first downloaded from other users, if necessary).
 
-* Load instruments with unpatch by clicking the square button next
-  to the *netload instrument* label. Browse to `netpd/instruments` and pick
-  an instrument (if your netpd/instruments directory is empty, you need
-  to get some instruments first. Read above).
+* Load instruments into the current session by clicking on any of the
+  instrument names in the upper scroll list.
   Alternatively, just type the name of the instrument (without the
-  extension .pd) into the symbol box and hit enter.
+  extension .pd) into the input box and hit enter.
 
-* Play an instrument by clicking its name in unpatch. The instru-
-  ment's GUI pops up and you can now manipulate the instrument
-  at your will. Beware other users are able (and supposed) to
-  manipulate the instrument to their will as well.
+* Show an instrument's GUI by clicking on its name in unpatch's lower section.
+  You can now manipulate the instrument's parameters. Any changes are instantaneously
+  synchronized between clients. Anyone can manipulate anything, so please be
+  cautious and considerate when joining an ongoing session.
 
-* Create your own instrument by typing `/new mysupersynth` into
-  unpatch's symbol box. A new instrument named *mysupersynth*
-  shows up in unpatch's instrument list. Edit *mysupersynth.pd* and
-  save it. You might want to check existing instruments to get an
-  idea of how to cook your own instrument. There will be section
-  about this topic on https://netpd.org/docs .  
-  **NOTE**: instruments belong to `netpd/instruments`, their abstractions to
-  `netpd/instruments/abs`.
- 
+If you're lucky, someone is online and might help you get started. This is the easiest
+and fastest way to get accustomed to all the instruments and how they interact with each
+other. Of course, you can explore the instruments on your own as well. Maybe start
+with [master](https://www.netpd.org/master) and [sine](https://www.netpd.org/sine).
+
+
 ## server
 
-For online jams, netpd needs to connect to a netpd-server. A public netpd-server
-is running at **netpd.org** on port **3025**. This is the default server in
-netpd's configuration. The netpd-server software is available here:  
-https://github.com/reduzent/netpd-server. 
+For online jams, netpd needs to connect to a [netpd-server](https://www.netpd.org/Server).
+A public netpd-server is running at **netpd.org** on port **3025**.
+This is the default server in netpd's configuration. The netpd-server software is available
+here:  
+https://github.com/reduzent/netpd-server.
 
 
 ## copyright
