@@ -1,20 +1,25 @@
-#N canvas 520 65 504 323 10;
-#X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+#N canvas 520 65 504 370 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X text 7 7 netpd-if-file - check if given file exists;
-#X obj 13 160 openpanel;
-#X obj 13 244 netpd-if-file;
-#X obj 13 136 bng 15 250 50 0 empty empty empty 17 7 0 10 -204786 -1
--1;
-#X msg 22 182 netpd-if-file-help.pd;
-#X msg 40 206 nonexistingpatch.pd;
-#X obj 13 279 print netpd-if-file;
-#X text 7 41 [netpd-if-file] checks if the given file/patch exists
+#X text 8 7 netpd-if-file - check if given file exists;
+#X obj 14 160 openpanel;
+#X obj 14 244 netpd-if-file;
+#X obj 14 136 bng 15 250 50 0 empty empty empty 17 7 0 10 #c4fcc4 #000000
+#000000;
+#X msg 23 182 netpd-if-file-help.pd;
+#X msg 41 206 nonexistingpatch.pd;
+#X text 8 41 [netpd-if-file] checks if the given file/patch exists
 and returns a '1' for true and '0' for false.;
-#X text 217 189 inlet0: path to patch;
-#X text 211 206 outlet0: 0|1;
+#X text 216 254 inlet0: path to patch;
+#X text 210 271 outlet0: 0|1;
+#X text 270 133 0: current patch;
+#X text 270 146 1: parent patch;
+#X text 272 160 ...;
+#X text 224 118 arg0: parent level (default: 0);
+#X obj 14 279 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X connect 2 0 3 0;
-#X connect 3 0 7 0;
+#X connect 3 0 14 0;
 #X connect 4 0 2 0;
 #X connect 5 0 3 0;
 #X connect 6 0 3 0;
