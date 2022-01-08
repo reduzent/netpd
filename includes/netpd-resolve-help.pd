@@ -1,0 +1,25 @@
+#N canvas 520 65 503 344 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X msg 27 105 symbol C:/Users/yodawg;
+#X msg 40 132 symbol /tmp/mozilla;
+#X msg 62 156 symbol my_sound_files/rec.wav;
+#X msg 75 180 symbol ./here.txt;
+#X msg 84 205 symbol other.jpg;
+#X text 240 235 inlet0: path to check;
+#X text 8 7 netpd-resolve - convert to absolute path;
+#X text 6 50 [netpd-resolve] converts incoming absolute or relative
+path to an absolute path.;
+#X listbox 27 286 53 0 0 0 - - - 0;
+#X text 234 252 outlet0: absolute path;
+#X text 310 170 0: current patch;
+#X text 310 183 1: parent patch;
+#X text 312 197 ...;
+#X obj 27 240 netpd-resolve 0;
+#X text 264 155 arg0: parent level (default: 0);
+#X connect 1 0 14 0;
+#X connect 2 0 14 0;
+#X connect 3 0 14 0;
+#X connect 4 0 14 0;
+#X connect 5 0 14 0;
+#X connect 14 0 9 0;
