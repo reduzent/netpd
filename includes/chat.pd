@@ -1,4 +1,4 @@
-#N canvas 0 106 493 562 10;
+#N canvas -10 26 493 562 10;
 #X declare -path osc;
 #N canvas 31 555 172 320 chat 0;
 #N canvas 331 376 444 295 connection 0;
@@ -861,20 +861,21 @@ vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 #N canvas 472 332 548 237 preferences 0;
 #X text 18 11 netpd-settings;
 #N canvas 0 450 379 284 netpd-preferences 0;
-#X symbolatom 120 15 10 0 0 0 - #0.netpd-name.r #0.netpd-name;
-#X symbolatom 120 36 40 0 0 0 - #0.netpd-welcome.r #0.netpd-welcome
-;
-#X symbolatom 120 56 40 0 0 0 - #0.netpd-server.r #0.netpd-server;
-#X floatatom 120 76 6 0 0 0 - #0.netpd-port.r #0.netpd-port;
+#X symbolatom 120 15 10 0 0 0 - \$0.netpd-name.r \$0.netpd-name 0;
+#X symbolatom 120 36 40 0 0 0 - \$0.netpd-welcome.r \$0.netpd-welcome
+0;
+#X symbolatom 120 56 40 0 0 0 - \$0.netpd-server.r \$0.netpd-server
+0;
+#X floatatom 120 76 6 0 0 0 - \$0.netpd-port.r \$0.netpd-port 0;
 #X text 76 14 name:;
 #X text 76 74 port:;
 #X text 46 36 say hello:;
 #X obj 116 246 hsl 237 19 0 127 0 0 \$0.closesavesettings \$0-bli save&close
-2 9 1 11 -233017 -233017 -1 0 1;
+2 9 1 11 #e0e0e0 #e0e0e0 #000000 0 1;
 #X obj 120 157 tgl 15 0 \$0.pd-dynamic-dsp-off \$0.pd-dynamic-dsp-off.r
-empty 17 7 0 10 -262144 -1 -1 1 1;
-#X floatatom 120 177 10 0 0 0 - #0.pd-audio-latency.r #0.pd-audio-latency
-;
+empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 120 177 10 0 0 0 - \$0.pd-audio-latency.r \$0.pd-audio-latency
+0;
 #X text 183 177 ms;
 #X text 3 216 __________________________________________________________
 ;
@@ -883,19 +884,19 @@ empty 17 7 0 10 -262144 -1 -1 1 1;
 #X text 10 134 DSP on at start:;
 #X text 22 54 IP / hostname:;
 #X obj 120 137 tgl 15 0 \$0.pd-start-dsp \$0.pd-start-dsp.r empty 17
-7 0 10 -262144 -1 -1 1 1;
+7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 212 175 hsl 30 14 0 127 0 0 \$0.show.alsa.dialog \$0.show.alsa.dialog.r
-alsa 0 8 0 10 -228856 -228856 -1 0 1;
+alsa 0 8 0 10 #dcdcdc #dcdcdc #000000 0 1;
 #X obj 250 175 hsl 30 14 0 127 0 0 \$0.show.jack.dialog \$0.show.jack.dialog.r
-jack 0 8 0 10 -228856 -228856 -1 0 1;
+jack 0 8 0 10 #dcdcdc #dcdcdc #000000 0 1;
 #X text 4 114 connect at start:;
 #X obj 120 117 tgl 15 0 \$0.netpd-auto-connect \$0.netpd-auto-connect.r
-empty 17 7 0 10 -262144 -1 -1 1 1;
-#X symbolatom 132 96 38 0 0 0 - #0.netpd-instruments-path.r #0.netpd-instruments-path
-;
+empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X symbolatom 132 96 38 0 0 0 - \$0.netpd-instruments-path.r \$0.netpd-instruments-path
+0;
 #X text 4 94 instruments path:;
 #X obj 120 98 vsl 12 12 0 127 0 0 \$0.netpd-instruments-path.button
-\$0.blu empty 0 -9 0 10 -228856 -228856 -1 0 1;
+\$0.blu empty 0 -9 0 10 #dcdcdc #dcdcdc #000000 0 1;
 #X restore 271 33 pd netpd-preferences;
 #X text 272 14 Preferences Window:;
 #N canvas 123 285 417 497 netpd-preferences-code 0;
@@ -1172,7 +1173,7 @@ empty 17 7 0 10 -262144 -1 -1 1 1;
 #X obj 18 147 netpd-pref-store pd-start-dsp;
 #N canvas 369 621 326 201 netpd-preferences-alsa 0;
 #X obj 130 65 vradio 15 1 0 7 \$0.alsa.blocksize \$0.bli empty 0 -8
-0 10 -1 -228856 -1 6;
+0 10 #000000 #dcdcdc #000000 0;
 #X text 113 66 64;
 #X text 107 81 128;
 #X text 107 96 256;
@@ -1181,7 +1182,7 @@ empty 17 7 0 10 -262144 -1 -1 1 1;
 #X text 101 143 2048;
 #X text 101 159 4096;
 #X obj 6 65 nbx 4 14 0 3000 0 0 \$0.alsa.msec \$0.blidsk empty 45 8
-0 12 -1 -228856 -1 0 256;
+0 12 #000000 #dcdcdc #000000 0 256;
 #X text 59 66 msec;
 #X text 4 48 Delay;
 #X text 81 48 Block size;
@@ -1190,7 +1191,7 @@ empty 17 7 0 10 -262144 -1 -1 1 1;
 #X restore 271 71 pd netpd-preferences-alsa;
 #N canvas 379 488 327 200 netpd-preferences-jack 0;
 #X obj 53 73 vradio 15 1 0 7 \$0.jack.frames \$0.bli empty 0 -8 0 10
--1 -228856 -1 0;
+#000000 #dcdcdc #000000 0;
 #X text 36 74 64;
 #X text 30 89 128;
 #X text 30 104 256;
@@ -1202,7 +1203,7 @@ empty 17 7 0 10 -262144 -1 -1 1 1;
 #X text 4 56 Frames;
 #X text 24 167 4096;
 #X obj 149 73 vradio 15 1 0 7 \$0.jack.periods \$0.bli empty 0 -8 0
-10 -1 -228856 -1 0;
+10 #000000 #dcdcdc #000000 0;
 #X text 100 56 Periods;
 #X text 138 74 2;
 #X text 138 89 3;
@@ -1296,7 +1297,7 @@ empty 17 7 0 10 -262144 -1 -1 1 1;
 #X connect 19 0 21 0;
 #X connect 21 0 15 0;
 #X restore 12 444 pd status;
-#N canvas 610 322 306 426 INIT 0;
+#N canvas 426 130 306 426 INIT 0;
 #X msg 47 217 \; pd dsp 1;
 #N canvas 120 274 181 227 netpd-loadbang 0;
 #X obj 8 8 loadbang;
@@ -1333,23 +1334,24 @@ empty 17 7 0 10 -262144 -1 -1 1 1;
 #X text 134 250 set to 1 when not defined;
 #X obj 8 250 s \$0.pd-start-dsp.r;
 #X obj 10 16 declare -path osc;
-#N canvas 0 106 492 310 check.instruments.path 0;
-#X obj 14 23 netpd-pref-get netpd-instruments-path;
-#X msg 33 72 symbol \$1/abs;
-#X obj 14 127 netpd-if-dir;
-#X obj 14 100 t a a;
-#X obj 14 150 list append;
-#X obj 14 173 route 0 1;
-#X obj 14 203 list;
-#X obj 14 271 netpd-error NETPD;
-#X msg 14 230 instruments directory '\$1' does not exist. Please check
+#N canvas 0 106 492 403 check.instruments.path 0;
+#X obj 14 63 netpd-pref-get netpd-instruments-path;
+#X msg 33 112 symbol \$1/abs;
+#X obj 14 167 netpd-if-dir;
+#X obj 14 140 t a a;
+#X obj 14 190 list append;
+#X obj 14 213 route 0 1;
+#X obj 14 243 list;
+#X obj 14 311 netpd-error NETPD;
+#X msg 14 270 instruments directory '\$1' does not exist. Please check
 netpd-instruments-dir in preferences.;
-#X obj 14 46 t a a a;
-#X obj 161 53 loadbang;
-#X obj 161 91 symbol <not_set>;
-#X obj 161 114 sel <not_set>;
-#X msg 161 139 instruments directory not configured. Please check netpd-instruments-dir
+#X obj 14 86 t a a a;
+#X obj 14 6 loadbang;
+#X obj 161 131 symbol <not_set>;
+#X obj 161 154 sel <not_set>;
+#X msg 161 179 instruments directory not configured. Please check netpd-instruments-dir
 in preferences.;
+#X obj 14 29 t b b;
 #X connect 0 0 9 0;
 #X connect 1 0 3 0;
 #X connect 2 0 4 0;
@@ -1362,10 +1364,12 @@ in preferences.;
 #X connect 9 0 3 0;
 #X connect 9 1 1 0;
 #X connect 9 2 11 1;
-#X connect 10 0 11 0;
+#X connect 10 0 14 0;
 #X connect 11 0 12 0;
 #X connect 12 0 13 0;
 #X connect 13 0 7 0;
+#X connect 14 0 11 0;
+#X connect 14 1 0 0;
 #X restore 5 385 pd check.instruments.path;
 #N canvas 594 381 469 317 check.samplerate 0;
 #X obj 27 36 loadbang;
@@ -1413,10 +1417,10 @@ live audio from being shared with peers.;
 #X connect 4 0 6 0;
 #X connect 6 0 5 0;
 #X restore 12 465 pd errors;
-#X obj 337 24 cnv 12 12 191 empty \$0-scrollbar empty 20 12 0 14 -187246
--187246 0;
+#X obj 337 24 cnv 12 12 191 empty \$0-scrollbar empty 20 12 0 14 #b4b4b4
+#b4b4b4 0;
 #X obj 163 395 loadbang;
-#X msg 163 418 2 3 0;
+#X msg 163 418 2 3 1;
 #N canvas 138 498 414 142 set_version 0;
 #X obj 6 19 inlet;
 #X obj 6 46 list prepend status set version;
@@ -1987,10 +1991,11 @@ help for help \, ----------;
 #X connect 7 0 1 0;
 #X restore 17 19 pd help.cmd;
 #X restore 12 507 pd commands;
-#X obj 15 16 cnv 6 347 254 empty empty empty 20 12 0 14 -262144 -66577
+#X obj 15 16 cnv 6 347 254 empty empty empty 20 12 0 14 #fcfcfc #404040
 0;
-#X obj 3 2 cnv 7 384 324 empty empty empty 6 8 1 12 -182959 -1 0;
-#X obj 5 4 cnv 15 380 320 empty empty netpd 3 12 0 20 -241213 -124705
+#X obj 3 2 cnv 7 384 324 empty empty empty 6 8 1 12 #b0a8b8 #000000
+0;
+#X obj 5 4 cnv 15 380 320 empty empty netpd 3 12 0 20 #e8e0f0 #787080
 0;
 #X obj 85 279 chat-inputbox \$0.input;
 #X obj 5 304 chat-button \$0.online.button online 79;
@@ -2001,7 +2006,7 @@ help for help \, ----------;
 #X obj 323 304 chat-button \$0.unpatch.button unpatch 62;
 #X obj 370 38 netpd-scrollbar \$0.scrollbar 15 240 12;
 #X obj 5 279 cnv 15 79 24 empty \$0.num.clients.label 1\  4 12 0 16
--241213 -124705 0;
+#e8e0f0 #787080 0;
 #X obj 5 238 chat-line \$0 1;
 #X obj 5 218 chat-line \$0 2;
 #X obj 5 198 chat-line \$0 3;
