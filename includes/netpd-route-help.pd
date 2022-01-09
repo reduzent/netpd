@@ -1,0 +1,27 @@
+#N canvas 195 59 503 362 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X text 8 7 netpd-route - settable route for float and symbol;
+#X obj 28 239 netpd-route;
+#X text 6 50 [netpd-route] works like route \, but can switch routing
+between symbols and floats.;
+#X text 252 115 arg0: selector (default: bang);
+#X text 240 145 inlet0: message;
+#X text 234 162 outlet0: output for a match;
+#X text 234 179 outlet1: output for umatched msgs;
+#X msg 91 208 bang;
+#X floatatom 127 209 5 0 0 0 - - - 0;
+#X symbolatom 165 209 10 0 0 0 - - - 0;
+#X msg 28 109 12 hallo velo;
+#X msg 43 131 blah blubbber;
+#X listbox 59 152 20 0 0 0 - - - 0;
+#X obj 91 289 print NO_MATCH;
+#X obj 28 316 print MATCH;
+#X connect 2 0 15 0;
+#X connect 2 1 14 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 1;
+#X connect 10 0 2 1;
+#X connect 11 0 2 0;
+#X connect 12 0 2 0;
+#X connect 13 0 2 0;
