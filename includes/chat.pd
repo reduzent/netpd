@@ -1373,22 +1373,24 @@ in preferences.;
 #X restore 5 385 pd check.instruments.path;
 #N canvas 594 381 469 317 check.samplerate 0;
 #X obj 27 36 loadbang;
-#X obj 27 59 samplerate~;
-#X obj 27 86 select 44100;
-#X obj 54 166 s NETPD;
-#X msg 54 133 warning non-standard samplerate detected: \$1 Hz;
-#X obj 27 254 print -n;
-#X msg 27 196 netpd uses 44100 Hz by convention. Not following this
+#X obj 27 91 samplerate~;
+#X obj 27 118 select 44100;
+#X obj 54 198 s NETPD;
+#X msg 54 165 warning non-standard samplerate detected: \$1 Hz;
+#X obj 27 286 print -n;
+#X msg 27 228 netpd uses 44100 Hz by convention. Not following this
 convention has unwanted side effects and prevents audio samples or
 live audio from being shared with peers.;
-#X obj 27 109 t b a;
-#X connect 0 0 1 0;
+#X obj 27 141 t b a;
+#X obj 27 59 delay 100;
+#X connect 0 0 8 0;
 #X connect 1 0 2 0;
 #X connect 2 1 7 0;
 #X connect 4 0 3 0;
 #X connect 6 0 5 0;
 #X connect 7 0 6 0;
 #X connect 7 1 4 0;
+#X connect 8 0 1 0;
 #X restore 161 314 pd check.samplerate;
 #X connect 5 0 4 0;
 #X connect 7 0 5 0;
@@ -2005,7 +2007,7 @@ help for help \, ----------;
 #X obj 268 304 chat-button \$0.dsp.button dsp 54;
 #X obj 323 304 chat-button \$0.unpatch.button unpatch 62;
 #X obj 370 38 netpd-scrollbar \$0.scrollbar 15 240 12;
-#X obj 5 279 cnv 15 79 24 empty \$0.num.clients.label 1\  4 12 0 16
+#X obj 5 279 cnv 15 79 24 empty \$0.num.clients.label 0\  4 12 0 16
 #e8e0f0 #787080 0;
 #X obj 5 238 chat-line \$0 1;
 #X obj 5 218 chat-line \$0 2;
