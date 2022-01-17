@@ -1,4 +1,4 @@
-#N canvas 594 44 460 561 10;
+#N canvas 286 32 999 693 10;
 #N canvas 624 75 434 290 NETPD 0;
 #X msg 12 8 version 0 0 0;
 #N canvas 315 75 473 287 abslist 0;
@@ -26,31 +26,138 @@ to specify dependencies (abstractions in netpd/abs) of your instrument.
 #X text 158 160 <- this manages patch state synchorization;
 #X msg 10 159 PLACEHOLDER NETPD_HEAD;
 #X msg 10 42 PLACEHOLDER GUI;
-#X text 10 66 This subpatch is displayed when you click on the instrument's
-name in unpatch. You can put in there whatever the user is supposed
-to see. Usually \, it contains the GUI widgets (sliders \, numberboxes
-\, etc.) that let the user control your instrument.;
 #X text 13 189 Every instrument needs exactly one [netpd_head] for
 state synchronization. You may use as many of the other [netpd_something]
 abstractions as you want for synchronizing user controlled parameters
 of your instrument.;
-#X text 15 262 An overview of available netpd_* abstractions:;
-#X text 19 289 * [netpd_f \$1 <sr-symbol> <initvalue>];
-#X text 19 368 * [netpd_t \$1 <table_name> <initsize>];
-#X text 33 383 synchronizes a table with the name '\$1-tablename'.
-;
-#X text 19 407 * [netpd_a \$1 <symbol>];
-#X text 31 424 synchronizes an 'anything' message or list;
-#X text 32 304 synchronizes a number controller by a number box \,
-slider \, toggle \, radio \, etc. Make sure to use <sr-symbol> in both
-\, send and receive symbol \, in the corresponding widget (slider \,
-numberbox \, etc).;
-#X text 296 537 last update: 2014-02-28;
 #X text 158 16 <- put your instrument's meta tags here;
 #X text 159 44 <- this is your new instrument's GUI canvas;
-#X obj 164 499 hsl 128 17 0 127 0 0 \$1-param1 \$1-param1 param1 2
-8 0 10 -262144 -1 -1 0 1;
-#X text 16 475 Example usage:;
-#X floatatom 18 521 5 0 0 0 - - -;
-#X obj 18 499 netpd_f \$1 param1 100;
-#X connect 19 0 18 0;
+#X obj 160 344 hsl 128 18 0 127 0 0 \$1-param1 \$1-param1 param1 2
+8 0 10 #feffc6 #000000 #000000 0 1;
+#X floatatom 14 366 5 0 0 0 - - - 0;
+#X text 293 345 <- check properties;
+#X text 837 665 last update: 2022-01-17;
+#X text 14 284 OVERVIEW OF NETPD INSTRUMENT ABSTRACTIONS;
+#X text 14 294 -----------------------------------------;
+#X obj 457 10 cnv 2 2 200 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 14 343 cnv 15 130 20 empty empty empty 20 12 0 14 #c6ffc7 #404040
+0;
+#X obj 14 344 netpd_f \$1 param1 100;
+#X text 12 320 [netpd_f] synchronizes a number parameter;
+#X floatatom 14 426 5 0 0 0 - - - 0;
+#X text 215 407 <- check properties;
+#X obj 14 403 cnv 15 130 20 empty empty empty 20 12 0 14 #c6ffc7 #404040
+0;
+#X obj 14 404 netpd_f \$1 param2 120;
+#X obj 157 404 nbx 5 18 0 120 0 0 \$1-param2 \$1-param2 empty 0 -8
+0 10 #feffc6 #000000 #000000 0 256;
+#X text 15 385 works also with numbers:;
+#X obj 14 513 cnv 15 110 20 empty empty empty 20 12 0 14 #c6ffc7 #404040
+0;
+#X obj 15 513 netpd_a \$1 param3;
+#X text 73 434 syntax: [netpd_f \$1 paramname initial_value];
+#X listbox 15 492 20 0 0 0 - - - 0;
+#X listbox 15 558 20 0 0 0 - - - 0;
+#X text 139 513 syntax: [netpd_a \$1 paramname];
+#X obj 275 603 cnv 15 110 20 empty empty empty 20 12 0 14 #c6ffc7 #404040
+0;
+#X listbox 276 650 20 0 0 0 - - - 0;
+#X text 12 653 syntax: [netpd_r \$1 paramname];
+#X obj 276 603 netpd_r \$1 param3;
+#X obj 145 603 cnv 15 110 20 empty empty empty 20 12 0 14 #c6ffc7 #404040
+0;
+#X obj 146 603 netpd_r \$1 param2;
+#X floatatom 146 629 5 0 0 0 - - - 0;
+#X obj 15 603 cnv 15 110 20 empty empty empty 20 12 0 14 #c6ffc7 #404040
+0;
+#X floatatom 16 629 5 0 0 0 - - - 0;
+#X obj 16 603 netpd_r \$1 param1;
+#X text 479 18 [netpd_t] synchronizes a grahical array;
+#X obj 484 50 cnv 15 150 20 empty empty empty 20 12 0 14 #c6ffc7 #404040
+0;
+#X obj 484 50 netpd_t \$1 somearray 200;
+#X obj 784 50 cnv 15 200 100 empty empty empty 20 12 0 14 #feffc6 #404040
+0;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$1-somearray 200 float 2;
+#X coords 0 1 200 -1 200 100 1 0 0;
+#X restore 784 50 graph;
+#X obj 457 209 cnv 2 2 200 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 457 409 cnv 2 2 200 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 457 479 cnv 2 2 200 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X text 12 470 [netpd_a] manages symbols and lists;
+#X text 13 582 [netpd_r] receives a value anywhere in the instrument
+;
+#X text 483 80 syntax: [netpd_t \$1 arrayname initial_size];
+#X text 483 152 NOTE: [netpd_t] detects manual manipulation of the
+array. However \, it is limited to arrays up to 2048 points. Indexes
+above that are ignored.;
+#X obj 632 259 adc~ 1;
+#X msg 485 260 start;
+#X msg 522 260 stop;
+#X obj 484 289 cnv 15 160 20 empty empty empty 20 12 0 14 #c6ffc7 #404040
+0;
+#X obj 485 289 netpd_sample \$1 realaudio;
+#X text 479 235 [netpd_sample] synchronizes an audio sample;
+#X text 483 319 syntax: [netpd_sample \$1 samplename];
+#X obj 813 293 tabplay~ \$1-realaudio-table;
+#X obj 972 318 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 813 316 dac~ 1;
+#X obj 813 270 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 836 268 play sample;
+#X text 646 291 <- check help for details;
+#X obj 484 449 cnv 15 140 20 empty empty empty 20 12 0 14 #c6ffc7 #404040
+0;
+#X text 628 451 <- check help for details;
+#X obj 485 449 netpd_text \$1 sometext;
+#X text 482 500 syntax: [netpd_text \$1 text];
+#X text 479 380 [netpd_text] synchronizes an instance of a [text] object
+;
+#X msg 485 402 append first line of this text;
+#X msg 499 425 get 0;
+#X listbox 485 475 30 0 0 0 - - - 0;
+#X listbox 615 651 20 0 0 0 - - - 0;
+#X obj 615 605 netpd_r \$1 rawparam;
+#X obj 490 605 cnv 15 120 20 empty empty empty 20 12 0 14 #c6ffc7 #404040
+0;
+#X obj 489 605 netpd_s \$1 rawparam;
+#X floatatom 489 578 5 0 0 0 - - - 0;
+#X listbox 534 578 20 0 0 0 - - - 0;
+#X text 479 550 [netpd_s] sends arbitrary data (without state saving!)
+;
+#X obj 15 536 list;
+#X obj 276 626 list;
+#X obj 615 628 list;
+#X text 10 66 The above subpatch is displayed when you click on the
+instrument's name in unpatch. You can put in there whatever the user
+is supposed to see. Usually \, it contains the GUI widgets (sliders
+\, numberboxes \, etc.) that let the user control your instrument.
+;
+#X connect 15 0 8 0;
+#X connect 20 0 17 0;
+#X connect 24 0 79 0;
+#X connect 26 0 24 0;
+#X connect 32 0 80 0;
+#X connect 34 0 35 0;
+#X connect 38 0 37 0;
+#X connect 51 0 55 1;
+#X connect 52 0 55 0;
+#X connect 53 0 55 0;
+#X connect 58 0 60 0;
+#X connect 58 1 59 0;
+#X connect 61 0 58 0;
+#X connect 66 0 71 0;
+#X connect 69 0 66 0;
+#X connect 70 0 66 0;
+#X connect 73 0 81 0;
+#X connect 76 0 75 0;
+#X connect 77 0 75 0;
+#X connect 79 0 27 0;
+#X connect 80 0 30 0;
+#X connect 81 0 72 0;
