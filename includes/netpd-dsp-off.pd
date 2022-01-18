@@ -1,4 +1,4 @@
-#N canvas 390 325 303 254 10;
+#N canvas 390 325 323 256 10;
 #X obj 11 10 inlet;
 #X obj 28 210 outlet;
 #X msg 11 151 dsp \$1;
@@ -8,7 +8,8 @@
 #X obj 11 79 f;
 #X obj 62 56 netpd-status-get dsp;
 #X obj 11 115 spigot;
-#X obj 85 85 netpd-pref-get pd-dynamic-dsp-off 1;
+#X obj 92 131 netpd-pref-get pd-dynamic-dsp-off 1;
+#X obj 92 97 loadbang;
 #X connect 0 0 4 0;
 #X connect 2 0 3 0;
 #X connect 4 0 6 0;
@@ -20,3 +21,4 @@
 #X connect 7 0 6 1;
 #X connect 8 0 2 0;
 #X connect 9 0 8 1;
+#X connect 10 0 9 0;
