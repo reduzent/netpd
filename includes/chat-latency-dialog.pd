@@ -1,0 +1,127 @@
+#N canvas 391 409 1090 435 10;
+#X obj 20 20 cnv 15 300 240 empty empty empty 20 12 0 14 #f0f0f0 #404040
+0;
+#X obj 330 20 cnv 15 300 240 empty empty empty 20 12 0 14 #f0f0f0 #404040
+0;
+#X obj 640 20 cnv 15 300 240 empty empty empty 20 12 0 14 #f0f0f0 #404040
+0;
+#X obj 22 278 namecanvas \$0.gop;
+#X msg 149 360 coords 0 -1 1 1 300 240 2 \$1 20;
+#X obj 149 389 s \$0.gop;
+#X msg 149 330 20;
+#X msg 269 328 330;
+#X msg 398 330 640;
+#X obj 123 20 hsl 94 30 0 127 0 0 \$0.lat.menu.jack \$0.lat.menu.jack
+empty -2 -8 0 10 #fcfcfc #ffffff #000000 0 1;
+#X obj 224 20 hsl 94 30 0 127 0 0 \$0.lat.menu.sample \$0.lat.menu.sample
+empty -2 -8 0 10 #fcfcfc #ffffff #000000 0 1;
+#X obj 20 20 cnv 15 99 30 empty empty ALSA 10 16 0 20 #f0f0f0 #404040
+0;
+#X obj 120 20 cnv 15 100 30 empty empty JACK 10 16 0 20 #ffffff #404040
+0;
+#X obj 221 20 cnv 15 99 30 empty empty SAMPLE 10 16 0 20 #ffffff #404040
+0;
+#X obj 333 20 hsl 94 30 0 127 0 0 \$0.lat.menu.alsa \$0.lat.menu.alsa
+empty -2 -8 0 10 #fcfcfc #ffffff #000000 0 1;
+#X obj 534 20 hsl 94 30 0 127 0 0 \$0.lat.menu.sample \$0.lat.menu.sample
+empty -2 -8 0 10 #fcfcfc #ffffff #000000 0 1;
+#X obj 330 20 cnv 15 99 30 empty empty ALSA 10 16 0 20 #ffffff #404040
+0;
+#X obj 430 20 cnv 15 100 30 empty empty JACK 10 16 0 20 #f0f0f0 #404040
+0;
+#X obj 531 20 cnv 15 99 30 empty empty SAMPLE 10 16 0 20 #ffffff #404040
+0;
+#X obj 643 20 hsl 94 30 0 127 0 0 \$0.lat.menu.alsa \$0.lat.menu.alsa
+empty -2 -8 0 10 #fcfcfc #ffffff #000000 0 1;
+#X obj 743 20 hsl 94 30 0 127 0 0 \$0.lat.menu.jack \$0.lat.menu.jack
+empty -2 -8 0 10 #fcfcfc #ffffff #000000 0 1;
+#X obj 640 20 cnv 15 99 30 empty empty ALSA 10 16 0 20 #ffffff #404040
+0;
+#X obj 740 20 cnv 15 100 30 empty empty JACK 10 16 0 20 #ffffff #404040
+0;
+#X obj 841 20 cnv 15 99 30 empty empty SAMPLE 10 16 0 20 #f0f0f0 #404040
+0;
+#X obj 149 277 r \$0.lat.menu.alsa;
+#X obj 149 300 sel;
+#X obj 177 301 t a;
+#X obj 269 300 sel;
+#X obj 297 301 t a;
+#X obj 269 277 r \$0.lat.menu.jack;
+#X obj 398 300 sel;
+#X obj 426 301 t a;
+#X obj 398 277 r \$0.lat.menu.sample;
+#X obj 160 135 vradio 15 1 0 7 \$1.alsa.blocksize \$0.bli empty 0 -8
+0 10 #000000 #dcdcdc #000000 0;
+#X text 143 136 64;
+#X text 137 151 128;
+#X text 137 166 256;
+#X text 137 181 512;
+#X text 131 196 1024;
+#X text 131 213 2048;
+#X text 131 229 4096;
+#X obj 36 135 nbx 3 20 0 3000 0 0 \$1.alsa.msec \$0.blidsk empty 45
+8 0 14 #000000 #dcdcdc #000000 0 256;
+#X text 89 137 msec;
+#X text 34 118 Delay;
+#X text 111 118 Block size;
+#X text 34 96 Enter currently used ALSA settings:;
+#X text 34 65 CALCULATE AUDIO LATENCY (ALSA);
+#X obj 394 135 vradio 15 1 0 7 \$1.jack.frames \$0.bli empty 0 -8 0
+10 #000000 #dcdcdc #000000 0;
+#X text 377 136 64;
+#X text 371 151 128;
+#X text 371 166 256;
+#X text 371 181 512;
+#X text 365 196 1024;
+#X text 365 213 2048;
+#X text 344 65 CALCULATE AUDIO LATENCY (JACK);
+#X text 344 96 Enter currently used JACK settings:;
+#X text 369 118 Frames;
+#X text 365 229 4096;
+#X obj 470 135 vradio 15 1 0 7 \$1.jack.periods \$0.bli empty 0 -8
+0 10 #000000 #dcdcdc #000000 0;
+#X text 440 118 Periods;
+#X text 459 136 2;
+#X text 459 151 3;
+#X text 459 166 4;
+#X text 459 181 5;
+#X text 459 196 6;
+#X text 459 211 7;
+#X text 459 226 8;
+#X obj 507 135 nbx 3 20 2 999 0 0 \$1.jack.msec empty empty 0 -8 0
+14 #000000 #dfdfdf #000000 0 256;
+#X text 562 138 msec;
+#X text 505 118 Delay;
+#X obj 507 186 tgl 20 0 \$1.jack.callback empty empty 17 7 0 10 #000000
+#dfdfdf #000000 0 1;
+#X text 505 169 Callback:;
+#X obj 669 177 cnv 15 70 25 empty \$1.lat.ret.level \ \ 0dB 6 12 0
+14 #000000 #dfdfdf 0;
+#X obj 669 207 cnv 15 70 25 empty \$1.latency.label empty 6 12 0 14
+#000000 #fcfcfc 0;
+#X obj 669 147 tgl 25 0 \$1.lat.measure.s \$1.lat.measure.r empty 17
+7 0 10 #000000 #dfdfdf #000000 0 1;
+#X text 746 213 Latency;
+#X text 747 182 Input Level;
+#X text 698 149 Turn on Test signal;
+#X text 654 65 NEASURE LATENCY;
+#X text 666 88 Route the output of your soundcard;
+#X text 666 118 test signal ([dac~ 1] -> [adc~ 1]);
+#X text 666 103 back to your input and turn on the;
+#X connect 4 0 5 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 4 0;
+#X connect 24 0 25 0;
+#X connect 25 0 6 0;
+#X connect 25 1 26 0;
+#X connect 26 0 25 1;
+#X connect 27 0 7 0;
+#X connect 27 1 28 0;
+#X connect 28 0 27 1;
+#X connect 29 0 27 0;
+#X connect 30 0 8 0;
+#X connect 30 1 31 0;
+#X connect 31 0 30 1;
+#X connect 32 0 30 0;
+#X coords 0 -1 1 1 300 240 2 20 20;
