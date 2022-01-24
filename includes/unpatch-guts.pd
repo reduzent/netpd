@@ -1,5 +1,4 @@
 #N canvas 613 106 546 477 10;
-#X declare -path ../instruments/abs;
 #N canvas 595 106 532 660 unpatch_download 0;
 #X obj 9 65 r \$0.receive;
 #X obj 9 290 list trim;
@@ -16,8 +15,8 @@ abstractions and the patch.;
 #X obj 79 187 t a a;
 #X obj 233 237 spigot;
 #X obj 233 259 print DEBUG/DOWNLOAD;
-#X obj 266 217 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 266 217 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X obj 9 496 unpatch-batch-download /unpatch \$0.UNPATCH;
 #X text 227 426 pass the the batch download in order to;
 #X obj 226 371 t a a;
@@ -137,8 +136,8 @@ abstractions and the patch.;
 #X obj 14 96 list prepend patchlist out;
 #X obj 14 118 list trim;
 #X obj 222 151 pack f s;
-#X floatatom 222 132 5 0 0 0 - - -;
-#X symbolatom 263 132 10 0 0 0 - - -;
+#X floatatom 222 132 5 0 0 0 - - - 0;
+#X symbolatom 263 132 10 0 0 0 - - - 0;
 #X obj 14 32 route patchlist;
 #X obj 14 54 route in;
 #N canvas 778 147 198 360 sync.length 0;
@@ -456,7 +455,7 @@ sechs \, 4 sieben \, 8 acht \, 9 neun \, 10 zehn \, 11 elf \, 12 zwoelf
 #X obj 83 164 t b a b, f 9;
 #X obj 134 308 b;
 #X obj 83 374 -;
-#X floatatom 180 363 5 0 0 0 - - -;
+#X floatatom 180 363 5 0 0 0 - - - 0;
 #X obj 83 396 moses 0;
 #X obj 122 418 moses 10;
 #X obj 122 442 list append;
@@ -1052,8 +1051,8 @@ been completed;
 #X text 157 244 /check slot <slot>;
 #X obj 237 533 print DEBUG/UPLOAD;
 #X obj 237 512 spigot;
-#X obj 270 489 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 270 489 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X msg 47 245 b /check slot \$1;
 #X obj 8 396 list prepend;
 #X obj 8 418 route 1 0;
@@ -1987,7 +1986,6 @@ update netpd!;
 #X obj 284 281 unpatch-singleton-container;
 #N canvas 913 182 399 264 unpatch_dynamic_declare 0;
 #N canvas 773 508 465 169 \$0.declare 0;
-#X obj 20 20 declare -path ../instruments/abs;
 #X restore 13 25 pd \$0.declare;
 #X obj 13 214 s pd-\$0.declare;
 #X obj 13 53 loadbang;
@@ -2005,10 +2003,10 @@ update netpd!;
 #X connect 6 0 7 0;
 #X connect 7 0 1 0;
 #X restore 284 76 pd unpatch_dynamic_declare;
-#X obj 20 20 cnv 15 204 404 empty empty empty 3 12 0 14 -191407 -1
+#X obj 20 20 cnv 15 204 404 empty empty empty 3 12 0 14 #b8b8b8 #000000
 0;
 #X obj 22 22 cnv 15 200 400 empty \$0.title.label unpatch 3 12 0 20
--249661 -162280 0;
+#f0f0f0 #9c9c9c 0;
 #X obj 22 218 unpatch-gui-row \$0 1;
 #X obj 22 198 unpatch-gui-row \$0 0;
 #X obj 22 238 unpatch-gui-row \$0 2;
@@ -2024,7 +2022,7 @@ update netpd!;
 #X obj 182 22 unpatch-preset-load \$0;
 #X obj 132 22 unpatch-preset-save;
 #X obj 172 402 unpatch-status-print \$0;
-#X obj 110 24 cnv 15 20 20 empty \$0.protect.label empty 3 6 0 30 -249661
--66577 0;
+#X obj 110 24 cnv 15 20 20 empty \$0.protect.label empty 3 6 0 30 #f0f0f0
+#404040 0;
 #X obj 22 177 unpatch-inputbox \$0.input;
 #X coords 0 -1 1 1 204 404 2 20 20;
