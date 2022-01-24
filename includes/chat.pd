@@ -1,6 +1,6 @@
 #N canvas -10 26 493 562 10;
 #X declare -path osc;
-#N canvas 31 555 172 320 chat 0;
+#N canvas 31 555 172 320 chat 1;
 #N canvas 331 376 444 295 connection 0;
 #X msg 143 175 disconnect;
 #X msg 9 184 connect \$1 \$2;
@@ -251,7 +251,7 @@
 #X connect 8 0 4 0;
 #X connect 9 0 10 0;
 #X restore 9 168 pd dsp-button;
-#N canvas 757 145 479 486 chatdisplay 0;
+#N canvas 641 139 479 486 chatdisplay 0;
 #X obj 11 63 list;
 #X obj 11 117 unpack s s f;
 #X obj 11 206 pack s s f;
@@ -385,11 +385,11 @@
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
 #X connect 7 0 4 1;
-#X restore 80 184 pd client_color;
-#X obj 50 140 t a b;
+#X restore 154 182 pd client_color;
+#X obj 45 139 t a b;
 #X obj 11 88 t a b;
 #X obj 108 118 1;
-#X obj 80 162 f;
+#X obj 154 160 f;
 #X obj 11 16 netpd-r /chat/msg;
 #N canvas 0 106 413 217 command.display 0;
 #X obj 21 17 r \$0.chat.comand.display;
@@ -412,7 +412,7 @@
 #X msg 154 33 set bgcolor 232 224 240 \, set frontcolor 176 168 184
 ;
 #X obj 154 10 loadbang;
-#X obj 219 169 text define \$0.msgs;
+#X obj 227 141 text define \$0.msgs;
 #X obj 30 302 text set \$0.msgs;
 #X msg 61 279 1e+15;
 #X obj 11 324 text size \$0.msgs;
@@ -437,13 +437,14 @@
 #X connect 4 0 3 0;
 #X connect 5 0 2 0;
 #X restore 101 261 pd limit.history;
+#X obj 17 175 netpd-str-replace " ˮ;
 #X connect 0 0 5 0;
 #X connect 1 0 2 0;
 #X connect 1 1 4 0;
 #X connect 1 2 7 1;
 #X connect 2 0 26 0;
 #X connect 3 0 2 2;
-#X connect 4 0 2 1;
+#X connect 4 0 28 0;
 #X connect 4 1 7 0;
 #X connect 5 0 1 0;
 #X connect 5 1 6 0;
@@ -466,6 +467,7 @@
 #X connect 26 1 16 0;
 #X connect 26 2 17 0;
 #X connect 26 3 27 0;
+#X connect 28 0 2 1;
 #X restore 9 48 pd chatdisplay;
 #X restore 17 66 pd chat-guicode;
 #N canvas 392 594 279 249 CLIENT 0;
@@ -1292,12 +1294,12 @@ empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 10 0 11 0;
 #X connect 11 0 6 0;
 #X restore 12 560 pd sample.period;
-#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ 59dB 6 12 0 14
-#e0e0e0 #404040 0;
+#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ \ 0dB 6 12 0
+14 #e0e0e0 #404040 0;
 #X obj 219 371 s \$0.lat.ret.level;
 #X obj 12 247 bang;
-#X obj 382 508 cnv 15 60 25 empty \$0.latency.label 216.1ms 6 12 0
-14 #000000 #fcfcfc 0;
+#X obj 382 508 cnv 15 60 25 empty \$0.latency.label 0.0ms 6 12 0 14
+#000000 #fcfcfc 0;
 #X obj 219 206 adc~ 1;
 #X obj 75 207 *~ 0;
 #X obj 219 230 delwrite~ \$0.lat.offset 20;
