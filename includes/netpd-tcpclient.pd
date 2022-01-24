@@ -1,12 +1,10 @@
 #N canvas 414 108 396 229 10;
-#X declare -path iemnet;
 #X obj 15 45 inlet;
 #X obj 15 82 tcpclient;
 #X obj 15 177 outlet;
 #X obj 32 156 outlet;
 #X obj 49 135 outlet;
 #X obj 66 114 outlet;
-#X obj 16 13 declare -path iemnet;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
