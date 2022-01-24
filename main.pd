@@ -1,4 +1,6 @@
 #N canvas 0 0 394 334 10;
-#X declare -path . -path ./includes;
-#X obj 42 131 declare -path . -path ./includes;
+#X declare -path . -path includes -path osc -path iemnet -path slip
+-path iemlib -lib iemlib;
+#X obj 4 131 declare -path . -path includes -path osc -path iemnet
+-path slip -path iemlib -lib iemlib;
 #X obj 4 4 chat;
