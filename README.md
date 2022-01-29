@@ -33,22 +33,19 @@ netpd runs on any platform [Pure Data](https://puredata.info) runs on. This incl
 
 For [macOS](https://www.netpd.org/software/netpd-current-macos.dmg) and
 [Windows](https://www.netpd.org/software/netpd-current-windows.zip) there are
-batteries-included standalone apps available that should get you going very quickly.
+batteries-included standalone apps available that should get you going quickly.
 
 ## prerequisites
 
-Before runnning netpd you need to install [Pure Data](https://puredata.info) (Pd) (>= 0.51.0) from
+Before runnning netpd you need to install [Pure Data](https://puredata.info) (Pd) (>= 0.52.0) from
 [here](http://msp.ucsd.edu/software.html). You also need to install a few additional libraries.
 They can be installed from Pd through the menu *Help* -> *Find externals*. The following libraries
 need to be searched and installed:
 
-  * binfile
-  * else
-  * iemnet
   * iemlib
+  * iemnet
   * osc
   * slip
-  * zexy
 
 **NOTE**: pd-l2ork is not supported (and support is not planned) because it
  has some incompatibilities with Pure Data.
