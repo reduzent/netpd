@@ -1,0 +1,51 @@
+#N canvas 572 201 392 366 10;
+#N canvas 859 454 322 181 \$0.download.gop 0;
+#X obj 16 16 cnv 15 200 20 empty empty Allow\ upgrade\ of: 0 12 0 20
+#ffffff #000000 0;
+#X obj 39 68 cnv 15 200 20 empty \$0.what empty 0 12 0 14 #ffffff #0400ff
+0;
+#X obj 178 119 hsl 49 28 0 127 0 0 \$0.yes empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 243 119 hsl 49 28 0 127 0 0 \$0.no empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 175 119 cnv 15 54 28 empty empty empty 5 12 0 20 #000000 #000000
+0;
+#X obj 177 121 cnv 15 50 24 empty empty Yes 5 12 0 20 #c6ffc7 #000000
+0;
+#X obj 240 119 cnv 15 54 28 empty empty empty 5 12 0 20 #000000 #000000
+0;
+#X obj 242 121 cnv 15 50 24 empty empty No 5 12 0 20 #ffc7c6 #000000
+0;
+#X coords 0 -1 1 1 300 150 2 10 10;
+#X restore 20 20 pd \$0.download.gop;
+#X obj 12 194 r \$1;
+#X obj 12 218 route set;
+#X obj 12 242 list;
+#X msg 12 266 label \$1;
+#X obj 12 290 s \$0.what;
+#X obj 139 200 r \$0.yes;
+#X obj 139 223 sel;
+#X obj 170 224 t a;
+#X obj 204 227 sel;
+#X obj 235 228 t a;
+#X obj 204 204 r \$0.no;
+#X msg 204 254 0;
+#X msg 139 255 1;
+#X msg 139 287 answer \$1;
+#X obj 139 310 s \$1;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
+#X connect 7 0 13 0;
+#X connect 7 1 8 0;
+#X connect 8 0 7 1;
+#X connect 9 0 12 0;
+#X connect 9 1 10 0;
+#X connect 10 0 9 1;
+#X connect 11 0 9 0;
+#X connect 12 0 14 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X coords 0 -1 1 1 300 150 2 20 20;
