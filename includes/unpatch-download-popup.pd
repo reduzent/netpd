@@ -1,51 +1,104 @@
-#N canvas 572 201 392 366 10;
-#N canvas 859 454 322 181 \$0.download.gop 0;
-#X obj 16 16 cnv 15 200 20 empty empty Allow\ upgrade\ of: 0 12 0 20
-#ffffff #000000 0;
-#X obj 39 68 cnv 15 200 20 empty \$0.what empty 0 12 0 14 #ffffff #0400ff
-0;
-#X obj 178 119 hsl 49 28 0 127 0 0 \$0.yes empty empty -2 -8 0 10 #fcfcfc
+#N canvas 572 201 666 513 12;
+#N canvas 859 454 379 252 \$0.download.gop 0;
+#X obj 20 20 cnv 15 200 20 empty empty Allow\\\ upgrade\\\ of: 0 12
+0 20 #ffffff #000000 0;
+#X obj 223 171 hsl 49 28 0 127 0 0 \$0.yes empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 243 119 hsl 49 28 0 127 0 0 \$0.no empty empty -2 -8 0 10 #fcfcfc
+#X obj 288 171 hsl 49 28 0 127 0 0 \$0.no empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 175 119 cnv 15 54 28 empty empty empty 5 12 0 20 #000000 #000000
+#X obj 220 171 cnv 15 54 28 empty empty empty 5 12 0 20 #7c7c7c #000000
 0;
-#X obj 177 121 cnv 15 50 24 empty empty Yes 5 12 0 20 #c6ffc7 #000000
+#X obj 222 173 cnv 15 50 24 empty empty Yes 5 12 0 20 #c6ffc7 #000000
 0;
-#X obj 240 119 cnv 15 54 28 empty empty empty 5 12 0 20 #000000 #000000
+#X obj 285 171 cnv 15 54 28 empty empty empty 5 12 0 20 #7c7c7c #000000
 0;
-#X obj 242 121 cnv 15 50 24 empty empty No 5 12 0 20 #ffc7c6 #000000
+#X obj 287 173 cnv 15 50 24 empty empty No 5 12 0 20 #ffc7c6 #000000
 0;
-#X coords 0 -1 1 1 300 150 2 10 10;
+#X obj 24 175 hsl 15 20 0 127 0 0 \$0.check.s \$0.check.r empty -2
+10 0 32 #fcfcfc #ffffff #000000 0 1;
+#X text 48 170 Remember for this;
+#X text 48 183 Session;
+#X obj 20 110 cnv 15 320 30 empty \$0.version empty 130 14 0 18 #dfdfdf
+#000000 0;
+#X obj 20 68 cnv 15 320 42 empty \$0.name empty 2 12 0 14 #dfdfdf #000000
+0;
+#X obj 20 94 cnv 15 20 30 empty \$0.type empty 2 12 0 10 #dfdfdf #000000
+0;
+#X coords 0 -1 1 1 340 200 2 10 10;
 #X restore 20 20 pd \$0.download.gop;
-#X obj 12 194 r \$1;
-#X obj 12 218 route set;
-#X obj 12 242 list;
-#X msg 12 266 label \$1;
-#X obj 12 290 s \$0.what;
-#X obj 139 200 r \$0.yes;
-#X obj 139 223 sel;
-#X obj 170 224 t a;
-#X obj 204 227 sel;
-#X obj 235 228 t a;
-#X obj 204 204 r \$0.no;
-#X msg 204 254 0;
-#X msg 139 255 1;
-#X msg 139 287 answer \$1;
-#X obj 139 310 s \$1;
-#X connect 1 0 2 0;
-#X connect 2 0 3 0;
+#X obj 16 261 r \$1;
+#X msg 16 426 label \$1;
+#X obj 254 282 r \$0.yes;
+#X obj 254 305 sel;
+#X obj 285 306 t a;
+#X obj 319 309 sel;
+#X obj 350 310 t a;
+#X obj 319 286 r \$0.no;
+#X msg 319 336 0;
+#X msg 254 337 1;
+#X msg 254 369 answer \$1;
+#X obj 254 392 s \$1;
+#X msg 128 310 symbol empty;
+#X obj 16 450 s \$0.name;
+#X msg 105 426 label \$1;
+#X msg 195 427 label \$1;
+#X obj 16 285 route set;
+#X obj 16 309 list;
+#X obj 16 333 unpack s s s, f 26;
+#X obj 105 450 s \$0.type;
+#X obj 195 451 s \$0.version;
+#X msg 531 204 symbol ✓;
+#X msg 508 228 symbol empty;
+#X obj 454 78 r \$0.check.s;
+#X obj 454 102 sel;
+#X obj 488 103 t a;
+#X obj 454 149 t a a a;
+#X obj 508 179 sel 0 1;
+#X msg 508 263 label \$1;
+#X obj 508 287 s \$0.check.r;
+#X obj 454 340 s \$1;
+#X msg 454 317 remember \$1;
+#X obj 454 126 == 0;
+#X obj 105 366 sel patch;
+#X msg 105 390 symbol instrument;
+#X connect 1 0 17 0;
+#X connect 2 0 14 0;
 #X connect 3 0 4 0;
-#X connect 4 0 5 0;
-#X connect 6 0 7 0;
-#X connect 7 0 13 0;
-#X connect 7 1 8 0;
-#X connect 8 0 7 1;
-#X connect 9 0 12 0;
-#X connect 9 1 10 0;
-#X connect 10 0 9 1;
-#X connect 11 0 9 0;
-#X connect 12 0 14 0;
-#X connect 13 0 14 0;
-#X connect 14 0 15 0;
-#X coords 0 -1 1 1 300 150 2 20 20;
+#X connect 4 0 10 0;
+#X connect 4 1 5 0;
+#X connect 5 0 4 1;
+#X connect 6 0 9 0;
+#X connect 6 1 7 0;
+#X connect 7 0 6 1;
+#X connect 8 0 6 0;
+#X connect 9 0 11 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 13 0 2 0;
+#X connect 13 0 15 0;
+#X connect 13 0 16 0;
+#X connect 15 0 20 0;
+#X connect 16 0 21 0;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 19 0 2 0;
+#X connect 19 1 34 0;
+#X connect 19 2 16 0;
+#X connect 22 0 29 0;
+#X connect 23 0 29 0;
+#X connect 24 0 25 0;
+#X connect 25 0 33 0;
+#X connect 25 1 26 0;
+#X connect 26 0 25 1;
+#X connect 27 0 32 0;
+#X connect 27 1 28 0;
+#X connect 27 2 33 1;
+#X connect 28 0 23 0;
+#X connect 28 1 22 0;
+#X connect 29 0 30 0;
+#X connect 32 0 31 0;
+#X connect 33 0 27 0;
+#X connect 34 0 35 0;
+#X connect 34 1 15 0;
+#X connect 35 0 15 0;
+#X coords 0 -1 1 1 340 200 2 20 20;
