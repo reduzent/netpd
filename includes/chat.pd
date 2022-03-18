@@ -1611,7 +1611,7 @@ live audio from being shared with peers.;
 #X obj 337 24 cnv 12 12 191 empty \$0-scrollbar empty 20 12 0 14 #b4b4b4
 #b4b4b4 0;
 #X obj 163 395 loadbang;
-#X msg 163 418 2 3 1;
+#X msg 163 418 2 3 2;
 #N canvas 138 498 414 142 set_version 0;
 #X obj 6 19 inlet;
 #X obj 6 46 list prepend status set version;
