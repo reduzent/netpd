@@ -1,19 +1,19 @@
-#N canvas 520 43 513 646 10;
-#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+#N canvas 520 43 504 655 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X text 324 611 see also:;
+#X text 324 631 see also:;
 #X text 8 7 netpd_text - netpd version of [text];
-#X obj 27 417 netpd_text \$1 text1;
-#X text 27 502 [netpd_text] is a wrapper around Pd's [text] class and
+#X obj 27 437 netpd_text \$1 text1;
+#X text 27 522 [netpd_text] is a wrapper around Pd's [text] class and
 keeps instances among clients in sync. Although it tries to provide
 an interface as similar as possible to the original \, some difference
 in behavior need to consider: All modifications happen asynchronously
 because they're sent through the network.;
-#X obj 27 460 print netpd_text.out;
-#X obj 287 460 print netpd_text.status;
-#X obj 402 610 text;
-#X obj 154 460 print netpd_text.type;
-#X obj 435 610 netpd_head;
+#X obj 27 480 print netpd_text.out;
+#X obj 287 480 print netpd_text.status;
+#X obj 402 630 text;
+#X obj 154 480 print netpd_text.type;
+#X obj 435 630 netpd_head;
 #X obj 316 49 netpd_head \$1 netpd_text-help;
 #X msg 37 73 set 2 -1 another line;
 #X msg 44 94 set 3 2 part of another line;
@@ -21,36 +21,36 @@ because they're sent through the network.;
 #X text 235 53 <- append;
 #X text 179 71 <- replace whole line;
 #X text 223 93 <- replace part of line;
-#X floatatom 57 122 5 0 0 0 - - -, f 5;
-#X msg 57 139 get \$1;
-#X msg 65 160 get 4 2;
-#X text 106 140 <- get whole line;
-#X text 118 160 <- get specific element of line;
-#X msg 72 181 get 4 1 2;
-#X text 140 181 <- get section of line;
-#X msg 80 229 delete \$1;
-#X floatatom 80 209 5 0 0 0 - - -, f 5;
-#X text 145 229 <- delete specific line;
-#X msg 87 251 delete -1;
-#X text 151 250 <- delete whole text;
-#X msg 89 279 size;
-#X msg 93 299 size 2;
-#X text 127 279 <- get number of lines;
-#X text 143 299 <- get number of elements of specific line;
-#X msg 98 328 tolist;
-#X text 145 326 <- output whole text as a list;
-#X msg 108 348 fromlist this is a message \\\; this is another 1 ...
+#X floatatom 57 118 5 0 0 0 - - - 0;
+#X msg 57 135 get \$1;
+#X msg 65 156 get 4 2;
+#X text 106 136 <- get whole line;
+#X text 118 156 <- get specific element of line;
+#X msg 72 177 get 4 1 2;
+#X text 140 177 <- get section of line;
+#X msg 80 249 delete \$1;
+#X floatatom 80 229 5 0 0 0 - - - 0;
+#X text 145 249 <- delete specific line;
+#X msg 87 271 delete -1;
+#X text 151 270 <- delete whole text;
+#X msg 89 299 size;
+#X msg 93 319 size 2;
+#X text 127 299 <- get number of lines;
+#X text 143 319 <- get number of elements of specific line;
+#X msg 98 348 tolist;
+#X text 145 346 <- output whole text as a list;
+#X msg 108 368 fromlist this is a message \\\; this is another 1 ...
 \\\;;
-#X msg 123 385 append this will always be appended at the end;
-#X text 414 385 <- append;
-#X text 319 365 ^^ set text from list;
+#X msg 123 405 append this will always be appended at the end;
+#X text 414 405 <- append;
+#X text 319 385 ^^ set text from list;
 #N canvas 70 43 485 419 more_about_netpd_text 0;
 #X text 21 13 Alternatively \, you can also use the common [text] subclasses
 for accessing data in [netpd_text]. However \, DO NOT use the [text]
 subclasses for modifying the data \, since those changes are not replicated
 through netpd.;
 #X obj 33 141 print text-get;
-#X floatatom 33 96 5 0 0 0 - - -, f 5;
+#X floatatom 33 96 5 0 0 0 - - - 0;
 #X obj 33 121 text get 0-text1;
 #X text 140 120 <- think of the '0' to be a \$1;
 #X text 75 96 <- get lines from text;
@@ -66,8 +66,10 @@ supported by [netpd_text]'s methods:;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
 #X connect 8 0 7 0;
-#X restore 35 593 pd more_about_netpd_text;
-#X text 189 593 <- Some important notes;
+#X restore 35 613 pd more_about_netpd_text;
+#X text 189 613 <- Some important notes;
+#X msg 77 204 insert 2 this wants to go in between;
+#X text 300 203 <- first arg is line no;
 #X connect 3 0 5 0;
 #X connect 3 1 8 0;
 #X connect 3 2 6 0;
@@ -86,3 +88,4 @@ supported by [netpd_text]'s methods:;
 #X connect 33 0 3 0;
 #X connect 35 0 3 0;
 #X connect 36 0 3 0;
+#X connect 41 0 3 0;
