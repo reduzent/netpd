@@ -1,0 +1,24 @@
+#N canvas 535 44 504 322 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X text 386 144 arg1: \$1;
+#X text 386 164 arg2: name;
+#X text 8 7 netpd_s - send messages without state managemnt;
+#X obj 350 41 netpd_head 993 netpd_s;
+#X obj 18 190 netpd_s 993 message;
+#X obj 21 228 netpd_r 993 message;
+#X obj 171 228 netpd_r 993 other;
+#X obj 168 190 netpd_s 993 other;
+#X floatatom 168 165 5 0 0 0 - - - 0;
+#X floatatom 171 271 5 0 0 0 - - - 0;
+#X listbox 18 163 20 0 0 0 - - - 0;
+#X listbox 21 277 20 0 0 0 - - - 0;
+#X text 11 49 [netpd_s] sends a raw message. Unlike other the other
+netpd_* abstractions \, it does not involve any state management. It
+pretty much works like [send] and [receive]: shoot and forget.;
+#X obj 21 251 list;
+#X connect 6 0 14 0;
+#X connect 7 0 10 0;
+#X connect 9 0 8 0;
+#X connect 11 0 5 0;
+#X connect 14 0 12 0;
