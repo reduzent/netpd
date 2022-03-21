@@ -1,0 +1,29 @@
+#N canvas 535 44 505 328 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 408 287 netpd_head;
+#X text 340 286 see also:;
+#X text 368 89 arg1: \$1;
+#X text 368 109 arg2: name;
+#X floatatom 21 143 5 0 0 0 - - - 0;
+#X obj 23 74 hsl 128 15 0 127 0 0 996-number 996-number empty -2 -8
+0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 356 42 netpd_head 996 number;
+#X obj 21 120 netpd_f 996 number 56;
+#X obj 25 220 netpd_r 996 number;
+#X floatatom 25 243 5 0 0 0 - - - 0;
+#X text 23 190 Values can be received with [netpd_r] anywhere in the
+instrument.;
+#X floatatom 193 145 5 0 0 0 - - - 0;
+#X obj 193 122 netpd_f 996 number2 4;
+#X obj 192 74 hradio 15 1 0 8 996-number2 996-number2 empty 0 -8 0
+10 #fcfcfc #000000 #000000 0;
+#X text 368 129 arg3: init value;
+#X floatatom 195 243 5 0 0 0 - - - 0;
+#X obj 195 220 netpd_r 996 number2;
+#X text 8 7 netpd_f - synchronize a number value from a GUI widget
+;
+#X connect 8 0 5 0;
+#X connect 9 0 10 0;
+#X connect 13 0 12 0;
+#X connect 17 0 16 0;
