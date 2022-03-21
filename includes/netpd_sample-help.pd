@@ -1,38 +1,41 @@
-#N canvas 535 44 506 484 10;
-#X obj 27 247 netpd_sample \$1 sample1;
-#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+#N canvas 535 44 504 501 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
 #X text 8 7 netpd_sample - manage an audio sample that is netpd-synced
 ;
-#X msg 70 89 loadfile sample1.wav;
-#X obj 163 220 adc~ 1;
-#X msg 142 117 stop;
-#X msg 98 117 start;
-#X obj 179 117 tgl 17 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X text 212 63 load audio from an array or table;
-#X text 214 90 load audio from a sound file;
-#X text 214 117 record audio from inlet;
-#X obj 27 290 print netpd_sample;
-#X obj 27 42 table sample1 4000;
-#X msg 27 64 loadtable sample1 30 1030;
-#X msg 157 180 length;
-#X text 217 176 get information about length (samples);
-#X text 27 322 The abstraction [netpd_sample] keeps an audio table
+#X msg 70 99 loadfile sample1.wav;
+#X obj 163 230 adc~ 1;
+#X msg 142 127 stop;
+#X msg 98 127 start;
+#X obj 179 127 tgl 17 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X text 212 73 load audio from an array or table;
+#X text 214 100 load audio from a sound file;
+#X text 214 127 record audio from inlet;
+#X obj 27 300 print netpd_sample;
+#X obj 27 52 table sample1 4000;
+#X msg 27 74 loadtable sample1 30 1030;
+#X msg 157 190 length;
+#X text 217 186 get information about length (samples);
+#X text 27 332 The abstraction [netpd_sample] keeps an audio table
 in sync between clients. The table is accessed by the name \$1-\$2-table.
 ;
-#X text 28 377 Any changes to the table are reported through the outlet.
+#X text 28 387 Any changes to the table are reported through the outlet.
 ;
 #X obj 408 437 netpd_head;
 #X text 340 436 see also:;
-#X msg 99 141 startuntil 1000;
-#X text 216 142 record for a pre-defined duration (ms);
-#X connect 0 0 11 0;
-#X connect 3 0 0 0;
-#X connect 4 0 0 1;
-#X connect 5 0 0 0;
-#X connect 6 0 0 0;
-#X connect 7 0 0 0;
-#X connect 13 0 0 0;
-#X connect 14 0 0 0;
-#X connect 20 0 0 0;
+#X msg 99 151 startuntil 1000;
+#X text 216 152 record for a pre-defined duration (ms);
+#X obj 27 257 netpd_sample 998 sample1;
+#X obj 316 44 netpd_head 998 netpd_sammple;
+#X obj 237 239 osc~ 440;
+#X connect 2 0 21 0;
+#X connect 3 0 21 1;
+#X connect 4 0 21 0;
+#X connect 5 0 21 0;
+#X connect 6 0 21 0;
+#X connect 12 0 21 0;
+#X connect 13 0 21 0;
+#X connect 19 0 21 0;
+#X connect 21 0 10 0;
+#X connect 23 0 21 1;
