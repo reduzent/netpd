@@ -1,0 +1,23 @@
+#N canvas 535 44 503 317 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X text 386 144 arg1: \$1;
+#X text 386 164 arg2: name;
+#X floatatom 19 246 5 0 0 0 - - - 0;
+#X obj 21 199 hsl 128 15 0 127 0 0 994-number 994-number empty -2 -8
+0 10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 19 149 5 0 0 0 - - - 0;
+#X text 8 7 netpd_r - receive named parameter in instrument;
+#X obj 350 41 netpd_head 994 netpd_r;
+#X obj 19 223 netpd_f 994 number 56;
+#X obj 19 126 netpd_r 994 number;
+#X obj 194 128 netpd_r 994 text;
+#X obj 198 227 netpd_text 994 text;
+#X obj 194 151 print netpd_r_text;
+#X msg 198 191 set 1000 -1 Hallo Velo;
+#X text 18 81 [netpd_r] receives parameter values of any type. Any
+name of an existing param can be specified as second argument.;
+#X connect 8 0 3 0;
+#X connect 9 0 5 0;
+#X connect 10 0 12 0;
+#X connect 13 0 11 0;
