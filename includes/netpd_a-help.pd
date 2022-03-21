@@ -1,0 +1,34 @@
+#N canvas 535 44 504 370 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 408 337 netpd_head;
+#X text 340 336 see also:;
+#X obj 24 198 netpd_a 997 anything;
+#X obj 356 42 netpd_head 997 netpd_a;
+#X floatatom 24 45 5 0 0 0 - - - 0;
+#X symbolatom 65 45 10 0 0 0 - - - 0;
+#X listbox 146 45 20 0 0 0 - - - 0;
+#X msg 132 104 1 2 3 4 5 6;
+#X msg 131 78 aynthing goes;
+#X obj 24 228 print netpd_a;
+#X text 8 7 netpd_a - synchronize an anything message;
+#X msg 94 161 set 9 bla foo;
+#X text 184 156 Set internal state (can be used for initialization)
+;
+#X text 184 171 This generates no output;
+#X obj 25 291 netpd_r 997 anything;
+#X obj 25 314 list;
+#X listbox 25 337 20 0 0 0 - - - 0;
+#X text 23 260 Messages can be received with [netpd_r] anywhere in
+the instrment.;
+#X text 312 88 arg1: \$1;
+#X text 312 108 arg2: name;
+#X connect 3 0 10 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 7 0 3 0;
+#X connect 8 0 3 0;
+#X connect 9 0 3 0;
+#X connect 12 0 3 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
