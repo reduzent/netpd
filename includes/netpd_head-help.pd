@@ -1,0 +1,26 @@
+#N canvas 535 44 503 349 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X text 347 100 arg1: \$1;
+#X floatatom 16 320 5 0 0 0 - - - 0;
+#X obj 153 297 hsl 80 18 0 127 0 0 995-number 995-number empty -2 -8
+0 10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 238 320 5 0 0 0 - - - 0;
+#X text 8 7 netpd_head - state manager of instrument;
+#X obj 18 113 netpd_head 995 netpd_head;
+#X obj 16 297 netpd_f 995 number 56;
+#X obj 238 297 netpd_r 995 number;
+#X text 17 43 Each netpd instrument requires exactly one instance of
+[netpd_head]. It manages the state of the instrument and makes sure
+that instruments are synchronized between peers at any time.;
+#X text 347 120 arg2: instrument name;
+#X text 16 143 The first argument is \$1 which is a unique numeric
+ID assigned by unpatch. This ID used for the communication between
+[netpd_head] and the other [netpd_*] abstractions.;
+#X text 16 189 The second argument is the name of the instrument. It
+is used as the OSC namespace of the instrument.;
+#X text 17 231 In this help-patch \, the 'number' parameter will use
+the OSC path: /995/netpd_head/number;
+#X text 17 268 Or generally: /<ID>/<instrumentname>/<paramname>;
+#X connect 7 0 2 0;
+#X connect 8 0 4 0;
