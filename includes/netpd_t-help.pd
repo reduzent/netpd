@@ -1,4 +1,4 @@
-#N canvas 535 44 503 432 10;
+#N canvas 620 26 505 443 10;
 #X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
 #X text 399 78 arg1: \$1;
@@ -7,37 +7,34 @@
 #X text 8 7 netpd_t - synchronize a table;
 #X text 10 49 [netpd_t] synchronizes a table specified by arguments
 between peers.;
-#X obj 24 158 netpd_t 992 mytable;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array 992-mytable 177 float 2;
-#X coords 0 1 177 -1 200 140 1;
+#X array 992-mytable 100 float 2;
+#X coords 0 1 100 -1 200 140 1;
 #X restore 24 230 graph;
-#X floatatom 135 128 5 0 0 0 - - - 0;
-#X text 171 129 index;
-#X floatatom 24 128 5 0 0 0 - - - 0;
-#X text 60 129 value;
 #X msg 253 91 const 0.5;
 #X obj 253 269 s 992-mytable;
 #X text 250 308 print changes:;
 #X obj 253 329 netpd_r 992 mytable;
 #X obj 253 352 print mytable.changes;
-#X msg 286 164 20 \$1;
-#X obj 289 143 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
-#000000 #000000 0 1;
-#X msg 294 190 sinesum 128 0.5 0.1;
-#X floatatom 305 214 5 0 0 0 - - - 0;
-#X msg 277 116 9 0.3 0.9;
-#X msg 305 236 resize \$1;
+#X msg 266 114 sinesum 128 0.5 0.1;
+#X floatatom 274 139 5 0 0 0 - - - 0;
+#X msg 274 161 resize \$1;
 #X text 58 400 It only supports table sizes up to 2048;
 #X text 23 382 Note: it detects and synchronizes manual manipulation
 ;
-#X connect 8 0 6 1;
-#X connect 10 0 6 0;
-#X connect 12 0 13 0;
-#X connect 15 0 16 0;
-#X connect 17 0 13 0;
-#X connect 18 0 17 0;
-#X connect 19 0 13 0;
-#X connect 20 0 22 0;
-#X connect 21 0 13 0;
-#X connect 22 0 13 0;
+#X obj 24 128 netpd_t 992 mytable 100;
+#X obj 344 269 tabwrite 992-mytable;
+#X msg 281 191 20 0.9;
+#X text 334 190 <- don't use this;
+#X text 284 229 but this:;
+#X floatatom 344 232 5 0 0 0 - - - 0;
+#X floatatom 461 232 5 0 0 0 - - - 0;
+#X text 21 152 (inlets access reference table);
+#X connect 7 0 8 0;
+#X connect 10 0 11 0;
+#X connect 12 0 8 0;
+#X connect 13 0 14 0;
+#X connect 14 0 8 0;
+#X connect 19 0 8 0;
+#X connect 22 0 18 0;
+#X connect 23 0 18 1;
