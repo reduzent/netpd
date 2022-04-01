@@ -3,7 +3,7 @@
 #X text 10 70 LICENSE GPL-2;
 #X text 10 50 NAME netpd;
 #X text 10 30 AUTHOR Roman Haefeli <roman@netpd.org>;
-#X text 10 10 VERSION 2.3.1;
+#X text 10 10 VERSION 2.3.2;
 #X text 9 91 DESCRIPTION Collaborative Realtime Networked Music Making
 Environment;
 #X text 8 129 URL https://www.netpd.org;
