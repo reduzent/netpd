@@ -2214,7 +2214,7 @@ help for help \, ----------;
 #X obj 207 304 chat-button \$0.mute.button mute 60;
 #X obj 268 304 chat-button \$0.dsp.button dsp 54;
 #X obj 323 304 chat-button \$0.unpatch.button unpatch 62;
-#X obj 370 38 netpd-scrollbar \$0.scrollbar 15 240 12;
+#X obj 370 38 netpd-gui-scrollbar \$0.scrollbar 15 240 12;
 #X obj 5 279 cnv 15 79 24 empty \$0.num.clients.label 1\  4 12 0 16
 #e8e0f0 #787080 0;
 #X obj 5 238 chat-line \$0 1;

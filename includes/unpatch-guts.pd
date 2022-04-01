@@ -2029,7 +2029,7 @@ update netpd!;
 #X obj 22 358 unpatch-gui-row \$0 8;
 #X obj 22 378 unpatch-gui-row \$0 9;
 #X obj 62 50 unpatch-instrument-picker \$0.loader;
-#X obj 207 198 netpd-scrollbar \$0.scrollbar 15 200 10;
+#X obj 207 198 netpd-gui-scrollbar \$0.scrollbar 15 200 10;
 #X obj 182 22 unpatch-preset-load \$0;
 #X obj 132 22 unpatch-preset-save;
 #X obj 172 402 unpatch-status-print \$0;

@@ -6,7 +6,7 @@
 #X obj 20 80 unpatch-instrument-picker-row \$0 3;
 #X obj 20 100 unpatch-instrument-picker-row \$0 4;
 #X obj 20 120 unpatch-instrument-picker-row \$0 5;
-#X obj 165 20 netpd-scrollbar \$0.scrollbar 15 120 6;
+#X obj 165 20 netpd-gui-scrollbar \$0.scrollbar 15 120 6;
 #N canvas 708 125 447 513 load.files 0;
 #X obj 56 375 text set \$0.instr.list;
 #X msg 99 328 1e+15;
