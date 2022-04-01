@@ -120,11 +120,11 @@
 #X restore 190 98 pd create.items;
 #N canvas 306 206 433 148 the.struct 0;
 #X obj 11 112 outlet;
-#X obj 12 12 filledpolygon bgclr boxclr 1 0 0 w 0 w h 0 h;
 #X obj 11 76 struct \$0.rectangle float id float x float y float w
 float h float txtclr float boxclr float bgclr symbol label;
+#X obj 12 12 filledpolygon -xv bgclr boxclr 1 0 0 w 0 w h 0 h;
 #X obj 13 44 drawsymbol label 1 2 txtclr;
-#X connect 2 0 0 0;
+#X connect 1 0 0 0;
 #X restore 190 122 pd the.struct;
 #X text 338 41 arg2: width;
 #X text 338 27 arg1: sendname;
@@ -145,7 +145,7 @@ float h float txtclr float boxclr float bgclr symbol label;
 #X msg 12 244 items symbol;
 #X obj 70 106 unpack s f f f f f f f f f, f 43;
 #X obj 155 195 s \$0.fontsize;
-#X msg 129 58 list _placeholder 100 16 10 0 666 888 555 666 888;
+#X msg 129 58 list _placeholder 100 16 10 0 666 777 555 666 888;
 #X connect 0 0 9 0;
 #X connect 1 0 12 0;
 #X connect 2 0 1 0;
