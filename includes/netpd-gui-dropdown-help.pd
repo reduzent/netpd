@@ -1,11 +1,11 @@
-#N struct 1147.rectangle float id float x float y float w float h float
+#N struct 1306.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1148.rectangle float id float x float y float w float h float
+#N struct 1308.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1150.rectangle float id float x float y float w float h float
+#N struct 1310.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N canvas 47 106 505 500 10;
-#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
+#N canvas 287 26 505 500 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
 #X text 8 7 netpd-gui-dropdown - a configurable drop-down menu;
 #X text 30 443 No inlets;
@@ -19,27 +19,27 @@ txtclr float boxclr float bgclr symbol label;
 #N canvas 345 108 451 528 customize 0;
 #X obj 18 71 s \$0.mydropdown;
 #X msg 18 46 width \$1;
-#X floatatom 18 22 5 0 0 0 - - -;
+#X floatatom 18 22 5 0 0 0 - - - 0;
 #X obj 21 157 s \$0.mydropdown;
-#X floatatom 21 108 5 0 0 0 - - -;
+#X floatatom 21 108 5 0 0 0 - - - 0;
 #X msg 21 132 height \$1;
 #X text 57 22 Change width;
 #X text 59 106 Change height;
 #X obj 23 281 s \$0.mydropdown;
-#X floatatom 23 232 5 0 0 0 - - -;
+#X floatatom 23 232 5 0 0 0 - - - 0;
 #X msg 23 256 selected_text_color \$1;
 #X obj 23 356 s \$0.mydropdown;
-#X floatatom 23 307 5 0 0 0 - - -;
+#X floatatom 23 307 5 0 0 0 - - - 0;
 #X msg 23 331 selected_box_color \$1;
 #X obj 25 432 s \$0.mydropdown;
-#X floatatom 25 383 5 0 0 0 - - -;
+#X floatatom 25 383 5 0 0 0 - - - 0;
 #X msg 25 407 selected_background_color \$1;
 #X obj 233 291 s \$0.mydropdown;
-#X floatatom 233 242 5 0 0 0 - - -;
+#X floatatom 233 242 5 0 0 0 - - - 0;
 #X obj 233 366 s \$0.mydropdown;
-#X floatatom 233 317 5 0 0 0 - - -;
+#X floatatom 233 317 5 0 0 0 - - - 0;
 #X obj 235 442 s \$0.mydropdown;
-#X floatatom 235 393 5 0 0 0 - - -;
+#X floatatom 235 393 5 0 0 0 - - - 0;
 #X msg 233 266 items_text_color \$1;
 #X msg 233 341 items_box_color \$1;
 #X msg 235 417 items_background_color \$1;
@@ -51,7 +51,7 @@ txtclr float boxclr float bgclr symbol label;
 #X text 168 21 CUSTOMIZATIONS FOR [netpd-gui-dropdown];
 #X text 168 36 =======================================;
 #X obj 171 157 s \$0.mydropdown;
-#X floatatom 171 108 5 0 0 0 - - -;
+#X floatatom 171 108 5 0 0 0 - - - 0;
 #X msg 171 132 fontsize \$1;
 #X text 209 106 Allowed values: 8 \, 10 \, 12 \, 16 \, 24 \, 36;
 #X connect 1 0 0 0;
@@ -85,8 +85,8 @@ txtclr float boxclr float bgclr symbol label;
 #X text 18 329 arg4: fontsize;
 #X text 18 287 arg1: sendname (mandatory);
 #X obj 205 209 route active selected;
-#X obj 205 235 tgl 18 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 205 235 tgl 18 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X text 282 326 More info:;
 #N canvas 374 109 409 508 optional 0;
 #X text 9 10 It's possible to specify only some the args while the
