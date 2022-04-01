@@ -1,16 +1,15 @@
-#N struct 3898.rectangle float id float x float y float w float h float
+#N struct 1237.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 3923.rectangle float id float x float y float w float h float
+#N struct 1238.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 3897.rectangle float id float x float y float w float h float
+#N struct 1239.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N canvas 272 64 504 501 10;
+#N canvas 358 56 504 501 10;
 #X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
 #X text 30 443 No inlets;
 #X text 30 457 No outlets;
-#X msg 204 116 items binfile else iemlib iemnet osc slip zexy;
-#X obj 204 92 loadbang;
+#X obj 144 92 loadbang;
 #N canvas 555 131 451 528 customize 0;
 #X msg 18 46 width \$1;
 #X floatatom 18 22 5 0 0 0 - - - 0;
@@ -104,12 +103,14 @@ non-specified args stay at their default value.;
 #X restore 284 379 pd optional args;
 #X text 8 7 netpd-gui-vmenu - a configurable vertical menu;
 #X text 10 47 [netpd-gui-vmenu \$0.myvmenu];
-#X obj 204 141 s \$0.myvmenu;
-#X obj 205 182 r \$0.myvmenu;
-#X obj 205 242 print netpd-gui-vmenu;
+#X obj 144 141 s \$0.myvmenu;
+#X obj 145 182 r \$0.myvmenu;
+#X obj 145 242 print netpd-gui-vmenu;
 #X obj 18 91 netpd-gui-vmenu \$0.myvmenu;
-#X obj 205 209 route selected;
-#X connect 3 0 20 0;
-#X connect 4 0 3 0;
-#X connect 21 0 24 0;
-#X connect 24 0 22 0;
+#X obj 145 209 route selected;
+#X msg 144 116 items binfile else iemlib iemnet osc slip zexy \, width
+50;
+#X connect 3 0 24 0;
+#X connect 20 0 23 0;
+#X connect 23 0 21 0;
+#X connect 24 0 19 0;
