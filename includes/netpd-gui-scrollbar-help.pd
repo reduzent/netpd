@@ -9,18 +9,18 @@
 #X msg 44 336 set pos \$1;
 #X msg 65 376 set bgcolor 220 220 220;
 #X msg 65 399 set frontcolor 180 180 180;
-#X obj 11 66 netpd-scrollbar \$0.scrollbar 15 120 10;
+#X obj 11 66 netpd-gui-scrollbar \$0.scrollbar 15 120 10;
 #X obj 16 428 s \$0.scrollbar;
 #X obj 16 451 r \$0.scrollbar;
-#X text 8 43 [netpd-scrollbar \$0.scrollbar 15 120 10];
+#X text 8 43 [netpd-gui-scrollbar \$0.scrollbar 15 120 10];
 #X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X text 7 7 netpd-scrollbar - a graph-on-parent scrollbar;
-#X text 65 68 [netpd-scrollbar] is supposed to be used as graphical
+#X text 7 7 netpd-gui-scrollbar - a graph-on-parent scrollbar;
+#X text 65 68 [netpd-gui-scrollbar] is supposed to be used as graphical
 scrollbar. It needs to know the total number of items and the number
 of display lines in order to return the current position to be displayed.
 ;
-#X text 63 132 [netpd-scrollbar]'s output (current position) does not
+#X text 63 132 [netpd-gui-scrollbar]'s output (current position) does not
 follow any consistent logic when the totallength or displaylength values
 are updated. It's the task of the user to create that logic.;
 #X text 241 256 arg1: receive/send symbol;
