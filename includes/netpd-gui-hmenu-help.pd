@@ -1,10 +1,10 @@
-#N struct 1199.rectangle float id float x float y float w float h float
+#N struct 1277.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1200.rectangle float id float x float y float w float h float
+#N struct 1278.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1201.rectangle float id float x float y float w float h float
+#N struct 1284.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N canvas 262 67 503 487 10;
+#N canvas 593 26 503 500 10;
 #X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
 #X text 30 443 No inlets;
@@ -103,14 +103,17 @@ non-specified args stay at their default value.;
 #X restore 284 379 pd optional args;
 #X text 8 7 netpd-gui-hmenu - a configurable vertical menu;
 #X text 10 47 [netpd-gui-hmenu \$0.myvmenu];
-#X obj 24 181 s \$0.myvmenu;
-#X obj 141 184 r \$0.myvmenu;
 #X obj 141 234 print netpd-gui-hmenu;
-#X obj 18 91 netpd-gui-hmenu \$0.myvmenu;
 #X obj 141 211 route selected;
 #X msg 24 156 items binfile else iemlib iemnet osc slip zexy \, width
 44;
-#X connect 3 0 24 0;
-#X connect 20 0 23 0;
-#X connect 23 0 21 0;
-#X connect 24 0 19 0;
+#X msg 296 200 set iemnet;
+#X obj 296 225 s \$0.myhmenu;
+#X obj 24 181 s \$0.myhmenu;
+#X obj 141 184 r \$0.myhmenu;
+#X obj 18 91 netpd-gui-hmenu \$0.myhmenu;
+#X connect 3 0 21 0;
+#X connect 20 0 19 0;
+#X connect 21 0 24 0;
+#X connect 22 0 23 0;
+#X connect 25 0 20 0;

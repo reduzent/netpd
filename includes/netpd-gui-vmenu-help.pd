@@ -1,10 +1,10 @@
-#N struct 1237.rectangle float id float x float y float w float h float
+#N struct 1251.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1238.rectangle float id float x float y float w float h float
+#N struct 1252.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1239.rectangle float id float x float y float w float h float
+#N struct 1253.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N canvas 358 56 504 501 10;
+#N canvas 89 26 504 499 10;
 #X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
 #X text 30 443 No inlets;
@@ -110,7 +110,10 @@ non-specified args stay at their default value.;
 #X obj 145 209 route selected;
 #X msg 144 116 items binfile else iemlib iemnet osc slip zexy \, width
 50;
+#X msg 310 186 set iemnet;
+#X obj 310 211 s \$0.myvmenu;
 #X connect 3 0 24 0;
 #X connect 20 0 23 0;
 #X connect 23 0 21 0;
 #X connect 24 0 19 0;
+#X connect 25 0 26 0;
