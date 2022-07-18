@@ -1319,8 +1319,8 @@ empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 10 0 11 0;
 #X connect 11 0 6 0;
 #X restore 12 560 pd sample.period;
-#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ \ 0dB 6 12 0
-14 #e0e0e0 #404040 0;
+#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ 60dB 6 12 0 14
+#e0e0e0 #404040 0;
 #X obj 219 371 s \$0.lat.ret.level;
 #X obj 12 247 bang;
 #X obj 382 508 cnv 15 60 25 empty \$0.latency.label 0.0ms 6 12 0 14
@@ -1630,15 +1630,16 @@ live audio from being shared with peers.;
 #X obj 337 24 cnv 12 12 191 empty \$0-scrollbar empty 20 12 0 14 #b4b4b4
 #b4b4b4 0;
 #X obj 163 395 loadbang;
-#X msg 163 418 2 3 2;
-#N canvas 138 498 414 142 set_version 0;
+#N canvas 138 498 404 150 set_version 0;
 #X obj 6 19 inlet;
-#X obj 6 46 list prepend status set version;
-#X obj 6 93 s NETPD;
-#X obj 6 69 list trim;
-#X connect 0 0 1 0;
+#X obj 6 63 list prepend status set version;
+#X obj 6 110 s NETPD;
+#X obj 6 86 list trim;
+#X obj 6 42 route VERSION;
+#X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 3 0 2 0;
+#X connect 4 0 1 0;
 #X restore 163 444 pd set_version;
 #N canvas 349 173 447 158 commands 0;
 #N canvas 475 170 396 351 TESTS 0;
@@ -2215,7 +2216,7 @@ help for help \, ----------;
 #X obj 268 304 chat-button \$0.dsp.button dsp 54;
 #X obj 323 304 chat-button \$0.unpatch.button unpatch 62;
 #X obj 370 38 netpd-gui-scrollbar \$0.scrollbar 15 240 12;
-#X obj 5 279 cnv 15 79 24 empty \$0.num.clients.label 1\  4 12 0 16
+#X obj 5 279 cnv 15 79 24 empty \$0.num.clients.label 0\  4 12 0 16
 #e8e0f0 #787080 0;
 #X obj 5 238 chat-line \$0 1;
 #X obj 5 218 chat-line \$0 2;
@@ -2242,6 +2243,7 @@ help for help \, ----------;
 #X msg 283 515 176 168 184;
 #X text 366 514 scrollbar handle;
 #X obj 318 4 chat-version-display;
-#X connect 9 0 10 0;
-#X connect 10 0 11 0;
+#X msg 163 418 VERSION 2 3 2;
+#X connect 9 0 49 0;
+#X connect 49 0 10 0;
 #X coords 0 -1 1 1 384 324 2 3 2;
