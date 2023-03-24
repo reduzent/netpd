@@ -1,28 +1,26 @@
-#N canvas 409 44 504 399 10;
-#X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X text 7 7 netpd-fifo - first-in-first-out message stack;
+#N canvas 409 44 503 414 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X text 9 7 netpd-fifo - first-in-first-out message stack;
 #X obj 22 229 netpd-fifo;
-#X obj 22 94 bng 15 250 50 0 empty empty empty 17 7 0 10 -204786 -1
--1;
+#X obj 22 94 bng 15 250 50 0 empty empty empty 17 7 0 10 #c4fcc4 #000000 #000000;
 #X text 43 94 <- spit out one message;
 #X msg 79 155 1;
 #X msg 104 175 one two three;
 #X msg 114 201 list this is only a help patch;
 #X text 113 152 add a message;
 #X obj 22 296 print netpd-fifo;
-#X obj 79 255 bng 15 250 50 0 empty empty empty 17 7 0 10 -261234 -1
--1;
+#X obj 79 255 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcc4c4 #000000 #000000;
 #X text 99 255 <- bang when empty;
 #X text 121 222 (list selector is truncated);
-#X text 15 48 [netpd-fifo] stores messages \, which can be retrieved
-later in the same order as they were stored.;
+#X text 15 48 [netpd-fifo] stores messages \, which can be retrieved later in the same order as they were stored.;
 #X text 275 275 inlet1: add messages;
 #X text 269 293 outlet0: message output;
 #X text 269 311 outlet1: bang when empty;
 #X msg 36 120 clear;
 #X text 78 120 <- clear the stack;
 #X text 275 258 inlet0: bang|clear;
+#X text 18 357 Setting first argument to 1 omits FUDI parsing which saves some CPU cycles when dealing with byte lists / float lists.;
+#X text 287 331 arg1: 0|1 FUDI or float lists;
 #X connect 2 0 9 0;
 #X connect 2 1 10 0;
 #X connect 3 0 2 0;
