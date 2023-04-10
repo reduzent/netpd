@@ -1,4 +1,4 @@
-#N canvas 603 26 504 488 10;
+#N canvas 603 26 502 483 10;
 #X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X text 129 100 <- stop;
 #X text 78 52 <- number of iterations;
@@ -6,7 +6,7 @@
 #X text 35 390 inlet0: bang|float (number of iterations);
 #X msg 48 52 4;
 #X obj 106 102 bng 18 250 50 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000;
-#X obj 48 214 print netpd-slow-until;
+#X obj 165 198 print netpd-slow-until;
 #X text 8 7 netpd-slow-until - an until variant with settable interval;
 #X obj 48 162 netpd-slow-until 200;
 #X floatatom 165 130 5 0 0 0 - - - 0;
@@ -18,8 +18,10 @@
 #X obj 399 447 netpd-nb-until;
 #X text 25 254 [netpd-slow-until] fires a series of bangs when triggered on the left inlet. The time interval between bangs is settable through the right most inlet. The series is interrupted with a bang message to the middle inlet.;
 #X text 26 330 NOTE: Setting the interval to 0 doesn't make it equivalent to [until]. While [until] maintains depth-first ordering \, [netpd-slow-until 0] does not.;
+#X obj 48 198 print Done;
 #X connect 5 0 9 0;
 #X connect 6 0 9 1;
-#X connect 9 0 7 0;
+#X connect 9 0 19 0;
+#X connect 9 1 7 0;
 #X connect 10 0 9 2;
 #X connect 12 0 9 0;

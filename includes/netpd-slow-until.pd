@@ -5,7 +5,7 @@
 #X obj 116 192 f, f 12;
 #X obj 116 239 moses 0;
 #X obj 116 214 - 1, f 18;
-#X obj 11 191 t b;
+#X obj 17 218 t b;
 #X msg 285 141 -1;
 #X obj 116 96 t b a b, f 12;
 #X msg 221 186 1;
@@ -16,9 +16,12 @@
 #X obj 155 263 t b b a;
 #X obj 116 169 del \$1;
 #X obj 361 94 inlet;
+#X obj 116 299 b;
+#X obj 116 331 outlet;
 #X connect 0 0 10 0;
 #X connect 2 0 7 0;
 #X connect 3 0 5 0;
+#X connect 4 0 17 0;
 #X connect 4 1 14 0;
 #X connect 5 0 4 0;
 #X connect 6 0 15 0;
@@ -39,3 +42,4 @@
 #X connect 14 2 3 1;
 #X connect 15 0 3 0;
 #X connect 16 0 15 1;
+#X connect 17 0 18 0;
