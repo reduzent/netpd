@@ -1,27 +1,48 @@
-#N canvas -10 26 493 562 10;
-#N canvas 31 555 172 320 chat 0;
-#N canvas 331 376 444 295 connection 0;
+#N canvas -10 26 493 564 10;
+#N canvas 31 555 172 351 chat 0;
+#N canvas 331 376 612 295 connection 0;
 #X msg 143 175 disconnect;
 #X msg 9 184 connect \$1 \$2;
 #X obj 9 138 symbol;
 #X obj 9 162 pack s f;
-#X obj 9 82 sel 1 0;
+#X obj 9 86 sel 1 0;
 #X obj 9 258 s NETPD;
 #X obj 9 236 list prepend tcpclient;
-#X obj 118 41 r NETPD;
-#X obj 118 62 route pref;
-#X obj 118 83 route netpd-server netpd-port;
-#X obj 118 104 list;
-#X obj 222 201 netpd-s /server/num_of_clients l;
-#X msg 222 176 0;
+#X obj 176 24 r NETPD;
+#X obj 176 45 route pref;
+#X obj 176 66 route netpd-server netpd-port;
+#X obj 176 87 list;
+#X obj 288 230 netpd-s /server/num_of_clients l;
+#X msg 288 205 0;
 #X obj 9 12 r \$0-connect-server;
+#X obj 9 36 t a a;
+#N canvas 969 507 406 331 detect.disconnect 0;
+#X obj 167 44 inlet;
+#X obj 18 79 sel 0;
+#X obj 18 121 f;
+#X obj 18 144 sel 1;
+#X obj 18 9 netpd-status-get connection 1;
+#X msg 18 173 UNITIATED DISCONNECT;
+#X obj 18 196 list prepend notification;
+#X obj 18 259 s NETPD;
+#X obj 18 219 list trim;
+#X connect 0 0 2 1;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 8 0;
+#X connect 8 0 7 0;
+#X restore 36 60 pd detect.disconnect;
+#X obj 288 181 sel 0;
+#X obj 288 155 netpd-status-get connection 1;
 #X connect 0 0 6 0;
 #X connect 1 0 6 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
 #X connect 4 0 2 0;
 #X connect 4 1 0 0;
-#X connect 4 1 12 0;
 #X connect 6 0 5 0;
 #X connect 7 0 8 0;
 #X connect 8 0 9 0;
@@ -29,9 +50,13 @@
 #X connect 9 1 3 1;
 #X connect 10 0 2 1;
 #X connect 12 0 11 0;
-#X connect 13 0 4 0;
+#X connect 13 0 14 0;
+#X connect 14 0 4 0;
+#X connect 14 1 15 0;
+#X connect 16 0 12 0;
+#X connect 17 0 16 0;
 #X restore 17 85 pd connection;
-#N canvas 330 427 198 283 chat-guicode 0;
+#N canvas 330 427 198 338 chat-guicode 0;
 #N canvas 357 176 555 324 connect-button 0;
 #X obj 8 26 route connection;
 #X obj 8 5 r NETPD;
@@ -412,8 +437,7 @@
 #X obj 226 94 r \$0.scrollbar;
 #X obj 226 117 route pos;
 #X obj 154 55 s \$0.scrollbar;
-#X msg 154 33 set bgcolor 232 224 240 \, set frontcolor 176 168 184
-;
+#X msg 154 33 set bgcolor 232 224 240 \, set frontcolor 176 168 184;
 #X obj 154 10 loadbang;
 #X obj 227 141 text define \$0.msgs;
 #X obj 30 302 text set \$0.msgs;
@@ -472,7 +496,39 @@
 #X connect 26 3 27 0;
 #X connect 28 0 2 1;
 #X restore 9 48 pd chatdisplay;
-#X restore 17 66 pd chat-guicode;
+#N canvas 543 428 450 300 notification.code 0;
+#X obj 32 240 s \$0.notification.label;
+#X msg 32 216 label \$1;
+#X obj 230 238 s pd-notification;
+#X msg 230 214 vis \$1;
+#X obj 230 58 r \$0.notification.ok;
+#X obj 270 81 t a;
+#X obj 230 81 sel 0;
+#X obj 230 104 del 100;
+#X msg 230 128 0;
+#X obj 32 12 r NETPD;
+#X obj 32 35 route notification;
+#X obj 32 58 list;
+#X obj 32 192 netpd-list2symbol;
+#X obj 32 106 t a b;
+#X msg 59 135 1;
+#X connect 1 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 1;
+#X connect 6 0 7 0;
+#X connect 6 1 5 0;
+#X connect 7 0 8 0;
+#X connect 8 0 3 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 13 0;
+#X connect 12 0 1 0;
+#X connect 13 0 12 0;
+#X connect 13 1 14 0;
+#X connect 14 0 3 0;
+#X restore 9 249 pd notification.code;
+#X restore 17 65 pd chat-guicode;
 #N canvas 392 594 279 249 CLIENT 0;
 #X obj 22 207 s NETPD;
 #X obj 22 16 r NETPD;
@@ -495,8 +551,7 @@
 #X restore 18 9 pd CLIENT;
 #N canvas 518 590 616 160 keep_alive 0;
 #X obj 22 68 metro 60000;
-#X text 142 70 in order to keep the tcp connection alive \, we send
-a dummy message every 60;
+#X text 142 70 in order to keep the tcp connection alive \, we send a dummy message every 60;
 #X obj 22 24 r NETPD;
 #X obj 22 44 route connection;
 #X obj 22 107 netpd-s /dummy s;
@@ -619,14 +674,11 @@ a dummy message every 60;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X restore 15 200 pd socket_request;
-#N canvas 387 317 245 384 list 0;
+#N canvas 387 317 356 471 list 0;
 #X text 6 7 send list request;
 #X obj 8 31 r \$0-listrequest;
 #X obj 8 70 f;
 #X text 8 180 send list response;
-#X obj 119 30 r NETPD;
-#X obj 119 51 route status;
-#X obj 119 72 route socket;
 #N canvas 375 178 640 495 compose.message 0;
 #X obj 15 18 inlet;
 #X obj 15 402 outlet;
@@ -702,15 +754,14 @@ a dummy message every 60;
 #X obj 12 322 netpd-s /chat/msg 0;
 #X msg 123 286 \$1;
 #X obj 12 210 netpd-r /chat/listrequest;
+#X obj 119 37 netpd-status-get socket;
 #X connect 1 0 2 0;
-#X connect 2 0 8 0;
-#X connect 4 0 5 0;
-#X connect 5 0 6 0;
-#X connect 6 0 2 1;
-#X connect 7 0 9 0;
-#X connect 10 0 9 1;
-#X connect 11 0 7 0;
-#X connect 11 1 10 0;
+#X connect 2 0 5 0;
+#X connect 4 0 6 0;
+#X connect 7 0 6 1;
+#X connect 8 0 4 0;
+#X connect 8 1 7 0;
+#X connect 9 0 2 1;
 #X restore 15 220 pd list;
 #N canvas 663 615 259 269 print_messages 0;
 #X obj 10 197 print CHAT;
@@ -848,13 +899,23 @@ a dummy message every 60;
 #X connect 10 0 11 0;
 #X connect 11 0 6 0;
 #X restore 15 261 pd bell&click;
+#N canvas -2 46 421 319 notification 0;
+#N canvas 481 455 451 342 \$0.notification.gop 0;
+#X obj 21 21 cnv 18 398 248 empty empty empty 0 0 0 10 #ff8e00 #404040 0;
+#X obj 27 27 cnv 18 386 236 empty \$0.notification.label empty 20 120 0 25 #fafafa #ff0400 0;
+#X obj 48 114 cnv 18 30 20 empty empty WARNING 0 0 0 25 #fafafa #000000 0;
+#X obj 317 280 hsl 89 28 0 127 0 0 \$0.notification.ok empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 314 280 cnv 15 94 28 empty empty empty 5 12 0 20 #7c7c7c #000000 0;
+#X obj 316 282 cnv 15 90 24 empty empty OK 32 12 0 20 #c6ffc7 #000000 0;
+#X coords 0 -1 1 1 400 300 2 20 20;
+#X restore 7 5 pd \$0.notification.gop;
+#X restore 15 281 pd notification;
 #X restore 12 401 pd chat;
 #N canvas 454 209 399 436 netpd_related_programs 0;
 #X obj 17 225 \$0;
 #X obj 63 178 \$0;
 #X msg 63 199 \; pd-\$1.unpatch.container clear;
-#X msg 17 246 \; pd-\$1.unpatch.container obj 20 20 unpatch \; pd-unpatch.pd
-vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
+#X msg 17 246 \; pd-\$1.unpatch.container obj 20 20 unpatch \; pd-unpatch.pd vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 #X obj 17 12 r NETPD;
 #X obj 17 35 route unpatch;
 #X obj 17 58 route start stop;
@@ -885,38 +946,26 @@ vis 0 \; pd-unpatch vis 1 \; pd-unpatch.pd loadbang \;;
 #X text 18 11 netpd-settings;
 #N canvas 0 450 378 285 netpd-preferences 0;
 #X symbolatom 120 15 10 0 0 0 - \$0.netpd-name.r \$0.netpd-name 0;
-#X symbolatom 120 36 40 0 0 0 - \$0.netpd-welcome.r \$0.netpd-welcome
-0;
-#X symbolatom 120 56 40 0 0 0 - \$0.netpd-server.r \$0.netpd-server
-0;
+#X symbolatom 120 36 40 0 0 0 - \$0.netpd-welcome.r \$0.netpd-welcome 0;
+#X symbolatom 120 56 40 0 0 0 - \$0.netpd-server.r \$0.netpd-server 0;
 #X floatatom 120 76 6 0 0 0 - \$0.netpd-port.r \$0.netpd-port 0;
 #X text 76 14 name:;
 #X text 76 74 port:;
 #X text 46 36 say hello:;
-#X obj 116 246 hsl 237 19 0 127 0 0 \$0.closesavesettings \$0-bli save&close
-2 9 1 11 #e0e0e0 #e0e0e0 #000000 0 1;
-#X obj 120 157 tgl 15 0 \$0.pd-dynamic-dsp-off \$0.pd-dynamic-dsp-off.r
-empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
-#X floatatom 120 197 10 0 0 0 - \$0.pd-audio-latency.r \$0.pd-audio-latency
-0;
+#X obj 116 246 hsl 237 19 0 127 0 0 \$0.closesavesettings \$0-bli save&close 2 9 1 11 #e0e0e0 #e0e0e0 #000000 0 1;
+#X obj 120 157 tgl 15 0 \$0.pd-dynamic-dsp-off \$0.pd-dynamic-dsp-off.r empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 120 197 10 0 0 0 - \$0.pd-audio-latency.r \$0.pd-audio-latency 0;
 #X text 183 197 ms;
-#X text 3 216 __________________________________________________________
-;
+#X text 3 216 __________________________________________________________;
 #X text 22 196 audio latency:;
 #X text 22 54 IP / hostname:;
-#X obj 120 137 tgl 15 0 \$0.pd-start-dsp \$0.pd-start-dsp.r empty 17
-7 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 253 197 hsl 100 17 0 127 0 0 \$0.show.latency.dialog \$0.show.latency.dialog.r
-Latency\\\ Settings 2 9 0 10 #dcdcdc #dcdcdc #000000 0 1;
-#X obj 120 117 tgl 15 0 \$0.netpd-auto-connect \$0.netpd-auto-connect.r
-empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
-#X symbolatom 132 96 38 0 0 0 - \$0.netpd-instruments-path.r \$0.netpd-instruments-path
-0;
+#X obj 120 137 tgl 15 0 \$0.pd-start-dsp \$0.pd-start-dsp.r empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 253 197 hsl 100 17 0 127 0 0 \$0.show.latency.dialog \$0.show.latency.dialog.r Latency\ Settings 2 9 0 10 #dcdcdc #dcdcdc #000000 0 1;
+#X obj 120 117 tgl 15 0 \$0.netpd-auto-connect \$0.netpd-auto-connect.r empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X symbolatom 132 96 38 0 0 0 - \$0.netpd-instruments-path.r \$0.netpd-instruments-path 0;
 #X text 4 94 instruments path:;
-#X obj 120 98 vsl 12 12 0 127 0 0 \$0.netpd-instruments-path.button
-\$0.blu empty 0 -9 0 10 #dcdcdc #dcdcdc #000000 0 1;
-#X obj 120 177 tgl 15 0 \$0.netpd-download-ask \$0.netpd-download-ask.r
-empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 120 98 vsl 12 12 0 127 0 0 \$0.netpd-instruments-path.button \$0.blu empty 0 -9 0 10 #dcdcdc #dcdcdc #000000 0 1;
+#X obj 120 177 tgl 15 0 \$0.netpd-download-ask \$0.netpd-download-ask.r empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 137 116 connect at start;
 #X text 137 136 DSP on at start;
 #X text 137 156 dynamic DSP-off;
@@ -1319,18 +1368,15 @@ empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 10 0 11 0;
 #X connect 11 0 6 0;
 #X restore 12 560 pd sample.period;
-#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ 60dB 6 12 0 14
-#e0e0e0 #404040 0;
+#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ \ 0dB 6 12 0 14 #e0e0e0 #404040 0;
 #X obj 219 371 s \$0.lat.ret.level;
 #X obj 12 247 bang;
-#X obj 382 508 cnv 15 60 25 empty \$0.latency.label 0.0ms 6 12 0 14
-#000000 #fcfcfc 0;
+#X obj 382 508 cnv 15 60 25 empty \$0.latency.label 0.0ms 6 12 0 14 #000000 #fcfcfc 0;
 #X obj 219 206 adc~ 1;
 #X obj 75 207 *~ 0;
 #X obj 219 230 delwrite~ \$0.lat.offset 20;
 #X obj 219 253 delread~ \$0.lat.offset 20;
-#X obj 381 423 tgl 20 0 \$0.lat.measure.s \$0.lat.measure.r empty 17
-7 0 10 #c6ffc7 #000000 #000000 0 1;
+#X obj 381 423 tgl 20 0 \$0.lat.measure.s \$0.lat.measure.r empty 17 7 0 10 #c6ffc7 #000000 #000000 0 1;
 #X obj 12 8 r \$0.lat.measure.s;
 #X obj 12 616 outlet;
 #X connect 0 0 29 0;
@@ -1460,7 +1506,7 @@ empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 8 49 netpd-status-property socket;
 #X obj 324 18 r NETPD;
 #X obj 324 39 route connection;
-#X obj 391 63 netpd-r /server/socket;
+#X obj 428 39 netpd-r /server/socket;
 #X obj 324 61 route 0;
 #X msg 324 84 0;
 #X obj 324 113 t a;
@@ -1476,9 +1522,11 @@ empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 500 120 route connection;
 #X obj 8 7 netpd-status-property connection;
 #X msg 500 143 connection \$1;
+#X obj 498 233 print YOYO;
+#X obj 428 62 route bang;
 #X connect 4 0 5 0;
 #X connect 5 0 7 0;
-#X connect 6 0 9 0;
+#X connect 6 0 23 0;
 #X connect 7 0 8 0;
 #X connect 8 0 9 0;
 #X connect 9 0 14 0;
@@ -1491,6 +1539,7 @@ empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 18 0 19 0;
 #X connect 19 0 21 0;
 #X connect 21 0 15 0;
+#X connect 23 1 9 0;
 #X restore 12 444 pd status;
 #N canvas 426 130 386 466 INIT 0;
 #X msg 47 177 \; pd dsp 1;
@@ -1536,13 +1585,11 @@ empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 14 263 route 0 1;
 #X obj 14 293 list;
 #X obj 14 361 netpd-error NETPD;
-#X msg 14 320 instruments directory '\$1' does not exist. Please check
-netpd-instruments-dir in preferences.;
+#X msg 14 320 instruments directory '\$1' does not exist. Please check netpd-instruments-dir in preferences.;
 #X obj 14 136 t a a a;
 #X obj 161 181 symbol <not_set>;
 #X obj 161 204 sel <not_set>;
-#X msg 161 229 instruments directory not configured. Please check netpd-instruments-dir
-in preferences.;
+#X msg 161 229 instruments directory not configured. Please check netpd-instruments-dir in preferences.;
 #X obj 14 79 t b b;
 #X obj 13 10 r NETPD;
 #X obj 13 33 route loadbang;
@@ -1574,9 +1621,7 @@ in preferences.;
 #X obj 54 198 s NETPD;
 #X msg 54 165 warning non-standard samplerate detected: \$1 Hz;
 #X obj 27 286 print -n;
-#X msg 27 228 netpd uses 44100 Hz by convention. Not following this
-convention has unwanted side effects and prevents audio samples or
-live audio from being shared with peers.;
+#X msg 27 228 netpd uses 44100 Hz by convention. Not following this convention has unwanted side effects and prevents audio samples or live audio from being shared with peers.;
 #X obj 27 141 t b a;
 #X obj 27 59 delay 100;
 #X obj 33 16 loadbang;
@@ -1627,8 +1672,7 @@ live audio from being shared with peers.;
 #X connect 4 0 6 0;
 #X connect 6 0 5 0;
 #X restore 12 465 pd errors;
-#X obj 337 24 cnv 12 12 191 empty \$0-scrollbar empty 20 12 0 14 #b4b4b4
-#b4b4b4 0;
+#X obj 337 24 cnv 12 12 191 empty \$0-scrollbar empty 20 12 0 14 #b4b4b4 #b4b4b4 0;
 #X obj 163 395 loadbang;
 #N canvas 138 498 404 150 set_version 0;
 #X obj 6 19 inlet;
@@ -1702,14 +1746,10 @@ live audio from being shared with peers.;
 #X msg 23 22 unpatch start;
 #X msg 36 48 unpatch stop;
 #X obj 17 253 route unpatch;
-#X msg 683 354 ---------- \, unpatch: invalid usage \, see: \, \ \ unpatch
-help \, ----------;
+#X msg 683 354 ---------- \, unpatch: invalid usage \, see: \, \ \ unpatch help \, ----------;
 #X obj 811 166 route on off;
 #X obj 683 138 route start stop help protect;
-#X msg 17 298 ---------- \, control unpatch \, Usage: \, \ \ unpatch
-start|stop \, \ \ \ start and stop unpatch by command \, \ \ unpatch
-protect on|off \, \ \ \ turn on|off protected mode where \, \ \ \ interaction
-with any other unpatch \, \ \ \ is suppressed \, ----------;
+#X msg 17 298 ---------- \, control unpatch \, Usage: \, \ \ unpatch start|stop \, \ \ \ start and stop unpatch by command \, \ \ unpatch protect on|off \, \ \ \ turn on|off protected mode where \, \ \ \ interaction with any other unpatch \, \ \ \ is suppressed \, ----------;
 #X obj 623 255 list prepend;
 #X obj 623 278 route 1 0;
 #X obj 710 326 list append ✗;
@@ -1930,13 +1970,8 @@ with any other unpatch \, \ \ \ is suppressed \, ----------;
 #X obj 13 551 route debug;
 #X obj 13 574 route help;
 #X obj 13 678 s \$0.chat.comand.display;
-#X msg 854 410 ---------- \, debug: invalid usage \, use: \, \ \ debug
-help \, ----------;
-#X msg 13 596 ---------- \, print different kinds of netpd \, messages
-to the console \, \, Usage: \, \ \ debug <type> on|off \, Available
-types are: \, \ \ to - message I send \, \ \ from - messages I receive
-\, \ \ local - messages sent locally \, \ \ raw - raw messages on NETPD
-bus \, ----------;
+#X msg 854 410 ---------- \, debug: invalid usage \, use: \, \ \ debug help \, ----------;
+#X msg 13 596 ---------- \, print different kinds of netpd \, messages to the console \, \, Usage: \, \ \ debug <type> on|off \, Available types are: \, \ \ to - message I send \, \ \ from - messages I receive \, \ \ local - messages sent locally \, \ \ raw - raw messages on NETPD bus \, ----------;
 #X obj 205 60 r NETPD.DEBUG.FROM;
 #X obj 205 89 route from sender;
 #X obj 295 14 r NETPD;
@@ -2182,15 +2217,10 @@ bus \, ----------;
 #X obj 72 282 s \$0.chat.comand.display;
 #X obj 15 143 route help;
 #X obj 156 90 list;
-#X msg 156 114 ---------- \, no such command: \$1 \, use: \, \ \ help
-\, to get more information \, ----------;
+#X msg 156 114 ---------- \, no such command: \$1 \, use: \, \ \ help \, to get more information \, ----------;
 #X obj 15 51 route help debug unpatch;
-#X msg 72 216 help ✓ \, ---------- \, Available commands are: \,
-\ \ debug: manage debug output \, \ \ help: show this help \, \ \ unpatch:
-control unpatch \, For more detailed information use: \, \ \ /<command>
-help \, ----------;
-#X msg 15 168 help help ✓ \, ---------- \, Sorry\\\, there is no
-help for help \, ----------;
+#X msg 72 216 help ✓ \, ---------- \, Available commands are: \, \ \ debug: manage debug output \, \ \ help: show this help \, \ \ unpatch: control unpatch \, For more detailed information use: \, \ \ /<command> help \, ----------;
+#X msg 15 168 help help ✓ \, ---------- \, Sorry\\\, there is no help for help \, ----------;
 #X connect 0 0 5 0;
 #X connect 2 0 7 0;
 #X connect 2 1 6 0;
@@ -2202,12 +2232,9 @@ help for help \, ----------;
 #X connect 7 0 1 0;
 #X restore 17 19 pd help.cmd;
 #X restore 12 507 pd commands;
-#X obj 15 16 cnv 6 347 254 empty empty empty 20 12 0 14 #fcfcfc #404040
-0;
-#X obj 3 2 cnv 7 384 324 empty empty empty 6 8 1 12 #b0a8b8 #000000
-0;
-#X obj 5 4 cnv 15 380 320 empty empty netpd 3 12 0 20 #e8e0f0 #787080
-0;
+#X obj 15 16 cnv 6 347 254 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
+#X obj 3 2 cnv 7 384 324 empty empty empty 6 8 1 12 #b0a8b8 #000000 0;
+#X obj 5 4 cnv 15 380 320 empty empty netpd 3 12 0 20 #e8e0f0 #787080 0;
 #X obj 85 279 chat-inputbox \$0.input;
 #X obj 5 304 chat-button \$0.online.button online 79;
 #X obj 85 304 chat-button \$0.list.button list 60;
@@ -2216,8 +2243,7 @@ help for help \, ----------;
 #X obj 268 304 chat-button \$0.dsp.button dsp 54;
 #X obj 323 304 chat-button \$0.unpatch.button unpatch 62;
 #X obj 370 38 netpd-gui-scrollbar \$0.scrollbar 15 240 12;
-#X obj 5 279 cnv 15 79 24 empty \$0.num.clients.label 0\  4 12 0 16
-#e8e0f0 #787080 0;
+#X obj 5 279 cnv 15 79 24 empty \$0.num.clients.label 0\  4 12 0 16 #e8e0f0 #787080 0;
 #X obj 5 238 chat-line \$0 1;
 #X obj 5 218 chat-line \$0 2;
 #X obj 5 198 chat-line \$0 3;
@@ -2243,7 +2269,7 @@ help for help \, ----------;
 #X msg 283 515 176 168 184;
 #X text 366 514 scrollbar handle;
 #X obj 318 4 chat-version-display;
-#X msg 163 418 VERSION 2 3 2;
+#X msg 163 418 VERSION 2 3 3;
 #X connect 9 0 49 0;
 #X connect 49 0 10 0;
 #X coords 0 -1 1 1 384 324 2 3 2;
