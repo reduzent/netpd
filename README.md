@@ -1,12 +1,12 @@
 
-![netpd](https://www.netpd.org/netpd-logo.png "netpd")
+![netpd](https://netpd.org/images/netpd_logo.svg "netpd")
 
 
 is a CRNMME (**C**ollaborative **R**ealtime **N**etworked **M**usic **M**aking **E**nvironment)
 written in Pure Data. It allows many users to have a real time jam
 sessions with each other, connected over the internet.
 Users might contribute their own *netpd*ized patches a.k.a. instruments
-or use pre-existing ones. The set of [instruments](https://www.netpd.org/Instruments) and the state of
+or use pre-existing ones. The set of [instruments](https://netpd.org/instruments/) and the state of
 each one is synchronized between clients in order to provide identical
 experience for every connected user.
 
@@ -53,11 +53,11 @@ need to be searched and installed:
 ## intro
 
 * Open `netpd/main.pd` with Pd.  
-  [chat](https://www.netpd.org/Chat) automatically connects to the server and you can
+  [chat](https://netpd.org/docs/chat) automatically connects to the server and you can
   now chat with other users currently online.  
   Click *list* to get a list all connnected users.
 
-* Click the [unpatch](https://www.netpd.org/Unpatch) button in chat to launch
+* Click the [unpatch](https://netpd.org/docs/unpatch) button in chat to launch
   the unpatch instrument manager. If there is already a session going on,
   the instruments used in the ongoing session are automatically loaded (they
   are first downloaded from other users, if necessary).
@@ -75,12 +75,13 @@ need to be searched and installed:
 If you're lucky, someone is online and might help you get started. This is the easiest
 and fastest way to get accustomed to all the instruments and how they interact with each
 other. Of course, you can explore the instruments on your own as well. Maybe start
-with [master](https://www.netpd.org/master) and [sine](https://www.netpd.org/sine).
+with [master](https://www.netpd.org/instruments/master) and
+[sine](https://www.netpd.org/instruments/sine).
 
 
 ## server
 
-For online jams, netpd needs to connect to a [netpd-server](https://www.netpd.org/Server).
+For online jams, netpd needs to connect to a [netpd-server](https://www.netpd.org/docs/server).
 A public netpd-server is running at **netpd.org** on port **3025**.
 This is the default server in netpd's configuration. The netpd-server software is available
 here:  
