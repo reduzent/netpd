@@ -1,21 +1,17 @@
-#N struct 1306.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1308.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1310.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N canvas 287 26 505 500 10;
-#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040
-0;
+#N struct 1004.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 1006.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 1008.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N canvas 287 26 505 492 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X text 8 7 netpd-gui-dropdown - a configurable drop-down menu;
 #X text 30 443 No inlets;
 #X text 30 457 No outlets;
 #X text 10 47 [netpd-gui-dropdown \$0.mydropdown];
-#X msg 204 116 items binfile else iemlib iemnet osc slip zexy;
-#X obj 204 141 s \$0.mydropdown;
-#X obj 205 182 r \$0.mydropdown;
-#X obj 266 235 print netpd-gui-dropdown;
-#X obj 204 92 loadbang;
+#X msg 200 106 items binfile else iemlib iemnet osc slip zexy;
+#X obj 200 131 s \$0.mydropdown;
+#X obj 200 222 r \$0.mydropdown;
+#X obj 261 275 print netpd-gui-dropdown;
+#X obj 200 82 loadbang;
 #N canvas 345 108 451 528 customize 0;
 #X obj 18 71 s \$0.mydropdown;
 #X msg 18 46 width \$1;
@@ -45,8 +41,7 @@ txtclr float boxclr float bgclr symbol label;
 #X msg 235 417 items_background_color \$1;
 #X text 20 197 Colors for selected item;
 #X text 230 198 Colors for drop-down items;
-#X text 21 488 Use data structure color values (800=red \, 80=green
-\, 8=blue);
+#X text 21 488 Use data structure color values (800=red \, 80=green \, 8=blue);
 #X text 21 470 NOTE:;
 #X text 168 21 CUSTOMIZATIONS FOR [netpd-gui-dropdown];
 #X text 168 36 =======================================;
@@ -84,23 +79,19 @@ txtclr float boxclr float bgclr symbol label;
 #X text 12 412 arg10: items background color;
 #X text 18 329 arg4: fontsize;
 #X text 18 287 arg1: sendname (mandatory);
-#X obj 205 209 route active selected;
-#X obj 205 235 tgl 18 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 200 249 route active selected;
+#X obj 200 275 tgl 18 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 282 326 More info:;
 #N canvas 374 109 409 508 optional 0;
-#X text 9 10 It's possible to specify only some the args while the
-non-specified args stay at their default value.;
+#X text 9 10 It's possible to specify only some the args while the non-specified args stay at their default value.;
 #X msg 45 398 items A B C;
 #X obj 45 421 s \$0.letters;
 #X obj 16 84 netpd-gui-dropdown \$0.letters 30 30 16;
 #X text 12 58 [netpd-gui-dropdown \$0.letters 30 30 16];
 #X msg 18 448 items stilton cheddar shropshire stichelton;
 #X obj 18 471 s \$0.cheese;
-#X obj 15 214 netpd-gui-dropdown \$0.cheese 57 14 8 232 787 787 322
-877 877;
-#X text 16 173 [netpd-gui-dropdown \$0.cheese 57 14 8 232 787 787 322
-877 877];
+#X obj 15 214 netpd-gui-dropdown \$0.cheese 57 14 8 232 787 787 322 877 877;
+#X text 16 173 [netpd-gui-dropdown \$0.cheese 57 14 8 232 787 787 322 877 877];
 #X text 84 210 <- fully specifed;
 #X text 70 91 <- partially specified;
 #X obj 18 351 loadbang;
@@ -111,8 +102,16 @@ non-specified args stay at their default value.;
 #X connect 12 0 5 0;
 #X connect 12 1 1 0;
 #X restore 284 379 pd optional args;
+#X msg 200 162 setlabel gridflow;
+#X obj 200 185 s \$0.mydropdown;
+#X msg 349 178 drop \$1;
+#X obj 349 155 tgl 18 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 349 201 s \$0.mydropdown;
 #X connect 5 0 6 0;
 #X connect 7 0 22 0;
 #X connect 9 0 5 0;
 #X connect 22 0 23 0;
 #X connect 22 1 8 0;
+#X connect 26 0 27 0;
+#X connect 28 0 30 0;
+#X connect 29 0 28 0;
