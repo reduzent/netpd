@@ -1,7 +1,5 @@
 #N canvas 210 112 576 318 10;
 #N canvas 247 349 709 287 \$0.gop 0;
-#X scalar 3502.rectangle 1 0 0 67 17 0 666 887  \;;
-#X scalar 3502.rectangle 0 0 0 67 17 404 666 878  \;;
 #X coords 0 0 67 17 67 17 2 50 50;
 #X restore 50 50 pd \$0.gop;
 #X obj 193 275 s \$0.expand;
