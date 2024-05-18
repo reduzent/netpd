@@ -1,7 +1,4 @@
-#N struct 1004.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
-#N struct 1006.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
-#N struct 1008.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
-#N canvas 287 26 505 492 10;
+#N canvas 605 65 503 492 10;
 #X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X text 8 7 netpd-gui-dropdown - a configurable drop-down menu;
 #X text 30 443 No inlets;
@@ -68,7 +65,6 @@
 #X connect 33 0 34 0;
 #X connect 34 0 32 0;
 #X restore 284 350 pd customize;
-#X obj 18 91 netpd-gui-dropdown \$0.mydropdown;
 #X text 18 301 arg2: width;
 #X text 18 315 arg3: height;
 #X text 18 343 arg5: selected text color;
@@ -107,11 +103,12 @@
 #X msg 349 178 drop \$1;
 #X obj 349 155 tgl 18 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 349 201 s \$0.mydropdown;
+#X obj 18 91 netpd-gui-dropdown \$0.mydropdown;
 #X connect 5 0 6 0;
-#X connect 7 0 22 0;
+#X connect 7 0 21 0;
 #X connect 9 0 5 0;
-#X connect 22 0 23 0;
-#X connect 22 1 8 0;
-#X connect 26 0 27 0;
-#X connect 28 0 30 0;
-#X connect 29 0 28 0;
+#X connect 21 0 22 0;
+#X connect 21 1 8 0;
+#X connect 25 0 26 0;
+#X connect 27 0 29 0;
+#X connect 28 0 27 0;
