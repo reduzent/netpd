@@ -927,7 +927,7 @@
 #X restore 15 261 pd bell&click;
 #N canvas -2 46 421 155 notification 0;
 #N canvas 481 455 469 350 \$0.notification.gop 0;
-#X obj 21 21 cnv 18 398 135 empty empty empty 0 0 0 10 #ff8e00 #404040 0;
+#X obj 21 21 cnv 18 398 135 empty empty empty 0 0 0 10 #ffff66 #404040 0;
 #X obj 27 27 cnv 18 386 86 empty \$0.notification.label Wrong\ samplerate:\ 48000 20 60 0 25 #fafafa #ff0400 0;
 #X obj 48 52 cnv 18 30 20 empty empty WARNING 0 0 0 25 #fafafa #000000 0;
 #X obj 323 122 hsl 89 28 0 127 0 0 \$0.notification.ok empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
