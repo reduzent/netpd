@@ -94,10 +94,10 @@
 #X restore 156 177 pd defaults;
 #N canvas 918 530 450 300 struct 0;
 #X obj 62 163 outlet;
-#X obj 62 59 filledpolygon bgclr bgclr 0 0 0 0 h w h w 0;
 #X obj 62 122 struct \$0.number float x float y float number float fclr float bgclr float w float h;
-#X obj 63 86 drawnumber number 2 1 fclr;
-#X connect 2 0 0 0;
+#X obj 62 59 filledpolygon -x bgclr bgclr 0 0 0 0 h w h w 0;
+#X obj 59 89 drawnumber number 2 1 fclr;
+#X connect 1 0 0 0;
 #X restore 83 329 pd struct \$0.number;
 #X obj 60 481 r \$0.lb;
 #X obj 60 504 netpd-default 5 -99999;
