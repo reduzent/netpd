@@ -1,0 +1,18 @@
+#N canvas 409 44 503 415 10;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X text 9 7 netpd-line-wrapper - parse lists with newline codes;
+#X text 11 40 [netpd-line-wrapper] is used to produce long texts as lists with newlines. It parses the incoming list and replaces every occurrence of <br> with a newline character.;
+#X obj 22 296 print netpd-line-wrapper;
+#X text 275 308 inlet0: list;
+#X text 269 323 outlet0: list with newlines;
+#X obj 22 155 netpd-line-wrapper;
+#X msg 22 104 list My favorite fruits: <br/> \ * apple <br/> \ * banana <br/> \ * mango;
+#X obj 94 198 netpd-list2symbol;
+#X msg 94 221 label \$1;
+#X obj 94 244 s mycanvas;
+#X obj 236 164 cnv 18 200 100 empty mycanvas mycanvas 6 40 0 10 #c6ffc7 #9c00ff 0;
+#X connect 6 0 3 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
