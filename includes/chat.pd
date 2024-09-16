@@ -1,4 +1,4 @@
-#N canvas -10 26 493 564 10;
+#N canvas 0 32 493 564 10;
 #N canvas 31 555 172 351 chat 0;
 #N canvas 331 376 612 295 connection 0;
 #X msg 143 175 disconnect;
@@ -500,7 +500,7 @@
 #X connect 26 3 27 0;
 #X connect 28 0 2 1;
 #X restore 9 48 pd chatdisplay;
-#N canvas 519 435 408 508 notification.code 0;
+#N canvas 495 424 408 508 notification.code 0;
 #X obj 59 449 s \$0.notification.label;
 #X msg 59 425 label \$1;
 #X obj 224 385 s pd-notification;
@@ -925,15 +925,15 @@
 #X connect 10 0 11 0;
 #X connect 11 0 6 0;
 #X restore 15 261 pd bell&click;
-#N canvas -2 46 421 155 notification 0;
+#N canvas 0 46 416 214 notification 1;
 #N canvas 481 455 469 350 \$0.notification.gop 0;
-#X obj 21 21 cnv 18 398 135 empty empty empty 0 0 0 10 #ffff66 #404040 0;
-#X obj 27 27 cnv 18 386 86 empty \$0.notification.label Wrong\ samplerate:\ 48000 20 60 0 25 #fafafa #ff0400 0;
-#X obj 48 52 cnv 18 30 20 empty empty WARNING 0 0 0 25 #fafafa #000000 0;
-#X obj 323 122 hsl 89 28 0 127 0 0 \$0.notification.ok empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 320 122 cnv 15 94 28 empty empty empty 5 12 0 20 #7c7c7c #000000 0;
-#X obj 322 124 cnv 15 90 24 empty empty OK 32 12 0 20 #c6ffc7 #000000 0;
-#X coords 0 -1 1 1 400 137 2 20 20;
+#X obj 21 21 cnv 18 398 198 empty empty empty 0 0 0 10 #faff00 #000000 0;
+#X obj 27 27 cnv 18 386 150 empty \$0.notification.label empty 20 60 0 12 #feffc6 #000000 0;
+#X obj 48 52 cnv 18 30 20 empty \$0.notification.type.label empty 0 0 0 25 #feffc6 #ff0400 0;
+#X obj 323 185 hsl 89 28 0 127 0 0 \$0.notification.ok empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 320 185 cnv 15 94 28 empty empty empty 5 12 0 20 #7c7c7c #000000 0;
+#X obj 322 187 cnv 15 90 24 empty empty OK 32 12 0 20 #c6ffc7 #000000 0;
+#X coords 0 -1 1 1 400 200 2 20 20;
 #X restore 7 5 pd \$0.notification.gop;
 #X restore 15 281 pd notification;
 #X restore 12 401 pd chat;
@@ -1394,7 +1394,7 @@
 #X connect 10 0 11 0;
 #X connect 11 0 6 0;
 #X restore 12 560 pd sample.period;
-#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ \ 0dB 6 12 0 14 #e0e0e0 #404040 0;
+#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ 41dB 6 12 0 14 #e0e0e0 #404040 0;
 #X obj 219 371 s \$0.lat.ret.level;
 #X obj 12 247 bang;
 #X obj 382 508 cnv 15 60 25 empty \$0.latency.label 0.0ms 6 12 0 14 #000000 #fcfcfc 0;
