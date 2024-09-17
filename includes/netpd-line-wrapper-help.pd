@@ -6,13 +6,18 @@
 #X text 275 308 inlet0: list;
 #X text 269 323 outlet0: list with newlines;
 #X obj 22 155 netpd-line-wrapper;
-#X msg 22 104 list My favorite fruits: <br/> \ * apple <br/> \ * banana <br/> \ * mango;
-#X obj 94 198 netpd-list2symbol;
-#X msg 94 221 label \$1;
-#X obj 94 244 s mycanvas;
-#X obj 236 164 cnv 18 200 100 empty mycanvas mycanvas 6 40 0 10 #c6ffc7 #9c00ff 0;
+#X obj 96 215 netpd-list2symbol;
+#X msg 96 238 label \$1;
+#X obj 96 261 s mycanvas;
+#X obj 236 164 cnv 18 200 100 empty mycanvas My\ favorite\ fruits:\ 
+*\ apple\ 
+*\ banana\ 
+*\ mango 6 40 0 10 #c6ffc7 #9c00ff 0;
+#X obj 127 180 print non-wrapped;
+#X msg 22 104 list My favorite fruits: <br/> * apple <br/> * banana <br/> * mango;
 #X connect 6 0 3 0;
-#X connect 6 0 8 0;
-#X connect 7 0 6 0;
+#X connect 6 0 7 0;
+#X connect 6 1 11 0;
+#X connect 7 0 8 0;
 #X connect 8 0 9 0;
-#X connect 9 0 10 0;
+#X connect 12 0 6 0;
