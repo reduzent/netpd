@@ -1,0 +1,8 @@
+#N canvas 35 69 431 231 12;
+#X obj 21 21 cnv 18 398 198 empty empty empty 0 0 0 10 #faff00 #000000 0;
+#X obj 27 27 cnv 18 386 144 empty \$1.notification.label empty 20 94 0 12 #feffc6 #000000 0;
+#X obj 46 30 cnv 18 30 20 empty \$1.notification.type.label WARNING 0 18 0 25 #fcfcc8 #ff8300 0;
+#X obj 323 185 hsl 89 28 0 127 0 0 \$1.notification.ok empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 320 185 cnv 15 94 28 empty empty empty 5 12 0 20 #7c7c7c #000000 0;
+#X obj 322 187 cnv 15 90 24 empty empty OK 32 12 0 20 #c6ffc7 #000000 0;
+#X coords 0 -1 1 1 400 200 2 20 20;
