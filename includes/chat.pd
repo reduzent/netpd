@@ -1598,7 +1598,7 @@
 #X obj 302 134 s pd-main.pd;
 #X msg 302 107 vis 0 \, setbounds 0 0 394 334 \, vis 1;
 #X obj 302 56 loadbang;
-#X obj 302 81 delay 3000;
+#X obj 302 81 delay 1500;
 #X text 303 20 work-around issue in Pd 0.55 where patches loaded at startup remain grey.;
 #X connect 5 0 4 0;
 #X connect 7 0 5 0;
