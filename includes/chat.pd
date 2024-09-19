@@ -1,4 +1,4 @@
-#N canvas 0 32 493 564 10;
+#N canvas 0 40 493 564 10;
 #N canvas 31 555 172 351 chat 0;
 #N canvas 331 376 612 295 connection 0;
 #X msg 143 175 disconnect;
@@ -1324,7 +1324,7 @@
 #X connect 10 0 11 0;
 #X connect 11 0 6 0;
 #X restore 12 560 pd sample.period;
-#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ 47dB 6 12 0 14 #e0e0e0 #404040 0;
+#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ 40dB 6 12 0 14 #e0e0e0 #404040 0;
 #X obj 219 371 s \$0.lat.ret.level;
 #X obj 12 247 bang;
 #X obj 382 508 cnv 15 60 25 empty \$0.latency.label 0.0ms 6 12 0 14 #000000 #fcfcfc 0;
@@ -1497,7 +1497,7 @@
 #X connect 21 0 15 0;
 #X connect 23 1 9 0;
 #X restore 12 444 pd status;
-#N canvas 426 130 386 466 INIT 0;
+#N canvas 426 130 691 433 INIT 0;
 #X msg 47 177 \; pd dsp 1;
 #N canvas 120 274 181 227 netpd-loadbang 0;
 #X obj 8 8 loadbang;
@@ -1595,6 +1595,11 @@
 #X obj 79 33 r NETPD;
 #X obj 79 56 route loadbang;
 #X obj 79 79 route 3;
+#X obj 302 134 s pd-main.pd;
+#X msg 302 107 vis 0 \, setbounds 0 0 394 334 \, vis 1;
+#X obj 302 56 loadbang;
+#X obj 302 81 delay 3000;
+#X text 303 20 work-around issue in Pd 0.55 where patches loaded at startup remain grey.;
 #X connect 5 0 4 0;
 #X connect 7 0 5 0;
 #X connect 8 0 0 0;
@@ -1610,6 +1615,9 @@
 #X connect 20 0 21 0;
 #X connect 21 0 22 0;
 #X connect 22 0 11 0;
+#X connect 24 0 23 0;
+#X connect 25 0 26 0;
+#X connect 26 0 24 0;
 #X restore 12 380 pd INIT;
 #X obj 337 24 cnv 12 12 191 empty \$0-scrollbar empty 20 12 0 14 #b4b4b4 #b4b4b4 0;
 #X obj 163 395 loadbang;
