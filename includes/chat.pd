@@ -2278,7 +2278,7 @@
 #X msg 283 515 176 168 184;
 #X text 366 514 scrollbar handle;
 #X obj 318 4 chat-version-display;
-#X msg 163 418 VERSION 2 3 3;
+#X msg 163 418 VERSION 2 3 4;
 #N canvas 373 279 474 253 warnings&errors 0;
 #X obj 6 31 r NETPD;
 #X obj 6 53 route error;
