@@ -1324,7 +1324,7 @@
 #X connect 10 0 11 0;
 #X connect 11 0 6 0;
 #X restore 12 560 pd sample.period;
-#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ 37dB 6 12 0 14 #e0e0e0 #404040 0;
+#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ 54dB 6 12 0 14 #e0e0e0 #404040 0;
 #X obj 219 371 s \$0.lat.ret.level;
 #X obj 12 247 bang;
 #X obj 382 508 cnv 15 60 25 empty \$0.latency.label 0.0ms 6 12 0 14 #000000 #fcfcfc 0;
@@ -1532,7 +1532,7 @@
 #X msg 8 145 1;
 #X text 134 210 set to 1 when not defined;
 #X obj 8 210 s \$0.pd-start-dsp.r;
-#N canvas 48 116 492 403 check.instruments.path 1;
+#N canvas 48 116 492 403 check.instruments.path 0;
 #X obj 14 113 netpd-pref-get netpd-instruments-path;
 #X msg 33 162 symbol \$1/abs;
 #X obj 14 217 netpd-if-dir;
@@ -1578,7 +1578,7 @@
 #X obj 27 59 delay 100;
 #X obj 33 16 loadbang;
 #X obj 54 248 netpd-warning netpd 1;
-#X msg 54 165 Non-standard samplerate detected: \$1\\\ Hz <br/> Make sure to run netpd at 44100\\\ Hz\\\, so that recorded <br/> audio is played back correctly.;
+#X msg 54 165 Non-standard samplerate detected: \$1 Hz <br/> Make sure to run netpd at 44100 Hz\\\, so that recorded <br/> audio is played back correctly.;
 #X connect 0 0 1 0;
 #X connect 1 1 2 0;
 #X connect 2 1 6 0;
