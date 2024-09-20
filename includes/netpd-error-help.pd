@@ -1,11 +1,13 @@
-#N canvas 422 44 503 324 10;
-#X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 -233017 -66577
-0;
+#N canvas 422 44 503 366 10;
+#X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X text 7 7 netpd-error - post an error;
-#X obj 23 251 netpd-error netpd-error-help;
-#X msg 23 214 This is only a dummy error message.;
-#X text 14 48 [netpd-error] aims to provide a unified way to post error
-messages in the netpd world.;
-#X text 193 109 arg1: name of the patch posting an error;
-#X text 181 138 inlet0: error message;
-#X connect 3 0 2 0;
+#X msg 21 258 This is only a dummy error message.;
+#X text 14 48 [netpd-error] aims to provide a unified way to post error messages in the netpd world.;
+#X text 63 109 arg1: name of the patch posting an error;
+#X text 51 144 inlet0: error message;
+#X text 63 124 arg2: pop up a dialog window (0|1);
+#X obj 19 207 netpd-error netpd-error-help 1;
+#X msg 19 170 This is a message shown also in <br/> a pop-up.;
+#X obj 21 295 netpd-error netpd-error-help;
+#X connect 2 0 9 0;
+#X connect 8 0 7 0;
