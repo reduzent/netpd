@@ -1324,7 +1324,7 @@
 #X connect 10 0 11 0;
 #X connect 11 0 6 0;
 #X restore 12 560 pd sample.period;
-#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ 40dB 6 12 0 14 #e0e0e0 #404040 0;
+#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ 43dB 6 12 0 14 #e0e0e0 #404040 0;
 #X obj 219 371 s \$0.lat.ret.level;
 #X obj 12 247 bang;
 #X obj 382 508 cnv 15 60 25 empty \$0.latency.label 0.0ms 6 12 0 14 #000000 #fcfcfc 0;
@@ -1394,7 +1394,6 @@
 #X connect 31 0 32 0;
 #X connect 33 0 31 0;
 #X restore 271 109 pd netpd-preferences-code;
-#X obj 275 231 netpd-pref-manager netpd-preferences.cnf;
 #X obj 18 204 netpd-pref-store pd-audio-latency;
 #X obj 18 185 netpd-pref-store pd-dynamic-dsp-off;
 #X obj 18 166 netpd-pref-store pd-start-dsp;
@@ -1412,10 +1411,11 @@
 #X obj 275 159 route loadbang;
 #X obj 275 182 route 2;
 #X obj 275 205 b;
+#X obj 275 231 netpd-pref-manager;
+#X connect 15 0 16 0;
 #X connect 16 0 17 0;
 #X connect 17 0 18 0;
 #X connect 18 0 19 0;
-#X connect 19 0 4 0;
 #X restore 12 423 pd preferences;
 #N canvas 382 290 974 304 status 0;
 #N canvas 419 416 280 353 unpatch_ 0;
