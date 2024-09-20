@@ -1,0 +1,13 @@
+#N canvas 422 44 505 369 10;
+#X obj 0 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X text 43 105 arg2: pop up a dialog window (0|1);
+#X msg 19 170 This is a message shown also in <br/> a pop-up.;
+#X text 7 7 netpd-warning - post an warning;
+#X text 14 48 [netpd-warning] aims to provide a unified way to post warning messages in the netpd world.;
+#X text 43 90 arg1: name of the patch posting an warning;
+#X text 31 125 inlet0: warning message;
+#X obj 19 207 netpd-warning netpd-warning-help 1;
+#X msg 21 258 This is only a dummy warning message.;
+#X obj 21 295 netpd-warning netpd-warning-help;
+#X connect 2 0 7 0;
+#X connect 8 0 9 0;
