@@ -40,7 +40,7 @@
 #X obj 165 319 t a b a;
 #X msg 340 400 download request \$3 \$1 \$2;
 #X obj 165 416 route download;
-#N canvas 625 26 432 642 bang.if.needs.download 0;
+#N canvas 625 40 432 642 bang.if.needs.download 0;
 #X obj 11 220 netpd-if-file;
 #X obj 11 90 route abstraction patch, f 31;
 #X obj 11 112 list;
@@ -57,7 +57,7 @@
 #X obj 11 344 t a a;
 #X obj 134 344 t a a;
 #X obj 177 315 t a;
-#N canvas 494 134 500 401 local_is_newer_message 0;
+#N canvas 463 184 500 401 local_is_newer_message 0;
 #X obj 26 53 list append;
 #X obj 26 78 list append;
 #X text 96 38 local version;
@@ -80,9 +80,8 @@
 #X obj 111 164 r \$3.socket;
 #X obj 26 187 s \$3.send;
 #X obj 25 241 r \$3.receive;
-#X obj 25 367 print UNPATCH;
-#X msg 25 329 \$1 '\$2': found newer version (\$3 \$4 \$5) on peer
-\$9 (local version: \$6 \$7 \$8);
+#X obj 25 367 netpd-warning unpatch 1;
+#X msg 25 329 \$1 '\$2': <br/> found newer version (\$3 \$4 \$5) <br/> on peer \$9 (local version: \$6 \$7 \$8);
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
 #X connect 4 0 6 0;
@@ -292,10 +291,7 @@
 #X obj 27 107 inlet;
 #X obj 27 294 outlet;
 #X obj 262 108 inlet;
-#X text 19 6 If we ever say 'No' to a upgrade/download \, we shouldn't
-reach 'synced' state \, so that we do not answer peer update/sync requests.
-This is for maintaining consistency among peers. Only updated peers
-should advertize their state.;
+#X text 19 6 If we ever say 'No' to a upgrade/download \, we shouldn't reach 'synced' state \, so that we do not answer peer update/sync requests. This is for maintaining consistency among peers. Only updated peers should advertize their state.;
 #X obj 27 187 list prepend 0;
 #X msg 108 160 1;
 #X obj 27 210 route 0 1;
