@@ -1324,7 +1324,7 @@
 #X connect 10 0 11 0;
 #X connect 11 0 6 0;
 #X restore 12 560 pd sample.period;
-#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ 43dB 6 12 0 14 #e0e0e0 #404040 0;
+#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ 41dB 6 12 0 14 #e0e0e0 #404040 0;
 #X obj 219 371 s \$0.lat.ret.level;
 #X obj 12 247 bang;
 #X obj 382 508 cnv 15 60 25 empty \$0.latency.label 0.0ms 6 12 0 14 #000000 #fcfcfc 0;
@@ -1595,11 +1595,6 @@
 #X obj 79 33 r NETPD;
 #X obj 79 56 route loadbang;
 #X obj 79 79 route 3;
-#X obj 302 134 s pd-main.pd;
-#X msg 302 107 vis 0 \, setbounds 0 0 394 334 \, vis 1;
-#X obj 302 56 loadbang;
-#X obj 302 81 delay 1500;
-#X text 303 20 work-around issue in Pd 0.55 where patches loaded at startup remain grey.;
 #X connect 5 0 4 0;
 #X connect 7 0 5 0;
 #X connect 8 0 0 0;
@@ -1615,9 +1610,6 @@
 #X connect 20 0 21 0;
 #X connect 21 0 22 0;
 #X connect 22 0 11 0;
-#X connect 24 0 23 0;
-#X connect 25 0 26 0;
-#X connect 26 0 24 0;
 #X restore 12 380 pd INIT;
 #X obj 337 24 cnv 12 12 191 empty \$0-scrollbar empty 20 12 0 14 #b4b4b4 #b4b4b4 0;
 #X obj 163 395 loadbang;
@@ -2252,7 +2244,7 @@
 #X obj 268 304 chat-button \$0.dsp.button dsp 54;
 #X obj 323 304 chat-button \$0.unpatch.button unpatch 62;
 #X obj 370 38 netpd-gui-scrollbar \$0.scrollbar 15 240 12;
-#X obj 5 279 cnv 15 79 24 empty \$0.num.clients.label 2\  4 12 0 16 #e8e0f0 #787080 0;
+#X obj 5 279 cnv 15 79 24 empty \$0.num.clients.label 1\  4 12 0 16 #e8e0f0 #787080 0;
 #X obj 5 238 chat-line \$0 1;
 #X obj 5 218 chat-line \$0 2;
 #X obj 5 198 chat-line \$0 3;
