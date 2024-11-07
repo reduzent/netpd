@@ -898,7 +898,7 @@
 #X restore 12 486 pd netpd_related_programs;
 #X text 9 359 Author: Roman Haefeli (roman@netpd.org);
 #X text 9 339 CHAT;
-#N canvas 472 332 548 274 preferences 0;
+#N canvas 472 332 536 371 preferences 0;
 #X text 18 11 netpd-settings;
 #N canvas 0 450 378 285 netpd-preferences 0;
 #X symbolatom 120 15 10 0 0 0 - \$0.netpd-name.r \$0.netpd-name 0;
@@ -1324,7 +1324,7 @@
 #X connect 10 0 11 0;
 #X connect 11 0 6 0;
 #X restore 12 560 pd sample.period;
-#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ 41dB 6 12 0 14 #e0e0e0 #404040 0;
+#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ 49dB 6 12 0 14 #e0e0e0 #404040 0;
 #X obj 219 371 s \$0.lat.ret.level;
 #X obj 12 247 bang;
 #X obj 382 508 cnv 15 60 25 empty \$0.latency.label 0.0ms 6 12 0 14 #000000 #fcfcfc 0;
@@ -1412,6 +1412,7 @@
 #X obj 275 182 route 2;
 #X obj 275 205 b;
 #X obj 275 231 netpd-pref-manager;
+#X obj 19 306 netpd-pref-static int-instr-path ../instruments;
 #X connect 15 0 16 0;
 #X connect 16 0 17 0;
 #X connect 17 0 18 0;
