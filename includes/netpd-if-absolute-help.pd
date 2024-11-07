@@ -1,23 +1,29 @@
 #N canvas 520 65 503 344 10;
-#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040
-0;
+#X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X text 212 286 outlet0: 0|1;
-#X text 8 7 netpd-is-absolute - check if path is relavtive or absolute
-;
-#X obj 27 240 netpd-is-absolute;
-#X obj 27 280 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
-#X msg 27 105 symbol C:/Users/yodawg;
-#X msg 40 132 symbol /tmp/mozilla;
-#X msg 62 156 symbol my_sound_files/rec.wav;
-#X msg 75 180 symbol ./here.txt;
-#X msg 84 205 symbol other.jpg;
+#X text 8 7 netpd-is-absolute - check if path is relavtive or absolute;
+#X obj 27 280 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X msg 122 70 symbol C:/Users/yodawg;
+#X msg 135 97 symbol /tmp/mozilla;
+#X msg 157 121 symbol my_sound_files/rec.wav;
+#X msg 170 145 symbol ./here.txt;
+#X msg 179 170 symbol other.jpg;
 #X text 218 269 inlet0: path to check;
-#X text 8 41 [netpd-is-absolute] checks if the given path is absolute
-(1) or relative (0).;
-#X connect 3 0 4 0;
-#X connect 5 0 3 0;
-#X connect 6 0 3 0;
-#X connect 7 0 3 0;
-#X connect 8 0 3 0;
-#X connect 9 0 3 0;
+#X text 8 41 [netpd-is-absolute] checks if the given path is absolute (1) or relative (0).;
+#X obj 27 240 netpd-if-absolute;
+#X obj 68 281 print;
+#X obj 27 208 t a a;
+#X obj 155 247 print LEFT;
+#X obj 225 247 print RIGHT;
+#X msg 315 179 symbol ~/.local/bin;
+#X floatatom 47 124 5 0 0 0 - - - 0;
+#X connect 4 0 13 0;
+#X connect 5 0 13 0;
+#X connect 6 0 13 0;
+#X connect 7 0 13 0;
+#X connect 8 0 13 0;
+#X connect 11 0 3 0;
+#X connect 11 0 12 0;
+#X connect 13 0 11 0;
+#X connect 16 0 13 0;
+#X connect 17 0 13 0;
