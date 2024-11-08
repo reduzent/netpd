@@ -1,4 +1,4 @@
-#N canvas 598 28 546 477 10;
+#N canvas 598 40 546 477 10;
 #N canvas 595 106 566 660 unpatch_download 0;
 #X obj 9 65 r \$0.receive;
 #X obj 9 290 list trim;
@@ -798,7 +798,7 @@
 #X connect 24 0 1 0;
 #X connect 25 0 18 0;
 #X restore 284 231 pd unpatch_patch_containers;
-#N canvas 570 106 471 631 unpatch_netload 0;
+#N canvas 605 32 471 631 unpatch_netload 0;
 #N canvas 394 106 509 529 negotiate.free.slot 0;
 #X obj 93 153 netpd-status-get socket 1;
 #X obj 140 241 r \$0.sender;
@@ -1088,10 +1088,8 @@
 #X msg 70 506 can't load many instances of singleton \$1;
 #X msg 46 245 patchlist in find \$1;
 #X obj 27 220 t b a b;
-#X obj 27 88 list prepend;
-#X obj 115 32 loadbang;
-#X obj 115 55 netpd-pref-get netpd-instruments-path;
-#X msg 27 110 \$1/\$3.pd;
+#X msg 27 75 symbol \$2;
+#X obj 27 102 netpd-search 0;
 #X connect 0 0 14 0;
 #X connect 2 0 3 0;
 #X connect 3 0 9 0;
@@ -1121,10 +1119,8 @@
 #X connect 25 0 11 0;
 #X connect 25 1 24 0;
 #X connect 25 2 12 0;
-#X connect 26 0 29 0;
-#X connect 27 0 28 0;
-#X connect 28 0 26 1;
-#X connect 29 0 2 0;
+#X connect 26 0 27 0;
+#X connect 27 0 2 0;
 #X restore 8 195 pd singleton.check;
 #X msg 33 442 b /netclose \$1 loading...;
 #N canvas 623 247 548 365 netpd.patch.spec.check 0;
@@ -1351,7 +1347,7 @@
 #X obj 33 577 s \$0.local;
 #X obj 8 495 t a a;
 #X obj 8 535 list prepend 0;
-#N canvas 580 166 480 450 lock.loaded.singleton 0;
+#N canvas 1006 163 480 450 lock.loaded.singleton 0;
 #X obj 147 204 netpd-properties;
 #X obj 147 226 route singleton;
 #X obj 147 122 t a a;
