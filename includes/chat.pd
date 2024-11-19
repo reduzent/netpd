@@ -16,7 +16,7 @@
 #X msg 288 205 0;
 #X obj 9 12 r \$0-connect-server;
 #X obj 9 36 t a a;
-#N canvas 969 507 526 331 detect.disconnect 0;
+#N canvas 432 112 526 331 detect.disconnect 0;
 #X obj 167 44 inlet;
 #X obj 18 79 sel 0;
 #X obj 18 121 f;
@@ -24,12 +24,14 @@
 #X obj 18 9 netpd-status-get connection 1;
 #X msg 18 171 Uninitiated disconnect detected. <br/> Session might be out of sync.;
 #X obj 18 206 netpd-warning netpd 1;
+#X obj 18 40 change 0;
 #X connect 0 0 2 1;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 5 0;
-#X connect 4 0 1 0;
+#X connect 4 0 7 0;
 #X connect 5 0 6 0;
+#X connect 7 0 1 0;
 #X restore 36 60 pd detect.disconnect;
 #X obj 288 181 sel 0;
 #X obj 288 155 netpd-status-get connection 1;
@@ -867,7 +869,7 @@
 #X obj 5 7 chat-notification-window \$0;
 #X restore 15 281 pd notification;
 #X restore 12 401 pd chat;
-#N canvas 454 209 774 436 netpd_related_programs 1;
+#N canvas 454 209 774 436 netpd_related_programs 0;
 #X obj 17 225 \$0;
 #X obj 63 178 \$0;
 #X msg 63 199 \; pd-\$1.unpatch.container clear;
@@ -1345,7 +1347,7 @@
 #X connect 10 0 11 0;
 #X connect 11 0 6 0;
 #X restore 12 560 pd sample.period;
-#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ 57dB 6 12 0 14 #e0e0e0 #404040 0;
+#X obj 376 470 cnv 15 60 25 empty \$0.lat.ret.level \ 46dB 6 12 0 14 #e0e0e0 #404040 0;
 #X obj 219 371 s \$0.lat.ret.level;
 #X obj 12 247 bang;
 #X obj 382 508 cnv 15 60 25 empty \$0.latency.label 0.0ms 6 12 0 14 #000000 #fcfcfc 0;
@@ -2266,7 +2268,7 @@
 #X obj 268 304 chat-button \$0.dsp.button dsp 54;
 #X obj 323 304 chat-button \$0.unpatch.button unpatch 62;
 #X obj 370 38 netpd-gui-scrollbar \$0.scrollbar 15 240 12;
-#X obj 5 279 cnv 15 79 24 empty \$0.num.clients.label 1\  4 12 0 16 #e8e0f0 #787080 0;
+#X obj 5 279 cnv 15 79 24 empty \$0.num.clients.label 0\  4 12 0 16 #e8e0f0 #787080 0;
 #X obj 5 238 chat-line \$0 1;
 #X obj 5 218 chat-line \$0 2;
 #X obj 5 198 chat-line \$0 3;
