@@ -1,0 +1,13 @@
+#N canvas 833 239 865 638 12;
+#N canvas 0 40 460 524 instruments-path-dialog 1;
+#N canvas 35 77 487 551 \$0.gop 0;
+#X obj 230 436 cnv 18 220 30 empty empty empty 20 12 0 10 #bbbbbb #404040 0;
+#X obj 240 441 hsl 200 20 0 127 0 0 \$1.use-default-path \$0.blu use\ default 2 10 0 12 #dfdfdf #dfdfdf #000000 0 1;
+#X obj 230 475 cnv 18 220 30 empty empty empty 20 12 0 10 #bbbbbb #404040 0;
+#X obj 240 480 hsl 200 20 0 127 0 0 \$1.netpd-instruments-path.button \$0.blu select\ instruments\ directory 2 10 0 12 #dfdfdf #dfdfdf #000000 0 1;
+#X obj 29 41 cnv 20 133 26 empty empty INSTRUMENTS\ PATH\ CONFIGURATION 2 12 0 18 #ffffff #000000 0;
+#X text 29 77 Please configure where netpd should store instruments that it receives from peers (or your own developments). Make sure that you select a directory you have write permissions for. Within that directory \, a new directory 'abs' is automa- tically created where abstractions of downloaded instruments are stored.;
+#X coords 0 -1 1 1 440 500 2 20 20;
+#X restore 8 9 pd \$0.gop;
+#X coords 0 524 1 523 440 500 0;
+#X restore 13 13 pd instruments-path-dialog;
