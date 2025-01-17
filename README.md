@@ -90,5 +90,5 @@ https://github.com/reduzent/netpd-server.
 
 ## copyright
 
-2008-2022, Roman Haefeli <roman@netpd.org>  
+2008-2025, Roman Haefeli <roman@netpd.org>  
 Published under the GNU Public License (GPL-2)
