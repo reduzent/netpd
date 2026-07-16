@@ -7,7 +7,7 @@
 #X obj 477 433 set \$0.number h;
 #X obj 66 303 pointer \$0.number;
 #N canvas 1205 328 1936 1364 \$0.gop 0;
-#X coords 0 0 34 16 34 16 2 50 50;
+#X coords 0 0 64 24 64 24 2 50 50;
 #X restore 50 50 pd \$0.gop;
 #X obj 93 258 s pd-\$0.gop;
 #X msg 66 280 traverse pd-\$1.gop \, next;
@@ -95,7 +95,7 @@
 #X obj 62 163 outlet;
 #X obj 62 122 struct \$0.number float x float y float number float fclr float bgclr float w float h;
 #X obj 62 59 filledpolygon -x bgclr bgclr 0 0 0 0 h w h w 0;
-#X obj 59 89 drawnumber number 2 1 fclr;
+#X obj 59 89 drawnumber -ne number 2 1 fclr;
 #X connect 1 0 0 0;
 #X restore 19 365 pd struct \$0.number;
 #X obj 60 481 r \$0.lb;
@@ -177,4 +177,4 @@
 #X connect 79 0 51 2;
 #X connect 79 1 77 2;
 #X connect 80 0 47 0;
-#X coords 0 0 34 16 34 16 2 50 50;
+#X coords 0 0 64 24 64 24 2 50 50;
