@@ -1,6 +1,6 @@
 #N canvas 222 155 574 318 10;
 #N canvas 247 349 709 287 \$0.gop 0;
-#X coords 0 0 100 16 100 16 2 50 50;
+#X coords 0 0 67 16 67 16 2 50 50;
 #X restore 50 50 pd \$0.gop;
 #X obj 193 275 s \$0.expand;
 #X obj 193 232 tgl 30 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
@@ -272,11 +272,11 @@
 #X connect 24 0 6 0;
 #X connect 25 0 20 0;
 #X restore 190 146 pd register.clicks;
-#N canvas 306 206 433 148 the.struct 0;
+#N canvas 954 791 433 148 the.struct 0;
 #X obj 11 112 outlet;
 #X obj 11 76 struct \$0.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #X obj 12 12 filledpolygon -xv bgclr boxclr 1 0 0 w 0 w h 0 h;
-#X obj 13 44 drawsymbol label 1 2 txtclr;
+#X obj 13 44 drawsymbol -ne label 1 2 txtclr;
 #X connect 1 0 0 0;
 #X restore 190 122 pd the.struct;
 #X text 338 41 arg2: width;
@@ -525,4 +525,4 @@
 #X connect 30 0 26 1;
 #X connect 31 0 32 0;
 #X connect 31 0 33 0;
-#X coords 0 0 100 16 100 16 2 50 50;
+#X coords 0 0 67 16 67 16 2 50 50;
