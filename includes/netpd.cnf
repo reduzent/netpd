@@ -5,6 +5,7 @@ netpd-port 3025
 netpd-auto-connect 1
 netpd-instruments-path ~/netpd-instruments
 netpd-download-ask 1
+netpd-dev-mode 0
 pd-start-dsp 1
 pd-dynamic-dsp-off 1
 pd-audio-latency 50
